@@ -1,0 +1,36 @@
+name: Sync built site to Society.ci
+
+on:
+  push:
+    branches: [main]
+  workflow_dispatch:
+
+jobs:
+  build-and-sync:
+    runs-on: ubuntu-latest
+    steps:
+      - uses: actions/checkout@v4
+
+      - uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Build for aguy8.github.io/Society.ci
+        run: npm run build
+        env:
+          VITE_BASE_PATH: /Society.ci/
+          VITE_API_URL: ${{ secrets.VITE_API_URL }}
+
+      - name: Push dist to Society.ci gh-pages
+        run: |
+          cd dist
+          git init
+          git config user.email "action@github.com"
+          git config user.name "GitHub Action"
+          git add -A
+          git commit -m "Deploy from Society — $(date +'%Y-%m-%d %H:%M UTC')"
+          git push --force https://x-access-token:${{ secrets.SOCIETY_CI_PAT }}@github.com/Aguy8/Society.ci.git HEAD:gh-pages

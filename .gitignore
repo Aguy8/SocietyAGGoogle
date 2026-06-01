@@ -1,0 +1,17 @@
+node_modules/
+dist/
+*.db
+*.db-shm
+*.db-wal
+
+# Local image assets (replaced by Unsplash CDN)
+assets/*.jpg
+assets/*.jpeg
+assets/*.png
+assets/*.gif
+assets/*.webp
+public/assets/*.jpg
+public/assets/*.jpeg
+public/assets/*.png
+public/assets/*.gif
+public/assets/*.webp

@@ -1,0 +1,11 @@
+{
+  "recommendations": [
+    "dbaeumer.vscode-eslint",
+    "esbenp.prettier-vscode",
+    "dsznajder.es7-react-js-snippets",
+    "formulahendry.auto-rename-tag",
+    "eamodio.gitlens",
+    "streetsidesoftware.code-spell-checker-fr",
+    "bradlc.vscode-tailwindcss"
+  ]
+}

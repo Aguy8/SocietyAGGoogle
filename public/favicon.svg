@@ -1,0 +1,10 @@
+<svg xmlns="http://www.w3.org/2000/svg" viewBox="0 0 32 32">
+  <rect width="32" height="32" rx="8" fill="#0A0A0A"/>
+  <text x="16" y="21.5"
+    font-family="Inter, -apple-system, BlinkMacSystemFont, system-ui, sans-serif"
+    font-size="15"
+    font-weight="900"
+    text-anchor="middle"
+    fill="white"
+    letter-spacing="-0.5">So</text>
+</svg>

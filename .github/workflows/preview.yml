@@ -1,0 +1,78 @@
+name: Vercel — Preview PR
+
+# Déploie une URL de preview Vercel pour chaque Pull Request
+# et poste l'URL en commentaire sur la PR.
+#
+# Prérequis (secrets GitHub à configurer dans Settings → Secrets) :
+#   VERCEL_TOKEN      → vercel.com/account/tokens
+#   VERCEL_ORG_ID     → vercel.com/account → Settings → General → Your ID
+#   VERCEL_PROJECT_ID → fichier .vercel/project.json après "vercel link"
+
+on:
+  pull_request:
+    types: [opened, synchronize, reopened]
+
+jobs:
+  preview:
+    name: Deploy preview
+    runs-on: ubuntu-latest
+    permissions:
+      pull-requests: write  # pour poster le commentaire
+      contents: read        # pour cloner le repo (checkout)
+
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v4
+
+      - name: Setup Node.js
+        uses: actions/setup-node@v4
+        with:
+          node-version: 20
+          cache: npm
+
+      - name: Install dependencies
+        run: npm ci
+
+      - name: Install Vercel CLI
+        run: npm install -g vercel@latest
+
+      - name: Pull Vercel environment (preview)
+        run: vercel pull --yes --environment=preview --token=${{ secrets.VERCEL_TOKEN }}
+        env:
+          VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
+          VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
+
+      - name: Build (via Vercel)
+        run: vercel build --token=${{ secrets.VERCEL_TOKEN }}
+        env:
+          VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
+          VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
+
+      - name: Deploy to Vercel preview
+        id: deploy
+        run: |
+          PREVIEW_URL=$(vercel deploy --prebuilt --token=${{ secrets.VERCEL_TOKEN }})
+          echo "url=$PREVIEW_URL" >> $GITHUB_OUTPUT
+        env:
+          VERCEL_ORG_ID: ${{ secrets.VERCEL_ORG_ID }}
+          VERCEL_PROJECT_ID: ${{ secrets.VERCEL_PROJECT_ID }}
+
+      - name: Post preview URL on PR
+        uses: actions/github-script@v7
+        with:
+          script: |
+            const url = '${{ steps.deploy.outputs.url }}';
+            const sha  = context.sha.substring(0, 7);
+            await github.rest.issues.createComment({
+              owner:        context.repo.owner,
+              repo:         context.repo.repo,
+              issue_number: context.issue.number,
+              body: [
+                '## 🚀 Preview Vercel disponible',
+                '',
+                `**URL :** ${url}`,
+                `**Commit :** \`${sha}\``,
+                '',
+                '_Ce preview est automatiquement supprimé à la fermeture de la PR._'
+              ].join('\n')
+            });

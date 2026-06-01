@@ -1,0 +1,4700 @@
+<!doctype html>
+<html lang="fr">
+<head>
+  <meta charset="utf-8"/>
+  <title>Society — Structurez. Engagez. Monétisez.</title>
+  <meta name="viewport" content="width=device-width,initial-scale=1"/>
+  <meta name="description" content="Society est la plateforme tout-en-un qui aide associations, ONG, mutuelles, alumni et leaders africains à structurer, engager et monétiser leur communauté."/>
+  <link rel="preconnect" href="https://fonts.googleapis.com"/>
+  <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin/>
+  <link href="https://fonts.googleapis.com/css2?family=Inter:wght@400;500;600;700;800;900&display=swap" rel="stylesheet"/>
+  <style>
+html, body { margin: 0; padding: 0; background: #fff; }
+#root { min-height: 100vh; }
+/* Society — Site vitrine
+   Charte: bleu primaire #0E47AB / bleu foncé #084CC2 / or #D4A75B / noir #0A0A0A / blanc */
+
+:root {
+  --so-blue: #0E47AB;
+  --so-blue-dark: #0A3A8F;
+  --so-blue-deep: #084CC2;
+  --so-blue-soft: #E8EFFC;
+  --so-blue-50: #F4F7FE;
+  --so-gold: #D4A75B;
+  --so-gold-soft: #F6EDD8;
+  --so-ink: #0A0A0A;
+  --so-ink-2: #1A1A1A;
+  --so-grey-900: #111111;
+  --so-grey-700: #3A3A3A;
+  --so-grey-500: #6B6B6B;
+  --so-grey-300: #C9C9C9;
+  --so-grey-200: #E5E5E5;
+  --so-grey-100: #F2F2F2;
+  --so-grey-50: #F8F8F8;
+  --so-white: #FFFFFF;
+
+  --so-pink: #FFD9DE;
+  --so-mint: #D4F0E2;
+  --so-lemon: #FFE9A8;
+  --so-lilac: #E0D6FF;
+
+  --r-sm: 10px;
+  --r-md: 18px;
+  --r-lg: 28px;
+  --r-xl: 40px;
+  --r-pill: 999px;
+}
+
+html, body {
+  margin: 0;
+  padding: 0;
+  background: var(--so-white);
+  font-family: 'Inter', system-ui, sans-serif;
+  -webkit-font-smoothing: antialiased;
+}
+
+/* page artboard reset */
+.page {
+  font-family: 'Inter', system-ui, sans-serif;
+  color: var(--so-ink);
+  background: var(--so-white);
+  width: 100%;
+  font-feature-settings: 'ss01', 'cv11';
+  -webkit-font-smoothing: antialiased;
+  letter-spacing: -0.01em;
+}
+
+.page * { box-sizing: border-box; }
+
+.page h1, .page h2, .page h3, .page h4 {
+  font-family: 'Inter', system-ui, sans-serif;
+  font-weight: 800;
+  letter-spacing: -0.035em;
+  line-height: 0.95;
+  margin: 0;
+  text-wrap: balance;
+}
+
+.page h1 { font-size: 96px; }
+.page h2 { font-size: 72px; }
+.page h3 { font-size: 40px; }
+.page h4 { font-size: 24px; letter-spacing: -0.02em; line-height: 1.1; }
+
+.page p { margin: 0; line-height: 1.5; color: var(--so-grey-700); }
+
+/* ───────── NAV ───────── */
+.nav {
+  height: 80px;
+  display: flex; align-items: center; justify-content: space-between;
+  padding: 0 64px;
+  border-bottom: 1px solid var(--so-grey-200);
+  background: rgba(255,255,255,0.92);
+  backdrop-filter: blur(20px);
+  position: sticky; top: 0; z-index: 50;
+}
+.nav.dark { background: var(--so-ink); border-bottom-color: #1f1f1f; }
+.nav.blue { background: var(--so-blue); border-bottom: none; }
+
+.nav-logo {
+  font-size: 28px; font-weight: 800; letter-spacing: -0.04em;
+  color: var(--so-blue);
+  text-decoration: none;
+  display: inline-flex; align-items: center; gap: 6px;
+  cursor: pointer;
+}
+.nav.blue .nav-logo, .nav.dark .nav-logo { color: var(--so-white); }
+
+.nav-links { display: flex; gap: 36px; }
+.nav-link {
+  font-size: 15px; font-weight: 500; color: var(--so-ink);
+  text-decoration: none;
+  transition: color 0.2s;
+  cursor: pointer;
+}
+.nav-link:hover { color: var(--so-blue); }
+.nav.dark .nav-link, .nav.blue .nav-link { color: rgba(255,255,255,0.85); }
+.nav-link.active { color: var(--so-blue); font-weight: 600; }
+.nav.blue .nav-link.active { color: var(--so-gold); }
+
+.nav-cta { display: flex; gap: 12px; align-items: center; }
+
+/* ───────── BUTTONS ───────── */
+.btn {
+  display: inline-flex; align-items: center; justify-content: center;
+  gap: 8px;
+  padding: 14px 26px;
+  border-radius: var(--r-pill);
+  font-size: 15px;
+  font-weight: 600;
+  font-family: inherit;
+  border: none;
+  cursor: pointer;
+  text-decoration: none;
+  transition: transform 0.15s, background 0.2s;
+  white-space: nowrap;
+}
+.btn:hover { transform: translateY(-1px); }
+
+.btn-primary { background: var(--so-blue); color: var(--so-white); }
+.btn-primary:hover { background: var(--so-blue-dark); }
+
+.btn-dark { background: var(--so-ink); color: var(--so-white); }
+.btn-dark:hover { background: #2a2a2a; }
+
+.btn-ghost { background: transparent; color: var(--so-ink); }
+.btn-outline { background: transparent; color: var(--so-ink); border: 1.5px solid var(--so-ink); }
+.btn-outline-white { background: transparent; color: var(--so-white); border: 1.5px solid rgba(255,255,255,0.3); }
+
+.btn-white { background: var(--so-white); color: var(--so-blue); }
+.btn-gold { background: var(--so-gold); color: var(--so-ink); }
+
+.btn-lg { padding: 18px 32px; font-size: 16px; }
+.btn-xl { padding: 22px 38px; font-size: 17px; }
+
+/* ───────── COMMON ───────── */
+.section { padding: 120px 64px; }
+.section-sm { padding: 80px 64px; }
+.container { max-width: 1312px; margin: 0 auto; }
+
+.eyebrow {
+  display: inline-flex; align-items: center; gap: 8px;
+  font-size: 13px; font-weight: 600; letter-spacing: 0.08em;
+  text-transform: uppercase;
+  color: var(--so-blue);
+}
+.eyebrow::before {
+  content: ""; width: 24px; height: 1.5px; background: var(--so-blue);
+}
+.eyebrow.dark { color: var(--so-gold); }
+.eyebrow.dark::before { background: var(--so-gold); }
+.eyebrow.white { color: var(--so-white); }
+.eyebrow.white::before { background: var(--so-white); }
+
+.dot { width: 8px; height: 8px; border-radius: 50%; background: var(--so-blue); display: inline-block; }
+
+/* ───────── FOOTER ───────── */
+.footer {
+  background: var(--so-ink);
+  color: var(--so-white);
+  padding: 80px 64px 40px;
+}
+.footer-grid {
+  display: grid;
+  grid-template-columns: 2fr 1fr 1fr 1fr 1fr;
+  gap: 48px;
+  padding-bottom: 64px;
+  border-bottom: 1px solid #1f1f1f;
+}
+.footer-col h5 {
+  font-size: 13px; font-weight: 600; letter-spacing: 0.06em;
+  text-transform: uppercase;
+  color: var(--so-grey-500);
+  margin: 0 0 20px;
+}
+.footer-col ul { list-style: none; padding: 0; margin: 0; display: grid; gap: 12px; }
+.footer-col a {
+  color: rgba(255,255,255,0.85);
+  text-decoration: none;
+  font-size: 15px;
+}
+.footer-col a:hover { color: var(--so-gold); }
+.footer-bottom {
+  display: flex; justify-content: space-between; align-items: center;
+  padding-top: 32px;
+  font-size: 13px; color: var(--so-grey-500);
+}
+.footer-brand {
+  font-size: 64px; font-weight: 800; letter-spacing: -0.045em;
+  color: var(--so-white); margin-bottom: 16px; line-height: 1;
+}
+.footer-tagline { color: var(--so-grey-300); max-width: 280px; font-size: 14px; }
+
+/* ───────── shapes ───────── */
+.tag {
+  display: inline-flex; align-items: center; gap: 6px;
+  padding: 6px 14px;
+  border-radius: var(--r-pill);
+  background: var(--so-grey-100);
+  font-size: 13px; font-weight: 500;
+  color: var(--so-grey-700);
+}
+.tag-blue { background: var(--so-blue-soft); color: var(--so-blue); }
+.tag-gold { background: var(--so-gold-soft); color: #876225; }
+
+/* avatar stack */
+.avatars { display: flex; }
+.avatars > * {
+  width: 44px; height: 44px; border-radius: 50%;
+  border: 3px solid white;
+  background-size: cover; background-position: center;
+  margin-left: -10px;
+}
+.avatars > *:first-child { margin-left: 0; }
+
+/* utility */
+.text-blue { color: var(--so-blue); }
+.text-gold { color: var(--so-gold); }
+.text-white { color: var(--so-white); }
+.text-grey { color: var(--so-grey-500); }
+
+/* phone frame */
+.phone-frame {
+  width: 280px;
+  aspect-ratio: 9 / 19;
+  border-radius: 38px;
+  border: 8px solid #0a0a0a;
+  background: #0a0a0a;
+  box-shadow: 0 30px 80px rgba(0,0,0,0.25);
+  overflow: hidden;
+  position: relative;
+}
+.phone-frame::before {
+  content: ''; position: absolute; top: 8px; left: 50%;
+  transform: translateX(-50%);
+  width: 92px; height: 24px; background: #0a0a0a; border-radius: 999px;
+  z-index: 2;
+}
+.phone-frame img { width: 100%; height: 100%; object-fit: cover; display: block; }
+
+  </style>
+</head>
+<body>
+<div id="root"></div>
+<script src="https://unpkg.com/react@18.3.1/umd/react.production.min.js" crossorigin="anonymous"></script>
+<script src="https://unpkg.com/react-dom@18.3.1/umd/react-dom.production.min.js" crossorigin="anonymous"></script>
+<script>
+
+// === shared.jsx ===
+// Society - Composants partagés
+// Note: nommage UNIQUE pour éviter collisions
+const SoNav = ({
+  active = "Accueil",
+  variant = "light"
+}) => {
+  const links = ["Accueil", "Fonctionnalités", "Pour qui ?", "Tarifs", "À propos"];
+  const linkHrefs = {
+    "Accueil": "#accueil",
+    "Fonctionnalités": "#fonctionnalites",
+    "Pour qui ?": "#pour-qui",
+    "Tarifs": "#tarifs",
+    "À propos": "#a-propos"
+  };
+  return /*#__PURE__*/React.createElement("nav", {
+    className: `nav ${variant === "dark" ? "dark" : variant === "blue" ? "blue" : ""}`
+  }, /*#__PURE__*/React.createElement("a", {
+    href: "#accueil",
+    className: "nav-logo"
+  }, "Society", /*#__PURE__*/React.createElement("span", {
+    style: {
+      color: variant === "blue" ? "#D4A75B" : "#0E47AB"
+    }
+  }, ".")), /*#__PURE__*/React.createElement("div", {
+    className: "nav-links"
+  }, links.map(l => /*#__PURE__*/React.createElement("a", {
+    key: l,
+    href: linkHrefs[l],
+    className: `nav-link ${active === l ? "active" : ""}`
+  }, l))), /*#__PURE__*/React.createElement("div", {
+    className: "nav-cta"
+  }, /*#__PURE__*/React.createElement("a", {
+    href: "#",
+    className: "btn btn-ghost",
+    style: {
+      color: variant === "blue" || variant === "dark" ? "#fff" : undefined
+    }
+  }, "Se connecter"), /*#__PURE__*/React.createElement("a", {
+    href: "#inscription",
+    className: variant === "blue" ? "btn btn-white" : "btn btn-dark"
+  }, "Inscrire ma communaut\xE9", /*#__PURE__*/React.createElement("svg", {
+    width: "14",
+    height: "14",
+    viewBox: "0 0 24 24",
+    fill: "none"
+  }, /*#__PURE__*/React.createElement("path", {
+    d: "M5 12h14M13 6l6 6-6 6",
+    stroke: "currentColor",
+    strokeWidth: "2",
+    strokeLinecap: "round",
+    strokeLinejoin: "round"
+  })))));
+};
+const SoFooter = () => /*#__PURE__*/React.createElement("footer", {
+  className: "footer"
+}, /*#__PURE__*/React.createElement("div", {
+  className: "footer-grid"
+}, /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("div", {
+  className: "footer-brand"
+}, "Society", /*#__PURE__*/React.createElement("span", {
+  style: {
+    color: '#D4A75B'
+  }
+}, ".")), /*#__PURE__*/React.createElement("p", {
+  className: "footer-tagline"
+}, "Structurez. Engagez. Mon\xE9tisez.", /*#__PURE__*/React.createElement("br", null), "L'infrastructure num\xE9rique des communaut\xE9s africaines."), /*#__PURE__*/React.createElement("div", {
+  style: {
+    display: 'flex',
+    gap: 12,
+    marginTop: 24
+  }
+}, ['IG', 'X', 'LK', 'FB'].map(s => /*#__PURE__*/React.createElement("div", {
+  key: s,
+  style: {
+    width: 40,
+    height: 40,
+    borderRadius: '50%',
+    border: '1px solid #2a2a2a',
+    display: 'grid',
+    placeItems: 'center',
+    fontSize: 12,
+    fontWeight: 600,
+    color: '#fff'
+  }
+}, s)))), /*#__PURE__*/React.createElement("div", {
+  className: "footer-col"
+}, /*#__PURE__*/React.createElement("h5", null, "Produit"), /*#__PURE__*/React.createElement("ul", null, /*#__PURE__*/React.createElement("li", null, /*#__PURE__*/React.createElement("a", {
+  href: "#fonctionnalites"
+}, "Fonctionnalit\xE9s")), /*#__PURE__*/React.createElement("li", null, /*#__PURE__*/React.createElement("a", {
+  href: "#tarifs"
+}, "Tarifs")), /*#__PURE__*/React.createElement("li", null, /*#__PURE__*/React.createElement("a", {
+  href: "#"
+}, "Modules")), /*#__PURE__*/React.createElement("li", null, /*#__PURE__*/React.createElement("a", {
+  href: "#"
+}, "Mobile App")), /*#__PURE__*/React.createElement("li", null, /*#__PURE__*/React.createElement("a", {
+  href: "#"
+}, "S\xE9curit\xE9")))), /*#__PURE__*/React.createElement("div", {
+  className: "footer-col"
+}, /*#__PURE__*/React.createElement("h5", null, "Pour qui ?"), /*#__PURE__*/React.createElement("ul", null, /*#__PURE__*/React.createElement("li", null, /*#__PURE__*/React.createElement("a", {
+  href: "#pour-qui"
+}, "ONG & Associations")), /*#__PURE__*/React.createElement("li", null, /*#__PURE__*/React.createElement("a", {
+  href: "#pour-qui"
+}, "Mutuelles")), /*#__PURE__*/React.createElement("li", null, /*#__PURE__*/React.createElement("a", {
+  href: "#pour-qui"
+}, "Alumni")), /*#__PURE__*/React.createElement("li", null, /*#__PURE__*/React.createElement("a", {
+  href: "#pour-qui"
+}, "Influenceurs")), /*#__PURE__*/React.createElement("li", null, /*#__PURE__*/React.createElement("a", {
+  href: "#pour-qui"
+}, "Groupes religieux")))), /*#__PURE__*/React.createElement("div", {
+  className: "footer-col"
+}, /*#__PURE__*/React.createElement("h5", null, "Soci\xE9t\xE9"), /*#__PURE__*/React.createElement("ul", null, /*#__PURE__*/React.createElement("li", null, /*#__PURE__*/React.createElement("a", {
+  href: "#a-propos"
+}, "\xC0 propos")), /*#__PURE__*/React.createElement("li", null, /*#__PURE__*/React.createElement("a", {
+  href: "#"
+}, "Difero Fundry")), /*#__PURE__*/React.createElement("li", null, /*#__PURE__*/React.createElement("a", {
+  href: "#"
+}, "Carri\xE8res")), /*#__PURE__*/React.createElement("li", null, /*#__PURE__*/React.createElement("a", {
+  href: "#"
+}, "Presse")), /*#__PURE__*/React.createElement("li", null, /*#__PURE__*/React.createElement("a", {
+  href: "#"
+}, "Contact")))), /*#__PURE__*/React.createElement("div", {
+  className: "footer-col"
+}, /*#__PURE__*/React.createElement("h5", null, "Ressources"), /*#__PURE__*/React.createElement("ul", null, /*#__PURE__*/React.createElement("li", null, /*#__PURE__*/React.createElement("a", {
+  href: "#"
+}, "Centre d'aide")), /*#__PURE__*/React.createElement("li", null, /*#__PURE__*/React.createElement("a", {
+  href: "#"
+}, "Blog")), /*#__PURE__*/React.createElement("li", null, /*#__PURE__*/React.createElement("a", {
+  href: "#"
+}, "\xC9tudes de cas")), /*#__PURE__*/React.createElement("li", null, /*#__PURE__*/React.createElement("a", {
+  href: "#"
+}, "Documentation")), /*#__PURE__*/React.createElement("li", null, /*#__PURE__*/React.createElement("a", {
+  href: "#"
+}, "Statut"))))), /*#__PURE__*/React.createElement("div", {
+  className: "footer-bottom"
+}, /*#__PURE__*/React.createElement("div", null, "\xA9 2026 Society \u2014 Une cr\xE9ation Difero Fundry \xB7 Abidjan, C\xF4te d'Ivoire"), /*#__PURE__*/React.createElement("div", {
+  style: {
+    display: 'flex',
+    gap: 24
+  }
+}, /*#__PURE__*/React.createElement("a", {
+  href: "#",
+  style: {
+    color: '#6B6B6B',
+    textDecoration: 'none'
+  }
+}, "Mentions l\xE9gales"), /*#__PURE__*/React.createElement("a", {
+  href: "#",
+  style: {
+    color: '#6B6B6B',
+    textDecoration: 'none'
+  }
+}, "Confidentialit\xE9"), /*#__PURE__*/React.createElement("a", {
+  href: "#",
+  style: {
+    color: '#6B6B6B',
+    textDecoration: 'none'
+  }
+}, "CGU"))));
+
+// Marquee bandeau de communautés
+const SoMarquee = () => {
+  const items = ["+150 000 communautés en CI", "•", "85 % des Ivoiriens membres d'un groupe", "•", "\n", "\n", "Conçue à Abidjan, pour l'Afrique", "•", "Plateforme sociale à intéraction communautaire"];
+  return /*#__PURE__*/React.createElement("div", {
+    style: {
+      background: '#0E47AB',
+      color: 'white',
+      padding: '14px 0',
+      overflow: 'hidden',
+      borderTop: '1px solid rgba(255,255,255,0.1)',
+      borderBottom: '1px solid rgba(255,255,255,0.1)'
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      display: 'flex',
+      gap: 40,
+      whiteSpace: 'nowrap',
+      animation: 'marquee 40s linear infinite'
+    }
+  }, [...items, ...items, ...items].map((it, i) => /*#__PURE__*/React.createElement("span", {
+    key: i,
+    style: {
+      fontSize: 14,
+      fontWeight: 500,
+      letterSpacing: '0.02em',
+      opacity: it === "•" ? 0.4 : 0.95
+    }
+  }, it))), /*#__PURE__*/React.createElement("style", null, `@keyframes marquee { from { transform: translateX(0); } to { transform: translateX(-33.3%); } }`));
+};
+
+// Icônes simples (inline SVG)
+const SoIcon = ({
+  name,
+  size = 24,
+  color = "currentColor"
+}) => {
+  const paths = {
+    users: /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("circle", {
+      cx: "9",
+      cy: "8",
+      r: "4"
+    }), /*#__PURE__*/React.createElement("path", {
+      d: "M3 21v-2a6 6 0 0 1 12 0v2"
+    }), /*#__PURE__*/React.createElement("circle", {
+      cx: "17",
+      cy: "6",
+      r: "3"
+    }), /*#__PURE__*/React.createElement("path", {
+      d: "M21 21v-1a4 4 0 0 0-3-3.87"
+    })),
+    money: /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("rect", {
+      x: "2",
+      y: "6",
+      width: "20",
+      height: "12",
+      rx: "2"
+    }), /*#__PURE__*/React.createElement("circle", {
+      cx: "12",
+      cy: "12",
+      r: "2.5"
+    }), /*#__PURE__*/React.createElement("path", {
+      d: "M6 12h.01M18 12h.01"
+    })),
+    chart: /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("path", {
+      d: "M3 3v18h18"
+    }), /*#__PURE__*/React.createElement("path", {
+      d: "M7 14l4-4 4 4 5-5"
+    })),
+    spark: /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("path", {
+      d: "M12 2l2 6h6l-5 4 2 6-5-4-5 4 2-6-5-4h6z"
+    })),
+    calendar: /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("rect", {
+      x: "3",
+      y: "4",
+      width: "18",
+      height: "18",
+      rx: "2"
+    }), /*#__PURE__*/React.createElement("path", {
+      d: "M16 2v4M8 2v4M3 10h18"
+    })),
+    chat: /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("path", {
+      d: "M21 15a2 2 0 0 1-2 2H7l-4 4V5a2 2 0 0 1 2-2h14a2 2 0 0 1 2 2z"
+    })),
+    grid: /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("rect", {
+      x: "3",
+      y: "3",
+      width: "7",
+      height: "7"
+    }), /*#__PURE__*/React.createElement("rect", {
+      x: "14",
+      y: "3",
+      width: "7",
+      height: "7"
+    }), /*#__PURE__*/React.createElement("rect", {
+      x: "14",
+      y: "14",
+      width: "7",
+      height: "7"
+    }), /*#__PURE__*/React.createElement("rect", {
+      x: "3",
+      y: "14",
+      width: "7",
+      height: "7"
+    })),
+    arrow: /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("path", {
+      d: "M5 12h14M13 6l6 6-6 6"
+    })),
+    check: /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("path", {
+      d: "M20 6L9 17l-5-5"
+    })),
+    star: /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("path", {
+      d: "M12 2l3 7 7 1-5 5 1 7-6-3-6 3 1-7-5-5 7-1z"
+    })),
+    shield: /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("path", {
+      d: "M12 2l9 4v6c0 5-3.5 9.7-9 10-5.5-.3-9-5-9-10V6z"
+    })),
+    bolt: /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("path", {
+      d: "M13 2L3 14h7l-1 8 10-12h-7z"
+    })),
+    globe: /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("circle", {
+      cx: "12",
+      cy: "12",
+      r: "10"
+    }), /*#__PURE__*/React.createElement("path", {
+      d: "M2 12h20M12 2a15 15 0 0 1 0 20M12 2a15 15 0 0 0 0 20"
+    })),
+    play: /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("path", {
+      d: "M5 3l14 9-14 9z"
+    })),
+    heart: /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("path", {
+      d: "M20.84 4.61a5.5 5.5 0 0 0-7.78 0L12 5.67l-1.06-1.06a5.5 5.5 0 0 0-7.78 7.78l1.06 1.06L12 21.23l7.78-7.78 1.06-1.06a5.5 5.5 0 0 0 0-7.78z"
+    })),
+    target: /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("circle", {
+      cx: "12",
+      cy: "12",
+      r: "10"
+    }), /*#__PURE__*/React.createElement("circle", {
+      cx: "12",
+      cy: "12",
+      r: "6"
+    }), /*#__PURE__*/React.createElement("circle", {
+      cx: "12",
+      cy: "12",
+      r: "2"
+    })),
+    layers: /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("path", {
+      d: "M12 2L2 7l10 5 10-5z"
+    }), /*#__PURE__*/React.createElement("path", {
+      d: "M2 17l10 5 10-5M2 12l10 5 10-5"
+    })),
+    lock: /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("rect", {
+      x: "3",
+      y: "11",
+      width: "18",
+      height: "11",
+      rx: "2"
+    }), /*#__PURE__*/React.createElement("path", {
+      d: "M7 11V7a5 5 0 0 1 10 0v4"
+    })),
+    qr: /*#__PURE__*/React.createElement(React.Fragment, null, /*#__PURE__*/React.createElement("rect", {
+      x: "3",
+      y: "3",
+      width: "7",
+      height: "7"
+    }), /*#__PURE__*/React.createElement("rect", {
+      x: "14",
+      y: "3",
+      width: "7",
+      height: "7"
+    }), /*#__PURE__*/React.createElement("rect", {
+      x: "3",
+      y: "14",
+      width: "7",
+      height: "7"
+    }), /*#__PURE__*/React.createElement("path", {
+      d: "M14 14h2v2h-2zM18 14h3M14 18h2M18 18h3v3h-3z"
+    }))
+  };
+  return /*#__PURE__*/React.createElement("svg", {
+    width: size,
+    height: size,
+    viewBox: "0 0 24 24",
+    fill: "none",
+    stroke: color,
+    strokeWidth: "1.8",
+    strokeLinecap: "round",
+    strokeLinejoin: "round"
+  }, paths[name]);
+};
+Object.assign(window, {
+  SoNav,
+  SoFooter,
+  SoMarquee,
+  SoIcon
+});
+
+// === page-accueil.jsx ===
+// Page Accueil — Society
+const PageAccueil = () => {
+  return /*#__PURE__*/React.createElement("div", {
+    className: "page",
+    "data-screen-label": "01 Accueil"
+  }, /*#__PURE__*/React.createElement(SoNav, {
+    active: "Accueil"
+  }), /*#__PURE__*/React.createElement("section", {
+    style: {
+      padding: '100px 64px 80px',
+      position: 'relative',
+      overflow: 'hidden'
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "container",
+    style: {
+      position: 'relative',
+      zIndex: 2
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      display: 'grid',
+      gridTemplateColumns: '1.1fr 0.9fr',
+      gap: 80,
+      alignItems: 'center'
+    }
+  }, /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("div", {
+    style: {
+      display: 'inline-flex',
+      alignItems: 'center',
+      gap: 8,
+      padding: '6px 14px 6px 6px',
+      background: '#F2F2F2',
+      borderRadius: 999,
+      marginBottom: 32
+    }
+  }, /*#__PURE__*/React.createElement("span", {
+    style: {
+      background: '#0E47AB',
+      color: 'white',
+      padding: '4px 10px',
+      borderRadius: 999,
+      fontSize: 11,
+      fontWeight: 700,
+      letterSpacing: '0.04em'
+    }
+  }, "NEW"), /*#__PURE__*/React.createElement("span", {
+    style: {
+      fontSize: 13,
+      fontWeight: 500
+    }
+  }, "Lancement officiel \u2014 Q3 2026")), /*#__PURE__*/React.createElement("h1", {
+    style: {
+      fontSize: 112,
+      lineHeight: 0.92
+    }
+  }, "Donnez", /*#__PURE__*/React.createElement("br", null), /*#__PURE__*/React.createElement("span", {
+    style: {
+      color: '#0E47AB'
+    }
+  }, "une vraie vie"), /*#__PURE__*/React.createElement("br", null), "\xE0 votre communaut\xE9."), /*#__PURE__*/React.createElement("p", {
+    style: {
+      fontSize: 20,
+      marginTop: 32,
+      maxWidth: 540,
+      lineHeight: 1.5,
+      color: '#3A3A3A'
+    }
+  }, "Society est la plateforme tout-en-un qui aide les associations, ONG, mutuelles, alumni et leaders africains \xE0 ", /*#__PURE__*/React.createElement("b", {
+    style: {
+      color: '#0a0a0a'
+    }
+  }, "structurer, engager et mon\xE9tiser"), " leur communaut\xE9 \u2014 depuis un seul espace."), /*#__PURE__*/React.createElement("div", {
+    style: {
+      display: 'flex',
+      gap: 12,
+      marginTop: 40
+    }
+  }, /*#__PURE__*/React.createElement("a", {
+    href: "#inscription",
+    className: "btn btn-primary btn-xl"
+  }, "Inscrire ma communaut\xE9", /*#__PURE__*/React.createElement(SoIcon, {
+    name: "arrow",
+    size: 16,
+    color: "white"
+  })), /*#__PURE__*/React.createElement("a", {
+    href: "#",
+    className: "btn btn-outline btn-xl"
+  }, /*#__PURE__*/React.createElement(SoIcon, {
+    name: "play",
+    size: 14
+  }), "Voir la d\xE9mo (2 min)")), /*#__PURE__*/React.createElement("div", {
+    style: {
+      display: 'flex',
+      alignItems: 'center',
+      gap: 20,
+      marginTop: 56
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "avatars"
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      backgroundImage: 'url(assets/p_aw_fem_1.jpg)'
+    }
+  }), /*#__PURE__*/React.createElement("div", {
+    style: {
+      backgroundImage: 'url(assets/p_aw_hom_1.jpg)'
+    }
+  }), /*#__PURE__*/React.createElement("div", {
+    style: {
+      backgroundImage: 'url(assets/p_aw_fem_2.jpg)'
+    }
+  }), /*#__PURE__*/React.createElement("div", {
+    style: {
+      backgroundImage: 'url(assets/p_eu_1.jpg)'
+    }
+  }), /*#__PURE__*/React.createElement("div", {
+    style: {
+      backgroundImage: 'url(assets/p_aw_hom_2.jpg)'
+    }
+  })), /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("div", {
+    style: {
+      fontWeight: 700,
+      fontSize: 16
+    }
+  }, "+ 1 200 leaders communautaires"), /*#__PURE__*/React.createElement("div", {
+    style: {
+      fontSize: 13,
+      color: '#6B6B6B'
+    }
+  }, "d\xE9j\xE0 sur la liste d'attente b\xEAta.")))), /*#__PURE__*/React.createElement("div", {
+    style: {
+      position: 'relative',
+      height: 720
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      position: 'absolute',
+      inset: 0,
+      background: '#0E47AB',
+      borderRadius: 40,
+      transform: 'rotate(-3deg)'
+    }
+  }), /*#__PURE__*/React.createElement("div", {
+    style: {
+      position: 'absolute',
+      top: 30,
+      right: 40,
+      width: 200,
+      height: 200,
+      background: '#D4A75B',
+      borderRadius: 999
+    }
+  }), /*#__PURE__*/React.createElement("div", {
+    style: {
+      position: 'absolute',
+      top: 60,
+      left: '50%',
+      transform: 'translateX(-50%)',
+      width: 320,
+      aspectRatio: '9 / 19.5',
+      borderRadius: 42,
+      border: '10px solid #0a0a0a',
+      overflow: 'hidden',
+      boxShadow: '0 40px 80px rgba(0,0,0,0.3)',
+      background: '#0a0a0a'
+    }
+  }, /*#__PURE__*/React.createElement("img", {
+    src: "assets/screen_app1.png",
+    alt: "Society app",
+    style: {
+      width: '100%',
+      height: '100%',
+      objectFit: 'cover',
+      objectPosition: 'top'
+    }
+  })), /*#__PURE__*/React.createElement("div", {
+    style: {
+      position: 'absolute',
+      top: 120,
+      left: -20,
+      background: 'white',
+      padding: 16,
+      borderRadius: 20,
+      boxShadow: '0 20px 50px rgba(0,0,0,0.15)',
+      width: 220
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      display: 'flex',
+      alignItems: 'center',
+      gap: 10,
+      marginBottom: 12
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      width: 36,
+      height: 36,
+      borderRadius: 10,
+      background: '#FFD9DE',
+      display: 'grid',
+      placeItems: 'center'
+    }
+  }, /*#__PURE__*/React.createElement(SoIcon, {
+    name: "heart",
+    size: 18,
+    color: "#C23B5A"
+  })), /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("div", {
+    style: {
+      fontSize: 12,
+      color: '#6B6B6B'
+    }
+  }, "Cagnotte active"), /*#__PURE__*/React.createElement("div", {
+    style: {
+      fontSize: 13,
+      fontWeight: 700
+    }
+  }, "Cansein Fondation"))), /*#__PURE__*/React.createElement("div", {
+    style: {
+      fontSize: 22,
+      fontWeight: 800,
+      letterSpacing: '-0.02em'
+    }
+  }, "3 240 000 ", /*#__PURE__*/React.createElement("span", {
+    style: {
+      fontSize: 12,
+      color: '#6B6B6B'
+    }
+  }, "FCFA")), /*#__PURE__*/React.createElement("div", {
+    style: {
+      height: 6,
+      background: '#F2F2F2',
+      borderRadius: 999,
+      overflow: 'hidden',
+      marginTop: 8
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      width: '64%',
+      height: '100%',
+      background: '#0E47AB'
+    }
+  }))), /*#__PURE__*/React.createElement("div", {
+    style: {
+      position: 'absolute',
+      bottom: 80,
+      right: -10,
+      background: 'white',
+      padding: 18,
+      borderRadius: 20,
+      boxShadow: '0 20px 50px rgba(0,0,0,0.15)',
+      width: 240
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      fontSize: 12,
+      color: '#6B6B6B',
+      marginBottom: 6
+    }
+  }, "Cotisations du mois"), /*#__PURE__*/React.createElement("div", {
+    style: {
+      display: 'flex',
+      alignItems: 'baseline',
+      gap: 6
+    }
+  }, /*#__PURE__*/React.createElement("span", {
+    style: {
+      fontSize: 28,
+      fontWeight: 800,
+      letterSpacing: '-0.02em'
+    }
+  }, "184"), /*#__PURE__*/React.createElement("span", {
+    style: {
+      fontSize: 13,
+      color: '#0E47AB',
+      fontWeight: 600
+    }
+  }, "/200 membres")), /*#__PURE__*/React.createElement("div", {
+    style: {
+      display: 'flex',
+      gap: 4,
+      marginTop: 12
+    }
+  }, Array.from({
+    length: 30
+  }).map((_, i) => /*#__PURE__*/React.createElement("div", {
+    key: i,
+    style: {
+      flex: 1,
+      height: 28,
+      borderRadius: 3,
+      background: i < 27 ? '#0E47AB' : '#E5E5E5'
+    }
+  })))), /*#__PURE__*/React.createElement("div", {
+    style: {
+      position: 'absolute',
+      bottom: 30,
+      left: 20,
+      background: '#0a0a0a',
+      color: 'white',
+      padding: '14px 18px',
+      borderRadius: 16,
+      display: 'flex',
+      alignItems: 'center',
+      gap: 10
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      width: 8,
+      height: 8,
+      borderRadius: 4,
+      background: '#3DDC84'
+    }
+  }), /*#__PURE__*/React.createElement("span", {
+    style: {
+      fontSize: 13,
+      fontWeight: 500
+    }
+  }, "12 nouveaux membres")))))), /*#__PURE__*/React.createElement(SoMarquee, null), /*#__PURE__*/React.createElement("section", {
+    style: {
+      padding: '120px 64px',
+      background: '#F8F8F8'
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "container"
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      display: 'grid',
+      gridTemplateColumns: '1fr 1fr',
+      gap: 80,
+      alignItems: 'center'
+    }
+  }, /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("span", {
+    className: "eyebrow"
+  }, "Le probl\xE8me"), /*#__PURE__*/React.createElement("h2", {
+    style: {
+      marginTop: 24
+    }
+  }, "10 outils pour g\xE9rer une communaut\xE9.", /*#__PURE__*/React.createElement("br", null), /*#__PURE__*/React.createElement("span", {
+    style: {
+      color: '#6B6B6B'
+    }
+  }, "Aucun ne fait le travail.")), /*#__PURE__*/React.createElement("p", {
+    style: {
+      fontSize: 18,
+      marginTop: 28,
+      maxWidth: 480
+    }
+  }, "WhatsApp pour communiquer. Excel pour les cotisations. Google Forms pour les inscriptions. Facebook pour la visibilit\xE9. Mobile money pour collecter. Et toujours rien \xE0 montrer aux bailleurs."), /*#__PURE__*/React.createElement("p", {
+    style: {
+      fontSize: 18,
+      marginTop: 16,
+      maxWidth: 480,
+      color: '#0a0a0a',
+      fontWeight: 600
+    }
+  }, "Les leaders communautaires africains perdent en moyenne 5 \xE0 10h par semaine en gestion manuelle.")), /*#__PURE__*/React.createElement("div", {
+    style: {
+      display: 'grid',
+      gridTemplateColumns: '1fr 1fr',
+      gap: 16,
+      fontSize: 14
+    }
+  }, [{
+    n: 'WhatsApp',
+    d: 'Communication',
+    x: true
+  }, {
+    n: 'Excel',
+    d: 'Cotisations',
+    x: true
+  }, {
+    n: 'Forms',
+    d: 'Inscriptions',
+    x: true
+  }, {
+    n: 'Facebook',
+    d: 'Visibilité',
+    x: true
+  }, {
+    n: 'Donorbox',
+    d: 'Dons',
+    x: true
+  }, {
+    n: 'Mailchimp',
+    d: 'Emails',
+    x: true
+  }, {
+    n: 'Eventbrite',
+    d: 'Billets',
+    x: true
+  }, {
+    n: 'Google Drive',
+    d: 'Documents',
+    x: true
+  }].map((t, i) => /*#__PURE__*/React.createElement("div", {
+    key: i,
+    style: {
+      padding: 20,
+      background: 'white',
+      borderRadius: 16,
+      position: 'relative'
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      fontWeight: 700,
+      fontSize: 15
+    }
+  }, t.n), /*#__PURE__*/React.createElement("div", {
+    style: {
+      color: '#6B6B6B',
+      fontSize: 13
+    }
+  }, t.d), /*#__PURE__*/React.createElement("div", {
+    style: {
+      position: 'absolute',
+      top: 14,
+      right: 14,
+      width: 22,
+      height: 22,
+      borderRadius: '50%',
+      background: '#FEE',
+      color: '#C23B5A',
+      display: 'grid',
+      placeItems: 'center',
+      fontSize: 12,
+      fontWeight: 700
+    }
+  }, "\xD7"))), /*#__PURE__*/React.createElement("div", {
+    style: {
+      gridColumn: 'span 2',
+      padding: 24,
+      background: '#0E47AB',
+      borderRadius: 16,
+      color: 'white',
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'space-between'
+    }
+  }, /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("div", {
+    style: {
+      fontWeight: 800,
+      fontSize: 22,
+      letterSpacing: '-0.02em'
+    }
+  }, "Society"), /*#__PURE__*/React.createElement("div", {
+    style: {
+      opacity: 0.85,
+      fontSize: 13
+    }
+  }, "Un seul espace. Tout int\xE9gr\xE9.")), /*#__PURE__*/React.createElement("div", {
+    style: {
+      width: 32,
+      height: 32,
+      borderRadius: '50%',
+      background: '#D4A75B',
+      color: '#0a0a0a',
+      display: 'grid',
+      placeItems: 'center',
+      fontWeight: 700
+    }
+  }, "\u2713")))))), /*#__PURE__*/React.createElement("section", {
+    style: {
+      padding: '140px 64px'
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "container"
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      display: 'flex',
+      justifyContent: 'space-between',
+      alignItems: 'flex-end',
+      marginBottom: 80
+    }
+  }, /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("span", {
+    className: "eyebrow"
+  }, "5 Modules"), /*#__PURE__*/React.createElement("h2", {
+    style: {
+      marginTop: 24,
+      maxWidth: 800
+    }
+  }, "Tout ce qu'il faut, l\xE0 o\xF9 il faut.")), /*#__PURE__*/React.createElement("a", {
+    href: "#fonctionnalites",
+    className: "btn btn-outline"
+  }, "Explorer en d\xE9tail ", /*#__PURE__*/React.createElement(SoIcon, {
+    name: "arrow",
+    size: 14
+  }))), /*#__PURE__*/React.createElement("div", {
+    style: {
+      display: 'grid',
+      gridTemplateColumns: 'repeat(12, 1fr)',
+      gap: 20
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      gridColumn: 'span 7',
+      background: '#0E47AB',
+      color: 'white',
+      padding: 48,
+      borderRadius: 32,
+      minHeight: 420,
+      display: 'flex',
+      flexDirection: 'column',
+      justifyContent: 'space-between',
+      position: 'relative',
+      overflow: 'hidden'
+    }
+  }, /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("div", {
+    style: {
+      display: 'inline-flex',
+      padding: '6px 12px',
+      background: 'rgba(255,255,255,0.15)',
+      borderRadius: 999,
+      fontSize: 12,
+      fontWeight: 600,
+      marginBottom: 24
+    }
+  }, "01 \u2014 Gestion communautaire"), /*#__PURE__*/React.createElement("h3", {
+    style: {
+      fontSize: 56,
+      lineHeight: 0.95,
+      color: 'white',
+      maxWidth: 480
+    }
+  }, "Vos membres,", /*#__PURE__*/React.createElement("br", null), "parfaitement organis\xE9s."), /*#__PURE__*/React.createElement("p", {
+    style: {
+      marginTop: 20,
+      color: 'rgba(255,255,255,0.85)',
+      fontSize: 16,
+      maxWidth: 440
+    }
+  }, "Profils, segmentation, r\xF4les, communication cibl\xE9e par sous-groupes. Fini les listes WhatsApp en pagaille.")), /*#__PURE__*/React.createElement("div", {
+    style: {
+      display: 'flex',
+      gap: 12,
+      flexWrap: 'wrap'
+    }
+  }, ['Base de données', 'Sous-groupes', 'Rôles & permissions', 'Tableau de bord', 'Automatisations'].map(t => /*#__PURE__*/React.createElement("span", {
+    key: t,
+    style: {
+      padding: '8px 14px',
+      background: 'rgba(255,255,255,0.12)',
+      borderRadius: 999,
+      fontSize: 13,
+      fontWeight: 500
+    }
+  }, t))), /*#__PURE__*/React.createElement("div", {
+    style: {
+      position: 'absolute',
+      top: -50,
+      right: -50,
+      width: 280,
+      height: 280,
+      borderRadius: '50%',
+      border: '1px solid rgba(255,255,255,0.15)'
+    }
+  }), /*#__PURE__*/React.createElement("div", {
+    style: {
+      position: 'absolute',
+      top: 30,
+      right: 30,
+      width: 160,
+      height: 160,
+      borderRadius: '50%',
+      border: '1px solid rgba(255,255,255,0.15)'
+    }
+  })), /*#__PURE__*/React.createElement("div", {
+    style: {
+      gridColumn: 'span 5',
+      background: '#D4A75B',
+      padding: 40,
+      borderRadius: 32,
+      minHeight: 420,
+      display: 'flex',
+      flexDirection: 'column',
+      justifyContent: 'space-between',
+      position: 'relative',
+      overflow: 'hidden'
+    }
+  }, /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("div", {
+    style: {
+      display: 'inline-flex',
+      padding: '6px 12px',
+      background: 'rgba(0,0,0,0.1)',
+      borderRadius: 999,
+      fontSize: 12,
+      fontWeight: 600,
+      marginBottom: 24,
+      color: '#3a2a0c'
+    }
+  }, "02 \u2014 Mon\xE9tisation"), /*#__PURE__*/React.createElement("h3", {
+    style: {
+      fontSize: 44,
+      lineHeight: 0.95,
+      color: '#0a0a0a'
+    }
+  }, "Transformez l'\xE9nergie en flux."), /*#__PURE__*/React.createElement("p", {
+    style: {
+      marginTop: 20,
+      color: '#3a2a0c',
+      fontSize: 15
+    }
+  }, "Cagnottes, cotisations, billetterie, abonnements \u2014 paiement Mobile Money int\xE9gr\xE9.")), /*#__PURE__*/React.createElement("div", {
+    style: {
+      display: 'grid',
+      gridTemplateColumns: '1fr 1fr 1fr',
+      gap: 8,
+      marginTop: 32
+    }
+  }, ['Orange Money', 'Wave', 'MTN MoMo', 'Banques', 'Cartes prépayées', 'Flooz'].map(p => /*#__PURE__*/React.createElement("div", {
+    key: p,
+    style: {
+      background: 'white',
+      padding: '12px 8px',
+      borderRadius: 12,
+      fontSize: 12,
+      fontWeight: 600,
+      textAlign: 'center'
+    }
+  }, p)))), /*#__PURE__*/React.createElement("div", {
+    style: {
+      gridColumn: 'span 4',
+      background: '#F2F2F2',
+      padding: 36,
+      borderRadius: 32,
+      minHeight: 360
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      display: 'inline-flex',
+      padding: '6px 12px',
+      background: 'white',
+      borderRadius: 999,
+      fontSize: 12,
+      fontWeight: 600,
+      marginBottom: 24
+    }
+  }, "03 \u2014 Mise en relation"), /*#__PURE__*/React.createElement("h3", {
+    style: {
+      fontSize: 32
+    }
+  }, "L'algorithme qui connecte."), /*#__PURE__*/React.createElement("p", {
+    style: {
+      marginTop: 16,
+      fontSize: 15
+    }
+  }, "Besoins \u2194 ressources. B\xE9n\xE9voles, expertises, partenaires RSE."), /*#__PURE__*/React.createElement("div", {
+    style: {
+      display: 'flex',
+      alignItems: 'center',
+      gap: -8,
+      marginTop: 32
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "avatars"
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      backgroundImage: 'url(assets/p_aw_fem_3.jpg)'
+    }
+  }), /*#__PURE__*/React.createElement("div", {
+    style: {
+      backgroundImage: 'url(assets/p_aw_hom_3.jpg)'
+    }
+  }), /*#__PURE__*/React.createElement("div", {
+    style: {
+      backgroundImage: 'url(assets/p_aw_fem_4.jpg)'
+    }
+  })), /*#__PURE__*/React.createElement("div", {
+    style: {
+      marginLeft: 16,
+      padding: '6px 14px',
+      background: '#0E47AB',
+      color: 'white',
+      borderRadius: 999,
+      fontSize: 13,
+      fontWeight: 600
+    }
+  }, "+ 12 matchs"))), /*#__PURE__*/React.createElement("div", {
+    style: {
+      gridColumn: 'span 4',
+      background: '#0a0a0a',
+      color: 'white',
+      padding: 36,
+      borderRadius: 32,
+      minHeight: 360,
+      position: 'relative',
+      overflow: 'hidden'
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      display: 'inline-flex',
+      padding: '6px 12px',
+      background: 'rgba(255,255,255,0.15)',
+      borderRadius: 999,
+      fontSize: 12,
+      fontWeight: 600,
+      marginBottom: 24
+    }
+  }, "04 \u2014 Visibilit\xE9 & Impact"), /*#__PURE__*/React.createElement("h3", {
+    style: {
+      fontSize: 32,
+      color: 'white'
+    }
+  }, "Rapports d'impact, automatiquement."), /*#__PURE__*/React.createElement("p", {
+    style: {
+      marginTop: 16,
+      fontSize: 15,
+      color: 'rgba(255,255,255,0.7)'
+    }
+  }, "Page publique, m\xE9triques, t\xE9moignages \u2014 pour bailleurs et RSE."), /*#__PURE__*/React.createElement("div", {
+    style: {
+      marginTop: 28,
+      padding: 16,
+      background: 'rgba(255,255,255,0.08)',
+      borderRadius: 12
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      fontSize: 12,
+      color: 'rgba(255,255,255,0.6)'
+    }
+  }, "B\xE9n\xE9ficiaires touch\xE9s"), /*#__PURE__*/React.createElement("div", {
+    style: {
+      fontSize: 32,
+      fontWeight: 800,
+      letterSpacing: '-0.02em'
+    }
+  }, "14 290"), /*#__PURE__*/React.createElement("div", {
+    style: {
+      fontSize: 12,
+      color: '#3DDC84'
+    }
+  }, "\u2191 28 % ce trimestre"))), /*#__PURE__*/React.createElement("div", {
+    style: {
+      gridColumn: 'span 4',
+      background: 'linear-gradient(135deg, #FFD9DE 0%, #E0D6FF 100%)',
+      padding: 36,
+      borderRadius: 32,
+      minHeight: 360
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      display: 'inline-flex',
+      padding: '6px 12px',
+      background: 'rgba(255,255,255,0.6)',
+      borderRadius: 999,
+      fontSize: 12,
+      fontWeight: 600,
+      marginBottom: 24
+    }
+  }, "05 \u2014 Espace Leader"), /*#__PURE__*/React.createElement("h3", {
+    style: {
+      fontSize: 32
+    }
+  }, "Votre audience.", /*#__PURE__*/React.createElement("br", null), "Votre algorithme."), /*#__PURE__*/React.createElement("p", {
+    style: {
+      marginTop: 16,
+      fontSize: 15
+    }
+  }, "Q&A, lives, contenus premium \u2014 sans d\xE9pendre d'Instagram ou TikTok."), /*#__PURE__*/React.createElement("div", {
+    style: {
+      marginTop: 24,
+      display: 'flex',
+      alignItems: 'center',
+      gap: 12
+    }
+  }, /*#__PURE__*/React.createElement("img", {
+    src: "assets/p_aw_fem_5.jpg",
+    style: {
+      width: 50,
+      height: 50,
+      borderRadius: '50%',
+      objectFit: 'cover'
+    }
+  }), /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("div", {
+    style: {
+      fontWeight: 700,
+      fontSize: 14
+    }
+  }, "A\xEFssatou D."), /*#__PURE__*/React.createElement("div", {
+    style: {
+      fontSize: 12,
+      color: '#6B6B6B'
+    }
+  }, "+ 4 200 fans abonn\xE9s"))))))), /*#__PURE__*/React.createElement("section", {
+    id: "pour-qui",
+    style: {
+      padding: '140px 64px',
+      background: '#0a0a0a',
+      color: 'white'
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "container"
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      textAlign: 'center',
+      maxWidth: 900,
+      margin: '0 auto 80px'
+    }
+  }, /*#__PURE__*/React.createElement("span", {
+    className: "eyebrow dark"
+  }, "Pour qui ?"), /*#__PURE__*/React.createElement("h2", {
+    style: {
+      marginTop: 24,
+      color: 'white',
+      fontSize: 84
+    }
+  }, "Society s'adapte", /*#__PURE__*/React.createElement("br", null), "\xE0 votre ", /*#__PURE__*/React.createElement("span", {
+    style: {
+      color: '#D4A75B'
+    }
+  }, "r\xE9alit\xE9"), ".")), /*#__PURE__*/React.createElement("div", {
+    style: {
+      display: 'grid',
+      gridTemplateColumns: 'repeat(3, 1fr)',
+      gap: 16
+    }
+  }, [{
+    n: 'ONG & Associations',
+    img: 'assets/p_seg_ong.jpg',
+    d: 'Coordonnez vos actions, prouvez votre impact, sécurisez vos bailleurs.',
+    count: '20 000+'
+  }, {
+    n: 'Mutuelles & Tontines',
+    img: 'assets/p_seg_mut.jpg',
+    d: 'Automatisez les cotisations, sécurisez les flux, fini les conflits.',
+    count: '15 000+'
+  }, {
+    n: 'Alumni & Jeunesse',
+    img: 'assets/p_seg_alum.jpg',
+    d: 'Reconnectez la diaspora, organisez événements et mentorat.',
+    count: '8 000+'
+  }, {
+    n: 'Réseaux Pro',
+    img: 'assets/p_seg_pro.jpg',
+    d: 'Espaces collaboratifs, contenus premium, mise en relation.',
+    count: '6 000+'
+  }, {
+    n: 'Groupes religieux',
+    img: 'assets/p_seg_rel.jpg',
+    d: 'Communication multi-paroisses, collectes traçables, fidèles engagés.',
+    count: '12 000+'
+  }, {
+    n: 'Leaders & Influenceurs',
+    img: 'assets/p_seg_lead.jpg',
+    d: 'Communauté propriétaire, monétisation directe, indépendance.',
+    count: '4 000+'
+  }].map((s, i) => /*#__PURE__*/React.createElement("div", {
+    key: i,
+    style: {
+      borderRadius: 24,
+      overflow: 'hidden',
+      position: 'relative',
+      aspectRatio: '4/5',
+      backgroundImage: `url(${s.img})`,
+      backgroundSize: 'cover',
+      backgroundPosition: 'center'
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      position: 'absolute',
+      inset: 0,
+      background: 'linear-gradient(180deg, transparent 30%, rgba(0,0,0,0.85) 100%)'
+    }
+  }), /*#__PURE__*/React.createElement("div", {
+    style: {
+      position: 'absolute',
+      top: 20,
+      right: 20,
+      padding: '6px 12px',
+      background: 'rgba(255,255,255,0.15)',
+      backdropFilter: 'blur(10px)',
+      borderRadius: 999,
+      fontSize: 12,
+      fontWeight: 600
+    }
+  }, s.count, " en CI"), /*#__PURE__*/React.createElement("div", {
+    style: {
+      position: 'absolute',
+      bottom: 28,
+      left: 28,
+      right: 28
+    }
+  }, /*#__PURE__*/React.createElement("h3", {
+    style: {
+      color: 'white',
+      fontSize: 32,
+      lineHeight: 1
+    }
+  }, s.n), /*#__PURE__*/React.createElement("p", {
+    style: {
+      color: 'rgba(255,255,255,0.85)',
+      marginTop: 12,
+      fontSize: 14
+    }
+  }, s.d))))))), /*#__PURE__*/React.createElement("section", {
+    style: {
+      padding: '120px 64px',
+      background: '#0E47AB',
+      color: 'white'
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "container"
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      display: 'grid',
+      gridTemplateColumns: '1fr 1.4fr',
+      gap: 80,
+      alignItems: 'center'
+    }
+  }, /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("span", {
+    className: "eyebrow white"
+  }, "March\xE9"), /*#__PURE__*/React.createElement("h2", {
+    style: {
+      marginTop: 24,
+      color: 'white',
+      fontSize: 80
+    }
+  }, "Une opportunit\xE9 de ", /*#__PURE__*/React.createElement("span", {
+    style: {
+      color: '#D4A75B'
+    }
+  }, "30 M\u20AC"), "."), /*#__PURE__*/React.createElement("p", {
+    style: {
+      fontSize: 18,
+      marginTop: 24,
+      color: 'rgba(255,255,255,0.85)',
+      maxWidth: 480
+    }
+  }, "85 % des Ivoiriens sont membres d'au moins un groupe communautaire. Seulement 10 % disposent d'un outil num\xE9rique adapt\xE9. Nous sommes la premi\xE8re solution compl\xE8te con\xE7ue pour l'Afrique francophone.")), /*#__PURE__*/React.createElement("div", {
+    style: {
+      display: 'grid',
+      gridTemplateColumns: '1fr 1fr',
+      gap: 24
+    }
+  }, [{
+    n: '85 %',
+    l: 'des Ivoiriens membres d\'un groupe'
+  }, {
+    n: '+150 K',
+    l: 'communautés en Côte d\'Ivoire'
+  }, {
+    n: '10 %',
+    l: 'seulement disposent d\'un outil numérique'
+  }, {
+    n: '+25 %',
+    l: 'croissance annuelle du marché'
+  }].map((s, i) => /*#__PURE__*/React.createElement("div", {
+    key: i,
+    style: {
+      padding: 32,
+      background: 'rgba(255,255,255,0.08)',
+      backdropFilter: 'blur(10px)',
+      borderRadius: 24,
+      border: '1px solid rgba(255,255,255,0.15)'
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      fontSize: 64,
+      fontWeight: 800,
+      letterSpacing: '-0.04em',
+      lineHeight: 1,
+      color: '#D4A75B'
+    }
+  }, s.n), /*#__PURE__*/React.createElement("div", {
+    style: {
+      marginTop: 12,
+      color: 'rgba(255,255,255,0.85)',
+      fontSize: 14
+    }
+  }, s.l))))))), /*#__PURE__*/React.createElement("section", {
+    style: {
+      padding: '120px 64px'
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "container"
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      display: 'grid',
+      gridTemplateColumns: '1fr 1.2fr',
+      gap: 64,
+      alignItems: 'center'
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      borderRadius: 32,
+      overflow: 'hidden',
+      aspectRatio: '4/5'
+    }
+  }, /*#__PURE__*/React.createElement("img", {
+    src: "assets/p_temoin.jpg",
+    style: {
+      width: '100%',
+      height: '100%',
+      objectFit: 'cover'
+    },
+    alt: "t\xE9moin"
+  })), /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("span", {
+    className: "eyebrow"
+  }, "Ils nous font confiance"), /*#__PURE__*/React.createElement("blockquote", {
+    style: {
+      margin: '32px 0 0',
+      fontSize: 44,
+      fontWeight: 700,
+      lineHeight: 1.15,
+      letterSpacing: '-0.025em'
+    }
+  }, "\xAB Avant Society, je passais mes week-ends \xE0 relancer 200 cotisantes sur WhatsApp. Aujourd'hui, je suis le suivi en temps r\xE9el \u2014 et j'ai du temps pour ", /*#__PURE__*/React.createElement("span", {
+    style: {
+      color: '#0E47AB'
+    }
+  }, "vraiment animer"), " notre mutuelle. \xBB"), /*#__PURE__*/React.createElement("div", {
+    style: {
+      marginTop: 40,
+      display: 'flex',
+      alignItems: 'center',
+      gap: 20
+    }
+  }, /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("div", {
+    style: {
+      fontWeight: 700,
+      fontSize: 18
+    }
+  }, "Awa K."), /*#__PURE__*/React.createElement("div", {
+    style: {
+      color: '#6B6B6B',
+      fontSize: 15
+    }
+  }, "Pr\xE9sidente \u2014 Mutuelle des Femmes d'Abobo")), /*#__PURE__*/React.createElement("div", {
+    style: {
+      flex: 1,
+      height: 1,
+      background: '#E5E5E5'
+    }
+  }), /*#__PURE__*/React.createElement("div", {
+    style: {
+      fontSize: 13,
+      color: '#6B6B6B'
+    }
+  }, "B\xEAta-testeuse depuis Mars 2026")))))), /*#__PURE__*/React.createElement("section", {
+    style: {
+      padding: '120px 64px 140px'
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "container"
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      background: '#0a0a0a',
+      borderRadius: 40,
+      padding: '100px 80px',
+      position: 'relative',
+      overflow: 'hidden'
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      position: 'absolute',
+      top: -100,
+      right: -100,
+      width: 400,
+      height: 400,
+      borderRadius: '50%',
+      background: '#0E47AB',
+      opacity: 0.6,
+      filter: 'blur(80px)'
+    }
+  }), /*#__PURE__*/React.createElement("div", {
+    style: {
+      position: 'relative',
+      zIndex: 2,
+      display: 'grid',
+      gridTemplateColumns: '1.3fr 1fr',
+      gap: 80,
+      alignItems: 'center'
+    }
+  }, /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("h2", {
+    style: {
+      color: 'white',
+      fontSize: 80
+    }
+  }, "Pr\xEAt \xE0 donner une", /*#__PURE__*/React.createElement("br", null), /*#__PURE__*/React.createElement("span", {
+    style: {
+      color: '#D4A75B'
+    }
+  }, "vraie voix"), " \xE0 votre", /*#__PURE__*/React.createElement("br", null), "communaut\xE9 ?"), /*#__PURE__*/React.createElement("p", {
+    style: {
+      color: 'rgba(255,255,255,0.7)',
+      fontSize: 18,
+      marginTop: 24,
+      maxWidth: 480
+    }
+  }, "Inscrivez votre communaut\xE9 en moins de 5 minutes. Acc\xE8s gratuit pendant la phase b\xEAta \u2014 sans carte bancaire.")), /*#__PURE__*/React.createElement("div", {
+    style: {
+      display: 'flex',
+      flexDirection: 'column',
+      gap: 12
+    }
+  }, /*#__PURE__*/React.createElement("a", {
+    href: "#inscription",
+    className: "btn btn-gold btn-xl",
+    style: {
+      justifyContent: 'space-between',
+      padding: '24px 32px'
+    }
+  }, /*#__PURE__*/React.createElement("span", null, "Inscrire ma communaut\xE9"), /*#__PURE__*/React.createElement(SoIcon, {
+    name: "arrow",
+    size: 18,
+    color: "#0a0a0a"
+  })), /*#__PURE__*/React.createElement("a", {
+    href: "#tarifs",
+    className: "btn btn-outline-white btn-xl",
+    style: {
+      justifyContent: 'space-between',
+      padding: '24px 32px'
+    }
+  }, /*#__PURE__*/React.createElement("span", null, "Voir les tarifs"), /*#__PURE__*/React.createElement(SoIcon, {
+    name: "arrow",
+    size: 18,
+    color: "white"
+  })), /*#__PURE__*/React.createElement("div", {
+    style: {
+      marginTop: 16,
+      color: 'rgba(255,255,255,0.6)',
+      fontSize: 13,
+      display: 'flex',
+      alignItems: 'center',
+      gap: 8
+    }
+  }, /*#__PURE__*/React.createElement(SoIcon, {
+    name: "check",
+    size: 14,
+    color: "#3DDC84"
+  }), " 5 minutes pour d\xE9marrer", /*#__PURE__*/React.createElement("span", {
+    style: {
+      margin: '0 8px'
+    }
+  }, "\xB7"), /*#__PURE__*/React.createElement(SoIcon, {
+    name: "check",
+    size: 14,
+    color: "#3DDC84"
+  }), " Aucune carte bancaire")))))), /*#__PURE__*/React.createElement(SoFooter, null));
+};
+window.PageAccueil = PageAccueil;
+
+// === page-fonctionnalites.jsx ===
+// Page Fonctionnalités — détail des modules
+const PageFonctionnalites = () => {
+  return /*#__PURE__*/React.createElement("div", {
+    className: "page",
+    "data-screen-label": "02 Fonctionnalites"
+  }, /*#__PURE__*/React.createElement(SoNav, {
+    active: "Fonctionnalit\xE9s"
+  }), /*#__PURE__*/React.createElement("section", {
+    style: {
+      padding: '120px 64px 80px',
+      background: '#F8F8F8'
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "container"
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      maxWidth: 900
+    }
+  }, /*#__PURE__*/React.createElement("span", {
+    className: "eyebrow"
+  }, "Fonctionnalit\xE9s"), /*#__PURE__*/React.createElement("h1", {
+    style: {
+      fontSize: 120,
+      marginTop: 28,
+      lineHeight: 0.9
+    }
+  }, "5 modules.", /*#__PURE__*/React.createElement("br", null), /*#__PURE__*/React.createElement("span", {
+    style: {
+      color: '#0E47AB'
+    }
+  }, "1 plateforme"), ".", /*#__PURE__*/React.createElement("br", null), "Z\xE9ro friction."), /*#__PURE__*/React.createElement("p", {
+    style: {
+      fontSize: 22,
+      marginTop: 32,
+      maxWidth: 700,
+      lineHeight: 1.5
+    }
+  }, "Chaque module est pens\xE9 pour les r\xE9alit\xE9s africaines : mobile-first, paiements locaux, multilinguisme, usage hors-ligne partiel.")), /*#__PURE__*/React.createElement("div", {
+    style: {
+      display: 'flex',
+      gap: 8,
+      marginTop: 64,
+      flexWrap: 'wrap'
+    }
+  }, ['Gestion communautaire', 'Monétisation', 'Mise en relation', 'Visibilité & Impact', 'Espace Leader'].map((m, i) => /*#__PURE__*/React.createElement("a", {
+    key: i,
+    href: `#m${i + 1}`,
+    style: {
+      padding: '14px 22px',
+      background: i === 0 ? '#0a0a0a' : 'white',
+      color: i === 0 ? 'white' : '#0a0a0a',
+      borderRadius: 999,
+      fontSize: 14,
+      fontWeight: 600,
+      textDecoration: 'none',
+      border: '1px solid #E5E5E5'
+    }
+  }, /*#__PURE__*/React.createElement("span", {
+    style: {
+      color: i === 0 ? '#D4A75B' : '#0E47AB',
+      marginRight: 8
+    }
+  }, `0${i + 1}`), m))))), /*#__PURE__*/React.createElement("section", {
+    id: "m1",
+    style: {
+      padding: '120px 64px'
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "container"
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      display: 'grid',
+      gridTemplateColumns: '1fr 1fr',
+      gap: 80,
+      alignItems: 'center'
+    }
+  }, /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("div", {
+    style: {
+      display: 'flex',
+      alignItems: 'center',
+      gap: 16,
+      marginBottom: 24
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      padding: '6px 14px',
+      background: '#0E47AB',
+      color: 'white',
+      borderRadius: 999,
+      fontSize: 13,
+      fontWeight: 700,
+      letterSpacing: '0.05em'
+    }
+  }, "MODULE 01"), /*#__PURE__*/React.createElement("div", {
+    style: {
+      height: 1,
+      flex: 1,
+      background: '#E5E5E5'
+    }
+  })), /*#__PURE__*/React.createElement("h2", {
+    style: {
+      fontSize: 80
+    }
+  }, "Gestion communautaire."), /*#__PURE__*/React.createElement("p", {
+    style: {
+      fontSize: 19,
+      marginTop: 24,
+      maxWidth: 520
+    }
+  }, "Tout ce qu'il faut pour g\xE9rer une communaut\xE9 sans Excel ni WhatsApp. Un c\u0153ur op\xE9rationnel solide, pens\xE9 pour les non-techniciens."), /*#__PURE__*/React.createElement("div", {
+    style: {
+      marginTop: 40,
+      display: 'grid',
+      gap: 4
+    }
+  }, [['Base de données vivante', 'Profils complets, segmentation, historique des cotisations, niveau d\'implication.'], ['Communication ciblée', 'Canaux par sous-groupes, comités, thématiques — sans pollution de groupe.'], ['Gestion des événements', 'Création, invitations, suivi des présences, bilans post-événement.'], ['Pilotage de projets', 'Planification, suivi, archivage, mise en valeur des initiatives.'], ['Tableau de bord d\'impact', 'Membres actifs, taux de participation, projets réalisés, fonds collectés.'], ['Rôles et permissions', 'Administrateur, modérateur, membre, bénévole — granulaire.']].map((f, i) => /*#__PURE__*/React.createElement("div", {
+    key: i,
+    style: {
+      padding: '20px 0',
+      borderBottom: '1px solid #E5E5E5',
+      display: 'grid',
+      gridTemplateColumns: '40px 1fr',
+      gap: 20,
+      alignItems: 'flex-start'
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      width: 36,
+      height: 36,
+      borderRadius: 10,
+      background: '#E8EFFC',
+      display: 'grid',
+      placeItems: 'center'
+    }
+  }, /*#__PURE__*/React.createElement(SoIcon, {
+    name: "check",
+    size: 18,
+    color: "#0E47AB"
+  })), /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("div", {
+    style: {
+      fontWeight: 700,
+      fontSize: 17
+    }
+  }, f[0]), /*#__PURE__*/React.createElement("div", {
+    style: {
+      color: '#6B6B6B',
+      fontSize: 14,
+      marginTop: 4
+    }
+  }, f[1])))))), /*#__PURE__*/React.createElement("div", {
+    style: {
+      background: '#F2F2F2',
+      borderRadius: 32,
+      padding: 48,
+      position: 'relative',
+      minHeight: 720,
+      overflow: 'hidden'
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      position: 'absolute',
+      inset: 24,
+      background: 'white',
+      borderRadius: 24,
+      padding: 32,
+      boxShadow: '0 20px 60px rgba(0,0,0,0.08)'
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      display: 'flex',
+      justifyContent: 'space-between',
+      alignItems: 'center',
+      marginBottom: 24
+    }
+  }, /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("div", {
+    style: {
+      fontSize: 12,
+      color: '#6B6B6B',
+      fontWeight: 600,
+      textTransform: 'uppercase',
+      letterSpacing: '0.06em'
+    }
+  }, "Tableau de bord"), /*#__PURE__*/React.createElement("div", {
+    style: {
+      fontSize: 24,
+      fontWeight: 800,
+      marginTop: 4,
+      letterSpacing: '-0.02em'
+    }
+  }, "Cansein Fondation")), /*#__PURE__*/React.createElement("div", {
+    style: {
+      padding: '6px 12px',
+      background: '#E8FBF1',
+      color: '#0F8B4F',
+      borderRadius: 999,
+      fontSize: 12,
+      fontWeight: 600
+    }
+  }, "\u25CF Live")), /*#__PURE__*/React.createElement("div", {
+    style: {
+      display: 'grid',
+      gridTemplateColumns: '1fr 1fr 1fr',
+      gap: 12,
+      marginBottom: 24
+    }
+  }, [['Membres', '1 248', '+18'], ['Cotisations', '94 %', '+5 %'], ['Projets', '12', '4 actifs']].map((s, i) => /*#__PURE__*/React.createElement("div", {
+    key: i,
+    style: {
+      padding: 16,
+      background: '#F8F8F8',
+      borderRadius: 14
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      fontSize: 11,
+      color: '#6B6B6B',
+      fontWeight: 600
+    }
+  }, s[0]), /*#__PURE__*/React.createElement("div", {
+    style: {
+      fontSize: 24,
+      fontWeight: 800,
+      marginTop: 6,
+      letterSpacing: '-0.02em'
+    }
+  }, s[1]), /*#__PURE__*/React.createElement("div", {
+    style: {
+      fontSize: 11,
+      color: '#0E47AB',
+      marginTop: 2
+    }
+  }, s[2])))), /*#__PURE__*/React.createElement("div", {
+    style: {
+      padding: 20,
+      background: '#F8F8F8',
+      borderRadius: 14,
+      marginBottom: 16
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      display: 'flex',
+      justifyContent: 'space-between',
+      marginBottom: 12
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      fontSize: 13,
+      fontWeight: 700
+    }
+  }, "Activit\xE9 \u2014 30 derniers jours"), /*#__PURE__*/React.createElement("div", {
+    style: {
+      fontSize: 11,
+      color: '#6B6B6B'
+    }
+  }, "+24 % vs mois dernier")), /*#__PURE__*/React.createElement("div", {
+    style: {
+      display: 'flex',
+      alignItems: 'flex-end',
+      gap: 4,
+      height: 80
+    }
+  }, [40, 55, 35, 70, 60, 82, 75, 90, 65, 80, 95, 88, 72, 85].map((h, i) => /*#__PURE__*/React.createElement("div", {
+    key: i,
+    style: {
+      flex: 1,
+      height: `${h}%`,
+      background: i === 11 ? '#0E47AB' : '#D5DCEA',
+      borderRadius: 3
+    }
+  })))), /*#__PURE__*/React.createElement("div", {
+    style: {
+      display: 'grid',
+      gap: 8
+    }
+  }, [{
+    n: 'Awa K.',
+    r: 'Trésorière',
+    img: 'assets/p_aw_fem_1.jpg'
+  }, {
+    n: 'Mamadou D.',
+    r: 'Bénévole',
+    img: 'assets/p_aw_hom_1.jpg'
+  }, {
+    n: 'Salimata B.',
+    r: 'Membre actif',
+    img: 'assets/p_aw_fem_6.jpg'
+  }].map((m, i) => /*#__PURE__*/React.createElement("div", {
+    key: i,
+    style: {
+      display: 'flex',
+      alignItems: 'center',
+      gap: 12,
+      padding: 12,
+      background: '#F8F8F8',
+      borderRadius: 12
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      width: 36,
+      height: 36,
+      borderRadius: '50%',
+      backgroundImage: `url(${m.img})`,
+      backgroundSize: 'cover'
+    }
+  }), /*#__PURE__*/React.createElement("div", {
+    style: {
+      flex: 1
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      fontSize: 13,
+      fontWeight: 700
+    }
+  }, m.n), /*#__PURE__*/React.createElement("div", {
+    style: {
+      fontSize: 11,
+      color: '#6B6B6B'
+    }
+  }, m.r)), /*#__PURE__*/React.createElement("div", {
+    style: {
+      padding: '4px 10px',
+      background: '#E8EFFC',
+      color: '#0E47AB',
+      borderRadius: 999,
+      fontSize: 11,
+      fontWeight: 600
+    }
+  }, "\xC0 jour"))))))))), /*#__PURE__*/React.createElement("section", {
+    id: "m2",
+    style: {
+      padding: '120px 64px',
+      background: '#0a0a0a',
+      color: 'white'
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "container"
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      display: 'grid',
+      gridTemplateColumns: '1fr 1fr',
+      gap: 80,
+      alignItems: 'center'
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      order: 2
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      display: 'flex',
+      alignItems: 'center',
+      gap: 16,
+      marginBottom: 24
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      padding: '6px 14px',
+      background: '#D4A75B',
+      color: '#0a0a0a',
+      borderRadius: 999,
+      fontSize: 13,
+      fontWeight: 700,
+      letterSpacing: '0.05em'
+    }
+  }, "MODULE 02"), /*#__PURE__*/React.createElement("div", {
+    style: {
+      height: 1,
+      flex: 1,
+      background: '#2a2a2a'
+    }
+  })), /*#__PURE__*/React.createElement("h2", {
+    style: {
+      fontSize: 80,
+      color: 'white'
+    }
+  }, "Mon\xE9tisation & financement."), /*#__PURE__*/React.createElement("p", {
+    style: {
+      fontSize: 19,
+      marginTop: 24,
+      maxWidth: 520,
+      color: 'rgba(255,255,255,0.7)'
+    }
+  }, "Transformer l'\xE9nergie communautaire en flux financiers structur\xE9s, tra\xE7ables et s\xE9curis\xE9s. Avec les paiements mobiles que tout le monde utilise d\xE9j\xE0."), /*#__PURE__*/React.createElement("div", {
+    style: {
+      marginTop: 40,
+      display: 'grid',
+      gridTemplateColumns: '1fr 1fr',
+      gap: 16
+    }
+  }, ['Cagnottes en 3 clics', 'Cotisations automatiques', 'Crowdfunding participatif', 'Billetterie + QR codes', 'Abonnements premium', 'Reporting financier'].map((f, i) => /*#__PURE__*/React.createElement("div", {
+    key: i,
+    style: {
+      padding: '16px 20px',
+      background: 'rgba(255,255,255,0.05)',
+      border: '1px solid rgba(255,255,255,0.1)',
+      borderRadius: 14,
+      fontSize: 15,
+      fontWeight: 600
+    }
+  }, f))), /*#__PURE__*/React.createElement("div", {
+    style: {
+      marginTop: 32,
+      display: 'flex',
+      gap: 12,
+      alignItems: 'center'
+    }
+  }, /*#__PURE__*/React.createElement("span", {
+    style: {
+      fontSize: 13,
+      color: 'rgba(255,255,255,0.6)'
+    }
+  }, "Compatible avec :"), ['Orange Money', 'Wave', 'MTN MoMo', 'Flooz', 'Visa'].map(p => /*#__PURE__*/React.createElement("span", {
+    key: p,
+    style: {
+      padding: '6px 12px',
+      background: 'rgba(255,255,255,0.08)',
+      borderRadius: 8,
+      fontSize: 12,
+      fontWeight: 600
+    }
+  }, p)))), /*#__PURE__*/React.createElement("div", {
+    style: {
+      order: 1,
+      position: 'relative',
+      minHeight: 700
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      position: 'absolute',
+      inset: 0,
+      background: '#D4A75B',
+      borderRadius: 40,
+      transform: 'rotate(2deg)'
+    }
+  }), /*#__PURE__*/React.createElement("div", {
+    style: {
+      position: 'absolute',
+      top: 40,
+      left: 40,
+      right: 40,
+      bottom: 40,
+      background: 'white',
+      borderRadius: 32,
+      padding: 32,
+      color: '#0a0a0a'
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      fontSize: 12,
+      color: '#6B6B6B',
+      fontWeight: 600
+    }
+  }, "CAGNOTTE EN COURS"), /*#__PURE__*/React.createElement("div", {
+    style: {
+      fontSize: 24,
+      fontWeight: 800,
+      marginTop: 4,
+      letterSpacing: '-0.02em'
+    }
+  }, "Reconstruire l'\xE9cole Anono"), /*#__PURE__*/React.createElement("div", {
+    style: {
+      display: 'flex',
+      alignItems: 'baseline',
+      gap: 8,
+      marginTop: 28
+    }
+  }, /*#__PURE__*/React.createElement("span", {
+    style: {
+      fontSize: 56,
+      fontWeight: 800,
+      letterSpacing: '-0.04em',
+      color: '#0E47AB'
+    }
+  }, "7 245"), /*#__PURE__*/React.createElement("span", {
+    style: {
+      fontSize: 32,
+      fontWeight: 800,
+      letterSpacing: '-0.04em',
+      color: '#0E47AB'
+    }
+  }, "K"), /*#__PURE__*/React.createElement("span", {
+    style: {
+      fontSize: 18,
+      color: '#6B6B6B',
+      fontWeight: 600
+    }
+  }, "FCFA")), /*#__PURE__*/React.createElement("div", {
+    style: {
+      display: 'flex',
+      justifyContent: 'space-between',
+      fontSize: 13,
+      color: '#6B6B6B',
+      marginTop: 4
+    }
+  }, /*#__PURE__*/React.createElement("span", null, "collect\xE9s sur 10 000 K"), /*#__PURE__*/React.createElement("span", {
+    style: {
+      fontWeight: 700,
+      color: '#0E47AB'
+    }
+  }, "72 %")), /*#__PURE__*/React.createElement("div", {
+    style: {
+      height: 8,
+      background: '#F2F2F2',
+      borderRadius: 999,
+      marginTop: 8,
+      overflow: 'hidden'
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      width: '72%',
+      height: '100%',
+      background: 'linear-gradient(90deg, #0E47AB, #084CC2)'
+    }
+  })), /*#__PURE__*/React.createElement("div", {
+    style: {
+      marginTop: 24,
+      padding: 20,
+      background: '#F8F8F8',
+      borderRadius: 16
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      fontSize: 12,
+      color: '#6B6B6B',
+      marginBottom: 12,
+      fontWeight: 600
+    }
+  }, "DERNIERS DONS"), [{
+    n: 'Aïssatou D.',
+    m: '50 000',
+    t: 'il y a 2 min',
+    img: 'assets/p_aw_fem_5.jpg'
+  }, {
+    n: 'Réseau JCI Abidjan',
+    m: '250 000',
+    t: 'il y a 14 min',
+    img: 'assets/p_eu_2.jpg'
+  }, {
+    n: 'Anonyme',
+    m: '15 000',
+    t: 'il y a 32 min',
+    img: null
+  }].map((d, i) => /*#__PURE__*/React.createElement("div", {
+    key: i,
+    style: {
+      display: 'flex',
+      alignItems: 'center',
+      gap: 12,
+      padding: '8px 0',
+      borderBottom: i < 2 ? '1px solid #E5E5E5' : 'none'
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      width: 32,
+      height: 32,
+      borderRadius: '50%',
+      background: d.img ? `url(${d.img}) center/cover` : '#E5E5E5'
+    }
+  }), /*#__PURE__*/React.createElement("div", {
+    style: {
+      flex: 1
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      fontSize: 13,
+      fontWeight: 700
+    }
+  }, d.n), /*#__PURE__*/React.createElement("div", {
+    style: {
+      fontSize: 11,
+      color: '#6B6B6B'
+    }
+  }, d.t)), /*#__PURE__*/React.createElement("div", {
+    style: {
+      fontSize: 14,
+      fontWeight: 800,
+      color: '#0E47AB'
+    }
+  }, d.m, " ", /*#__PURE__*/React.createElement("span", {
+    style: {
+      fontSize: 10,
+      color: '#6B6B6B'
+    }
+  }, "FCFA"))))), /*#__PURE__*/React.createElement("button", {
+    style: {
+      marginTop: 20,
+      width: '100%',
+      padding: 16,
+      background: '#0E47AB',
+      color: 'white',
+      border: 'none',
+      borderRadius: 14,
+      fontSize: 15,
+      fontWeight: 700
+    }
+  }, "Faire un don")))))), /*#__PURE__*/React.createElement("section", {
+    style: {
+      padding: '120px 64px'
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "container"
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      display: 'grid',
+      gap: 24
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    id: "m3",
+    style: {
+      display: 'grid',
+      gridTemplateColumns: '1fr 1fr',
+      gap: 64,
+      padding: 56,
+      background: '#F8F8F8',
+      borderRadius: 32,
+      alignItems: 'center'
+    }
+  }, /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("div", {
+    style: {
+      padding: '6px 14px',
+      background: '#0E47AB',
+      color: 'white',
+      borderRadius: 999,
+      fontSize: 13,
+      fontWeight: 700,
+      display: 'inline-block'
+    }
+  }, "MODULE 03"), /*#__PURE__*/React.createElement("h3", {
+    style: {
+      fontSize: 56,
+      marginTop: 16
+    }
+  }, "Mise en relation intelligente."), /*#__PURE__*/React.createElement("p", {
+    style: {
+      fontSize: 17,
+      marginTop: 16,
+      maxWidth: 480
+    }
+  }, "L'algorithme qui connecte besoins et ressources : comp\xE9tences recherch\xE9es, profils disponibles, partenariats RSE."), /*#__PURE__*/React.createElement("div", {
+    style: {
+      marginTop: 28,
+      display: 'flex',
+      gap: 8,
+      flexWrap: 'wrap'
+    }
+  }, ['Matching besoins/ressources', 'Annuaire interactif', 'Co-projets entre communautés', 'Connexion RSE'].map(t => /*#__PURE__*/React.createElement("span", {
+    key: t,
+    style: {
+      padding: '8px 14px',
+      background: 'white',
+      borderRadius: 999,
+      fontSize: 13,
+      fontWeight: 500
+    }
+  }, t)))), /*#__PURE__*/React.createElement("div", {
+    style: {
+      position: 'relative',
+      height: 320
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      position: 'absolute',
+      top: 30,
+      left: 0,
+      padding: 16,
+      background: 'white',
+      borderRadius: 16,
+      boxShadow: '0 10px 30px rgba(0,0,0,0.06)',
+      width: 220
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      fontSize: 11,
+      color: '#6B6B6B',
+      fontWeight: 600
+    }
+  }, "BESOIN"), /*#__PURE__*/React.createElement("div", {
+    style: {
+      fontSize: 14,
+      fontWeight: 700,
+      marginTop: 4
+    }
+  }, "D\xE9veloppeur web b\xE9n\xE9vole"), /*#__PURE__*/React.createElement("div", {
+    style: {
+      fontSize: 12,
+      color: '#0E47AB',
+      marginTop: 4
+    }
+  }, "ONG Hope Life CI")), /*#__PURE__*/React.createElement("div", {
+    style: {
+      position: 'absolute',
+      top: 50,
+      right: 0,
+      padding: 16,
+      background: 'white',
+      borderRadius: 16,
+      boxShadow: '0 10px 30px rgba(0,0,0,0.06)',
+      width: 220
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      fontSize: 11,
+      color: '#6B6B6B',
+      fontWeight: 600
+    }
+  }, "RESSOURCE"), /*#__PURE__*/React.createElement("div", {
+    style: {
+      fontSize: 14,
+      fontWeight: 700,
+      marginTop: 4
+    }
+  }, "Mamadou T."), /*#__PURE__*/React.createElement("div", {
+    style: {
+      fontSize: 12,
+      color: '#0E47AB',
+      marginTop: 4
+    }
+  }, "JCI Abidjan \u2022 React/Node")), /*#__PURE__*/React.createElement("svg", {
+    style: {
+      position: 'absolute',
+      inset: 0,
+      width: '100%',
+      height: '100%'
+    },
+    viewBox: "0 0 400 320"
+  }, /*#__PURE__*/React.createElement("path", {
+    d: "M 220 60 Q 200 160 200 200 T 200 260",
+    stroke: "#0E47AB",
+    strokeWidth: "2",
+    fill: "none",
+    strokeDasharray: "4 4"
+  })), /*#__PURE__*/React.createElement("div", {
+    style: {
+      position: 'absolute',
+      bottom: 0,
+      left: '50%',
+      transform: 'translateX(-50%)',
+      padding: '12px 24px',
+      background: '#0E47AB',
+      color: 'white',
+      borderRadius: 999,
+      fontSize: 14,
+      fontWeight: 700,
+      display: 'flex',
+      alignItems: 'center',
+      gap: 8
+    }
+  }, /*#__PURE__*/React.createElement(SoIcon, {
+    name: "spark",
+    size: 16,
+    color: "#D4A75B"
+  }), " 96 % de match"))), /*#__PURE__*/React.createElement("div", {
+    style: {
+      display: 'grid',
+      gridTemplateColumns: '1fr 1fr',
+      gap: 24
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    id: "m4",
+    style: {
+      padding: 48,
+      background: '#0E47AB',
+      color: 'white',
+      borderRadius: 32,
+      minHeight: 480
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      padding: '6px 14px',
+      background: 'rgba(255,255,255,0.15)',
+      borderRadius: 999,
+      fontSize: 13,
+      fontWeight: 700,
+      display: 'inline-block'
+    }
+  }, "MODULE 04"), /*#__PURE__*/React.createElement("h3", {
+    style: {
+      fontSize: 48,
+      marginTop: 16,
+      color: 'white'
+    }
+  }, "Visibilit\xE9 & Impact."), /*#__PURE__*/React.createElement("p", {
+    style: {
+      fontSize: 16,
+      marginTop: 12,
+      color: 'rgba(255,255,255,0.85)'
+    }
+  }, "Rendre visible ce qui \xE9tait invisible. Pages publiques, rapports automatis\xE9s, valorisation RSE."), /*#__PURE__*/React.createElement("div", {
+    style: {
+      marginTop: 32,
+      padding: 24,
+      background: 'rgba(255,255,255,0.1)',
+      borderRadius: 20
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      fontSize: 12,
+      color: 'rgba(255,255,255,0.7)',
+      fontWeight: 600
+    }
+  }, "RAPPORT D'IMPACT \u2014 Q3 2026"), /*#__PURE__*/React.createElement("div", {
+    style: {
+      display: 'grid',
+      gridTemplateColumns: '1fr 1fr',
+      gap: 16,
+      marginTop: 16
+    }
+  }, /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("div", {
+    style: {
+      fontSize: 32,
+      fontWeight: 800,
+      color: '#D4A75B',
+      letterSpacing: '-0.03em'
+    }
+  }, "14 290"), /*#__PURE__*/React.createElement("div", {
+    style: {
+      fontSize: 12,
+      opacity: 0.8
+    }
+  }, "b\xE9n\xE9ficiaires touch\xE9s")), /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("div", {
+    style: {
+      fontSize: 32,
+      fontWeight: 800,
+      color: '#D4A75B',
+      letterSpacing: '-0.03em'
+    }
+  }, "8"), /*#__PURE__*/React.createElement("div", {
+    style: {
+      fontSize: 12,
+      opacity: 0.8
+    }
+  }, "projets r\xE9alis\xE9s")), /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("div", {
+    style: {
+      fontSize: 32,
+      fontWeight: 800,
+      color: '#D4A75B',
+      letterSpacing: '-0.03em'
+    }
+  }, "62 M"), /*#__PURE__*/React.createElement("div", {
+    style: {
+      fontSize: 12,
+      opacity: 0.8
+    }
+  }, "FCFA collect\xE9s")), /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("div", {
+    style: {
+      fontSize: 32,
+      fontWeight: 800,
+      color: '#D4A75B',
+      letterSpacing: '-0.03em'
+    }
+  }, "1 248"), /*#__PURE__*/React.createElement("div", {
+    style: {
+      fontSize: 12,
+      opacity: 0.8
+    }
+  }, "membres actifs"))))), /*#__PURE__*/React.createElement("div", {
+    id: "m5",
+    style: {
+      padding: 48,
+      background: 'linear-gradient(135deg, #FFD9DE, #E0D6FF)',
+      borderRadius: 32,
+      minHeight: 480,
+      position: 'relative',
+      overflow: 'hidden'
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      padding: '6px 14px',
+      background: 'rgba(255,255,255,0.6)',
+      borderRadius: 999,
+      fontSize: 13,
+      fontWeight: 700,
+      display: 'inline-block'
+    }
+  }, "MODULE 05"), /*#__PURE__*/React.createElement("h3", {
+    style: {
+      fontSize: 48,
+      marginTop: 16
+    }
+  }, "Espace Leader & Influenceur."), /*#__PURE__*/React.createElement("p", {
+    style: {
+      fontSize: 16,
+      marginTop: 12,
+      maxWidth: 380
+    }
+  }, "Transformer une audience en communaut\xE9 structur\xE9e, engag\xE9e et mon\xE9tisable."), /*#__PURE__*/React.createElement("div", {
+    style: {
+      marginTop: 32,
+      padding: 20,
+      background: 'white',
+      borderRadius: 20,
+      display: 'flex',
+      alignItems: 'center',
+      gap: 16
+    }
+  }, /*#__PURE__*/React.createElement("img", {
+    src: "assets/p_aw_fem_5.jpg",
+    style: {
+      width: 60,
+      height: 60,
+      borderRadius: '50%',
+      objectFit: 'cover'
+    }
+  }), /*#__PURE__*/React.createElement("div", {
+    style: {
+      flex: 1
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      fontWeight: 800,
+      fontSize: 17
+    }
+  }, "A\xEFssatou D."), /*#__PURE__*/React.createElement("div", {
+    style: {
+      fontSize: 13,
+      color: '#6B6B6B'
+    }
+  }, "Espace priv\xE9 \xB7 4 200 fans")), /*#__PURE__*/React.createElement("div", {
+    style: {
+      padding: '8px 14px',
+      background: '#0a0a0a',
+      color: 'white',
+      borderRadius: 999,
+      fontSize: 12,
+      fontWeight: 700
+    }
+  }, "VIP")), /*#__PURE__*/React.createElement("div", {
+    style: {
+      marginTop: 12,
+      padding: 20,
+      background: 'white',
+      borderRadius: 20
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      fontSize: 11,
+      color: '#6B6B6B',
+      fontWeight: 600
+    }
+  }, "REVENUS DU MOIS"), /*#__PURE__*/React.createElement("div", {
+    style: {
+      fontSize: 32,
+      fontWeight: 800,
+      letterSpacing: '-0.03em',
+      marginTop: 4
+    }
+  }, "1 240 000 ", /*#__PURE__*/React.createElement("span", {
+    style: {
+      fontSize: 14,
+      color: '#6B6B6B'
+    }
+  }, "FCFA")), /*#__PURE__*/React.createElement("div", {
+    style: {
+      fontSize: 12,
+      color: '#0F8B4F',
+      fontWeight: 600
+    }
+  }, "\u2191 32 % vs mois dernier"))))))), /*#__PURE__*/React.createElement("section", {
+    style: {
+      padding: '120px 64px',
+      background: '#F8F8F8'
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "container"
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      textAlign: 'center',
+      marginBottom: 64
+    }
+  }, /*#__PURE__*/React.createElement("span", {
+    className: "eyebrow"
+  }, "Vs. la concurrence"), /*#__PURE__*/React.createElement("h2", {
+    style: {
+      marginTop: 24,
+      fontSize: 72
+    }
+  }, "Society fait ce qu'aucun autre", /*#__PURE__*/React.createElement("br", null), "ne fait \u2014 en Afrique.")), /*#__PURE__*/React.createElement("div", {
+    style: {
+      background: 'white',
+      borderRadius: 24,
+      overflow: 'hidden',
+      boxShadow: '0 10px 40px rgba(0,0,0,0.04)'
+    }
+  }, /*#__PURE__*/React.createElement("table", {
+    style: {
+      width: '100%',
+      borderCollapse: 'collapse',
+      fontSize: 15
+    }
+  }, /*#__PURE__*/React.createElement("thead", null, /*#__PURE__*/React.createElement("tr", {
+    style: {
+      background: '#F2F2F2'
+    }
+  }, /*#__PURE__*/React.createElement("th", {
+    style: {
+      padding: 20,
+      textAlign: 'left',
+      fontSize: 13,
+      fontWeight: 700,
+      color: '#6B6B6B',
+      textTransform: 'uppercase',
+      letterSpacing: '0.04em'
+    }
+  }, "Fonctionnalit\xE9"), /*#__PURE__*/React.createElement("th", {
+    style: {
+      padding: 20,
+      textAlign: 'center',
+      fontSize: 13,
+      fontWeight: 700,
+      color: '#6B6B6B'
+    }
+  }, "WhatsApp"), /*#__PURE__*/React.createElement("th", {
+    style: {
+      padding: 20,
+      textAlign: 'center',
+      fontSize: 13,
+      fontWeight: 700,
+      color: '#6B6B6B'
+    }
+  }, "Facebook"), /*#__PURE__*/React.createElement("th", {
+    style: {
+      padding: 20,
+      textAlign: 'center',
+      fontSize: 13,
+      fontWeight: 700,
+      color: '#6B6B6B'
+    }
+  }, "Circle.so"), /*#__PURE__*/React.createElement("th", {
+    style: {
+      padding: 20,
+      textAlign: 'center',
+      fontSize: 13,
+      fontWeight: 700,
+      background: '#0E47AB',
+      color: 'white'
+    }
+  }, "Society"))), /*#__PURE__*/React.createElement("tbody", null, [['Gestion des membres & rôles', 0, 1, 2, 2], ['Cotisations automatisées', 0, 0, 1, 2], ['Mobile Money (OM, Wave, MoMo)', 0, 0, 0, 2], ['Cagnottes & crowdfunding', 0, 0, 1, 2], ['Billetterie + QR codes', 0, 1, 1, 2], ['Rapports d\'impact RSE', 0, 0, 0, 2], ['Matching besoins/ressources', 0, 0, 0, 2], ['Prix adapté Afrique', 2, 2, 0, 2], ['Multilinguisme local', 2, 1, 0, 2]].map((row, i) => /*#__PURE__*/React.createElement("tr", {
+    key: i,
+    style: {
+      borderTop: '1px solid #E5E5E5'
+    }
+  }, /*#__PURE__*/React.createElement("td", {
+    style: {
+      padding: 20,
+      fontWeight: 600
+    }
+  }, row[0]), [1, 2, 3, 4].map(c => /*#__PURE__*/React.createElement("td", {
+    key: c,
+    style: {
+      padding: 20,
+      textAlign: 'center',
+      background: c === 4 ? '#F4F7FE' : 'transparent'
+    }
+  }, row[c] === 2 && /*#__PURE__*/React.createElement("span", {
+    style: {
+      display: 'inline-grid',
+      placeItems: 'center',
+      width: 28,
+      height: 28,
+      borderRadius: '50%',
+      background: c === 4 ? '#0E47AB' : '#0F8B4F',
+      color: 'white'
+    }
+  }, "\u2713"), row[c] === 1 && /*#__PURE__*/React.createElement("span", {
+    style: {
+      color: '#D4A75B',
+      fontSize: 18
+    }
+  }, "~"), row[c] === 0 && /*#__PURE__*/React.createElement("span", {
+    style: {
+      color: '#C9C9C9',
+      fontSize: 22
+    }
+  }, "\u2014")))))))))), /*#__PURE__*/React.createElement("section", {
+    style: {
+      padding: '120px 64px'
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "container",
+    style: {
+      textAlign: 'center'
+    }
+  }, /*#__PURE__*/React.createElement("h2", {
+    style: {
+      fontSize: 80,
+      maxWidth: 900,
+      margin: '0 auto'
+    }
+  }, "Tout \xE7a,", /*#__PURE__*/React.createElement("br", null), "en ", /*#__PURE__*/React.createElement("span", {
+    style: {
+      color: '#0E47AB'
+    }
+  }, "5 minutes"), " chrono."), /*#__PURE__*/React.createElement("a", {
+    href: "#inscription",
+    className: "btn btn-primary btn-xl",
+    style: {
+      marginTop: 40
+    }
+  }, "Inscrire ma communaut\xE9 ", /*#__PURE__*/React.createElement(SoIcon, {
+    name: "arrow",
+    size: 16,
+    color: "white"
+  })))), /*#__PURE__*/React.createElement(SoFooter, null));
+};
+window.PageFonctionnalites = PageFonctionnalites;
+
+// === page-pour-qui.jsx ===
+// Page Pour qui — Segments
+const PagePourQui = () => {
+  const segments = [{
+    n: 'ONG & Associations',
+    img: 'assets/p_seg_ong.jpg',
+    color: '#0E47AB',
+    ex: 'Children of Africa, Hope Life CI, GirlUp CI',
+    pb: 'Coordination artisanale, invisibilité des actions, manque de traçabilité financière.',
+    sol: ['Gestion centralisée', 'Page d\'impact publique', 'Reporting bailleurs automatisé', 'Connexion RSE']
+  }, {
+    n: 'Mutuelles & Tontines',
+    img: 'assets/p_seg_mut.jpg',
+    color: '#D4A75B',
+    ex: 'MUGEF-CI, MUGASCI, MUSCOP-CI',
+    pb: 'Suivi manuel des cotisations, conflits sur les montants, perte de données.',
+    sol: ['Cotisations automatisées', 'Historique sécurisé', 'Alertes & relances', 'Mobile Money']
+  }, {
+    n: 'Alumni & Jeunesse',
+    img: 'assets/p_seg_alum.jpg',
+    color: '#0a0a0a',
+    ex: 'INPHB Alumni, BDE, JCI',
+    pb: 'Diaspora déconnectée, événements non coordonnés, absence d\'annuaire.',
+    sol: ['Annuaire alumni', 'Programme mentorat', 'Événements + billetterie', 'Réseau global']
+  }, {
+    n: 'Réseaux Professionnels',
+    img: 'assets/p_seg_pro.jpg',
+    color: '#0E47AB',
+    ex: 'Jacobleu, SangCoolheur',
+    pb: 'Engagement dispersé, monétisation inexistante, valeur diluée.',
+    sol: ['Espaces collaboratifs', 'Contenus premium', 'Matching expertise', 'Analytics']
+  }, {
+    n: 'Groupes Religieux',
+    img: 'assets/p_seg_rel.jpg',
+    color: '#D4A75B',
+    ex: 'Vases d\'Honneur, AEBECI, Diocèse',
+    pb: 'Coordination multi-paroisses, collectes informelles, fidèles éparpillés.',
+    sol: ['Communication ciblée', 'Cagnottes traçables', 'Gestion des fidèles', 'Événements lives']
+  }, {
+    n: 'Leaders & Influenceurs',
+    img: 'assets/p_seg_lead.jpg',
+    color: '#0a0a0a',
+    ex: 'Artistes, personnalités, pasteurs',
+    pb: 'Audience volatile, dépendance aux algorithmes, pas de revenus directs.',
+    sol: ['Communauté propriétaire', 'Monétisation directe', 'Indépendance algo', 'Q&A + lives privés']
+  }];
+  return /*#__PURE__*/React.createElement("div", {
+    className: "page",
+    "data-screen-label": "03 Pour qui"
+  }, /*#__PURE__*/React.createElement(SoNav, {
+    active: "Pour qui ?"
+  }), /*#__PURE__*/React.createElement("section", {
+    style: {
+      padding: '120px 64px 80px'
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "container"
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      maxWidth: 1000
+    }
+  }, /*#__PURE__*/React.createElement("span", {
+    className: "eyebrow"
+  }, "Pour qui ?"), /*#__PURE__*/React.createElement("h1", {
+    style: {
+      fontSize: 120,
+      marginTop: 28,
+      lineHeight: 0.9
+    }
+  }, "Six segments.", /*#__PURE__*/React.createElement("br", null), /*#__PURE__*/React.createElement("span", {
+    style: {
+      color: '#0E47AB'
+    }
+  }, "Une promesse"), "."), /*#__PURE__*/React.createElement("p", {
+    style: {
+      fontSize: 22,
+      marginTop: 32,
+      maxWidth: 700,
+      lineHeight: 1.5
+    }
+  }, "Society s'adresse \xE0 toutes les communaut\xE9s qui veulent passer du WhatsApp informel \xE0 une vraie infrastructure num\xE9rique.")))), segments.map((s, i) => {
+    const reverse = i % 2 === 1;
+    return /*#__PURE__*/React.createElement("section", {
+      key: i,
+      style: {
+        padding: '80px 64px',
+        background: i % 2 === 0 ? 'white' : '#F8F8F8'
+      }
+    }, /*#__PURE__*/React.createElement("div", {
+      className: "container"
+    }, /*#__PURE__*/React.createElement("div", {
+      style: {
+        display: 'grid',
+        gridTemplateColumns: '1fr 1fr',
+        gap: 80,
+        alignItems: 'center'
+      }
+    }, /*#__PURE__*/React.createElement("div", {
+      style: {
+        order: reverse ? 2 : 1,
+        borderRadius: 32,
+        overflow: 'hidden',
+        aspectRatio: '4/5',
+        position: 'relative',
+        background: s.color
+      }
+    }, /*#__PURE__*/React.createElement("img", {
+      src: s.img,
+      style: {
+        width: '100%',
+        height: '100%',
+        objectFit: 'cover'
+      },
+      alt: ""
+    }), /*#__PURE__*/React.createElement("div", {
+      style: {
+        position: 'absolute',
+        inset: 0,
+        background: `linear-gradient(180deg, transparent 50%, ${s.color}cc 100%)`
+      }
+    }), /*#__PURE__*/React.createElement("div", {
+      style: {
+        position: 'absolute',
+        top: 28,
+        left: 28,
+        padding: '8px 16px',
+        background: 'rgba(255,255,255,0.95)',
+        borderRadius: 999,
+        fontSize: 13,
+        fontWeight: 700
+      }
+    }, "Segment ", String(i + 1).padStart(2, '0')), /*#__PURE__*/React.createElement("div", {
+      style: {
+        position: 'absolute',
+        bottom: 28,
+        left: 28,
+        right: 28,
+        color: 'white'
+      }
+    }, /*#__PURE__*/React.createElement("div", {
+      style: {
+        fontSize: 13,
+        opacity: 0.85,
+        fontWeight: 500
+      }
+    }, "Exemples : ", s.ex))), /*#__PURE__*/React.createElement("div", {
+      style: {
+        order: reverse ? 1 : 2
+      }
+    }, /*#__PURE__*/React.createElement("h2", {
+      style: {
+        fontSize: 64
+      }
+    }, s.n, "."), /*#__PURE__*/React.createElement("div", {
+      style: {
+        marginTop: 32,
+        padding: 24,
+        background: '#FFE9E9',
+        borderRadius: 16,
+        borderLeft: `4px solid #C23B5A`
+      }
+    }, /*#__PURE__*/React.createElement("div", {
+      style: {
+        fontSize: 12,
+        fontWeight: 700,
+        color: '#C23B5A',
+        textTransform: 'uppercase',
+        letterSpacing: '0.06em'
+      }
+    }, "Le probl\xE8me"), /*#__PURE__*/React.createElement("p", {
+      style: {
+        marginTop: 8,
+        fontSize: 17,
+        color: '#0a0a0a',
+        fontWeight: 500
+      }
+    }, s.pb)), /*#__PURE__*/React.createElement("div", {
+      style: {
+        marginTop: 24
+      }
+    }, /*#__PURE__*/React.createElement("div", {
+      style: {
+        fontSize: 12,
+        fontWeight: 700,
+        color: s.color,
+        textTransform: 'uppercase',
+        letterSpacing: '0.06em',
+        marginBottom: 16
+      }
+    }, "Ce que Society apporte"), /*#__PURE__*/React.createElement("div", {
+      style: {
+        display: 'grid',
+        gridTemplateColumns: '1fr 1fr',
+        gap: 12
+      }
+    }, s.sol.map((sol, j) => /*#__PURE__*/React.createElement("div", {
+      key: j,
+      style: {
+        padding: '14px 18px',
+        background: 'white',
+        border: '1px solid #E5E5E5',
+        borderRadius: 14,
+        display: 'flex',
+        alignItems: 'center',
+        gap: 10
+      }
+    }, /*#__PURE__*/React.createElement("div", {
+      style: {
+        width: 22,
+        height: 22,
+        borderRadius: '50%',
+        background: s.color,
+        color: 'white',
+        display: 'grid',
+        placeItems: 'center',
+        fontSize: 12,
+        fontWeight: 700,
+        flexShrink: 0
+      }
+    }, "\u2713"), /*#__PURE__*/React.createElement("span", {
+      style: {
+        fontSize: 14,
+        fontWeight: 600
+      }
+    }, sol))))), /*#__PURE__*/React.createElement("a", {
+      href: "#inscription",
+      className: "btn btn-dark",
+      style: {
+        marginTop: 32
+      }
+    }, "Inscrire ma ", s.n.split(' ')[0].toLowerCase(), " ", /*#__PURE__*/React.createElement(SoIcon, {
+      name: "arrow",
+      size: 14,
+      color: "white"
+    }))))));
+  }), /*#__PURE__*/React.createElement("section", {
+    style: {
+      padding: '120px 64px',
+      background: '#0E47AB',
+      color: 'white'
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "container",
+    style: {
+      textAlign: 'center'
+    }
+  }, /*#__PURE__*/React.createElement("h2", {
+    style: {
+      fontSize: 80,
+      color: 'white'
+    }
+  }, "Vous ne vous reconnaissez", /*#__PURE__*/React.createElement("br", null), "dans aucun segment ?"), /*#__PURE__*/React.createElement("p", {
+    style: {
+      fontSize: 20,
+      marginTop: 24,
+      color: 'rgba(255,255,255,0.85)'
+    }
+  }, "Society s'adapte \xE0 toute communaut\xE9 de 10+ membres. Parlons-en."), /*#__PURE__*/React.createElement("div", {
+    style: {
+      display: 'flex',
+      gap: 12,
+      justifyContent: 'center',
+      marginTop: 40
+    }
+  }, /*#__PURE__*/React.createElement("a", {
+    href: "#inscription",
+    className: "btn btn-gold btn-xl"
+  }, "Inscrire ma communaut\xE9"), /*#__PURE__*/React.createElement("a", {
+    href: "#",
+    className: "btn btn-outline-white btn-xl"
+  }, "Prendre un appel d\xE9couverte")))), /*#__PURE__*/React.createElement(SoFooter, null));
+};
+window.PagePourQui = PagePourQui;
+
+// === page-tarifs.jsx ===
+// Page Tarifs
+const PageTarifs = () => {
+  const plans = [{
+    n: 'Starter',
+    p: 'Gratuit',
+    sub: 'Pour toujours.',
+    d: 'Pour démarrer et tester sur une petite communauté.',
+    c: 'Jusqu\'à 50 membres',
+    f: ['Gestion des membres & rôles', 'Communication par canaux', '1 cagnotte active', 'Page communautaire publique', 'Support communautaire'],
+    cta: 'Démarrer gratuitement',
+    color: '#F8F8F8',
+    text: '#0a0a0a'
+  }, {
+    n: 'Communauté',
+    p: '14 900',
+    currency: 'FCFA',
+    sub: '/mois',
+    d: 'Pour les associations actives qui veulent professionnaliser leur gestion.',
+    c: 'Jusqu\'à 500 membres',
+    f: ['Tout Starter, plus :', 'Cotisations automatisées', 'Cagnottes & crowdfunding illimités', 'Billetterie + QR codes', 'Rapports d\'impact', 'Mobile Money intégré', 'Support prioritaire'],
+    cta: 'Choisir Communauté',
+    color: '#0E47AB',
+    text: 'white',
+    popular: true
+  }, {
+    n: 'Pro',
+    p: '39 900',
+    currency: 'FCFA',
+    sub: '/mois',
+    d: 'Pour les ONG, mutuelles, fédérations et grandes communautés.',
+    c: 'Membres illimités',
+    f: ['Tout Communauté, plus :', 'Sous-groupes illimités', 'API & intégrations sur mesure', 'Page RSE pour partenaires', 'Matching avancé', 'Account manager dédié', 'Formation équipe (4h)'],
+    cta: 'Choisir Pro',
+    color: '#0a0a0a',
+    text: 'white'
+  }, {
+    n: 'Institution',
+    p: 'Sur mesure',
+    sub: 'Selon volume.',
+    d: 'Pour fédérations nationales, institutions et entreprises RSE.',
+    c: 'À partir de 5 000 membres',
+    f: ['Tout Pro, plus :', 'Déploiement sur mesure', 'SSO & sécurité avancée', 'Dashboard RSE multi-communautés', 'SLA 99.9 %', 'Conformité réglementaire UMOA', 'Onboarding sur site'],
+    cta: 'Nous contacter',
+    color: '#D4A75B',
+    text: '#0a0a0a'
+  }];
+  return /*#__PURE__*/React.createElement("div", {
+    className: "page",
+    "data-screen-label": "04 Tarifs"
+  }, /*#__PURE__*/React.createElement(SoNav, {
+    active: "Tarifs"
+  }), /*#__PURE__*/React.createElement("section", {
+    style: {
+      padding: '120px 64px 64px'
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "container",
+    style: {
+      textAlign: 'center'
+    }
+  }, /*#__PURE__*/React.createElement("span", {
+    className: "eyebrow"
+  }, "Tarifs"), /*#__PURE__*/React.createElement("h1", {
+    style: {
+      fontSize: 120,
+      marginTop: 28,
+      lineHeight: 0.9,
+      maxWidth: 1000,
+      margin: '28px auto 0'
+    }
+  }, "Un prix juste,", /*#__PURE__*/React.createElement("br", null), /*#__PURE__*/React.createElement("span", {
+    style: {
+      color: '#0E47AB'
+    }
+  }, "con\xE7u pour l'Afrique"), "."), /*#__PURE__*/React.createElement("p", {
+    style: {
+      fontSize: 20,
+      marginTop: 32,
+      maxWidth: 700,
+      margin: '32px auto 0',
+      lineHeight: 1.5
+    }
+  }, "Plan gratuit pour d\xE9marrer. Plans payants en FCFA, payables par Mobile Money. Pas de carte bancaire requise."), /*#__PURE__*/React.createElement("div", {
+    style: {
+      display: 'inline-flex',
+      marginTop: 48,
+      padding: 6,
+      background: '#F2F2F2',
+      borderRadius: 999
+    }
+  }, /*#__PURE__*/React.createElement("button", {
+    style: {
+      padding: '10px 20px',
+      background: 'white',
+      borderRadius: 999,
+      border: 'none',
+      fontSize: 14,
+      fontWeight: 600,
+      boxShadow: '0 2px 8px rgba(0,0,0,0.06)'
+    }
+  }, "Mensuel"), /*#__PURE__*/React.createElement("button", {
+    style: {
+      padding: '10px 20px',
+      background: 'transparent',
+      borderRadius: 999,
+      border: 'none',
+      fontSize: 14,
+      fontWeight: 500,
+      color: '#6B6B6B'
+    }
+  }, "Annuel ", /*#__PURE__*/React.createElement("span", {
+    style: {
+      padding: '2px 8px',
+      background: '#D4A75B',
+      color: '#0a0a0a',
+      borderRadius: 999,
+      fontSize: 11,
+      fontWeight: 700,
+      marginLeft: 6
+    }
+  }, "\u221220 %"))))), /*#__PURE__*/React.createElement("section", {
+    style: {
+      padding: '40px 64px 120px'
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "container"
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      display: 'grid',
+      gridTemplateColumns: 'repeat(4, 1fr)',
+      gap: 16
+    }
+  }, plans.map((p, i) => /*#__PURE__*/React.createElement("div", {
+    key: i,
+    style: {
+      padding: 32,
+      background: p.color,
+      color: p.text,
+      borderRadius: 28,
+      position: 'relative',
+      display: 'flex',
+      flexDirection: 'column'
+    }
+  }, p.popular && /*#__PURE__*/React.createElement("div", {
+    style: {
+      position: 'absolute',
+      top: -12,
+      left: 24,
+      padding: '6px 12px',
+      background: '#D4A75B',
+      color: '#0a0a0a',
+      borderRadius: 999,
+      fontSize: 11,
+      fontWeight: 800,
+      letterSpacing: '0.04em'
+    }
+  }, "RECOMMAND\xC9"), /*#__PURE__*/React.createElement("div", {
+    style: {
+      fontSize: 13,
+      fontWeight: 700,
+      opacity: 0.8,
+      letterSpacing: '0.04em',
+      textTransform: 'uppercase'
+    }
+  }, p.n), /*#__PURE__*/React.createElement("div", {
+    style: {
+      display: 'flex',
+      alignItems: 'baseline',
+      gap: 4,
+      marginTop: 16,
+      flexWrap: 'wrap'
+    }
+  }, /*#__PURE__*/React.createElement("span", {
+    style: {
+      fontSize: 48,
+      fontWeight: 800,
+      letterSpacing: '-0.03em',
+      lineHeight: 1
+    }
+  }, p.p), p.currency && /*#__PURE__*/React.createElement("span", {
+    style: {
+      fontSize: 14,
+      fontWeight: 700,
+      opacity: 0.85
+    }
+  }, p.currency)), /*#__PURE__*/React.createElement("div", {
+    style: {
+      fontSize: 13,
+      marginTop: 4,
+      opacity: 0.75
+    }
+  }, p.sub), /*#__PURE__*/React.createElement("p", {
+    style: {
+      fontSize: 14,
+      marginTop: 16,
+      opacity: 0.85,
+      color: p.text === 'white' ? 'rgba(255,255,255,0.85)' : '#3A3A3A'
+    }
+  }, p.d), /*#__PURE__*/React.createElement("div", {
+    style: {
+      padding: '10px 14px',
+      marginTop: 20,
+      background: p.text === 'white' ? 'rgba(255,255,255,0.12)' : 'rgba(0,0,0,0.06)',
+      borderRadius: 10,
+      fontSize: 12,
+      fontWeight: 600
+    }
+  }, p.c), /*#__PURE__*/React.createElement("div", {
+    style: {
+      margin: '24px 0',
+      borderTop: `1px solid ${p.text === 'white' ? 'rgba(255,255,255,0.15)' : '#E5E5E5'}`
+    }
+  }), /*#__PURE__*/React.createElement("ul", {
+    style: {
+      listStyle: 'none',
+      padding: 0,
+      margin: 0,
+      display: 'grid',
+      gap: 10,
+      flex: 1
+    }
+  }, p.f.map((f, j) => /*#__PURE__*/React.createElement("li", {
+    key: j,
+    style: {
+      display: 'flex',
+      gap: 10,
+      fontSize: 14,
+      lineHeight: 1.4
+    }
+  }, /*#__PURE__*/React.createElement("span", {
+    style: {
+      flexShrink: 0,
+      marginTop: 2
+    }
+  }, "\u2713"), /*#__PURE__*/React.createElement("span", null, f)))), /*#__PURE__*/React.createElement("a", {
+    href: "#inscription",
+    style: {
+      marginTop: 24,
+      padding: '14px 20px',
+      textAlign: 'center',
+      borderRadius: 999,
+      fontSize: 14,
+      fontWeight: 700,
+      textDecoration: 'none',
+      background: p.text === 'white' ? 'white' : '#0a0a0a',
+      color: p.text === 'white' ? p.color : 'white'
+    }
+  }, p.cta)))))), /*#__PURE__*/React.createElement("section", {
+    style: {
+      padding: '80px 64px',
+      background: '#F8F8F8'
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "container"
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      display: 'grid',
+      gridTemplateColumns: '1fr 1.4fr',
+      gap: 64,
+      alignItems: 'center'
+    }
+  }, /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("span", {
+    className: "eyebrow"
+  }, "Commissions"), /*#__PURE__*/React.createElement("h2", {
+    style: {
+      fontSize: 56,
+      marginTop: 24
+    }
+  }, "2,5 % seulement", /*#__PURE__*/React.createElement("br", null), "sur les flux collect\xE9s."), /*#__PURE__*/React.createElement("p", {
+    style: {
+      fontSize: 17,
+      marginTop: 20,
+      maxWidth: 460
+    }
+  }, "Sur les cagnottes, cotisations, billets et dons. Pas de frais cach\xE9s. Frais Mobile Money inclus.")), /*#__PURE__*/React.createElement("div", {
+    style: {
+      display: 'grid',
+      gridTemplateColumns: '1fr 1fr',
+      gap: 16
+    }
+  }, [{
+    l: 'Cagnottes',
+    v: '2,5 %',
+    d: 'sur les fonds collectés'
+  }, {
+    l: 'Cotisations',
+    v: '1,5 %',
+    d: 'sur les paiements récurrents'
+  }, {
+    l: 'Billetterie',
+    v: '3 %',
+    d: '+ 100 FCFA / billet'
+  }, {
+    l: 'Dons',
+    v: '0 %',
+    d: 'pour ONG certifiées'
+  }].map((c, i) => /*#__PURE__*/React.createElement("div", {
+    key: i,
+    style: {
+      padding: 28,
+      background: 'white',
+      borderRadius: 20
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      fontSize: 14,
+      color: '#6B6B6B',
+      fontWeight: 600
+    }
+  }, c.l), /*#__PURE__*/React.createElement("div", {
+    style: {
+      fontSize: 48,
+      fontWeight: 800,
+      letterSpacing: '-0.03em',
+      color: '#0E47AB',
+      marginTop: 4
+    }
+  }, c.v), /*#__PURE__*/React.createElement("div", {
+    style: {
+      fontSize: 13,
+      color: '#6B6B6B'
+    }
+  }, c.d))))))), /*#__PURE__*/React.createElement("section", {
+    style: {
+      padding: '120px 64px'
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "container"
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      display: 'grid',
+      gridTemplateColumns: '1fr 1.6fr',
+      gap: 80
+    }
+  }, /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("span", {
+    className: "eyebrow"
+  }, "FAQ"), /*#__PURE__*/React.createElement("h2", {
+    style: {
+      fontSize: 56,
+      marginTop: 24
+    }
+  }, "Questions", /*#__PURE__*/React.createElement("br", null), "fr\xE9quentes."), /*#__PURE__*/React.createElement("p", {
+    style: {
+      fontSize: 16,
+      marginTop: 20,
+      maxWidth: 360
+    }
+  }, "Une autre question ? ", /*#__PURE__*/React.createElement("a", {
+    href: "#",
+    style: {
+      color: '#0E47AB',
+      fontWeight: 600
+    }
+  }, "\xC9crivez-nous \u2192"))), /*#__PURE__*/React.createElement("div", null, [['Puis-je tester gratuitement avant de payer ?', 'Oui. Le plan Starter est gratuit pour toujours, jusqu\'à 50 membres. Vous pouvez aussi essayer gratuitement Communauté et Pro pendant 30 jours, sans carte bancaire.'], ['Comment fonctionne le paiement ?', 'Vous payez en FCFA via Orange Money, Wave, MTN MoMo ou carte bancaire. Mensuel ou annuel (−20 %).'], ['Que se passe-t-il si je dépasse le nombre de membres ?', 'Aucune coupure brutale. Nous vous proposons de passer au plan supérieur, ou de payer un complément au prorata.'], ['Mes données sont-elles sécurisées ?', 'Oui. Hébergement souverain en Afrique de l\'Ouest, chiffrement AES-256, conformité RGPD et UEMOA. Vos données vous appartiennent.'], ['Puis-je exporter mes données ?', 'Oui, à tout moment. Tous vos membres, cotisations, événements peuvent être exportés en CSV ou Excel.']].map((q, i) => /*#__PURE__*/React.createElement("details", {
+    key: i,
+    style: {
+      padding: '24px 0',
+      borderBottom: '1px solid #E5E5E5'
+    }
+  }, /*#__PURE__*/React.createElement("summary", {
+    style: {
+      cursor: 'pointer',
+      fontSize: 19,
+      fontWeight: 700,
+      listStyle: 'none',
+      display: 'flex',
+      justifyContent: 'space-between',
+      alignItems: 'center'
+    }
+  }, q[0], " ", /*#__PURE__*/React.createElement("span", {
+    style: {
+      color: '#0E47AB',
+      fontSize: 24,
+      fontWeight: 400
+    }
+  }, "+")), /*#__PURE__*/React.createElement("p", {
+    style: {
+      marginTop: 12,
+      fontSize: 15,
+      color: '#3A3A3A'
+    }
+  }, q[1]))))))), /*#__PURE__*/React.createElement(SoFooter, null));
+};
+window.PageTarifs = PageTarifs;
+
+// === page-a-propos.jsx ===
+// Page À propos
+const PageAPropos = () => {
+  return /*#__PURE__*/React.createElement("div", {
+    className: "page",
+    "data-screen-label": "05 A propos"
+  }, /*#__PURE__*/React.createElement(SoNav, {
+    active: "\xC0 propos"
+  }), /*#__PURE__*/React.createElement("section", {
+    style: {
+      padding: '120px 64px 80px'
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "container"
+  }, /*#__PURE__*/React.createElement("span", {
+    className: "eyebrow"
+  }, "\xC0 propos"), /*#__PURE__*/React.createElement("h1", {
+    style: {
+      fontSize: 120,
+      marginTop: 28,
+      lineHeight: 0.9,
+      maxWidth: 1100
+    }
+  }, "Nous b\xE2tissons", /*#__PURE__*/React.createElement("br", null), /*#__PURE__*/React.createElement("span", {
+    style: {
+      color: '#0E47AB'
+    }
+  }, "l'infrastructure"), /*#__PURE__*/React.createElement("br", null), "de l'\xE9conomie", /*#__PURE__*/React.createElement("br", null), "communautaire africaine."))), /*#__PURE__*/React.createElement("section", {
+    style: {
+      padding: '80px 64px',
+      background: '#F8F8F8'
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "container"
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      display: 'grid',
+      gridTemplateColumns: '1fr 1fr',
+      gap: 48
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      padding: 56,
+      background: 'white',
+      borderRadius: 32
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      fontSize: 13,
+      fontWeight: 700,
+      letterSpacing: '0.06em',
+      color: '#0E47AB'
+    }
+  }, "\u25CF MISSION"), /*#__PURE__*/React.createElement("h2", {
+    style: {
+      fontSize: 44,
+      marginTop: 16,
+      lineHeight: 1.05
+    }
+  }, "Donner aux communaut\xE9s africaines les outils d'une plateforme professionnelle."), /*#__PURE__*/React.createElement("p", {
+    style: {
+      fontSize: 17,
+      marginTop: 24
+    }
+  }, "Pour g\xE9rer leurs membres, organiser des \xE9v\xE9nements, lever des fonds et cr\xE9er une \xE9conomie autour de leur projet commun.")), /*#__PURE__*/React.createElement("div", {
+    style: {
+      padding: 56,
+      background: '#0a0a0a',
+      color: 'white',
+      borderRadius: 32
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      fontSize: 13,
+      fontWeight: 700,
+      letterSpacing: '0.06em',
+      color: '#D4A75B'
+    }
+  }, "\u25CF VISION"), /*#__PURE__*/React.createElement("h2", {
+    style: {
+      fontSize: 44,
+      marginTop: 16,
+      lineHeight: 1.05,
+      color: 'white'
+    }
+  }, "Devenir le \xAB Circle \xBB africain \u2014 ancr\xE9 dans nos r\xE9alit\xE9s locales."), /*#__PURE__*/React.createElement("p", {
+    style: {
+      fontSize: 17,
+      marginTop: 24,
+      color: 'rgba(255,255,255,0.85)'
+    }
+  }, "Mobile Money, langues locales, culture de la solidarit\xE9. B\xE2tir l'infrastructure num\xE9rique de l'\xE9conomie communautaire africaine."))))), /*#__PURE__*/React.createElement("section", {
+    style: {
+      padding: '120px 64px'
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "container"
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      display: 'grid',
+      gridTemplateColumns: '1fr 1.4fr',
+      gap: 80
+    }
+  }, /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("span", {
+    className: "eyebrow"
+  }, "Notre histoire"), /*#__PURE__*/React.createElement("h2", {
+    style: {
+      fontSize: 64,
+      marginTop: 24
+    }
+  }, "D'un constat", /*#__PURE__*/React.createElement("br", null), "\xE0 une plateforme.")), /*#__PURE__*/React.createElement("div", {
+    style: {
+      display: 'grid',
+      gap: 32
+    }
+  }, /*#__PURE__*/React.createElement("p", {
+    style: {
+      fontSize: 19,
+      lineHeight: 1.5,
+      color: '#0a0a0a'
+    }
+  }, "Society est n\xE9e d'une frustration que partagent des dizaines de milliers de leaders communautaires africains : ", /*#__PURE__*/React.createElement("b", null, "il n'existe aucun outil digne de ce nom pour g\xE9rer une communaut\xE9.")), /*#__PURE__*/React.createElement("p", {
+    style: {
+      fontSize: 17,
+      lineHeight: 1.6
+    }
+  }, "WhatsApp pour communiquer. Excel pour les cotisations. Google Forms pour les inscriptions. Facebook pour la visibilit\xE9. Et toujours rien \xE0 montrer aux bailleurs au moment du rapport annuel."), /*#__PURE__*/React.createElement("p", {
+    style: {
+      fontSize: 17,
+      lineHeight: 1.6
+    }
+  }, "En 2025, l'\xE9quipe Difero Fundry, bas\xE9e \xE0 Abidjan, a d\xE9marr\xE9 une enqu\xEAte de validation aupr\xE8s de 25 leaders : pr\xE9sidents de mutuelles, directeurs d'ONG, influenceurs, responsables alumni. Le constat \xE9tait unanime \u2014 et le vide \xE0 combler, immense."), /*#__PURE__*/React.createElement("p", {
+    style: {
+      fontSize: 17,
+      lineHeight: 1.6
+    }
+  }, "Society est notre r\xE9ponse : ", /*#__PURE__*/React.createElement("b", null, "une plateforme con\xE7ue en Afrique, pour l'Afrique"), " \u2014 qui parle nos langues, accepte nos paiements, comprend nos rythmes communautaires."))))), /*#__PURE__*/React.createElement("section", {
+    style: {
+      padding: '80px 64px',
+      background: '#0E47AB',
+      color: 'white'
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "container"
+  }, /*#__PURE__*/React.createElement("span", {
+    className: "eyebrow white"
+  }, "Roadmap"), /*#__PURE__*/React.createElement("h2", {
+    style: {
+      fontSize: 64,
+      marginTop: 24,
+      color: 'white'
+    }
+  }, "De la validation au lancement."), /*#__PURE__*/React.createElement("div", {
+    style: {
+      marginTop: 64,
+      display: 'grid',
+      gridTemplateColumns: 'repeat(4, 1fr)',
+      gap: 24,
+      position: 'relative'
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      position: 'absolute',
+      top: 24,
+      left: 24,
+      right: 24,
+      height: 2,
+      background: 'rgba(255,255,255,0.2)'
+    }
+  }), [{
+    p: 'Q2 2026',
+    t: 'Validation',
+    d: 'Enquête de 25 leaders communautaires. Construction de l\'équipe.'
+  }, {
+    p: 'Q3 2026',
+    t: 'MVP',
+    d: 'Développement des modules clés. Premiers partenariats.'
+  }, {
+    p: 'Q4 2026',
+    t: 'Beta',
+    d: 'Communautés pilotes. Tests terrain. Intégration paiements.'
+  }, {
+    p: 'Q1 2027',
+    t: 'Lancement',
+    d: 'Lancement officiel web + mobile. Cérémonie d\'ouverture.'
+  }].map((m, i) => /*#__PURE__*/React.createElement("div", {
+    key: i,
+    style: {
+      position: 'relative'
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      width: 48,
+      height: 48,
+      borderRadius: '50%',
+      background: i === 0 ? '#D4A75B' : 'rgba(255,255,255,0.15)',
+      display: 'grid',
+      placeItems: 'center',
+      fontSize: 14,
+      fontWeight: 800,
+      color: i === 0 ? '#0a0a0a' : 'white',
+      position: 'relative',
+      zIndex: 2
+    }
+  }, i + 1), /*#__PURE__*/React.createElement("div", {
+    style: {
+      fontSize: 13,
+      fontWeight: 700,
+      color: '#D4A75B',
+      marginTop: 24,
+      letterSpacing: '0.04em'
+    }
+  }, m.p), /*#__PURE__*/React.createElement("div", {
+    style: {
+      fontSize: 28,
+      fontWeight: 800,
+      marginTop: 6,
+      letterSpacing: '-0.02em',
+      color: 'white'
+    }
+  }, m.t), /*#__PURE__*/React.createElement("p", {
+    style: {
+      fontSize: 14,
+      marginTop: 8,
+      color: 'rgba(255,255,255,0.75)'
+    }
+  }, m.d)))))), /*#__PURE__*/React.createElement("section", {
+    style: {
+      padding: '120px 64px'
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "container"
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      display: 'flex',
+      justifyContent: 'space-between',
+      alignItems: 'flex-end',
+      marginBottom: 64
+    }
+  }, /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("span", {
+    className: "eyebrow"
+  }, "\xC9quipe"), /*#__PURE__*/React.createElement("h2", {
+    style: {
+      fontSize: 64,
+      marginTop: 24
+    }
+  }, "Difero Fundry."), /*#__PURE__*/React.createElement("p", {
+    style: {
+      fontSize: 18,
+      marginTop: 16,
+      maxWidth: 600
+    }
+  }, "Un studio bas\xE9 \xE0 Abidjan, qui con\xE7oit des outils digitaux pour les communaut\xE9s africaines.")), /*#__PURE__*/React.createElement("a", {
+    href: "#",
+    className: "btn btn-outline"
+  }, "Toutes nos \xE9quipes ", /*#__PURE__*/React.createElement(SoIcon, {
+    name: "arrow",
+    size: 14
+  }))), /*#__PURE__*/React.createElement("div", {
+    style: {
+      display: 'grid',
+      gridTemplateColumns: 'repeat(4, 1fr)',
+      gap: 24
+    }
+  }, [{
+    n: 'Ange-Samuel KEKE',
+    r: 'Co-fondateur · CEO',
+    img: 'assets/p_aw_hom_4.jpg'
+  }, {
+    n: 'Aïssatou D.',
+    r: 'Head of Product',
+    img: 'assets/p_aw_fem_5.jpg'
+  }, {
+    n: 'Mamadou T.',
+    r: 'Lead Engineering',
+    img: 'assets/p_aw_hom_5.jpg'
+  }, {
+    n: 'Salimata B.',
+    r: 'Community & Growth',
+    img: 'assets/p_aw_fem_6.jpg'
+  }].map((m, i) => /*#__PURE__*/React.createElement("div", {
+    key: i
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      aspectRatio: '4/5',
+      borderRadius: 20,
+      overflow: 'hidden',
+      backgroundImage: `url(${m.img})`,
+      backgroundSize: 'cover',
+      backgroundPosition: 'center'
+    }
+  }), /*#__PURE__*/React.createElement("div", {
+    style: {
+      marginTop: 16,
+      fontWeight: 700,
+      fontSize: 18
+    }
+  }, m.n), /*#__PURE__*/React.createElement("div", {
+    style: {
+      fontSize: 14,
+      color: '#6B6B6B'
+    }
+  }, m.r)))))), /*#__PURE__*/React.createElement("section", {
+    style: {
+      padding: '120px 64px',
+      background: '#F8F8F8'
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "container"
+  }, /*#__PURE__*/React.createElement("span", {
+    className: "eyebrow"
+  }, "Nos valeurs"), /*#__PURE__*/React.createElement("h2", {
+    style: {
+      fontSize: 64,
+      marginTop: 24,
+      maxWidth: 800
+    }
+  }, "Trois principes", /*#__PURE__*/React.createElement("br", null), "qui guident chaque ligne de code."), /*#__PURE__*/React.createElement("div", {
+    style: {
+      display: 'grid',
+      gridTemplateColumns: 'repeat(3, 1fr)',
+      gap: 24,
+      marginTop: 64
+    }
+  }, [{
+    n: '01',
+    t: 'Souveraineté communautaire',
+    d: 'Vos données vous appartiennent. Aucun algorithme n\'altère vos relations. Vous êtes propriétaire de votre communauté.'
+  }, {
+    n: '02',
+    t: 'Adaptation locale',
+    d: 'Pensé pour le mobile, pour le Mobile Money, pour les langues locales, pour les usages réels — pas pour Silicon Valley.'
+  }, {
+    n: '03',
+    t: 'Impact mesurable',
+    d: 'Chaque action de votre communauté laisse une trace. Bénéficiaires, fonds, projets — tout est documenté, automatiquement.'
+  }].map((v, i) => /*#__PURE__*/React.createElement("div", {
+    key: i,
+    style: {
+      padding: 40,
+      background: 'white',
+      borderRadius: 24,
+      position: 'relative'
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      fontSize: 80,
+      fontWeight: 800,
+      color: '#E8EFFC',
+      letterSpacing: '-0.04em',
+      lineHeight: 1
+    }
+  }, v.n), /*#__PURE__*/React.createElement("h3", {
+    style: {
+      fontSize: 24,
+      marginTop: 12
+    }
+  }, v.t), /*#__PURE__*/React.createElement("p", {
+    style: {
+      fontSize: 15,
+      marginTop: 12,
+      lineHeight: 1.5
+    }
+  }, v.d)))))), /*#__PURE__*/React.createElement(SoFooter, null));
+};
+window.PageAPropos = PageAPropos;
+
+// === page-inscription.jsx ===
+// Page Inscription — formulaire onboarding multi-étapes
+const PageInscription = () => {
+  return /*#__PURE__*/React.createElement("div", {
+    className: "page",
+    "data-screen-label": "06 Inscription"
+  }, /*#__PURE__*/React.createElement(SoNav, {
+    active: ""
+  }), /*#__PURE__*/React.createElement("section", {
+    style: {
+      padding: '60px 64px 120px',
+      background: '#F8F8F8',
+      minHeight: 1400
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "container"
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      display: 'grid',
+      gridTemplateColumns: '0.9fr 1.4fr',
+      gap: 80,
+      alignItems: 'flex-start'
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      position: 'sticky',
+      top: 100
+    }
+  }, /*#__PURE__*/React.createElement("span", {
+    className: "eyebrow"
+  }, "Inscription"), /*#__PURE__*/React.createElement("h1", {
+    style: {
+      fontSize: 64,
+      marginTop: 24,
+      lineHeight: 0.95
+    }
+  }, "Inscrivez", /*#__PURE__*/React.createElement("br", null), "votre", /*#__PURE__*/React.createElement("br", null), "communaut\xE9."), /*#__PURE__*/React.createElement("p", {
+    style: {
+      fontSize: 17,
+      marginTop: 24,
+      maxWidth: 380,
+      lineHeight: 1.5
+    }
+  }, "5 minutes pour cr\xE9er votre espace. Aucune carte bancaire. Vous pourrez modifier toutes ces informations plus tard."), /*#__PURE__*/React.createElement("div", {
+    style: {
+      marginTop: 48,
+      display: 'grid',
+      gap: 16
+    }
+  }, [{
+    n: '01',
+    t: 'Votre communauté',
+    s: 'En cours',
+    active: true,
+    done: false
+  }, {
+    n: '02',
+    t: 'Vos besoins',
+    s: '',
+    active: false,
+    done: false
+  }, {
+    n: '03',
+    t: 'Vous, fondateur',
+    s: '',
+    active: false,
+    done: false
+  }, {
+    n: '04',
+    t: 'Validation',
+    s: '',
+    active: false,
+    done: false
+  }].map((s, i) => /*#__PURE__*/React.createElement("div", {
+    key: i,
+    style: {
+      display: 'flex',
+      alignItems: 'center',
+      gap: 16,
+      padding: 16,
+      background: s.active ? 'white' : 'transparent',
+      borderRadius: 14,
+      border: s.active ? '1px solid #0E47AB' : '1px solid transparent'
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      width: 36,
+      height: 36,
+      borderRadius: '50%',
+      background: s.active ? '#0E47AB' : '#E5E5E5',
+      color: s.active ? 'white' : '#6B6B6B',
+      display: 'grid',
+      placeItems: 'center',
+      fontWeight: 700,
+      fontSize: 13
+    }
+  }, s.n), /*#__PURE__*/React.createElement("div", {
+    style: {
+      flex: 1
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      fontSize: 15,
+      fontWeight: 700,
+      color: s.active ? '#0a0a0a' : '#6B6B6B'
+    }
+  }, s.t), s.s && /*#__PURE__*/React.createElement("div", {
+    style: {
+      fontSize: 12,
+      color: '#0E47AB',
+      fontWeight: 600
+    }
+  }, s.s))))), /*#__PURE__*/React.createElement("div", {
+    style: {
+      marginTop: 48,
+      padding: 24,
+      background: '#FFF8E5',
+      borderRadius: 16,
+      borderLeft: '4px solid #D4A75B'
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      display: 'flex',
+      gap: 12,
+      alignItems: 'flex-start'
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      width: 32,
+      height: 32,
+      borderRadius: '50%',
+      background: '#D4A75B',
+      display: 'grid',
+      placeItems: 'center',
+      flexShrink: 0
+    }
+  }, /*#__PURE__*/React.createElement(SoIcon, {
+    name: "spark",
+    size: 16,
+    color: "#0a0a0a"
+  })), /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("div", {
+    style: {
+      fontSize: 14,
+      fontWeight: 700
+    }
+  }, "Vous \xEAtes une ONG ?"), /*#__PURE__*/React.createElement("div", {
+    style: {
+      fontSize: 13,
+      marginTop: 4,
+      color: '#6B5418'
+    }
+  }, "B\xE9n\xE9ficiez de notre programme : 50 % de r\xE9duction et accompagnement d\xE9di\xE9."))))), /*#__PURE__*/React.createElement("div", {
+    style: {
+      background: 'white',
+      borderRadius: 32,
+      padding: 56,
+      boxShadow: '0 20px 60px rgba(0,0,0,0.04)'
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      display: 'flex',
+      justifyContent: 'space-between',
+      alignItems: 'center',
+      marginBottom: 8
+    }
+  }, /*#__PURE__*/React.createElement("span", {
+    style: {
+      fontSize: 13,
+      fontWeight: 700,
+      color: '#0E47AB',
+      letterSpacing: '0.05em'
+    }
+  }, "\xC9TAPE 01 / 04"), /*#__PURE__*/React.createElement("span", {
+    style: {
+      fontSize: 13,
+      color: '#6B6B6B'
+    }
+  }, "~ 1 minute")), /*#__PURE__*/React.createElement("h2", {
+    style: {
+      fontSize: 48,
+      lineHeight: 1.05
+    }
+  }, "Parlez-nous de votre communaut\xE9."), /*#__PURE__*/React.createElement("p", {
+    style: {
+      fontSize: 16,
+      marginTop: 12,
+      color: '#6B6B6B'
+    }
+  }, "Ces informations appara\xEEtront sur la page publique de votre communaut\xE9."), /*#__PURE__*/React.createElement("div", {
+    style: {
+      marginTop: 40,
+      display: 'grid',
+      gap: 24
+    }
+  }, /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("label", {
+    style: {
+      fontSize: 14,
+      fontWeight: 600,
+      color: '#0a0a0a'
+    }
+  }, "Nom de votre communaut\xE9 ", /*#__PURE__*/React.createElement("span", {
+    style: {
+      color: '#C23B5A'
+    }
+  }, "*")), /*#__PURE__*/React.createElement("input", {
+    type: "text",
+    placeholder: "Mutuelle des Femmes d'Abobo",
+    defaultValue: "Cansein Fondation",
+    style: {
+      width: '100%',
+      marginTop: 8,
+      padding: '16px 20px',
+      border: '1.5px solid #0E47AB',
+      borderRadius: 14,
+      fontSize: 16,
+      fontFamily: 'inherit',
+      background: '#F4F7FE'
+    }
+  })), /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("label", {
+    style: {
+      fontSize: 14,
+      fontWeight: 600,
+      color: '#0a0a0a'
+    }
+  }, "Type de communaut\xE9 ", /*#__PURE__*/React.createElement("span", {
+    style: {
+      color: '#C23B5A'
+    }
+  }, "*")), /*#__PURE__*/React.createElement("div", {
+    style: {
+      marginTop: 12,
+      display: 'grid',
+      gridTemplateColumns: 'repeat(3, 1fr)',
+      gap: 8
+    }
+  }, [{
+    n: 'ONG / Asso',
+    sel: false,
+    ico: 'heart'
+  }, {
+    n: 'Mutuelle',
+    sel: true,
+    ico: 'shield'
+  }, {
+    n: 'Alumni',
+    sel: false,
+    ico: 'users'
+  }, {
+    n: 'Réseau Pro',
+    sel: false,
+    ico: 'grid'
+  }, {
+    n: 'Religieux',
+    sel: false,
+    ico: 'globe'
+  }, {
+    n: 'Influenceur',
+    sel: false,
+    ico: 'star'
+  }].map((t, i) => /*#__PURE__*/React.createElement("div", {
+    key: i,
+    style: {
+      padding: 16,
+      border: t.sel ? '1.5px solid #0E47AB' : '1.5px solid #E5E5E5',
+      borderRadius: 14,
+      display: 'flex',
+      flexDirection: 'column',
+      alignItems: 'center',
+      gap: 8,
+      cursor: 'pointer',
+      background: t.sel ? '#F4F7FE' : 'white'
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      width: 32,
+      height: 32,
+      borderRadius: 8,
+      background: t.sel ? '#0E47AB' : '#F2F2F2',
+      display: 'grid',
+      placeItems: 'center'
+    }
+  }, /*#__PURE__*/React.createElement(SoIcon, {
+    name: t.ico,
+    size: 16,
+    color: t.sel ? 'white' : '#6B6B6B'
+  })), /*#__PURE__*/React.createElement("span", {
+    style: {
+      fontSize: 13,
+      fontWeight: 600
+    }
+  }, t.n))))), /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("label", {
+    style: {
+      fontSize: 14,
+      fontWeight: 600,
+      color: '#0a0a0a'
+    }
+  }, "Description courte"), /*#__PURE__*/React.createElement("div", {
+    style: {
+      fontSize: 12,
+      color: '#6B6B6B',
+      marginTop: 2
+    }
+  }, "En une ou deux phrases. Ce qui vous rassemble."), /*#__PURE__*/React.createElement("textarea", {
+    defaultValue: "Une mutuelle de soutien aux femmes commer\xE7antes du march\xE9 d'Abobo. Cotisations mensuelles, pr\xEAts solidaires, formations.",
+    style: {
+      width: '100%',
+      marginTop: 8,
+      padding: '16px 20px',
+      border: '1.5px solid #E5E5E5',
+      borderRadius: 14,
+      fontSize: 15,
+      fontFamily: 'inherit',
+      minHeight: 100,
+      resize: 'vertical',
+      lineHeight: 1.5
+    }
+  })), /*#__PURE__*/React.createElement("div", {
+    style: {
+      display: 'grid',
+      gridTemplateColumns: '1.4fr 1fr',
+      gap: 16
+    }
+  }, /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("label", {
+    style: {
+      fontSize: 14,
+      fontWeight: 600,
+      color: '#0a0a0a'
+    }
+  }, "Ville principale ", /*#__PURE__*/React.createElement("span", {
+    style: {
+      color: '#C23B5A'
+    }
+  }, "*")), /*#__PURE__*/React.createElement("select", {
+    defaultValue: "Abidjan",
+    style: {
+      width: '100%',
+      marginTop: 8,
+      padding: '16px 20px',
+      border: '1.5px solid #E5E5E5',
+      borderRadius: 14,
+      fontSize: 15,
+      fontFamily: 'inherit',
+      background: 'white'
+    }
+  }, /*#__PURE__*/React.createElement("option", null, "Abidjan"), /*#__PURE__*/React.createElement("option", null, "Yamoussoukro"), /*#__PURE__*/React.createElement("option", null, "Bouak\xE9"), /*#__PURE__*/React.createElement("option", null, "Daloa"), /*#__PURE__*/React.createElement("option", null, "Autre \u2014 pr\xE9cisez"))), /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("label", {
+    style: {
+      fontSize: 14,
+      fontWeight: 600,
+      color: '#0a0a0a'
+    }
+  }, "Nb. membres ", /*#__PURE__*/React.createElement("span", {
+    style: {
+      color: '#C23B5A'
+    }
+  }, "*")), /*#__PURE__*/React.createElement("select", {
+    defaultValue: "50-200",
+    style: {
+      width: '100%',
+      marginTop: 8,
+      padding: '16px 20px',
+      border: '1.5px solid #E5E5E5',
+      borderRadius: 14,
+      fontSize: 15,
+      fontFamily: 'inherit',
+      background: 'white'
+    }
+  }, /*#__PURE__*/React.createElement("option", null, "1 - 50"), /*#__PURE__*/React.createElement("option", null, "50-200"), /*#__PURE__*/React.createElement("option", null, "200 - 500"), /*#__PURE__*/React.createElement("option", null, "500 - 2 000"), /*#__PURE__*/React.createElement("option", null, "+ 2 000")))), /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("label", {
+    style: {
+      fontSize: 14,
+      fontWeight: 600,
+      color: '#0a0a0a'
+    }
+  }, "Logo de votre communaut\xE9"), /*#__PURE__*/React.createElement("div", {
+    style: {
+      marginTop: 8,
+      padding: 24,
+      border: '2px dashed #C9C9C9',
+      borderRadius: 14,
+      display: 'flex',
+      alignItems: 'center',
+      gap: 20
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      width: 64,
+      height: 64,
+      borderRadius: 14,
+      background: '#0E47AB',
+      color: 'white',
+      display: 'grid',
+      placeItems: 'center',
+      fontWeight: 800,
+      fontSize: 24,
+      letterSpacing: '-0.04em'
+    }
+  }, "CF"), /*#__PURE__*/React.createElement("div", {
+    style: {
+      flex: 1
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      fontSize: 14,
+      fontWeight: 600
+    }
+  }, "cansein-logo.png"), /*#__PURE__*/React.createElement("div", {
+    style: {
+      fontSize: 12,
+      color: '#6B6B6B'
+    }
+  }, "T\xE9l\xE9vers\xE9 \xB7 84 KB")), /*#__PURE__*/React.createElement("button", {
+    style: {
+      padding: '10px 16px',
+      background: '#F2F2F2',
+      border: 'none',
+      borderRadius: 10,
+      fontSize: 13,
+      fontWeight: 600,
+      cursor: 'pointer'
+    }
+  }, "Remplacer"))), /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("label", {
+    style: {
+      fontSize: 14,
+      fontWeight: 600,
+      color: '#0a0a0a'
+    }
+  }, "Couleur principale"), /*#__PURE__*/React.createElement("div", {
+    style: {
+      fontSize: 12,
+      color: '#6B6B6B',
+      marginTop: 2
+    }
+  }, "Sera utilis\xE9e sur la page publique de votre communaut\xE9."), /*#__PURE__*/React.createElement("div", {
+    style: {
+      marginTop: 12,
+      display: 'flex',
+      gap: 12
+    }
+  }, ['#0E47AB', '#D4A75B', '#0a0a0a', '#C23B5A', '#0F8B4F', '#5C2E91'].map((c, i) => /*#__PURE__*/React.createElement("div", {
+    key: i,
+    style: {
+      width: 44,
+      height: 44,
+      borderRadius: '50%',
+      background: c,
+      border: i === 0 ? '3px solid #0a0a0a' : '3px solid transparent',
+      cursor: 'pointer',
+      boxShadow: i === 0 ? '0 0 0 2px white inset' : 'none'
+    }
+  }))))), /*#__PURE__*/React.createElement("div", {
+    style: {
+      marginTop: 48,
+      paddingTop: 32,
+      borderTop: '1px solid #E5E5E5',
+      display: 'flex',
+      justifyContent: 'space-between',
+      alignItems: 'center'
+    }
+  }, /*#__PURE__*/React.createElement("button", {
+    style: {
+      padding: '14px 22px',
+      background: 'transparent',
+      border: 'none',
+      fontSize: 14,
+      fontWeight: 600,
+      color: '#6B6B6B',
+      cursor: 'pointer'
+    }
+  }, "Sauvegarder & quitter"), /*#__PURE__*/React.createElement("a", {
+    href: "#confirmation",
+    className: "btn btn-primary btn-lg"
+  }, "Continuer \u2014 \xC9tape 02 ", /*#__PURE__*/React.createElement(SoIcon, {
+    name: "arrow",
+    size: 14,
+    color: "white"
+  }))))))), /*#__PURE__*/React.createElement(SoFooter, null));
+};
+window.PageInscription = PageInscription;
+
+// === page-confirmation.jsx ===
+// Page Confirmation — bienvenue à bord
+const PageConfirmation = () => {
+  return /*#__PURE__*/React.createElement("div", {
+    className: "page",
+    "data-screen-label": "07 Confirmation"
+  }, /*#__PURE__*/React.createElement(SoNav, {
+    active: ""
+  }), /*#__PURE__*/React.createElement("section", {
+    style: {
+      padding: '120px 64px',
+      background: 'linear-gradient(180deg, #F4F7FE 0%, white 100%)',
+      minHeight: 900
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    className: "container"
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      maxWidth: 980,
+      margin: '0 auto',
+      textAlign: 'center'
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      width: 96,
+      height: 96,
+      borderRadius: '50%',
+      background: '#0E47AB',
+      margin: '0 auto',
+      display: 'grid',
+      placeItems: 'center',
+      position: 'relative'
+    }
+  }, /*#__PURE__*/React.createElement(SoIcon, {
+    name: "check",
+    size: 48,
+    color: "white"
+  }), /*#__PURE__*/React.createElement("div", {
+    style: {
+      position: 'absolute',
+      inset: -16,
+      borderRadius: '50%',
+      border: '2px solid #0E47AB',
+      opacity: 0.3
+    }
+  }), /*#__PURE__*/React.createElement("div", {
+    style: {
+      position: 'absolute',
+      inset: -32,
+      borderRadius: '50%',
+      border: '2px solid #0E47AB',
+      opacity: 0.15
+    }
+  })), /*#__PURE__*/React.createElement("h1", {
+    style: {
+      fontSize: 96,
+      marginTop: 48,
+      lineHeight: 0.95
+    }
+  }, "Cansein Fondation", /*#__PURE__*/React.createElement("br", null), "est ", /*#__PURE__*/React.createElement("span", {
+    style: {
+      color: '#0E47AB'
+    }
+  }, "sur Society"), "."), /*#__PURE__*/React.createElement("p", {
+    style: {
+      fontSize: 22,
+      marginTop: 32,
+      maxWidth: 700,
+      margin: '32px auto 0',
+      lineHeight: 1.5
+    }
+  }, "Bienvenue, Awa. Votre espace est pr\xEAt. Voici les 3 prochaines \xE9tapes pour d\xE9marrer en force."), /*#__PURE__*/React.createElement("div", {
+    style: {
+      marginTop: 24,
+      padding: '8px 16px',
+      background: 'white',
+      border: '1px solid #E5E5E5',
+      borderRadius: 999,
+      display: 'inline-flex',
+      alignItems: 'center',
+      gap: 12,
+      fontSize: 13
+    }
+  }, /*#__PURE__*/React.createElement("span", {
+    style: {
+      padding: '2px 10px',
+      background: '#0F8B4F',
+      color: 'white',
+      borderRadius: 999,
+      fontSize: 11,
+      fontWeight: 700,
+      letterSpacing: '0.04em'
+    }
+  }, "\u25CF ACTIV\xC9"), /*#__PURE__*/React.createElement("span", null, "Plan Communaut\xE9 \xB7 Essai 30 jours"), /*#__PURE__*/React.createElement("span", {
+    style: {
+      color: '#6B6B6B'
+    }
+  }, "Expire le 12 mai 2026"))), /*#__PURE__*/React.createElement("div", {
+    style: {
+      maxWidth: 1100,
+      margin: '80px auto 0',
+      display: 'grid',
+      gridTemplateColumns: 'repeat(3, 1fr)',
+      gap: 20
+    }
+  }, [{
+    n: '01',
+    t: 'Importez vos membres',
+    d: 'Téléversez votre fichier Excel ou ajoutez-les un par un. On s\'occupe du reste.',
+    cta: 'Importer mes membres',
+    icon: 'users',
+    color: '#0E47AB'
+  }, {
+    n: '02',
+    t: 'Créez votre 1ʳᵉ cagnotte',
+    d: 'En 3 clics. Lien partageable. Mobile Money intégré dès le départ.',
+    cta: 'Lancer une cagnotte',
+    icon: 'money',
+    color: '#D4A75B'
+  }, {
+    n: '03',
+    t: 'Personnalisez votre page',
+    d: 'Photos, présentation, projets en cours — votre vitrine publique.',
+    cta: 'Personnaliser',
+    icon: 'spark',
+    color: '#0a0a0a'
+  }].map((s, i) => /*#__PURE__*/React.createElement("div", {
+    key: i,
+    style: {
+      padding: 32,
+      background: 'white',
+      borderRadius: 24,
+      border: '1px solid #E5E5E5'
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      display: 'flex',
+      alignItems: 'center',
+      justifyContent: 'space-between',
+      marginBottom: 24
+    }
+  }, /*#__PURE__*/React.createElement("span", {
+    style: {
+      fontSize: 14,
+      fontWeight: 700,
+      color: s.color,
+      letterSpacing: '0.05em'
+    }
+  }, s.n), /*#__PURE__*/React.createElement("div", {
+    style: {
+      width: 40,
+      height: 40,
+      borderRadius: 12,
+      background: s.color,
+      color: 'white',
+      display: 'grid',
+      placeItems: 'center'
+    }
+  }, /*#__PURE__*/React.createElement(SoIcon, {
+    name: s.icon,
+    size: 20,
+    color: "white"
+  }))), /*#__PURE__*/React.createElement("h3", {
+    style: {
+      fontSize: 24,
+      lineHeight: 1.1
+    }
+  }, s.t), /*#__PURE__*/React.createElement("p", {
+    style: {
+      fontSize: 14,
+      marginTop: 12,
+      lineHeight: 1.5
+    }
+  }, s.d), /*#__PURE__*/React.createElement("button", {
+    style: {
+      marginTop: 28,
+      width: '100%',
+      padding: 14,
+      background: s.color,
+      color: 'white',
+      border: 'none',
+      borderRadius: 12,
+      fontSize: 14,
+      fontWeight: 700,
+      cursor: 'pointer'
+    }
+  }, s.cta, " \u2192")))), /*#__PURE__*/React.createElement("div", {
+    style: {
+      maxWidth: 1100,
+      margin: '40px auto 0',
+      padding: 48,
+      background: '#0a0a0a',
+      color: 'white',
+      borderRadius: 28,
+      display: 'grid',
+      gridTemplateColumns: '1fr auto',
+      gap: 48,
+      alignItems: 'center'
+    }
+  }, /*#__PURE__*/React.createElement("div", null, /*#__PURE__*/React.createElement("div", {
+    style: {
+      fontSize: 13,
+      fontWeight: 700,
+      color: '#D4A75B',
+      letterSpacing: '0.05em'
+    }
+  }, "\u25CF BONUS"), /*#__PURE__*/React.createElement("h3", {
+    style: {
+      fontSize: 36,
+      marginTop: 12,
+      color: 'white'
+    }
+  }, "T\xE9l\xE9chargez l'app mobile."), /*#__PURE__*/React.createElement("p", {
+    style: {
+      fontSize: 16,
+      marginTop: 12,
+      color: 'rgba(255,255,255,0.75)',
+      maxWidth: 480
+    }
+  }, "Vos membres gardent le contact, votent dans les sondages, suivent les cagnottes \u2014 depuis leur poche."), /*#__PURE__*/React.createElement("div", {
+    style: {
+      marginTop: 24,
+      display: 'flex',
+      gap: 12
+    }
+  }, /*#__PURE__*/React.createElement("button", {
+    style: {
+      padding: '14px 22px',
+      background: 'white',
+      color: '#0a0a0a',
+      border: 'none',
+      borderRadius: 12,
+      fontWeight: 700,
+      fontSize: 14,
+      display: 'flex',
+      alignItems: 'center',
+      gap: 8
+    }
+  }, /*#__PURE__*/React.createElement("span", {
+    style: {
+      fontSize: 20
+    }
+  }), /*#__PURE__*/React.createElement("span", null, /*#__PURE__*/React.createElement("div", {
+    style: {
+      fontSize: 10,
+      opacity: 0.7
+    }
+  }, "T\xE9l\xE9charger sur"), /*#__PURE__*/React.createElement("div", null, "App Store"))), /*#__PURE__*/React.createElement("button", {
+    style: {
+      padding: '14px 22px',
+      background: 'white',
+      color: '#0a0a0a',
+      border: 'none',
+      borderRadius: 12,
+      fontWeight: 700,
+      fontSize: 14,
+      display: 'flex',
+      alignItems: 'center',
+      gap: 8
+    }
+  }, /*#__PURE__*/React.createElement("span", {
+    style: {
+      fontSize: 20
+    }
+  }, "\u25B6"), /*#__PURE__*/React.createElement("span", null, /*#__PURE__*/React.createElement("div", {
+    style: {
+      fontSize: 10,
+      opacity: 0.7
+    }
+  }, "Disponible sur"), /*#__PURE__*/React.createElement("div", null, "Google Play"))))), /*#__PURE__*/React.createElement("div", {
+    style: {
+      width: 120,
+      height: 120,
+      background: 'white',
+      borderRadius: 16,
+      padding: 12
+    }
+  }, /*#__PURE__*/React.createElement("div", {
+    style: {
+      width: '100%',
+      height: '100%',
+      background: 'repeating-conic-gradient(#0a0a0a 0% 25%, white 0% 50%) 0/8px 8px'
+    }
+  }))))), /*#__PURE__*/React.createElement(SoFooter, null));
+};
+window.PageConfirmation = PageConfirmation;
+
+// === app.jsx ===
+// Society — routeur hash simple
+const PAGES = {
+  '': PageAccueil,
+  accueil: PageAccueil,
+  fonctionnalites: PageFonctionnalites,
+  'pour-qui': PagePourQui,
+  tarifs: PageTarifs,
+  'a-propos': PageAPropos,
+  inscription: PageInscription,
+  confirmation: PageConfirmation
+};
+const App = () => {
+  const getPage = () => window.location.hash.replace('#', '') || 'accueil';
+  const [page, setPage] = React.useState(getPage);
+  React.useEffect(() => {
+    const onHash = () => {
+      const p = getPage();
+      setPage(p);
+      window.scrollTo({
+        top: 0,
+        behavior: 'smooth'
+      });
+    };
+    window.addEventListener('hashchange', onHash);
+    return () => window.removeEventListener('hashchange', onHash);
+  }, []);
+  const Page = PAGES[page] || PageAccueil;
+  return /*#__PURE__*/React.createElement(Page, null);
+};
+ReactDOM.createRoot(document.getElementById('root')).render(/*#__PURE__*/React.createElement(App, null));
+
+</script>
+</body>
+</html>

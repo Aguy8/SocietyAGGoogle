@@ -1,0 +1,42 @@
+====================================================
+  DOSSIER IMAGES SOCIETY — Comment ajouter vos photos
+====================================================
+
+UTILISATION LOCALE (recommandée)
+---------------------------------
+1. Déposez votre image dans CE dossier (public/img/)
+   Exemples : hero.jpg, team-ange.jpg, benevolat.png
+
+2. Dans le code JSX, référencez-la ainsi :
+   src="/img/hero.jpg"   ← EN LOCAL (npm run dev)
+
+   OU avec import en haut du fichier :
+   import heroImg from '/img/hero.jpg'
+   puis : src={heroImg}
+
+
+UTILISATION GOOGLE DRIVE
+--------------------------
+1. Mettez votre image sur Google Drive
+2. Faites un clic droit → "Obtenir le lien" → "Tout le monde"
+3. Copiez le FILE_ID depuis le lien :
+   https://drive.google.com/file/d/  >>FILE_ID<<  /view?usp=sharing
+
+4. Construisez votre URL directe :
+   https://drive.google.com/uc?export=view&id=FILE_ID
+
+5. Utilisez directement dans le JSX :
+   src="https://drive.google.com/uc?export=view&id=VOTRE_FILE_ID"
+
+
+FORMATS SUPPORTÉS
+------------------
+.jpg  .jpeg  .png  .webp  .gif  .svg
+
+CONSEIL
+--------
+Pour de meilleures performances, utilisez des images
+optimisées (moins de 500Ko). Outils gratuits :
+- squoosh.app
+- tinypng.com
+====================================================
