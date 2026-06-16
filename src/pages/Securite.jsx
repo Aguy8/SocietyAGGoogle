@@ -17,8 +17,8 @@ const pilliers = [
       'Zéro accès en clair aux données de paiement',
     ],
     color: '#E8F0FD',
-    iconColor: '#1A2BFF',
-    accent: '#1A2BFF',
+    iconColor: 'var(--cobalt)',
+    accent: 'var(--cobalt)',
   },
   {
     icon: 'shield',
@@ -33,8 +33,8 @@ const pilliers = [
       'Signalement des violations sous 72 heures',
     ],
     color: '#F8F8F8',
-    iconColor: '#14110D',
-    accent: '#1A2BFF',
+    iconColor: 'var(--encre)',
+    accent: 'var(--cobalt)',
   },
   {
     icon: 'search',
@@ -49,8 +49,8 @@ const pilliers = [
       'Scan de dépendances hebdomadaire',
     ],
     color: '#F8F8F8',
-    iconColor: '#1A2BFF',
-    accent: '#1A2BFF',
+    iconColor: 'var(--cobalt)',
+    accent: 'var(--cobalt)',
   },
   {
     icon: 'layers',
@@ -75,7 +75,7 @@ export default function Securite() {
     <div className="page">
       <Nav />
 
-      <section data-nav-theme="dark" style={{ padding: '120px 64px 80px', background: '#1A2BFF', position: 'relative', overflow: 'hidden' }}>
+      <section data-nav-theme="dark" style={{ padding: '120px 64px 80px', background: 'var(--cobalt)', position: 'relative', overflow: 'hidden' }}>
         <div style={{ position: 'absolute', top: -80, right: -80, width: 400, height: 400, borderRadius: 999, background: 'rgba(255,255,255,0.05)' }} />
         <div style={{ position: 'absolute', bottom: -40, left: 100, width: 250, height: 250, borderRadius: 999, background: 'rgba(212,167,91,0.15)' }} />
         <div className="container" style={{ position: 'relative', zIndex: 2 }}>
@@ -87,7 +87,7 @@ export default function Securite() {
           </div>
           <h1 style={{ fontSize: 80, lineHeight: 0.92, color: 'white', maxWidth: 880 }}>
             Vos données<br />
-            <span style={{ color: '#1A2BFF' }}>méritent</span><br />
+            <span style={{ color: 'var(--so-blue-soft)' }}>méritent</span><br />
             la meilleure protection.
           </h1>
           <p style={{ fontSize: 19, marginTop: 32, maxWidth: 620, lineHeight: 1.55, color: 'rgba(255,255,255,0.8)' }}>
@@ -136,7 +136,7 @@ export default function Securite() {
                         <div style={{ width: 22, height: 22, borderRadius: 999, background: p.color, display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0, marginTop: 1 }}>
                           <Icon name="check" size={12} color={p.iconColor} />
                         </div>
-                        <span style={{ fontSize: 15, lineHeight: 1.5, color: '#14110D' }}>{d}</span>
+                        <span style={{ fontSize: 15, lineHeight: 1.5, color: 'var(--encre)' }}>{d}</span>
                       </li>
                     ))}
                   </ul>
@@ -150,8 +150,8 @@ export default function Securite() {
       <section style={{ padding: '64px 64px', background: '#F8F8F8' }}>
         <div className="container">
           <div className="two-col-grid">
-            <div style={{ padding: '48px', background: 'linear-gradient(135deg, #1A2BFF 0%, #1A2BFF 100%)', borderRadius: 28, color: 'white', boxShadow: '0 12px 40px rgba(14,71,171,0.25)' }}>
-              <div style={{ fontSize: 13, fontWeight: 700, letterSpacing: '0.06em', color: '#1A2BFF' }}>● DONNÉES EN AFRIQUE</div>
+            <div style={{ padding: '48px', background: 'linear-gradient(135deg, var(--cobalt) 0%, var(--cobalt) 100%)', borderRadius: 28, color: 'white', boxShadow: '0 12px 40px rgba(26,43,255,0.25)' }}>
+              <div style={{ fontSize: 13, fontWeight: 700, letterSpacing: '0.06em', color: 'var(--so-blue-soft)' }}>● DONNÉES EN AFRIQUE</div>
               <h2 style={{ fontSize: 36, color: 'white', marginTop: 16, fontWeight: 800, lineHeight: 1.2 }}>Vos données restent sur le continent.</h2>
               <p style={{ fontSize: 16, color: 'rgba(255,255,255,0.75)', marginTop: 20, lineHeight: 1.65 }}>
                 Par défaut, vos données sont hébergées dans des datacenters d'Afrique de l'Ouest. Aucun transfert hors continent sans votre accord explicite.
@@ -159,19 +159,19 @@ export default function Securite() {
               <div style={{ display: 'grid', gap: 12, marginTop: 32 }}>
                 {['Datacenter principal : Abidjan, CI', 'Réplication : Lagos, NG (backup)', 'Aucun transfert Europe / USA sans consentement', 'Conformité CEDEAO et loi ivoirienne n° 2013-450'].map((item, i) => (
                   <div key={i} style={{ display: 'flex', gap: 12, alignItems: 'center' }}>
-                    <div style={{ width: 6, height: 6, borderRadius: 999, background: '#1A2BFF', flexShrink: 0 }} />
+                    <div style={{ width: 6, height: 6, borderRadius: 999, background: 'var(--cobalt)', flexShrink: 0 }} />
                     <span style={{ fontSize: 14, color: 'rgba(255,255,255,0.8)' }}>{item}</span>
                   </div>
                 ))}
               </div>
             </div>
             <div style={{ padding: '48px', background: 'white', borderRadius: 28, border: '1px solid #EBEBEB' }}>
-              <div style={{ fontSize: 13, fontWeight: 700, letterSpacing: '0.06em', color: '#1A2BFF' }}>● DIVULGATION RESPONSABLE</div>
+              <div style={{ fontSize: 13, fontWeight: 700, letterSpacing: '0.06em', color: 'var(--cobalt)' }}>● DIVULGATION RESPONSABLE</div>
               <h2 style={{ fontSize: 36, marginTop: 16, fontWeight: 800, lineHeight: 1.2 }}>Vous avez trouvé une faille ?</h2>
               <p style={{ fontSize: 16, color: '#4A4438', marginTop: 20, lineHeight: 1.65 }}>
                 On accueille les signalements à bras ouverts. Notre programme de divulgation responsable récompense les chercheurs de 50 000 à 500 000 FCFA, selon la gravité.
               </p>
-              <div style={{ padding: '20px 24px', background: '#F8F8F8', borderRadius: 16, marginTop: 28, fontFamily: 'monospace', fontSize: 14, color: '#14110D' }}>
+              <div style={{ padding: '20px 24px', background: '#F8F8F8', borderRadius: 16, marginTop: 28, fontFamily: 'monospace', fontSize: 14, color: 'var(--encre)' }}>
                 security@society.ci
               </div>
               <div style={{ display: 'flex', gap: 12, marginTop: 28 }}>
@@ -185,7 +185,7 @@ export default function Securite() {
 
       <section style={{ padding: '80px 64px 120px' }}>
         <div className="container" style={{ textAlign: 'center' }}>
-          <Icon name="shield" size={48} color="#1A2BFF" />
+          <Icon name="shield" size={48} color='var(--cobalt)' />
           <h2 style={{ fontSize: 48, marginTop: 24, fontWeight: 800 }}>Des questions sur notre sécurité ?</h2>
           <p style={{ fontSize: 17, color: '#6B6B6B', marginTop: 16, maxWidth: 520, margin: '16px auto 0', lineHeight: 1.6 }}>
             Notre équipe sécurité répond aux entreprises, institutions et grandes communautés.

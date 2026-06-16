@@ -5,10 +5,10 @@ import Footer from '../components/Footer.jsx'
 const Section = ({ num, title, children }) => (
   <div style={{ marginBottom: 56 }}>
     <div style={{ display: 'flex', alignItems: 'flex-start', gap: 20, marginBottom: 20 }}>
-      <div style={{ width: 40, height: 40, borderRadius: 10, background: '#1A2BFF', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0, fontWeight: 900, fontSize: 14, color: 'white' }}>
+      <div style={{ width: 40, height: 40, borderRadius: 10, background: 'var(--cobalt)', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0, fontWeight: 900, fontSize: 14, color: 'white' }}>
         {num}
       </div>
-      <h2 style={{ fontSize: 24, fontWeight: 800, color: '#14110D', lineHeight: 1.2, paddingTop: 8 }}>{title}</h2>
+      <h2 style={{ fontSize: 24, fontWeight: 800, color: 'var(--encre)', lineHeight: 1.2, paddingTop: 8 }}>{title}</h2>
     </div>
     <div style={{ fontSize: 15, color: '#4A4438', lineHeight: 1.85, paddingLeft: 60 }}>{children}</div>
   </div>
@@ -26,16 +26,16 @@ export default function CGU() {
     <div className="page">
       <Nav />
 
-      <section data-nav-theme="dark" style={{ padding: '120px 64px', minHeight: '70vh', display: 'flex', alignItems: 'center', background: '#14110D', position: 'relative', overflow: 'hidden' }}>
-        <div style={{ position: 'absolute', top: -100, right: -100, width: 500, height: 500, borderRadius: '50%', background: '#1A2BFF', opacity: 0.12, filter: 'blur(80px)' }} />
+      <section data-nav-theme="dark" style={{ padding: '120px 64px', minHeight: '70vh', display: 'flex', alignItems: 'center', background: 'var(--encre)', position: 'relative', overflow: 'hidden' }}>
+        <div style={{ position: 'absolute', top: -100, right: -100, width: 500, height: 500, borderRadius: '50%', background: 'var(--cobalt)', opacity: 0.12, filter: 'blur(80px)' }} />
         <div className="container" style={{ position: 'relative', zIndex: 2 }}>
           <div style={{ display: 'inline-flex', alignItems: 'center', gap: 10, padding: '8px 20px', background: 'rgba(212,167,91,0.12)', border: '1px solid rgba(212,167,91,0.3)', borderRadius: 999, marginBottom: 32 }}>
-            <div style={{ width: 8, height: 8, borderRadius: '50%', background: '#1A2BFF' }} />
-            <span style={{ fontSize: 13, fontWeight: 700, color: '#1A2BFF', letterSpacing: '0.06em', textTransform: 'uppercase' }}>Bientôt disponible</span>
+            <div style={{ width: 8, height: 8, borderRadius: '50%', background: 'var(--cobalt)' }} />
+            <span style={{ fontSize: 13, fontWeight: 700, color: 'var(--cobalt)', letterSpacing: '0.06em', textTransform: 'uppercase' }}>Bientôt disponible</span>
           </div>
           <h1 style={{ fontSize: 'clamp(48px, 8vw, 80px)', lineHeight: 0.92, color: 'white', maxWidth: 800 }}>
             Conditions d'utilisation<br />
-            <span style={{ color: '#1A2BFF' }}>en cours de finalisation.</span>
+            <span style={{ color: 'var(--cobalt)' }}>en cours de finalisation.</span>
           </h1>
           <p style={{ fontSize: 18, color: 'rgba(255,255,255,0.65)', marginTop: 28, maxWidth: 520, lineHeight: 1.65 }}>
             Nos CGU sont en cours de validation juridique. Pour toute question, contactez directement notre équipe.
@@ -49,12 +49,12 @@ export default function CGU() {
       </section>
 
       <div style={{ display: 'none' }}>
-      <section data-nav-theme="dark" style={{ padding: '120px 64px 64px', background: '#14110D' }}>
+      <section data-nav-theme="dark" style={{ padding: '120px 64px 64px', background: 'var(--encre)' }}>
         <div className="container">
-          <span style={{ fontSize: 13, fontWeight: 700, letterSpacing: '0.06em', color: '#1A2BFF', display: 'block', marginBottom: 20 }}>CONDITIONS GENERALES D'UTILISATION</span>
+          <span style={{ fontSize: 13, fontWeight: 700, letterSpacing: '0.06em', color: 'var(--cobalt)', display: 'block', marginBottom: 20 }}>CONDITIONS GENERALES D'UTILISATION</span>
           <h1 style={{ fontSize: 72, lineHeight: 0.92, color: 'white', fontWeight: 900, maxWidth: 800 }}>
             Conditions generales<br />
-            <span style={{ color: '#1A2BFF' }}>d'utilisation.</span>
+            <span style={{ color: 'var(--cobalt)' }}>d'utilisation.</span>
           </h1>
           <p style={{ fontSize: 17, marginTop: 28, color: 'rgba(255,255,255,0.7)', maxWidth: 620, lineHeight: 1.65 }}>
             Les presentes Conditions Generales d'Utilisation (CGU) regissent l'acces et l'utilisation de la plateforme Society et de ses services. En utilisant Society, vous acceptez ces conditions dans leur integralite.
@@ -97,10 +97,10 @@ export default function CGU() {
                   ))}
                 </div>
                 <div style={{ marginTop: 24, paddingTop: 20, borderTop: '1px solid #EBEBEB' }}>
-                  <NavLink to="/confidentialite" style={{ fontSize: 13, color: '#1A2BFF', fontWeight: 600, textDecoration: 'none', display: 'block', marginBottom: 8 }}>
+                  <NavLink to="/confidentialite" style={{ fontSize: 13, color: 'var(--cobalt)', fontWeight: 600, textDecoration: 'none', display: 'block', marginBottom: 8 }}>
                     Politique de confidentialite →
                   </NavLink>
-                  <NavLink to="/mentions-legales" style={{ fontSize: 13, color: '#1A2BFF', fontWeight: 600, textDecoration: 'none' }}>
+                  <NavLink to="/mentions-legales" style={{ fontSize: 13, color: 'var(--cobalt)', fontWeight: 600, textDecoration: 'none' }}>
                     Mentions legales →
                   </NavLink>
                 </div>
@@ -184,7 +184,7 @@ export default function CGU() {
                 <P>En cas de litige relatif a l'interpretation ou a l'execution des presentes CGU, les parties s'engagent a rechercher une solution amiable. A defaut d'accord dans un delai de 30 jours, le litige sera soumis aux tribunaux competents d'Abidjan (Cote d'Ivoire).</P>
                 <div style={{ marginTop: 24, padding: '20px 24px', background: '#F8F8F8', borderRadius: 16 }}>
                   <div style={{ fontSize: 13, color: '#6B6B6B', marginBottom: 8 }}>Pour toute question relative aux presentes CGU :</div>
-                  <div style={{ fontSize: 15, fontWeight: 700, color: '#14110D' }}>legal@society.ci</div>
+                  <div style={{ fontSize: 15, fontWeight: 700, color: 'var(--encre)' }}>legal@society.ci</div>
                   <div style={{ fontSize: 13, color: '#9B9B9B', marginTop: 4 }}>Difero Fundry SARL — Plateau, Abidjan, Cote d'Ivoire</div>
                 </div>
               </Section>

@@ -5,9 +5,9 @@ import Icon from '../components/Icon.jsx'
 import Reveal from '../components/Reveal.jsx'
 
 const UPCOMING = [
-  { date: 'Prochainement', h: '18h00 GMT', t: 'Gérer la trésorerie de votre communauté avec Society', desc: 'Cotisations, relances, suivi : tout en moins d\'une heure par mois.', speaker: 'Équipe Society', cat: 'Finances', color: '#1A2BFF', bg: '#F8F8F8' },
-  { date: 'Prochainement', h: '17h30 GMT', t: 'Convaincre un bailleur : le rapport d\'impact qui marche', desc: 'Structure, indicateurs, mise en forme — ce que les bailleurs lisent vraiment.', speaker: 'Équipe Society', cat: 'Impact', color: '#1A2BFF', bg: '#E8EFFC' },
-  { date: 'Prochainement', h: '19h00 GMT', t: 'Monétiser sa communauté sans la trahir', desc: 'Ce qui marche en Afrique : abonnements, cagnottes, billetterie, contenu premium.', speaker: 'Équipe Society', cat: 'Monétisation', color: '#1A2BFF', bg: '#F3F0FF' },
+  { date: 'Prochainement', h: '18h00 GMT', t: 'Gérer la trésorerie de votre communauté avec Society', desc: 'Cotisations, relances, suivi : tout en moins d\'une heure par mois.', speaker: 'Équipe Society', cat: 'Finances', color: 'var(--cobalt)', bg: '#F8F8F8' },
+  { date: 'Prochainement', h: '17h30 GMT', t: 'Convaincre un bailleur : le rapport d\'impact qui marche', desc: 'Structure, indicateurs, mise en forme — ce que les bailleurs lisent vraiment.', speaker: 'Équipe Society', cat: 'Impact', color: 'var(--cobalt)', bg: '#E8EFFC' },
+  { date: 'Prochainement', h: '19h00 GMT', t: 'Monétiser sa communauté sans la trahir', desc: 'Ce qui marche en Afrique : abonnements, cagnottes, billetterie, contenu premium.', speaker: 'Équipe Society', cat: 'Monétisation', color: 'var(--cobalt)', bg: '#F3F0FF' },
 ]
 
 const PAST = [
@@ -30,12 +30,12 @@ export default function Webinaires() {
     <div className="page">
       <Nav />
 
-      <section data-nav-theme="dark" style={{ padding: '120px 64px 80px', background: '#14110D' }}>
+      <section data-nav-theme="dark" style={{ padding: '120px 64px 80px', background: 'var(--encre)' }}>
         <div className="container">
           <span className="eyebrow dark">Webinaires gratuits</span>
           <h1 style={{ fontSize: 88, marginTop: 24, lineHeight: 0.9, color: 'white', maxWidth: 900 }}>
             Formez-vous.<br />
-            <span style={{ color: '#1A2BFF' }}>Gratuitement.</span>
+            <span style={{ color: 'var(--so-blue-soft)' }}>Gratuitement.</span>
           </h1>
           <p style={{ fontSize: 20, marginTop: 28, maxWidth: 620, lineHeight: 1.6, color: 'rgba(255,255,255,0.75)' }}>
             Chaque mois, des sessions en direct. Pour maîtriser Society et faire grandir votre communauté.
@@ -43,7 +43,7 @@ export default function Webinaires() {
           <div style={{ display: 'flex', gap: 48, marginTop: 56, paddingTop: 40, borderTop: '1px solid rgba(255,255,255,0.1)', flexWrap: 'wrap' }}>
             {[['Gratuit', '100 % des sessions'], ['Live', 'Interaction directe'], ['Replay', 'Sessions enregistrées'], ['Francophone', 'Support local']].map(([v, l], i) => (
               <div key={i}>
-                <div style={{ fontSize: 28, fontWeight: 900, color: '#1A2BFF' }}>{v}</div>
+                <div style={{ fontSize: 28, fontWeight: 900, color: 'var(--so-blue-soft)' }}>{v}</div>
                 <div style={{ fontSize: 13, color: 'rgba(255,255,255,0.5)', marginTop: 4 }}>{l}</div>
               </div>
             ))}
@@ -64,14 +64,14 @@ export default function Webinaires() {
                   <div style={{ display: 'flex', gap: 28, alignItems: 'flex-start', flexWrap: 'wrap' }}>
                     <div style={{ padding: '16px 20px', background: w.bg, borderRadius: 16, textAlign: 'center', minWidth: 120, flexShrink: 0 }}>
                       <div style={{ fontSize: 12, fontWeight: 700, color: w.color }}>{w.cat.toUpperCase()}</div>
-                      <div style={{ fontSize: 14, fontWeight: 800, color: '#14110D', marginTop: 8 }}>{w.date}</div>
+                      <div style={{ fontSize: 14, fontWeight: 800, color: 'var(--encre)', marginTop: 8 }}>{w.date}</div>
                       <div style={{ fontSize: 13, color: '#6B6B6B', marginTop: 2 }}>{w.h}</div>
                     </div>
                     <div style={{ flex: 1 }}>
                       <span style={{ padding: '3px 10px', background: w.bg, color: w.color, borderRadius: 999, fontSize: 11, fontWeight: 700 }}>{w.cat}</span>
                       <h3 style={{ fontSize: 22, marginTop: 10, lineHeight: 1.2 }}>{w.t}</h3>
                       <p style={{ fontSize: 14, color: '#4A4438', marginTop: 8, lineHeight: 1.6 }}>{w.desc}</p>
-                      <div style={{ fontSize: 13, color: '#6B6B6B', marginTop: 10 }}>Animé par <strong style={{ color: '#14110D' }}>{w.speaker}</strong></div>
+                      <div style={{ fontSize: 13, color: '#6B6B6B', marginTop: 10 }}>Animé par <strong style={{ color: 'var(--encre)' }}>{w.speaker}</strong></div>
                     </div>
                   </div>
                   <div style={{ display: 'flex', flexDirection: 'column', gap: 10, minWidth: 180 }}>
@@ -99,7 +99,7 @@ export default function Webinaires() {
             {PAST.map((p, i) => (
               <Reveal key={i} delay={i * 80}>
                 <div className="hover-lift" style={{ padding: 28, background: 'white', borderRadius: 20, border: '1px solid #E5E5E5', display: 'flex', alignItems: 'center', gap: 20, cursor: 'pointer' }}>
-                  <div style={{ width: 52, height: 52, borderRadius: 14, background: '#1A2BFF', display: 'grid', placeItems: 'center', flexShrink: 0 }}>
+                  <div style={{ width: 52, height: 52, borderRadius: 14, background: 'var(--cobalt)', display: 'grid', placeItems: 'center', flexShrink: 0 }}>
                     <Icon name="play" size={22} color="white" />
                   </div>
                   <div style={{ flex: 1 }}>

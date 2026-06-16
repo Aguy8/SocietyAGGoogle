@@ -1,21 +1,21 @@
 /* Society — Site vitrine
    Charte graphique 2026
-   Cobalt #1A2BFF · Encre #14110D · Terre #C24A28 · Blanc #FFFFFF
+   Cobalt var(--cobalt) · Encre var(--encre) · Terre var(--terre) · Blanc #FFFFFF
    Police principale : DM Sans */
 
 @import url('https://fonts.googleapis.com/css2?family=DM+Sans:ital,opsz,wght@0,9..40,100..900;1,9..40,100..900&display=swap');
 
 :root {
-  --cobalt:        #1A2BFF;
-  --cobalt-deep:   #0B17B8;
+  --cobalt:        var(--cobalt);
+  --cobalt-deep:   var(--cobalt-deep);
   --cobalt-soft:   #DDE0FF;
-  --encre:         #14110D;
+  --encre:         var(--encre);
   --encre-2:       #2A2520;
   --paper:         #FFFFFF;
-  --terre:         #C24A28;
+  --terre:         var(--terre);
   --terre-deep:    #8B2F18;
-  --acacia:        #1F5D3A;
-  --hibiscus:      #B22842;
+  --acacia:        var(--acacia);
+  --hibiscus:      var(--hibiscus);
   --grey-100:      #EDE8DD;
   --grey-200:      #DDD5C8;
   --grey-500:      #847B6C;

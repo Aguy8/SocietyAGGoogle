@@ -9,28 +9,28 @@ const STEPS = [
     title: 'Publiez la mission',
     desc: "L'engagement, les compétences, la durée, le lieu. Visible par toute la communauté Society.",
     icon: 'file-text',
-    color: '#1A2BFF',
+    color: 'var(--cobalt)',
   },
   {
     n: '02',
     title: 'Les bénévoles postulent',
     desc: 'Candidatures dans l\'application. Vous voyez les profils, les compétences, les disponibilités.',
     icon: 'users',
-    color: '#1A2BFF',
+    color: 'var(--cobalt)',
   },
   {
     n: '03',
     title: 'Vous accueillez',
     desc: "Confirmez, planifiez, communiquez depuis le tableau de bord. Documents et logistique partagés d'un clic.",
     icon: 'calendar',
-    color: '#1A2BFF',
+    color: 'var(--cobalt)',
   },
   {
     n: '04',
     title: 'Mesurez l\'impact',
     desc: 'Heures suivies, attestations exportées, rapport d\'impact prêt pour vos bailleurs.',
     icon: 'chart',
-    color: '#1A2BFF',
+    color: 'var(--cobalt)',
   },
 ]
 
@@ -51,28 +51,28 @@ export default function Benevolat() {
 
       {/* HERO */}
       <section style={{ position: 'relative', minHeight: 640, display: 'flex', alignItems: 'flex-end', padding: '0 64px 80px', overflow: 'hidden', background: 'linear-gradient(160deg, #FFFBF2 0%, #F4F7FE 50%, #F0F6FF 100%)' }}>
-        <div style={{ position: 'absolute', top: -200, left: -200, width: 600, height: 600, borderRadius: '50%', background: '#1A2BFF', opacity: 0.1, filter: 'blur(80px)' }} />
-        <div style={{ position: 'absolute', bottom: -100, right: -100, width: 400, height: 400, borderRadius: '50%', background: '#B22842', opacity: 0.12, filter: 'blur(60px)' }} />
-        <div style={{ position: 'absolute', top: 0, left: 0, right: 0, height: 4, background: 'linear-gradient(90deg, #1A2BFF, #D4A75B)' }} />
+        <div style={{ position: 'absolute', top: -200, left: -200, width: 600, height: 600, borderRadius: '50%', background: 'var(--cobalt)', opacity: 0.1, filter: 'blur(80px)' }} />
+        <div style={{ position: 'absolute', bottom: -100, right: -100, width: 400, height: 400, borderRadius: '50%', background: 'var(--hibiscus)', opacity: 0.12, filter: 'blur(60px)' }} />
+        <div style={{ position: 'absolute', top: 0, left: 0, right: 0, height: 4, background: 'linear-gradient(90deg, var(--cobalt), var(--terre))' }} />
         <div className="container" style={{ position: 'relative', zIndex: 2, paddingTop: 120 }}>
           <NavLink to="/fonctionnalites" style={{ display: 'inline-flex', alignItems: 'center', gap: 8, color: 'var(--so-grey-500)', fontSize: 14, fontWeight: 600, textDecoration: 'none', marginBottom: 32 }}>
             ← Fonctionnalités
           </NavLink>
           <div style={{ display: 'flex', alignItems: 'flex-end', gap: 40, flexWrap: 'wrap' }}>
             <div style={{ flex: 1, minWidth: 280 }}>
-              <div style={{ display: 'inline-block', padding: '6px 16px', background: 'linear-gradient(135deg, #1A2BFF, #1A2BFF)', color: 'white', borderRadius: 999, fontSize: 12, fontWeight: 700, marginBottom: 20, boxShadow: '0 4px 12px rgba(14,71,171,0.25)' }}>
+              <div style={{ display: 'inline-block', padding: '6px 16px', background: 'linear-gradient(135deg, var(--cobalt), var(--cobalt))', color: 'white', borderRadius: 999, fontSize: 12, fontWeight: 700, marginBottom: 20, boxShadow: '0 4px 12px rgba(26,43,255,0.25)' }}>
                 Nouveau · Module Bénévolat
               </div>
-              <h1 style={{ fontSize: 92, lineHeight: 0.92, color: '#14110D', marginBottom: 24 }}>
+              <h1 style={{ fontSize: 92, lineHeight: 0.92, color: 'var(--encre)', marginBottom: 24 }}>
                 Engagez vos<br />
-                <span style={{ color: '#1A2BFF' }}>bénévoles.</span>
+                <span style={{ color: 'var(--cobalt)' }}>bénévoles.</span>
               </h1>
               <p style={{ fontSize: 22, color: '#4A4438', lineHeight: 1.45, maxWidth: 580 }}>
                 Recrutez. Organisez. Valorisez. Society fait du volontariat une vraie force pour votre organisation.
               </p>
             </div>
             <div style={{ display: 'flex', gap: 12, paddingBottom: 4, flexWrap: 'wrap' }}>
-              <NavLink to="/inscription" className="btn btn-primary btn-lg" style={{ background: 'linear-gradient(135deg, #1A2BFF, #1A2BFF)', boxShadow: '0 8px 24px rgba(14,71,171,0.3)' }}>Activer le module</NavLink>
+              <NavLink to="/inscription" className="btn btn-primary btn-lg" style={{ background: 'linear-gradient(135deg, var(--cobalt), var(--cobalt))', boxShadow: '0 8px 24px rgba(26,43,255,0.3)' }}>Activer le module</NavLink>
               <NavLink to="/tarifs" className="btn btn-outline btn-lg">Voir les plans</NavLink>
             </div>
           </div>
@@ -97,9 +97,9 @@ export default function Benevolat() {
                   'Recrutement limité au cercle proche',
                   'Bénévoles peu valorisés, beaucoup décrochent',
                 ].map((pb, i) => (
-                  <div key={i} style={{ display: 'flex', gap: 14, padding: '16px 20px', background: '#EEF1FF', borderRadius: 12, borderLeft: '4px solid #1A2BFF', alignItems: 'flex-start' }}>
-                    <span style={{ color: '#1A2BFF', fontWeight: 800, flexShrink: 0 }}>✕</span>
-                    <p style={{ fontSize: 15, color: '#14110D', margin: 0, lineHeight: 1.5 }}>{pb}</p>
+                  <div key={i} style={{ display: 'flex', gap: 14, padding: '16px 20px', background: '#EEF1FF', borderRadius: 12, borderLeft: '4px solid var(--cobalt)', alignItems: 'flex-start' }}>
+                    <span style={{ color: 'var(--cobalt)', fontWeight: 800, flexShrink: 0 }}>✕</span>
+                    <p style={{ fontSize: 15, color: 'var(--encre)', margin: 0, lineHeight: 1.5 }}>{pb}</p>
                   </div>
                 ))}
               </div>
@@ -109,20 +109,20 @@ export default function Benevolat() {
                 <img src="https://res.cloudinary.com/dyqeot2wi/image/upload/v1778379825/t%C3%A9l%C3%A9chargement_12_m5soiq.jpg" style={{ width: '100%', height: '100%', objectFit: 'cover' }} alt="Bénévolat" />
                 <div style={{ position: 'absolute', bottom: 24, left: 24, right: 24 }}>
                   <div style={{ background: 'rgba(255,255,255,0.9)', backdropFilter: 'blur(20px)', borderRadius: 20, padding: '20px 24px' }}>
-                    <div style={{ fontSize: 13, fontWeight: 700, color: '#1A2BFF', marginBottom: 8 }}>Module Bénévolat Society</div>
+                    <div style={{ fontSize: 13, fontWeight: 700, color: 'var(--cobalt)', marginBottom: 8 }}>Module Bénévolat Society</div>
                     <div style={{ display: 'flex', gap: 16, alignItems: 'center' }}>
                       <div style={{ textAlign: 'center' }}>
-                        <div style={{ fontSize: 28, fontWeight: 800, color: '#14110D', letterSpacing: '-0.03em' }}>∞</div>
+                        <div style={{ fontSize: 28, fontWeight: 800, color: 'var(--encre)', letterSpacing: '-0.03em' }}>∞</div>
                         <div style={{ fontSize: 11, color: '#6B6B6B' }}>bénévoles actifs</div>
                       </div>
                       <div style={{ width: 1, height: 40, background: '#E5E5E5' }} />
                       <div style={{ textAlign: 'center' }}>
-                        <div style={{ fontSize: 28, fontWeight: 800, color: '#1A2BFF', letterSpacing: '-0.03em' }}>∞h</div>
+                        <div style={{ fontSize: 28, fontWeight: 800, color: 'var(--cobalt)', letterSpacing: '-0.03em' }}>∞h</div>
                         <div style={{ fontSize: 11, color: '#6B6B6B' }}>suivies</div>
                       </div>
                       <div style={{ width: 1, height: 40, background: '#E5E5E5' }} />
                       <div style={{ textAlign: 'center' }}>
-                        <div style={{ fontSize: 28, fontWeight: 800, color: '#1A2BFF', letterSpacing: '-0.03em' }}>∞</div>
+                        <div style={{ fontSize: 28, fontWeight: 800, color: 'var(--cobalt)', letterSpacing: '-0.03em' }}>∞</div>
                         <div style={{ fontSize: 11, color: '#6B6B6B' }}>attestations</div>
                       </div>
                     </div>
@@ -170,7 +170,7 @@ export default function Benevolat() {
             {FEATURES.map((f, i) => (
               <div key={i} style={{ padding: '36px 32px', background: 'white', borderRadius: 24, border: '1px solid #EBEBEB' }}>
                 <div style={{ width: 48, height: 48, borderRadius: 14, background: '#E8F0FD', display: 'grid', placeItems: 'center', marginBottom: 20 }}>
-                  <Icon name={f.icon} size={22} color="#1A2BFF" />
+                  <Icon name={f.icon} size={22} color='var(--cobalt)' />
                 </div>
                 <h3 style={{ fontSize: 19, lineHeight: 1.2, marginBottom: 12 }}>{f.title}</h3>
                 <p style={{ fontSize: 15, color: '#4A4438', lineHeight: 1.6 }}>{f.desc}</p>
@@ -181,7 +181,7 @@ export default function Benevolat() {
       </section>
 
       {/* TÉMOIGNAGE */}
-      <section data-nav-theme="dark" style={{ padding: '100px 64px', background: '#1A2BFF' }}>
+      <section data-nav-theme="dark" style={{ padding: '100px 64px', background: 'var(--cobalt)' }}>
         <div className="container">
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 80, alignItems: 'center' }}>
             <div style={{ borderRadius: 32, overflow: 'hidden', aspectRatio: '1/1', boxShadow: '0 32px 64px rgba(0,0,0,0.3)' }}>
@@ -204,13 +204,13 @@ export default function Benevolat() {
       {/* CTA */}
       <section style={{ padding: '100px 64px 120px' }}>
         <div className="container">
-          <div style={{ background: 'linear-gradient(135deg, #1A2BFF 0%, #1A2BFF 50%, #0B17B8 100%)', borderRadius: 36, padding: '72px', textAlign: 'center', position: 'relative', overflow: 'hidden', boxShadow: '0 20px 60px rgba(14,71,171,0.3)' }}>
-            <div style={{ position: 'absolute', top: -60, right: -60, width: 300, height: 300, borderRadius: '50%', background: '#B22842', opacity: 0.2, filter: 'blur(60px)' }} />
-            <div style={{ position: 'absolute', bottom: -40, left: -40, width: 200, height: 200, borderRadius: '50%', background: '#B22842', opacity: 0.15, filter: 'blur(40px)' }} />
+          <div style={{ background: 'linear-gradient(135deg, var(--cobalt) 0%, var(--cobalt) 50%, var(--cobalt-deep) 100%)', borderRadius: 36, padding: '72px', textAlign: 'center', position: 'relative', overflow: 'hidden', boxShadow: '0 20px 60px rgba(26,43,255,0.3)' }}>
+            <div style={{ position: 'absolute', top: -60, right: -60, width: 300, height: 300, borderRadius: '50%', background: 'var(--hibiscus)', opacity: 0.2, filter: 'blur(60px)' }} />
+            <div style={{ position: 'absolute', bottom: -40, left: -40, width: 200, height: 200, borderRadius: '50%', background: 'var(--hibiscus)', opacity: 0.15, filter: 'blur(40px)' }} />
             <span className="eyebrow white" style={{ position: 'relative' }}>Prêt à démarrer ?</span>
             <h2 style={{ fontSize: 64, color: 'white', marginTop: 20, position: 'relative', lineHeight: 0.95 }}>
               Lancez votre programme<br />
-              <span style={{ color: '#1A2BFF' }}>bénévolat aujourd'hui.</span>
+              <span style={{ color: 'var(--cobalt)' }}>bénévolat aujourd'hui.</span>
             </h2>
             <p style={{ fontSize: 18, color: 'rgba(255,255,255,0.7)', marginTop: 24, maxWidth: 520, margin: '24px auto 0', lineHeight: 1.6, position: 'relative' }}>
               Gratuit jusqu'à 30 bénévoles. Aucune carte demandée. Vos premières missions en ligne en 10 minutes.
@@ -218,7 +218,7 @@ export default function Benevolat() {
             <div style={{ display: 'flex', gap: 14, justifyContent: 'center', marginTop: 44, flexWrap: 'wrap', position: 'relative' }}>
               <NavLink to="/inscription" className="btn btn-primary btn-xl">
                 Créer mon espace gratuitement
-                <Icon name="arrow" size={16} color="#14110D" />
+                <Icon name="arrow" size={16} color='var(--encre)' />
               </NavLink>
               <NavLink to="/centre-aide" className="btn btn-outline-white btn-xl">En savoir plus</NavLink>
             </div>

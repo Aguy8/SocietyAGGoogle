@@ -7,7 +7,7 @@ import Reveal from '../components/Reveal.jsx'
 import { SEGMENT_BY_SLUG, SEGMENTS } from '../data/segments.js'
 
 const HOW_STEPS = [
-  { num: '01', title: 'Créez votre espace', desc: '5 min, sans carte bancaire', icon: 'activity' },
+  { num: '01', title: 'Pré-réservez votre espace', desc: '5 min, sans carte bancaire', icon: 'activity' },
   { num: '02', title: 'Choisissez vos modules', desc: 'Adapté à vos besoins réels', icon: 'grid' },
   { num: '03', title: 'Invitez vos membres', desc: 'Lien, QR code, email — ils arrivent', icon: 'users' },
   { num: '04', title: 'Animez et grandissez', desc: 'Dashboard, analytics, votre communauté vit', icon: 'chart' },
@@ -31,9 +31,9 @@ export default function Segment() {
   const prev = SEGMENTS[idx - 1]
   const next = SEGMENTS[idx + 1]
 
-  const accentColor = '#1A2BFF'
+  const accentColor = 'var(--cobalt)'
   const textOnAccent = 'white'
-  const ctaColor = '#1A2BFF'
+  const ctaColor = 'var(--cobalt)'
 
   /* ── Carousel state ── */
   const carouselImages = s.carousel && s.carousel.length > 0
@@ -223,7 +223,7 @@ export default function Segment() {
               <span className="eyebrow" style={{ color: accentColor }}>Ce que vous faites avec Society</span>
               <h2 style={{
                 fontSize: 'clamp(28px, 3.4vw, 44px)',
-                marginTop: 18, color: '#14110D', lineHeight: 1.08, maxWidth: 640, letterSpacing: '-0.03em',
+                marginTop: 18, color: 'var(--encre)', lineHeight: 1.08, maxWidth: 640, letterSpacing: '-0.03em',
               }}>
                 Des outils. Des actions. <span style={{ color: accentColor }}>Des résultats.</span>
               </h2>
@@ -264,7 +264,7 @@ export default function Segment() {
                   <div style={{ marginBottom: 14 }}>
                     <Icon name={uc.icon} size={24} color={accentColor} />
                   </div>
-                  <h3 style={{ fontSize: 18, fontWeight: 700, color: '#14110D', lineHeight: 1.25, marginBottom: 12 }}>
+                  <h3 style={{ fontSize: 18, fontWeight: 700, color: 'var(--encre)', lineHeight: 1.25, marginBottom: 12 }}>
                     {uc.title}
                   </h3>
                   <p style={{ fontSize: 14, color: '#6B6B6B', lineHeight: 1.6, margin: 0 }}>
@@ -288,7 +288,7 @@ export default function Segment() {
             {/* LEFT — ce que Society change (s.sol) */}
             <Reveal direction="left">
               <span className="eyebrow" style={{ color: accentColor }}>Ce que Society change</span>
-              <h2 style={{ fontSize: 'clamp(28px, 3vw, 44px)', marginTop: 20, color: '#14110D', lineHeight: 1.1, marginBottom: 36 }}>
+              <h2 style={{ fontSize: 'clamp(28px, 3vw, 44px)', marginTop: 20, color: 'var(--encre)', lineHeight: 1.1, marginBottom: 36 }}>
                 Tout ce dont vous avez besoin,<br />
                 <span style={{ color: accentColor }}>intégré.</span>
               </h2>
@@ -318,7 +318,7 @@ export default function Segment() {
             {/* RIGHT — modules */}
             <Reveal direction="right" delay={80}>
               <span className="eyebrow" style={{ color: accentColor }}>Modules clés</span>
-              <h2 style={{ fontSize: 'clamp(28px, 3vw, 44px)', marginTop: 20, color: '#14110D', lineHeight: 1.1, marginBottom: 36 }}>
+              <h2 style={{ fontSize: 'clamp(28px, 3vw, 44px)', marginTop: 20, color: 'var(--encre)', lineHeight: 1.1, marginBottom: 36 }}>
                 Les outils taillés pour<br />
                 <span style={{ color: accentColor }}>{s.nom}</span>.
               </h2>
@@ -351,7 +351,7 @@ export default function Segment() {
                       <Icon name={MODULE_ICONS[mod] ?? 'grid'} size={20} color={accentColor} />
                     </div>
                     <div>
-                      <div style={{ fontSize: 15, fontWeight: 700, color: '#14110D' }}>{mod}</div>
+                      <div style={{ fontSize: 15, fontWeight: 700, color: 'var(--encre)' }}>{mod}</div>
                       <NavLink to="/fonctionnalites" style={{ fontSize: 12, color: accentColor, fontWeight: 600, textDecoration: 'none' }}>
                         Découvrir →
                       </NavLink>
@@ -365,7 +365,7 @@ export default function Segment() {
       </section>
 
       {/* ── GALERIE PLEINE LARGEUR — deux piles d'images ── */}
-      <section style={{ background: '#14110D', overflow: 'hidden' }}>
+      <section style={{ background: 'var(--encre)', overflow: 'hidden' }}>
         <div className="seg-piles-grid" style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', height: '70vh', gap: 3 }}>
 
           {/* Pile gauche */}
@@ -460,7 +460,7 @@ export default function Segment() {
               </h3>
               <NavLink to="/inscription" style={{
                 display: 'inline-flex', alignItems: 'center', gap: 8, marginTop: 22,
-                padding: '13px 22px', background: '#1A2BFF', borderRadius: 12,
+                padding: '13px 22px', background: 'var(--cobalt)', borderRadius: 12,
                 fontSize: 13, fontWeight: 700, color: 'white', textDecoration: 'none',
               }}>
                 Demarrer gratuitement
@@ -476,7 +476,7 @@ export default function Segment() {
           <Reveal>
             <div style={{ marginBottom: 64 }}>
               <span className="eyebrow" style={{ color: accentColor }}>Simple par design</span>
-              <h2 style={{ fontSize: 'clamp(32px, 4vw, 56px)', marginTop: 20, color: '#14110D', lineHeight: 1.0 }}>
+              <h2 style={{ fontSize: 'clamp(32px, 4vw, 56px)', marginTop: 20, color: 'var(--encre)', lineHeight: 1.0 }}>
                 De l'idée à la communauté<br />
                 <span style={{ color: accentColor }}>en 4 étapes.</span>
               </h2>
@@ -509,7 +509,7 @@ export default function Segment() {
                   }}>
                     <Icon name={step.icon} size={20} color={accentColor} />
                   </div>
-                  <h3 style={{ fontSize: 17, fontWeight: 700, color: '#14110D', lineHeight: 1.25, marginBottom: 10 }}>
+                  <h3 style={{ fontSize: 17, fontWeight: 700, color: 'var(--encre)', lineHeight: 1.25, marginBottom: 10 }}>
                     {step.title}
                   </h3>
                   <p style={{ fontSize: 13, color: '#6B6B6B', lineHeight: 1.5, margin: 0 }}>
@@ -557,14 +557,14 @@ export default function Segment() {
                 <blockquote style={{
                   margin: 0, fontSize: 'clamp(18px, 2vw, 26px)',
                   fontWeight: 600, lineHeight: 1.4,
-                  color: textOnAccent === 'white' ? 'white' : '#14110D',
+                  color: textOnAccent === 'white' ? 'white' : 'var(--encre)',
                 }}>{s.temoignage.texte}</blockquote>
                 <div style={{
                   marginTop: 36, paddingTop: 28,
                   borderTop: `1px solid ${textOnAccent === 'white' ? 'rgba(255,255,255,0.22)' : 'rgba(0,0,0,0.12)'}`,
                 }}>
                   <div style={{ fontWeight: 800, fontSize: 17,
-                    color: textOnAccent === 'white' ? 'white' : '#14110D' }}>{s.temoignage.auteur}</div>
+                    color: textOnAccent === 'white' ? 'white' : 'var(--encre)' }}>{s.temoignage.auteur}</div>
                   <div style={{ fontSize: 14, marginTop: 4,
                     color: textOnAccent === 'white' ? 'rgba(255,255,255,0.62)' : 'rgba(0,0,0,0.52)' }}>
                     {s.temoignage.role}
@@ -640,7 +640,7 @@ export default function Segment() {
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 64, alignItems: 'center' }}>
             <Reveal direction="left">
               <span className="eyebrow" style={{ color: accentColor }}>Formulaire de diagnostic</span>
-              <h2 style={{ fontSize: 'clamp(28px, 3vw, 44px)', marginTop: 20, color: '#14110D', lineHeight: 1.1 }}>
+              <h2 style={{ fontSize: 'clamp(28px, 3vw, 44px)', marginTop: 20, color: 'var(--encre)', lineHeight: 1.1 }}>
                 Vos besoins.<br />Vos <span style={{ color: accentColor }}>limites</span>.<br />Vos ambitions.
               </h2>
               <p style={{ fontSize: 16, marginTop: 24, color: '#4A4438', lineHeight: 1.65, maxWidth: 440 }}>
@@ -674,7 +674,7 @@ export default function Segment() {
               }}>
                 <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: 28 }}>
                   <div>
-                    <div style={{ fontWeight: 800, fontSize: 20, letterSpacing: '-0.03em', color: '#14110D' }}>Diagnostic Society</div>
+                    <div style={{ fontWeight: 800, fontSize: 20, letterSpacing: '-0.03em', color: 'var(--encre)' }}>Diagnostic Society</div>
                     <div style={{ fontSize: 13, color: '#6B6B6B', marginTop: 4 }}>{s.nom} · Formulaire PDF</div>
                   </div>
                   <div style={{
@@ -730,7 +730,7 @@ export default function Segment() {
               <NavLink to={`/pour-qui/${prev.slug}`} style={{
                 display: 'flex', alignItems: 'center', gap: 12,
                 padding: '16px 24px', background: '#F8F8F8',
-                borderRadius: 16, textDecoration: 'none', color: '#14110D',
+                borderRadius: 16, textDecoration: 'none', color: 'var(--encre)',
               }}>
                 <span>←</span>
                 <div>
@@ -746,7 +746,7 @@ export default function Segment() {
               <NavLink to={`/pour-qui/${next.slug}`} style={{
                 display: 'flex', alignItems: 'center', gap: 12,
                 padding: '16px 24px', background: '#F8F8F8',
-                borderRadius: 16, textDecoration: 'none', color: '#14110D',
+                borderRadius: 16, textDecoration: 'none', color: 'var(--encre)',
               }}>
                 <div style={{ textAlign: 'right' }}>
                   <div style={{ fontSize: 11, color: '#6B6B6B', fontWeight: 600 }}>Suivant</div>

@@ -5,7 +5,7 @@ import Footer from '../components/Footer.jsx'
 
 const Section = ({ title, children }) => (
   <div style={{ marginBottom: 48 }}>
-    <h2 style={{ fontSize: 22, fontWeight: 800, color: '#14110D', marginBottom: 16, paddingBottom: 12, borderBottom: '2px solid #F0F0F0' }}>{title}</h2>
+    <h2 style={{ fontSize: 22, fontWeight: 800, color: 'var(--encre)', marginBottom: 16, paddingBottom: 12, borderBottom: '2px solid #F0F0F0' }}>{title}</h2>
     <div style={{ fontSize: 15, color: '#4A4438', lineHeight: 1.8 }}>{children}</div>
   </div>
 )
@@ -17,16 +17,16 @@ export default function MentionsLegales() {
     <div className="page">
       <Nav />
 
-      <section data-nav-theme="dark" style={{ padding: '120px 64px', minHeight: '70vh', display: 'flex', alignItems: 'center', background: '#14110D', position: 'relative', overflow: 'hidden' }}>
-        <div style={{ position: 'absolute', top: -100, right: -100, width: 500, height: 500, borderRadius: '50%', background: '#1A2BFF', opacity: 0.12, filter: 'blur(80px)' }} />
+      <section data-nav-theme="dark" style={{ padding: '120px 64px', minHeight: '70vh', display: 'flex', alignItems: 'center', background: 'var(--encre)', position: 'relative', overflow: 'hidden' }}>
+        <div style={{ position: 'absolute', top: -100, right: -100, width: 500, height: 500, borderRadius: '50%', background: 'var(--cobalt)', opacity: 0.12, filter: 'blur(80px)' }} />
         <div className="container" style={{ position: 'relative', zIndex: 2 }}>
           <div style={{ display: 'inline-flex', alignItems: 'center', gap: 10, padding: '8px 20px', background: 'rgba(212,167,91,0.12)', border: '1px solid rgba(212,167,91,0.3)', borderRadius: 999, marginBottom: 32 }}>
-            <div style={{ width: 8, height: 8, borderRadius: '50%', background: '#1A2BFF' }} />
-            <span style={{ fontSize: 13, fontWeight: 700, color: '#1A2BFF', letterSpacing: '0.06em', textTransform: 'uppercase' }}>Bientôt disponible</span>
+            <div style={{ width: 8, height: 8, borderRadius: '50%', background: 'var(--cobalt)' }} />
+            <span style={{ fontSize: 13, fontWeight: 700, color: 'var(--cobalt)', letterSpacing: '0.06em', textTransform: 'uppercase' }}>Bientôt disponible</span>
           </div>
           <h1 style={{ fontSize: 'clamp(48px, 8vw, 80px)', lineHeight: 0.92, color: 'white', maxWidth: 800 }}>
             Mentions légales<br />
-            <span style={{ color: '#1A2BFF' }}>en cours de finalisation.</span>
+            <span style={{ color: 'var(--cobalt)' }}>en cours de finalisation.</span>
           </h1>
           <p style={{ fontSize: 18, color: 'rgba(255,255,255,0.65)', marginTop: 28, maxWidth: 520, lineHeight: 1.65 }}>
             Nos mentions légales sont en cours de rédaction. Pour toute question, contactez directement notre équipe.
@@ -40,12 +40,12 @@ export default function MentionsLegales() {
       </section>
 
       <div style={{ display: 'none' }}>
-      <section data-nav-theme="dark" style={{ padding: '120px 64px 64px', background: '#14110D' }}>
+      <section data-nav-theme="dark" style={{ padding: '120px 64px 64px', background: 'var(--encre)' }}>
         <div className="container">
-          <span style={{ fontSize: 13, fontWeight: 700, letterSpacing: '0.06em', color: '#1A2BFF', display: 'block', marginBottom: 20 }}>MENTIONS LEGALES</span>
+          <span style={{ fontSize: 13, fontWeight: 700, letterSpacing: '0.06em', color: 'var(--cobalt)', display: 'block', marginBottom: 20 }}>MENTIONS LEGALES</span>
           <h1 style={{ fontSize: 72, lineHeight: 0.92, color: 'white', fontWeight: 900, maxWidth: 800 }}>
             Mentions legales<br />
-            <span style={{ color: '#1A2BFF' }}>et informations</span><br />
+            <span style={{ color: 'var(--cobalt)' }}>et informations</span><br />
             reglementaires.
           </h1>
           <p style={{ fontSize: 16, marginTop: 28, color: 'rgba(255,255,255,0.6)', maxWidth: 600, lineHeight: 1.6 }}>
@@ -79,7 +79,7 @@ export default function MentionsLegales() {
                   ].map(([k, v]) => (
                     <Fragment key={k}>
                       <div style={{ fontSize: 13, fontWeight: 700, color: '#6B6B6B' }}>{k}</div>
-                      <div style={{ fontSize: 14, color: '#14110D' }}>{v}</div>
+                      <div style={{ fontSize: 14, color: 'var(--encre)' }}>{v}</div>
                     </Fragment>
                   ))}
                 </div>
@@ -98,7 +98,7 @@ export default function MentionsLegales() {
                   ].map(([k, v]) => (
                     <Fragment key={k}>
                       <div style={{ fontSize: 13, fontWeight: 700, color: '#6B6B6B' }}>{k}</div>
-                      <div style={{ fontSize: 14, color: '#14110D' }}>{v}</div>
+                      <div style={{ fontSize: 14, color: 'var(--encre)' }}>{v}</div>
                     </Fragment>
                   ))}
                 </div>
@@ -140,7 +140,7 @@ export default function MentionsLegales() {
 
             <Section title="8. Contact">
               <P>Pour toute question relative aux presentes mentions legales, vous pouvez nous contacter :</P>
-              <div style={{ padding: '20px 24px', background: '#1A2BFF', borderRadius: 16, color: 'white', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12 }}>
+              <div style={{ padding: '20px 24px', background: 'var(--cobalt)', borderRadius: 16, color: 'white', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12 }}>
                 <div><div style={{ fontSize: 12, opacity: 0.7 }}>E-mail legal</div><div style={{ fontWeight: 700 }}>legal@society.ci</div></div>
                 <div><div style={{ fontSize: 12, opacity: 0.7 }}>Courrier</div><div style={{ fontWeight: 700 }}>Difero Fundry SARL, Plateau, Abidjan</div></div>
               </div>

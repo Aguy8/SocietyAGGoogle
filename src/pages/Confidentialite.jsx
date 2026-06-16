@@ -5,10 +5,10 @@ import Footer from '../components/Footer.jsx'
 const Section = ({ num, title, children }) => (
   <div style={{ marginBottom: 56 }}>
     <div style={{ display: 'flex', alignItems: 'flex-start', gap: 20, marginBottom: 20 }}>
-      <div style={{ width: 40, height: 40, borderRadius: 10, background: '#E8F0FD', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0, fontWeight: 900, fontSize: 14, color: '#1A2BFF' }}>
+      <div style={{ width: 40, height: 40, borderRadius: 10, background: '#E8F0FD', display: 'flex', alignItems: 'center', justifyContent: 'center', flexShrink: 0, fontWeight: 900, fontSize: 14, color: 'var(--cobalt)' }}>
         {num}
       </div>
-      <h2 style={{ fontSize: 24, fontWeight: 800, color: '#14110D', lineHeight: 1.2, paddingTop: 8 }}>{title}</h2>
+      <h2 style={{ fontSize: 24, fontWeight: 800, color: 'var(--encre)', lineHeight: 1.2, paddingTop: 8 }}>{title}</h2>
     </div>
     <div style={{ fontSize: 15, color: '#4A4438', lineHeight: 1.85, paddingLeft: 60 }}>{children}</div>
   </div>
@@ -26,16 +26,16 @@ export default function Confidentialite() {
     <div className="page">
       <Nav />
 
-      <section data-nav-theme="dark" style={{ padding: '120px 64px', minHeight: '70vh', display: 'flex', alignItems: 'center', background: '#14110D', position: 'relative', overflow: 'hidden' }}>
-        <div style={{ position: 'absolute', top: -100, right: -100, width: 500, height: 500, borderRadius: '50%', background: '#1A2BFF', opacity: 0.12, filter: 'blur(80px)' }} />
+      <section data-nav-theme="dark" style={{ padding: '120px 64px', minHeight: '70vh', display: 'flex', alignItems: 'center', background: 'var(--encre)', position: 'relative', overflow: 'hidden' }}>
+        <div style={{ position: 'absolute', top: -100, right: -100, width: 500, height: 500, borderRadius: '50%', background: 'var(--cobalt)', opacity: 0.12, filter: 'blur(80px)' }} />
         <div className="container" style={{ position: 'relative', zIndex: 2 }}>
           <div style={{ display: 'inline-flex', alignItems: 'center', gap: 10, padding: '8px 20px', background: 'rgba(212,167,91,0.12)', border: '1px solid rgba(212,167,91,0.3)', borderRadius: 999, marginBottom: 32 }}>
-            <div style={{ width: 8, height: 8, borderRadius: '50%', background: '#1A2BFF' }} />
-            <span style={{ fontSize: 13, fontWeight: 700, color: '#1A2BFF', letterSpacing: '0.06em', textTransform: 'uppercase' }}>Bientôt disponible</span>
+            <div style={{ width: 8, height: 8, borderRadius: '50%', background: 'var(--cobalt)' }} />
+            <span style={{ fontSize: 13, fontWeight: 700, color: 'var(--cobalt)', letterSpacing: '0.06em', textTransform: 'uppercase' }}>Bientôt disponible</span>
           </div>
           <h1 style={{ fontSize: 'clamp(48px, 8vw, 80px)', lineHeight: 0.92, color: 'white', maxWidth: 800 }}>
             Politique de confidentialité<br />
-            <span style={{ color: '#1A2BFF' }}>en cours de finalisation.</span>
+            <span style={{ color: 'var(--cobalt)' }}>en cours de finalisation.</span>
           </h1>
           <p style={{ fontSize: 18, color: 'rgba(255,255,255,0.65)', marginTop: 28, maxWidth: 520, lineHeight: 1.65 }}>
             Notre politique de confidentialité est en cours de validation. Pour toute question sur vos données, contactez-nous directement.
@@ -49,12 +49,12 @@ export default function Confidentialite() {
       </section>
 
       <div style={{ display: 'none' }}>
-      <section data-nav-theme="dark" style={{ padding: '120px 64px 64px', background: '#14110D' }}>
+      <section data-nav-theme="dark" style={{ padding: '120px 64px 64px', background: 'var(--encre)' }}>
         <div className="container">
-          <span style={{ fontSize: 13, fontWeight: 700, letterSpacing: '0.06em', color: '#1A2BFF', display: 'block', marginBottom: 20 }}>POLITIQUE DE CONFIDENTIALITE</span>
+          <span style={{ fontSize: 13, fontWeight: 700, letterSpacing: '0.06em', color: 'var(--cobalt)', display: 'block', marginBottom: 20 }}>POLITIQUE DE CONFIDENTIALITE</span>
           <h1 style={{ fontSize: 72, lineHeight: 0.92, color: 'white', fontWeight: 900, maxWidth: 800 }}>
             Vos donnees vous<br />
-            <span style={{ color: '#1A2BFF' }}>appartiennent.</span>
+            <span style={{ color: 'var(--cobalt)' }}>appartiennent.</span>
           </h1>
           <p style={{ fontSize: 17, marginTop: 28, color: 'rgba(255,255,255,0.7)', maxWidth: 620, lineHeight: 1.65 }}>
             Chez Society, la protection de vos donnees personnelles n'est pas une obligation reglementaire — c'est une valeur fondamentale. Cette politique explique clairement quelles donnees nous collectons, pourquoi, comment nous les utilisons et comment vous les controlez.
@@ -69,7 +69,7 @@ export default function Confidentialite() {
               <span style={{ fontSize: 12, color: 'white', fontWeight: 600 }}>2.1.0</span>
             </div>
             <div style={{ padding: '12px 20px', background: 'rgba(212,167,91,0.15)', border: '1px solid rgba(212,167,91,0.2)', borderRadius: 10 }}>
-              <span style={{ fontSize: 12, color: '#1A2BFF', fontWeight: 600 }}>Conforme RGPD · Loi CI n° 2013-450</span>
+              <span style={{ fontSize: 12, color: 'var(--cobalt)', fontWeight: 600 }}>Conforme RGPD · Loi CI n° 2013-450</span>
             </div>
           </div>
         </div>
@@ -127,7 +127,7 @@ export default function Confidentialite() {
                     { cat: 'Donnees de communication', exemples: 'Messages envoyes dans les canaux de votre communaute, fichiers partages' },
                   ].map((d, i) => (
                     <div key={i} style={{ padding: '16px 20px', background: '#F8F8F8', borderRadius: 12, display: 'grid', gridTemplateColumns: '200px 1fr', gap: 16 }}>
-                      <div style={{ fontSize: 13, fontWeight: 700, color: '#14110D' }}>{d.cat}</div>
+                      <div style={{ fontSize: 13, fontWeight: 700, color: 'var(--encre)' }}>{d.cat}</div>
                       <div style={{ fontSize: 13, color: '#6B6B6B' }}>{d.exemples}</div>
                     </div>
                   ))}
@@ -159,7 +159,7 @@ export default function Confidentialite() {
                     { base: 'Consentement', desc: 'Communications marketing, cookies analytiques, partage avec partenaires tiers' },
                   ].map((b, i) => (
                     <div key={i} style={{ padding: '16px 20px', border: '1px solid #EBEBEB', borderRadius: 12, display: 'grid', gridTemplateColumns: '180px 1fr', gap: 16 }}>
-                      <div style={{ fontSize: 13, fontWeight: 700, color: '#1A2BFF' }}>{b.base}</div>
+                      <div style={{ fontSize: 13, fontWeight: 700, color: 'var(--cobalt)' }}>{b.base}</div>
                       <div style={{ fontSize: 13, color: '#4A4438' }}>{b.desc}</div>
                     </div>
                   ))}
@@ -206,7 +206,7 @@ export default function Confidentialite() {
                     ['Droit de retrait', 'Retirer votre consentement a tout moment'],
                   ].map(([r, d], i) => (
                     <div key={i} style={{ padding: '16px', background: '#F8F8F8', borderRadius: 12 }}>
-                      <div style={{ fontSize: 13, fontWeight: 700, color: '#1A2BFF', marginBottom: 6 }}>{r}</div>
+                      <div style={{ fontSize: 13, fontWeight: 700, color: 'var(--cobalt)', marginBottom: 6 }}>{r}</div>
                       <div style={{ fontSize: 13, color: '#6B6B6B' }}>{d}</div>
                     </div>
                   ))}
@@ -226,7 +226,7 @@ export default function Confidentialite() {
 
               <Section num="10" title="Contact — Delegue a la Protection des Donnees">
                 <P>Pour toute question, reclamation ou exercice de vos droits, contactez notre DPD :</P>
-                <div style={{ padding: '28px', background: '#1A2BFF', borderRadius: 20, color: 'white', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 20 }}>
+                <div style={{ padding: '28px', background: 'var(--cobalt)', borderRadius: 20, color: 'white', display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 20 }}>
                   <div>
                     <div style={{ fontSize: 12, color: 'rgba(255,255,255,0.6)', marginBottom: 6 }}>E-mail</div>
                     <div style={{ fontSize: 16, fontWeight: 700 }}>dpo@society.ci</div>

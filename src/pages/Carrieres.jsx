@@ -9,21 +9,21 @@ const valeurs = [
     title: 'Impact avant tout',
     description: 'Chaque ligne de code, chaque décision produit touche des milliers de communautés africaines. Ici, on ne s\'ennuie pas.',
     color: '#E8F0FD',
-    iconColor: '#1A2BFF',
+    iconColor: 'var(--cobalt)',
   },
   {
     icon: 'users',
     title: 'Grandir ensemble',
     description: 'Mentoring interne, 300 000 FCFA de formation par an, conférences tech africaines prises en charge.',
     color: '#F8F8F8',
-    iconColor: '#14110D',
+    iconColor: 'var(--encre)',
   },
   {
     icon: 'globe',
     title: 'Ancrés ici',
     description: 'Pas de copier-coller de la Silicon Valley. Nos outils naissent de nos réalités — Mobile Money, langues locales, culture de la solidarité.',
     color: '#E8EFFC',
-    iconColor: '#1A2BFF',
+    iconColor: 'var(--cobalt)',
   },
 ]
 
@@ -90,10 +90,10 @@ const avantages = [
 ]
 
 const deptColors = {
-  Engineering: { bg: '#E8F0FD', text: '#1A2BFF' },
-  Produit: { bg: '#F8F8F8', text: '#14110D' },
-  Community: { bg: '#F8F8F8', text: '#1A2BFF' },
-  'Business Development': { bg: '#E8EFFC', text: '#1A2BFF' },
+  Engineering: { bg: '#E8F0FD', text: 'var(--cobalt)' },
+  Produit: { bg: '#F8F8F8', text: 'var(--encre)' },
+  Community: { bg: '#F8F8F8', text: 'var(--cobalt)' },
+  'Business Development': { bg: '#E8EFFC', text: 'var(--cobalt)' },
 }
 
 export default function Carrieres() {
@@ -101,14 +101,14 @@ export default function Carrieres() {
     <div className="page">
       <Nav />
 
-      <section data-nav-theme="dark" style={{ padding: '120px 64px 80px', background: 'linear-gradient(135deg, #1A2BFF 0%, #0B17B8 100%)', position: 'relative', overflow: 'hidden' }}>
+      <section data-nav-theme="dark" style={{ padding: '120px 64px 80px', background: 'linear-gradient(135deg, var(--cobalt) 0%, var(--cobalt-deep) 100%)', position: 'relative', overflow: 'hidden' }}>
         <div style={{ position: 'absolute', top: -60, right: 200, width: 400, height: 400, borderRadius: 999, background: 'rgba(255,255,255,0.06)', opacity: 0.5 }} />
         <div style={{ position: 'absolute', bottom: -80, left: -40, width: 300, height: 300, borderRadius: 999, background: 'rgba(255,255,255,0.05)' }} />
         <div className="container" style={{ position: 'relative', zIndex: 2 }}>
           <span className="eyebrow white">Carrières</span>
           <h1 style={{ fontSize: 90, marginTop: 24, lineHeight: 0.9, color: 'white', maxWidth: 900 }}>
             Construisez l'avenir<br />
-            <span style={{ color: '#1A2BFF' }}>de l'Afrique communautaire.</span>
+            <span style={{ color: 'var(--cobalt)' }}>de l'Afrique communautaire.</span>
           </h1>
           <p style={{ fontSize: 20, marginTop: 32, maxWidth: 620, lineHeight: 1.55, color: 'rgba(255,255,255,0.8)' }}>
             Petite équipe, grosse ambition. On cherche des bâtisseurs qui veulent laisser une trace sur la tech africaine.
@@ -116,7 +116,7 @@ export default function Carrieres() {
           <div style={{ display: 'flex', gap: 16, marginTop: 48, flexWrap: 'wrap' }}>
             <a href="#postes" className="btn btn-primary btn-xl">
               Voir les postes ouverts
-              <Icon name="arrow" size={16} color="#14110D" />
+              <Icon name="arrow" size={16} color='var(--encre)' />
             </a>
             <button style={{ padding: '16px 28px', background: 'rgba(255,255,255,0.1)', color: 'white', border: '1px solid rgba(255,255,255,0.2)', borderRadius: 12, fontSize: 16, fontWeight: 600, cursor: 'pointer' }}>
               Notre culture en vidéo
@@ -160,7 +160,7 @@ export default function Carrieres() {
             </div>
             <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap' }}>
               {['Tous', 'Engineering', 'Produit', 'Community', 'Business'].map(f => (
-                <button key={f} style={{ padding: '8px 16px', border: f === 'Tous' ? '2px solid #1A2BFF' : '1px solid #E5E5E5', background: f === 'Tous' ? '#1A2BFF' : 'white', color: f === 'Tous' ? 'white' : '#4A4438', borderRadius: 999, fontSize: 12, fontWeight: 600, cursor: 'pointer' }}>
+                <button key={f} style={{ padding: '8px 16px', border: f === 'Tous' ? '2px solid var(--cobalt)' : '1px solid #E5E5E5', background: f === 'Tous' ? 'var(--cobalt)' : 'white', color: f === 'Tous' ? 'white' : '#4A4438', borderRadius: 999, fontSize: 12, fontWeight: 600, cursor: 'pointer' }}>
                   {f}
                 </button>
               ))}
@@ -176,7 +176,7 @@ export default function Carrieres() {
                       {p.dept}
                     </span>
                     {p.isNew && (
-                      <span style={{ padding: '5px 14px', background: '#1A2BFF', color: 'white', borderRadius: 999, fontSize: 11, fontWeight: 800, letterSpacing: '0.04em' }}>
+                      <span style={{ padding: '5px 14px', background: 'var(--cobalt)', color: 'white', borderRadius: 999, fontSize: 11, fontWeight: 800, letterSpacing: '0.04em' }}>
                         NOUVEAU
                       </span>
                     )}
@@ -187,7 +187,7 @@ export default function Carrieres() {
                       <Icon name="globe" size={13} color="#6B6B6B" /> {p.lieu}
                     </span>
                     <span style={{ fontSize: 13, color: '#6B6B6B' }}>· {p.type}</span>
-                    <span style={{ fontSize: 13, color: '#1A2BFF', fontWeight: 600 }}>· {p.remote}</span>
+                    <span style={{ fontSize: 13, color: 'var(--cobalt)', fontWeight: 600 }}>· {p.remote}</span>
                   </div>
                   <p style={{ fontSize: 14, color: '#4A4438', marginTop: 14, lineHeight: 1.6, maxWidth: 700 }}>{p.description}</p>
                   <div style={{ display: 'flex', gap: 8, marginTop: 16, flexWrap: 'wrap' }}>
@@ -206,7 +206,7 @@ export default function Carrieres() {
         </div>
       </section>
 
-      <section data-nav-theme="dark" style={{ padding: '64px 64px', background: 'linear-gradient(135deg, #1A2BFF 0%, #1A2BFF 50%, #0B17B8 100%)' }}>
+      <section data-nav-theme="dark" style={{ padding: '64px 64px', background: 'linear-gradient(135deg, var(--cobalt) 0%, var(--cobalt) 50%, var(--cobalt-deep) 100%)' }}>
         <div className="container">
           <span className="eyebrow white">Avantages</span>
           <h2 style={{ fontSize: 48, color: 'white', marginTop: 20, fontWeight: 800 }}>Prendre soin de notre équipe.</h2>
@@ -214,7 +214,7 @@ export default function Carrieres() {
             {avantages.map((a, i) => (
               <div key={i} style={{ padding: '32px 28px', background: 'rgba(255,255,255,0.05)', borderRadius: 20, border: '1px solid rgba(255,255,255,0.08)' }}>
                 <div style={{ width: 44, height: 44, borderRadius: 12, background: 'rgba(212,167,91,0.15)', display: 'flex', alignItems: 'center', justifyContent: 'center', marginBottom: 20 }}>
-                  <Icon name={a.icon} size={20} color="#1A2BFF" />
+                  <Icon name={a.icon} size={20} color='var(--cobalt)' />
                 </div>
                 <h3 style={{ fontSize: 17, fontWeight: 800, color: 'white' }}>{a.title}</h3>
                 <p style={{ fontSize: 14, color: 'rgba(255,255,255,0.65)', marginTop: 10, lineHeight: 1.6 }}>{a.desc}</p>

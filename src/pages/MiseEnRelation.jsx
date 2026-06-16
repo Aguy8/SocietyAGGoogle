@@ -8,7 +8,7 @@ const MATCH_TYPES = [
     icon: 'link',
     title: 'Partenariats stratégiques',
     desc: 'Deux organisations complémentaires s\'associent pour un projet commun : une ONG de santé + une mutuelle locale pour une campagne de sensibilisation.',
-    color: '#1A2BFF',
+    color: 'var(--cobalt)',
     bg: '#E8F0FD',
     example: 'ONG + Mutuelle → Campagne santé',
   },
@@ -16,7 +16,7 @@ const MATCH_TYPES = [
     icon: 'users',
     title: 'Mutualisation de ressources',
     desc: 'Partagez des espaces, du matériel ou des compétences bénévoles entre organisations du même territoire.',
-    color: '#1A2BFF',
+    color: 'var(--cobalt)',
     bg: '#E8EFFC',
     example: 'Alumni + Association → Salle partagée',
   },
@@ -24,7 +24,7 @@ const MATCH_TYPES = [
     icon: 'award',
     title: 'Co-financement de projets',
     desc: 'Plusieurs communautés s\'associent pour financer un projet à plus grand impact : récolte groupée, subvention partagée.',
-    color: '#14110D',
+    color: 'var(--encre)',
     bg: '#F8F8F8',
     example: '3 ONG → Puits d\'eau Bouaké',
   },
@@ -32,7 +32,7 @@ const MATCH_TYPES = [
     icon: 'users',
     title: 'Référencement de bénéficiaires',
     desc: 'Orientez des personnes vers des organisations mieux placées pour les aider. Le réseau Society devient un filet de sécurité social.',
-    color: '#1A2BFF',
+    color: 'var(--cobalt)',
     bg: '#E8EFFC',
     example: 'Fondation → Oriente vers AFJCI',
   },
@@ -40,7 +40,7 @@ const MATCH_TYPES = [
     icon: 'globe',
     title: 'Événements co-organisés',
     desc: 'Unissez vos réseaux pour organiser des événements plus grands, mieux financés et plus impactants.',
-    color: '#1A2BFF',
+    color: 'var(--cobalt)',
     bg: '#E8EFFC',
     example: 'Leaders + Alumni → Forum Impact 2026',
   },
@@ -48,7 +48,7 @@ const MATCH_TYPES = [
     icon: 'activity',
     title: 'Transfert de savoir-faire',
     desc: 'Une organisation plus mature accompagne et forme une plus jeune. Mentorat institutionnel intégré dans la plateforme.',
-    color: '#1A2BFF',
+    color: 'var(--cobalt)',
     bg: '#E8EFFC',
     example: 'ONG senior → Accompagne 5 startups sociales',
   },
@@ -59,37 +59,37 @@ const HOW_STEPS = [
     n: '01',
     title: 'Complétez votre profil',
     desc: "Renseignez votre domaine d'action, vos ressources disponibles, vos besoins et vos zones géographiques d'intervention.",
-    color: '#1A2BFF',
+    color: 'var(--cobalt)',
   },
   {
     n: '02',
     title: 'Society vous suggère',
     desc: 'Society analyse les profils et vous propose les 5 organisations les plus complémentaires. Proximité, mission commune, taille compatible.',
-    color: '#1A2BFF',
+    color: 'var(--cobalt)',
   },
   {
     n: '03',
     title: 'Vous prenez contact',
     desc: "Envoyez une proposition de collaboration structurée. L'autre organisation reçoit une notification et peut accepter, décliner ou proposer une rencontre.",
-    color: '#1A2BFF',
+    color: 'var(--cobalt)',
   },
   {
     n: '04',
     title: 'Vous collaborez',
     desc: 'Espace de travail partagé, messagerie, suivi de projet et bilan d\'impact commun — tout reste dans Society.',
-    color: '#1A2BFF',
+    color: 'var(--cobalt)',
   },
 ]
 
 const SECTORS = [
-  { label: 'Santé & Bien-être', orgs: 247, color: '#1A2BFF' },
-  { label: 'Éducation', orgs: 312, color: '#1A2BFF' },
-  { label: 'Agriculture & Environnement', orgs: 189, color: '#1A2BFF' },
-  { label: 'Entrepreneuriat social', orgs: 428, color: '#1A2BFF' },
-  { label: 'Culture & Arts', orgs: 156, color: '#1A2BFF' },
-  { label: 'Genre & Inclusion', orgs: 203, color: '#14110D' },
-  { label: 'Jeunesse & Sport', orgs: 341, color: '#1A2BFF' },
-  { label: 'Urgences & Solidarité', orgs: 94, color: '#1A2BFF' },
+  { label: 'Santé & Bien-être', orgs: 247, color: 'var(--cobalt)' },
+  { label: 'Éducation', orgs: 312, color: 'var(--cobalt)' },
+  { label: 'Agriculture & Environnement', orgs: 189, color: 'var(--cobalt)' },
+  { label: 'Entrepreneuriat social', orgs: 428, color: 'var(--cobalt)' },
+  { label: 'Culture & Arts', orgs: 156, color: 'var(--cobalt)' },
+  { label: 'Genre & Inclusion', orgs: 203, color: 'var(--encre)' },
+  { label: 'Jeunesse & Sport', orgs: 341, color: 'var(--cobalt)' },
+  { label: 'Urgences & Solidarité', orgs: 94, color: 'var(--cobalt)' },
 ]
 
 export default function MiseEnRelation() {
@@ -99,20 +99,20 @@ export default function MiseEnRelation() {
 
       {/* HERO */}
       <section style={{ padding: '120px 64px 80px', background: 'linear-gradient(160deg, #F0F6FF 0%, #F4F1FF 50%, #FFFBF2 100%)', position: 'relative', overflow: 'hidden' }}>
-        <div style={{ position: 'absolute', top: -150, right: -100, width: 500, height: 500, borderRadius: '50%', background: '#1A2BFF', opacity: 0.15, filter: 'blur(80px)' }} />
-        <div style={{ position: 'absolute', bottom: -80, left: -80, width: 350, height: 350, borderRadius: '50%', background: '#B22842', opacity: 0.12, filter: 'blur(60px)' }} />
+        <div style={{ position: 'absolute', top: -150, right: -100, width: 500, height: 500, borderRadius: '50%', background: 'var(--cobalt)', opacity: 0.15, filter: 'blur(80px)' }} />
+        <div style={{ position: 'absolute', bottom: -80, left: -80, width: 350, height: 350, borderRadius: '50%', background: 'var(--hibiscus)', opacity: 0.12, filter: 'blur(60px)' }} />
         <div className="container" style={{ position: 'relative', zIndex: 2 }}>
           <span className="eyebrow">Mise en relation intelligente</span>
-          <h1 style={{ fontSize: 88, lineHeight: 0.92, color: '#14110D', marginTop: 28, maxWidth: 820 }}>
+          <h1 style={{ fontSize: 88, lineHeight: 0.92, color: 'var(--encre)', marginTop: 28, maxWidth: 820 }}>
             Le réseau qui<br />
-            <span style={{ color: '#1A2BFF' }}>connecte</span> les<br />
+            <span style={{ color: 'var(--cobalt)' }}>connecte</span> les<br />
             communautés.
           </h1>
           <p style={{ fontSize: 20, color: '#4A4438', marginTop: 28, lineHeight: 1.65, maxWidth: 520 }}>
             Society met en relation les associations, ONG, mutuelles et leaders qui partagent les mêmes valeurs et les mêmes territoires. Ensemble, vous faites plus.
           </p>
           <div style={{ display: 'flex', gap: 14, marginTop: 48, flexWrap: 'wrap' }}>
-            <NavLink to="/inscription" className="btn btn-primary btn-xl" style={{ background: 'linear-gradient(135deg, #1A2BFF, #1A2BFF)', boxShadow: '0 8px 24px rgba(14,71,171,0.3)' }}>
+            <NavLink to="/inscription" className="btn btn-primary btn-xl" style={{ background: 'linear-gradient(135deg, var(--cobalt), var(--cobalt))', boxShadow: '0 8px 24px rgba(26,43,255,0.3)' }}>
               Rejoindre le réseau
               <Icon name="arrow" size={16} color="white" />
             </NavLink>
@@ -122,24 +122,24 @@ export default function MiseEnRelation() {
           {/* Mini réseau visuel */}
           <div style={{ marginTop: 72, display: 'flex', alignItems: 'center', gap: 0, overflowX: 'auto', paddingBottom: 8 }}>
             {[
-              { label: 'ONG Eau Vive', type: 'ONG', color: '#1A2BFF' },
+              { label: 'ONG Eau Vive', type: 'ONG', color: 'var(--cobalt)' },
               { label: '+', type: null, color: null },
-              { label: 'Mutuelle Espoir', type: 'Mutuelle', color: '#1A2BFF' },
+              { label: 'Mutuelle Espoir', type: 'Mutuelle', color: 'var(--cobalt)' },
               { label: '+', type: null, color: null },
-              { label: 'Alumni INPHB', type: 'Alumni', color: '#1A2BFF' },
+              { label: 'Alumni INPHB', type: 'Alumni', color: 'var(--cobalt)' },
               { label: '→', type: null, color: null },
-              { label: 'Campagne Santé Bouaké', type: 'Projet commun', color: '#1A2BFF' },
+              { label: 'Campagne Santé Bouaké', type: 'Projet commun', color: 'var(--cobalt)' },
             ].map((node, i) => (
               node.type ? (
                 <div key={i} style={{ padding: '12px 18px', background: 'white', border: `1.5px solid ${node.color}44`, borderRadius: 12, display: 'flex', alignItems: 'center', gap: 8, flexShrink: 0, boxShadow: `0 4px 16px ${node.color}20` }}>
                   <div style={{ width: 8, height: 8, borderRadius: '50%', background: node.color }} />
                   <div>
-                    <div style={{ fontSize: 12, fontWeight: 800, color: '#14110D' }}>{node.label}</div>
+                    <div style={{ fontSize: 12, fontWeight: 800, color: 'var(--encre)' }}>{node.label}</div>
                     <div style={{ fontSize: 10, color: node.color, marginTop: 1, fontWeight: 600 }}>{node.type}</div>
                   </div>
                 </div>
               ) : (
-                <div key={i} style={{ fontSize: 24, color: 'rgba(14,71,171,0.4)', padding: '0 8px', flexShrink: 0 }}>{node.label}</div>
+                <div key={i} style={{ fontSize: 24, color: 'rgba(26,43,255,0.4)', padding: '0 8px', flexShrink: 0 }}>{node.label}</div>
               )
             ))}
           </div>
@@ -198,16 +198,16 @@ export default function MiseEnRelation() {
             </div>
 
             {/* Interface mockup */}
-            <div style={{ background: '#14110D', borderRadius: 32, padding: 32, position: 'relative', overflow: 'hidden' }}>
-              <div style={{ position: 'absolute', top: -40, right: -40, width: 200, height: 200, borderRadius: '50%', background: '#1A2BFF', opacity: 0.2, filter: 'blur(50px)' }} />
+            <div style={{ background: 'var(--encre)', borderRadius: 32, padding: 32, position: 'relative', overflow: 'hidden' }}>
+              <div style={{ position: 'absolute', top: -40, right: -40, width: 200, height: 200, borderRadius: '50%', background: 'var(--cobalt)', opacity: 0.2, filter: 'blur(50px)' }} />
               <div style={{ fontSize: 13, fontWeight: 700, color: 'rgba(255,255,255,0.5)', marginBottom: 20, letterSpacing: '0.04em', textTransform: 'uppercase' }}>
                 Suggestions pour vous
               </div>
               {[
-                { name: 'Fondation SAMU Social CI', type: 'ONG · Santé', match: '96%', color: '#1A2BFF' },
-                { name: 'Mutuelle des Mamans d\'Abobo', type: 'Mutuelle · Finance solidaire', match: '91%', color: '#1A2BFF' },
-                { name: 'Alumni HEC Paris Abidjan', type: 'Alumni · Entrepreneuriat', match: '88%', color: '#1A2BFF' },
-                { name: 'Jeunesse Catholique CI', type: 'Religion · Jeunesse', match: '84%', color: '#1A2BFF' },
+                { name: 'Fondation SAMU Social CI', type: 'ONG · Santé', match: '96%', color: 'var(--cobalt)' },
+                { name: 'Mutuelle des Mamans d\'Abobo', type: 'Mutuelle · Finance solidaire', match: '91%', color: 'var(--cobalt)' },
+                { name: 'Alumni HEC Paris Abidjan', type: 'Alumni · Entrepreneuriat', match: '88%', color: 'var(--cobalt)' },
+                { name: 'Jeunesse Catholique CI', type: 'Religion · Jeunesse', match: '84%', color: 'var(--cobalt)' },
               ].map((org, i) => (
                 <div key={i} style={{ padding: '16px 20px', background: 'rgba(255,255,255,0.05)', borderRadius: 16, marginBottom: 10, display: 'flex', alignItems: 'center', gap: 16, border: '1px solid rgba(255,255,255,0.08)' }}>
                   <div style={{ width: 44, height: 44, borderRadius: 14, background: org.color, display: 'grid', placeItems: 'center', flexShrink: 0, fontWeight: 800, color: 'white', fontSize: 16 }}>
@@ -255,7 +255,7 @@ export default function MiseEnRelation() {
       </section>
 
       {/* TÉMOIGNAGE */}
-      <section data-nav-theme="dark" style={{ padding: '100px 64px', background: '#1A2BFF' }}>
+      <section data-nav-theme="dark" style={{ padding: '100px 64px', background: 'var(--cobalt)' }}>
         <div className="container">
           <div style={{ maxWidth: 800, margin: '0 auto', textAlign: 'center' }}>
             <div style={{ fontSize: 96, color: 'rgba(255,255,255,0.15)', fontFamily: 'Georgia, serif', lineHeight: 1, marginBottom: -24 }}>"</div>
@@ -276,8 +276,8 @@ export default function MiseEnRelation() {
       {/* CTA FINAL */}
       <section style={{ padding: '100px 64px 120px' }}>
         <div className="container">
-          <div style={{ background: 'linear-gradient(135deg, #1A2BFF 0%, #1A2BFF 50%, #0B17B8 100%)', borderRadius: 36, padding: '72px', textAlign: 'center', position: 'relative', overflow: 'hidden', boxShadow: '0 20px 60px rgba(14,71,171,0.3)' }}>
-            <div style={{ position: 'absolute', top: -80, right: -80, width: 400, height: 400, borderRadius: '50%', background: '#B22842', opacity: 0.18, filter: 'blur(80px)' }} />
+          <div style={{ background: 'linear-gradient(135deg, var(--cobalt) 0%, var(--cobalt) 50%, var(--cobalt-deep) 100%)', borderRadius: 36, padding: '72px', textAlign: 'center', position: 'relative', overflow: 'hidden', boxShadow: '0 20px 60px rgba(26,43,255,0.3)' }}>
+            <div style={{ position: 'absolute', top: -80, right: -80, width: 400, height: 400, borderRadius: '50%', background: 'var(--hibiscus)', opacity: 0.18, filter: 'blur(80px)' }} />
             <span className="eyebrow white" style={{ position: 'relative' }}>Rejoignez le réseau</span>
             <h2 style={{ fontSize: 60, color: 'white', marginTop: 20, lineHeight: 0.95, position: 'relative' }}>
               Ensemble, vous pouvez<br />

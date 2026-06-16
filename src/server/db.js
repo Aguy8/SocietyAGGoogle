@@ -26,7 +26,7 @@ db.exec(`
     pays TEXT DEFAULT 'Côte d''Ivoire',
     ville TEXT,
     membres_count TEXT,
-    couleur TEXT DEFAULT '#0E47AB',
+    couleur TEXT DEFAULT 'var(--cobalt)',
     statut TEXT DEFAULT 'actif',
     plan TEXT DEFAULT 'Starter',
     modules TEXT,

@@ -41,13 +41,13 @@ export default function Manifeste() {
     <div className="page">
       <Nav />
 
-      <section data-nav-theme="dark" style={{ padding: '140px 64px 100px', background: '#14110D', position: 'relative', overflow: 'hidden' }}>
+      <section data-nav-theme="dark" style={{ padding: '140px 64px 100px', background: 'var(--encre)', position: 'relative', overflow: 'hidden' }}>
         <div style={{ position: 'absolute', inset: 0, backgroundImage: `url(https://res.cloudinary.com/dyqeot2wi/image/upload/v1778357840/CAN___la_C%C3%B4te_d_Ivoire_en_liesse_apr%C3%A8s_la_victoire_ey1mx6.jpg)`, backgroundSize: 'cover', backgroundPosition: 'center', opacity: 0.08 }} />
         <div className="container" style={{ position: 'relative', zIndex: 2 }}>
           <Reveal>
             <span className="eyebrow dark">Notre manifeste</span>
             <h1 style={{ fontSize: 'clamp(36px, 5vw, 64px)', marginTop: 24, lineHeight: 1.05, color: 'white', maxWidth: 820, letterSpacing: '-0.035em' }}>
-              Nous croyons que les communautés <span style={{ color: '#1A2BFF' }}>africaines méritent</span> mieux.
+              Nous croyons que les communautés <span style={{ color: 'var(--cobalt)' }}>africaines méritent</span> mieux.
             </h1>
           </Reveal>
           <Reveal delay={200}>
@@ -63,7 +63,7 @@ export default function Manifeste() {
           <div style={{ maxWidth: 780, margin: '0 auto' }}>
             <Reveal>
               <p style={{ fontSize: 20, lineHeight: 1.8, color: '#4A4438', marginBottom: 64 }}>
-                Tout leader communautaire africain le sait : <strong style={{ color: '#14110D' }}>animer une communauté, c'est un travail à plein temps.</strong> Et pourtant, les outils ne sont pas faits pour eux. WhatsApp pour communiquer. Excel pour les cotisations. Facebook pour la visibilité. Donorbox pour les dons. Et cinq autres par-dessus.
+                Tout leader communautaire africain le sait : <strong style={{ color: 'var(--encre)' }}>animer une communauté, c'est un travail à plein temps.</strong> Et pourtant, les outils ne sont pas faits pour eux. WhatsApp pour communiquer. Excel pour les cotisations. Facebook pour la visibilité. Donorbox pour les dons. Et cinq autres par-dessus.
               </p>
               <p style={{ fontSize: 20, lineHeight: 1.8, color: '#4A4438', marginBottom: 80 }}>
                 Society est notre réponse. Ce manifeste explique ce que nous croyons.
@@ -76,12 +76,12 @@ export default function Manifeste() {
                 padding: '56px 64px',
                 background: '#F8F8F8',
                 borderRadius: 28,
-                borderLeft: '4px solid #1A2BFF',
+                borderLeft: '4px solid var(--cobalt)',
               }}>
                 <span className="eyebrow">Le YET</span>
                 <h2 style={{ fontSize: 40, marginTop: 24, lineHeight: 1.1 }}>
                   Pas l'un ou l'autre.<br />
-                  <span style={{ color: '#1A2BFF' }}>Les deux à la fois.</span>
+                  <span style={{ color: 'var(--cobalt)' }}>Les deux à la fois.</span>
                 </h2>
                 <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: 32, marginTop: 48 }}>
                   {[
@@ -90,11 +90,11 @@ export default function Manifeste() {
                     { a: 'Innovation Silicon Valley', b: "Réalités de la rue d'Abidjan" },
                   ].map((item, i) => (
                     <div key={i} style={{ textAlign: 'center', padding: '32px 24px', background: 'white', borderRadius: 20 }}>
-                      <div style={{ fontSize: 17, fontWeight: 700, color: '#14110D', marginBottom: 12 }}>{item.a}</div>
+                      <div style={{ fontSize: 17, fontWeight: 700, color: 'var(--encre)', marginBottom: 12 }}>{item.a}</div>
                       <div style={{
                         display: 'inline-block',
                         padding: '4px 14px',
-                        background: '#1A2BFF',
+                        background: 'var(--cobalt)',
                         borderRadius: 100,
                         color: 'white',
                         fontSize: 12,
@@ -102,7 +102,7 @@ export default function Manifeste() {
                         letterSpacing: '0.06em',
                         marginBottom: 12,
                       }}>YET</div>
-                      <div style={{ fontSize: 17, fontWeight: 700, color: '#14110D' }}>{item.b}</div>
+                      <div style={{ fontSize: 17, fontWeight: 700, color: 'var(--encre)' }}>{item.b}</div>
                     </div>
                   ))}
                 </div>
@@ -113,7 +113,7 @@ export default function Manifeste() {
             <Reveal style={{ marginBottom: 80 }}>
               <div style={{
                 padding: '56px 64px',
-                background: '#14110D',
+                background: 'var(--encre)',
                 borderRadius: 28,
                 color: 'white',
               }}>
@@ -136,7 +136,7 @@ export default function Manifeste() {
                   <div style={{ display: 'grid', gridTemplateColumns: '80px 1fr', gap: 32 }}>
                     <div style={{ fontSize: 72, fontWeight: 900, color: '#E8EFFC', lineHeight: 1 }}>{p.n}</div>
                     <div>
-                      <h2 style={{ fontSize: 30, fontWeight: 800, lineHeight: 1.2, color: '#14110D', marginBottom: 16 }}>{p.t}</h2>
+                      <h2 style={{ fontSize: 30, fontWeight: 800, lineHeight: 1.2, color: 'var(--encre)', marginBottom: 16 }}>{p.t}</h2>
                       <p style={{ fontSize: 17, lineHeight: 1.75, color: '#4A4438' }}>{p.d}</p>
                     </div>
                   </div>
@@ -149,7 +149,7 @@ export default function Manifeste() {
             <Reveal style={{ marginTop: 80, marginBottom: 80 }}>
               <div style={{
                 padding: '56px 64px',
-                background: '#1A2BFF',
+                background: 'var(--cobalt)',
                 borderRadius: 28,
                 color: 'white',
               }}>
@@ -183,7 +183,7 @@ export default function Manifeste() {
               </div>
             </Reveal>
 
-            <Reveal style={{ marginTop: 80, padding: '48px 56px', background: '#1A2BFF', borderRadius: 28, color: 'white', textAlign: 'center' }}>
+            <Reveal style={{ marginTop: 80, padding: '48px 56px', background: 'var(--cobalt)', borderRadius: 28, color: 'white', textAlign: 'center' }}>
               <blockquote style={{ fontSize: 28, fontWeight: 700, lineHeight: 1.4, margin: 0 }}>
                 « L'infrastructure numérique des communautés africaines, c'est le prochain grand chantier. On le construit. »
               </blockquote>

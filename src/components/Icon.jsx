@@ -66,7 +66,7 @@ const paths = {
   'nyame-nti':    <><path d="M12 2 L14.5 9.5 L22 9.5 L16 14.5 L18.5 22 L12 17.5 L5.5 22 L8 14.5 L2 9.5 L9.5 9.5 Z"/></>,
 }
 
-export default function Icon({ name, size = 24, color = 'currentColor' }) {
+export default function Icon({ name, size = 24, color = 'var(--encre)' }) {
   return (
     <svg width={size} height={size} viewBox="0 0 24 24" fill="none"
       stroke={color} strokeWidth="1.8" strokeLinecap="round" strokeLinejoin="round">

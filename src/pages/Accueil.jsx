@@ -5,7 +5,7 @@ import Icon from '../components/Icon.jsx'
 import Reveal from '../components/Reveal.jsx'
 import { SEGMENTS } from '../data/segments.js'
 
-function Star({ size = 20, color = '#1A2BFF', style = {} }) {
+function Star({ size = 20, color = 'var(--cobalt)', style = {} }) {
   return (
     <svg viewBox="0 0 24 24" width={size} style={{ display: 'block', ...style }} aria-hidden="true">
       <path d="M12 2 L14.4 9.2 L22 9.2 L16 13.8 L18.4 21 L12 16.4 L5.6 21 L8 13.8 L2 9.2 L9.6 9.2 Z"
@@ -48,11 +48,11 @@ export default function Accueil() {
           width: '100%',
         }}>
           <Reveal>
-            <h1 style={{ fontSize: 'clamp(34px, 4.2vw, 56px)', lineHeight: 1.02, letterSpacing: '-0.035em', color: '#14110D', fontWeight: 800 }}>
-              Donnez vie à votre <span style={{ color: '#1A2BFF' }}>communauté</span>.
+            <h1 style={{ fontSize: 'clamp(34px, 4.2vw, 56px)', lineHeight: 1.02, letterSpacing: '-0.035em', color: 'var(--encre)', fontWeight: 800 }}>
+              Donnez vie à votre <span style={{ color: 'var(--cobalt)' }}>communauté</span>.
             </h1>
 
-            <p style={{ fontSize: 'clamp(15px, 1.2vw, 18px)', marginTop: 22, maxWidth: 560, margin: '22px auto 0', lineHeight: 1.55, color: '#14110D', fontWeight: 500 }}>
+            <p style={{ fontSize: 'clamp(15px, 1.2vw, 18px)', marginTop: 22, maxWidth: 560, margin: '22px auto 0', lineHeight: 1.55, color: 'var(--encre)', fontWeight: 500 }}>
               Vos membres, vos cotisations, vos événements. Au même endroit.
             </p>
 
@@ -76,7 +76,7 @@ export default function Accueil() {
             <Reveal direction="left">
               <span className="eyebrow">Le problème structurel</span>
               <h2 style={{ marginTop: 20, fontSize: 'clamp(28px, 3.4vw, 44px)', lineHeight: 1.08, letterSpacing: '-0.03em' }}>
-                Gérer une communauté prend <span style={{ color: '#1A2BFF' }}>plus de temps</span> que l'animer.
+                Gérer une communauté prend <span style={{ color: 'var(--cobalt)' }}>plus de temps</span> que l'animer.
               </h2>
               <div style={{ display: 'grid', gap: 12, marginTop: 32 }}>
                 {[
@@ -92,7 +92,7 @@ export default function Accueil() {
                   }}>
                     <div style={{ fontSize: 20, flexShrink: 0, marginTop: 2 }}>{item.icon}</div>
                     <div>
-                      <div style={{ fontWeight: 700, fontSize: 15, color: '#14110D', marginBottom: 4 }}>{item.t}</div>
+                      <div style={{ fontWeight: 700, fontSize: 15, color: 'var(--encre)', marginBottom: 4 }}>{item.t}</div>
                       <div style={{ fontSize: 13, color: '#847B6C', lineHeight: 1.55 }}>{item.d}</div>
                     </div>
                   </div>
@@ -124,7 +124,7 @@ export default function Accueil() {
                         <div style={{
                           position: 'absolute', top: 8, right: 8,
                           width: 18, height: 18, borderRadius: '50%',
-                          background: '#FEF2F2', color: '#C24A28',
+                          background: '#FEF2F2', color: 'var(--terre)',
                           display: 'grid', placeItems: 'center',
                           fontSize: 10, fontWeight: 800,
                         }}>x</div>
@@ -134,7 +134,7 @@ export default function Accueil() {
                 </div>
 
                 <div style={{
-                  padding: '24px 28px', background: '#14110D', borderRadius: 20,
+                  padding: '24px 28px', background: 'var(--encre)', borderRadius: 20,
                   display: 'flex', alignItems: 'center', justifyContent: 'space-between',
                   boxShadow: '0 12px 40px rgba(0,0,0,0.2)',
                 }}>
@@ -146,7 +146,7 @@ export default function Accueil() {
                   </div>
                   <div style={{
                     width: 44, height: 44, borderRadius: '50%',
-                    background: '#1A2BFF',
+                    background: 'var(--cobalt)',
                     display: 'grid', placeItems: 'center',
                     fontWeight: 800, fontSize: 20, color: 'white',
                     flexShrink: 0,
@@ -155,11 +155,11 @@ export default function Accueil() {
 
                 <div style={{
                   padding: '20px 24px', background: 'white', borderRadius: 14,
-                  borderLeft: '4px solid #1A2BFF',
+                  borderLeft: '4px solid var(--cobalt)',
                   boxShadow: '0 2px 8px rgba(0,0,0,0.05)',
                   display: 'flex', gap: 20, alignItems: 'center',
                 }}>
-                  <div style={{ fontSize: 40, fontWeight: 900, letterSpacing: '-0.04em', color: '#1A2BFF', lineHeight: 1 }}>05-10h</div>
+                  <div style={{ fontSize: 40, fontWeight: 900, letterSpacing: '-0.04em', color: 'var(--cobalt)', lineHeight: 1 }}>05-10h</div>
                   <div style={{ fontSize: 14, color: '#4A4438', lineHeight: 1.5 }}>
                     perdues chaque semaine en gestion administrative, par leader communautaire.
                   </div>
@@ -178,7 +178,7 @@ export default function Accueil() {
               <div>
                 <span className="eyebrow">5 modules · 1 plateforme</span>
                 <h2 style={{ marginTop: 20, maxWidth: 760, fontSize: 'clamp(28px, 3.4vw, 44px)', lineHeight: 1.08, letterSpacing: '-0.03em' }}>
-                  Tout ce qu'il faut pour faire tourner une <span style={{ color: '#1A2BFF' }}>communauté</span>.
+                  Tout ce qu'il faut pour faire tourner une <span style={{ color: 'var(--cobalt)' }}>communauté</span>.
                 </h2>
               </div>
               <NavLink to="/fonctionnalites" className="btn btn-outline">Explorer en détail <Icon name="arrow" size={14} /></NavLink>
@@ -189,8 +189,8 @@ export default function Accueil() {
             <Reveal direction="left" style={{ gridColumn: 'span 7' }}>
               <div className="module-card module-blue" style={{
                 minHeight: 380,
-                background: 'linear-gradient(135deg, #1A2BFF 0%, #1A2BFF 60%, #2463E8 100%)',
-                boxShadow: '0 20px 60px rgba(14,71,171,0.25)',
+                background: 'linear-gradient(135deg, var(--cobalt) 0%, var(--cobalt) 60%, #2463E8 100%)',
+                boxShadow: '0 20px 60px rgba(26,43,255,0.25)',
               }}>
                 <div>
                   <div className="module-tag" style={{ background: 'rgba(255,255,255,0.15)' }}>01 — Gestion communautaire</div>
@@ -212,7 +212,7 @@ export default function Accueil() {
             <Reveal direction="right" style={{ gridColumn: 'span 5' }}>
               <div className="module-card" style={{
                 minHeight: 380,
-                background: '#14110D',
+                background: 'var(--encre)',
                 boxShadow: '0 20px 60px rgba(0,0,0,0.25)',
               }}>
                 <div>
@@ -240,16 +240,16 @@ export default function Accueil() {
               <div className="module-card" style={{
                 minHeight: 280,
                 background: 'linear-gradient(135deg, #F0F6FF 0%, #E8EFFC 100%)',
-                boxShadow: '0 4px 24px rgba(14,71,171,0.08)',
+                boxShadow: '0 4px 24px rgba(26,43,255,0.08)',
               }}>
-                <div className="module-tag" style={{ background: 'white', color: '#14110D' }}>03 — Gestion des entités</div>
-                <h3 style={{ fontSize: 26, marginTop: 12, color: '#14110D' }}>Coordination & centralisation.</h3>
+                <div className="module-tag" style={{ background: 'white', color: 'var(--encre)' }}>03 — Gestion des entités</div>
+                <h3 style={{ fontSize: 26, marginTop: 12, color: 'var(--encre)' }}>Coordination & centralisation.</h3>
                 <p style={{ marginTop: 12, fontSize: 15, color: '#4A4438' }}>
                   Sous-entités, multiples implantations géographiques, groupements. Society unifie votre écosystème.
                 </p>
                 <div style={{ display: 'flex', gap: 8, marginTop: 16, flexWrap: 'wrap' }}>
                   {['Trésorerie', 'Événements', 'Centralisation'].map(t => (
-                    <span key={t} style={{ padding: '6px 12px', background: 'white', borderRadius: 999, fontSize: 12, fontWeight: 700, color: '#14110D' }}>{t}</span>
+                    <span key={t} style={{ padding: '6px 12px', background: 'white', borderRadius: 999, fontSize: 12, fontWeight: 700, color: 'var(--encre)' }}>{t}</span>
                   ))}
                 </div>
               </div>
@@ -258,7 +258,7 @@ export default function Accueil() {
             <Reveal delay={150} style={{ gridColumn: 'span 4' }}>
               <div className="module-card" style={{
                 minHeight: 280,
-                background: 'linear-gradient(135deg, #14110D 0%, #1a1a2e 100%)',
+                background: 'linear-gradient(135deg, var(--encre) 0%, #1a1a2e 100%)',
                 boxShadow: '0 20px 50px rgba(0,0,0,0.2)',
               }}>
                 <div className="module-tag" style={{ background: 'rgba(255,255,255,0.12)', color: 'white' }}>04 — Visibilité & Impact</div>
@@ -275,8 +275,8 @@ export default function Accueil() {
                 background: '#E8EFFC',
                 boxShadow: '0 4px 24px rgba(26,43,255,0.1)',
               }}>
-                <div className="module-tag" style={{ background: 'rgba(255,255,255,0.6)', color: '#14110D' }}>05 — Espace Leader</div>
-                <h3 style={{ fontSize: 26, marginTop: 12, color: '#14110D' }}>Votre audience.<br />Vos règles.</h3>
+                <div className="module-tag" style={{ background: 'rgba(255,255,255,0.6)', color: 'var(--encre)' }}>05 — Espace Leader</div>
+                <h3 style={{ fontSize: 26, marginTop: 12, color: 'var(--encre)' }}>Votre audience.<br />Vos règles.</h3>
                 <p style={{ marginTop: 12, fontSize: 14, color: '#4A4438', lineHeight: 1.6 }}>
                   Pas d'algorithme qui décide qui voit quoi. Votre espace, votre communauté, vos revenus — directement à vous.
                 </p>
@@ -294,7 +294,7 @@ export default function Accueil() {
               <div>
                 <span className="eyebrow">Pour qui ?</span>
                 <h2 style={{ marginTop: 20, fontSize: 'clamp(28px, 3.4vw, 44px)', lineHeight: 1.08, letterSpacing: '-0.03em' }}>
-                  Tontine, club, asso, diaspora ? <span style={{ color: '#1A2BFF' }}>— même outil.</span>
+                  Tontine, club, asso, diaspora ? <span style={{ color: 'var(--cobalt)' }}>— même outil.</span>
                 </h2>
               </div>
               <NavLink to="/pour-qui" className="btn btn-outline">Voir tous les profils <Icon name="arrow" size={14} /></NavLink>
@@ -331,14 +331,14 @@ export default function Accueil() {
                     }} />
                     {/* Contenu */}
                     <div style={{ padding: '24px' }}>
-                      <h3 style={{ fontSize: 18, fontWeight: 800, color: '#14110D', letterSpacing: '-0.02em', lineHeight: 1.2, marginBottom: 8 }}>
+                      <h3 style={{ fontSize: 18, fontWeight: 800, color: 'var(--encre)', letterSpacing: '-0.02em', lineHeight: 1.2, marginBottom: 8 }}>
                         {s.nom}
                       </h3>
                       <p style={{ fontSize: 13, color: '#847B6C', lineHeight: 1.55, marginBottom: 16 }}>
                         {s.tagline}
                       </p>
-                      <div style={{ display: 'inline-flex', alignItems: 'center', gap: 6, fontSize: 13, fontWeight: 700, color: '#14110D' }}>
-                        Découvrir <Icon name="arrow" size={12} color="#14110D" />
+                      <div style={{ display: 'inline-flex', alignItems: 'center', gap: 6, fontSize: 13, fontWeight: 700, color: 'var(--encre)' }}>
+                        Découvrir <Icon name="arrow" size={12} color='var(--encre)' />
                       </div>
                     </div>
                   </div>
@@ -352,7 +352,7 @@ export default function Accueil() {
       {/* SYNERGIE */}
       <section style={{
         padding: '88px 64px',
-        background: '#1A2BFF',
+        background: 'var(--cobalt)',
         color: 'white', position: 'relative', overflow: 'hidden',
       }}>
         <div style={{
@@ -435,9 +435,9 @@ export default function Accueil() {
                 margin: '32px 0 0',
                 fontSize: 34, fontWeight: 700,
                 lineHeight: 1.25, letterSpacing: '-0.02em',
-                color: '#14110D',
+                color: 'var(--encre)',
               }}>
-                «&#160;Imaginez : plus un seul week-end à relancer 200 cotisantes sur WhatsApp. Tout suivre en temps réel. Et du temps, enfin, pour <span style={{ color: '#1A2BFF' }}>animer</span> la mutuelle.&#160;»
+                «&#160;Imaginez : plus un seul week-end à relancer 200 cotisantes sur WhatsApp. Tout suivre en temps réel. Et du temps, enfin, pour <span style={{ color: 'var(--cobalt)' }}>animer</span> la mutuelle.&#160;»
               </blockquote>
               <div style={{ marginTop: 40, display: 'flex', alignItems: 'center', gap: 20, flexWrap: 'wrap' }}>
                 <div>
@@ -449,7 +449,7 @@ export default function Accueil() {
               </div>
               <div style={{ display: 'flex', gap: 6, marginTop: 28 }}>
                 {[1, 2, 3, 4, 5].map(i => (
-                  <Star key={i} size={22} color="#1A2BFF" />
+                  <Star key={i} size={22} color='var(--cobalt)' />
                 ))}
                 <span style={{ fontSize: 14, color: '#6B6B6B', marginLeft: 8, alignSelf: 'center' }}>5 / 5</span>
               </div>
@@ -459,19 +459,19 @@ export default function Accueil() {
       </section>
 
       {/* LE YET */}
-      <section data-nav-theme="dark" style={{ padding: '88px 64px', background: '#14110D', position: 'relative', overflow: 'hidden' }}>
+      <section data-nav-theme="dark" style={{ padding: '88px 64px', background: 'var(--encre)', position: 'relative', overflow: 'hidden' }}>
         <div style={{
           position: 'absolute', top: -80, right: -80,
           width: 400, height: 400,
           borderRadius: '50%',
-          background: '#1A2BFF',
+          background: 'var(--cobalt)',
           opacity: 0.06,
         }} />
         <div className="container" style={{ position: 'relative', zIndex: 2 }}>
           <Reveal>
             <span className="eyebrow dark">Le YET</span>
             <h2 style={{ fontSize: 'clamp(28px, 3.6vw, 48px)', marginTop: 20, lineHeight: 1.08, color: 'white', maxWidth: 800, letterSpacing: '-0.03em' }}>
-              L'efficience d'une infrastructure<span style={{ color: '#1A2BFF' }}> pensée </span>pour faire exploser votre intelligence collective. Le moteur est technologique <span style={{ color: '#1A2BFF' }}>mais</span> c'est vous qui batissez votre propre expérience.
+              L'efficience d'une infrastructure<span style={{ color: 'var(--so-blue-soft)' }}> pensée </span>pour faire exploser votre intelligence collective. Le moteur est technologique <span style={{ color: 'var(--so-blue-soft)' }}>mais</span> c'est vous qui batissez votre propre expérience.
             </h2>
           </Reveal>
           <Reveal delay={200}>
@@ -492,7 +492,7 @@ export default function Accueil() {
             <Reveal direction="left">
               <span className="eyebrow">Vous bâtissez avec nous</span>
               <h2 style={{ fontSize: 'clamp(28px, 3.4vw, 44px)', marginTop: 20, lineHeight: 1.08, letterSpacing: '-0.03em' }}>
-                Nos premiers <span style={{ color: '#1A2BFF' }}>partenaires co-créent.</span>
+                Nos premiers <span style={{ color: 'var(--cobalt)' }}>partenaires co-créent.</span>
               </h2>
               <p style={{ fontSize: 18, marginTop: 28, lineHeight: 1.65, maxWidth: 480 }}>
                 Les premières communautés qui rejoignent Society ne sont pas des clients. Ce sont des partenaires de construction. Leur terrain, nos décisions produit.
@@ -516,7 +516,7 @@ export default function Accueil() {
                     alignItems: 'center',
                     gap: 28,
                   }}>
-                    <div style={{ fontSize: 56, fontWeight: 900, color: '#1A2BFF', letterSpacing: '-0.04em', lineHeight: 1, minWidth: 100 }}>
+                    <div style={{ fontSize: 56, fontWeight: 900, color: 'var(--cobalt)', letterSpacing: '-0.04em', lineHeight: 1, minWidth: 100 }}>
                       {s.n}
                     </div>
                     <div style={{ fontSize: 17, lineHeight: 1.45, color: '#4A4438', fontWeight: 500 }}>
@@ -537,7 +537,7 @@ export default function Accueil() {
             <div style={{
               borderRadius: 40, padding: '80px 64px',
               position: 'relative', overflow: 'hidden',
-              background: '#14110D',
+              background: 'var(--encre)',
               boxShadow: '0 40px 100px rgba(0,0,0,0.3)',
             }}>
               <div style={{ position: 'relative', zIndex: 2 }} className="cta-grid">

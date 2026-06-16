@@ -9,42 +9,42 @@ const FEATURES = [
     icon: 'users',
     title: 'Fil communautaire',
     desc: 'Un fil d\'actualité vivant. Les causes, les communautés qui vous parlent. Photos, vidéos, campagnes.',
-    color: '#14110D',
+    color: 'var(--encre)',
     bg: '#E8F0FD',
   },
   {
     icon: 'shield',
     title: 'Espace fondateur',
     desc: 'Suivi, finances, membres, billetterie. Tout votre tableau de bord, dans votre poche.',
-    color: '#14110D',
+    color: 'var(--encre)',
     bg: '#F0FDF4',
   },
   {
     icon: 'money',
     title: 'Campagnes & dons',
     desc: 'Lancez une collecte, suivez les dons en direct, remerciez les contributeurs. Depuis l\'app.',
-    color: '#14110D',
+    color: 'var(--encre)',
     bg: '#FDF2F8',
   },
   {
     icon: 'calendar',
     title: 'Évènements & billets',
     desc: 'Créez, publiez, vendez. QR code à l\'entrée, liste des présents. Tout en mobile.',
-    color: '#14110D',
+    color: 'var(--encre)',
     bg: '#FDF6EC',
   },
   {
     icon: 'link',
     title: 'Mise en relation',
     desc: 'Rejoignez d\'autres organisations. Bâtissez des partenariats. Avancez ensemble sur des projets à impact.',
-    color: '#14110D',
+    color: 'var(--encre)',
     bg: '#F3F0FF',
   },
   {
     icon: 'award',
     title: 'Espace créateur',
     desc: 'Les leaders animent leur audience, partagent du contenu exclusif, monétisent leur influence.',
-    color: '#14110D',
+    color: 'var(--encre)',
     bg: '#FFF5F7',
   },
 ]
@@ -54,30 +54,30 @@ const SCREENS = [
     label: 'Fil',
     title: "Un fil d'actualité vivant",
     desc: 'Les causes qui vous touchent. Les communautés actives autour de vous. Chaque publication raconte une histoire vraie.',
-    bg: '#1A2BFF',
+    bg: 'var(--cobalt)',
     img: 'https://res.cloudinary.com/dyqeot2wi/image/upload/v1778355341/Accueil_1_bjfghm.png',
     checks: ['Communautés certifiées avec badge', 'Stories et publications photo/vidéo', 'Fil personnalisé selon vos intérêts'],
-    checkColor: '#1A2BFF',
+    checkColor: 'var(--cobalt)',
     checkBg: '#E8F0FD',
   },
   {
     label: 'Profil',
     title: "Le tableau de bord de l'organisation",
     desc: 'Suivi, membres, collectes, bénévoles. Toute la puissance de Society, dans une interface sombre et nette.',
-    bg: '#14110D',
+    bg: 'var(--encre)',
     img: 'https://res.cloudinary.com/dyqeot2wi/image/upload/v1778355345/P_com_neclph.png',
     checks: ['Reporting & statistiques temps réel', 'Gestion des membres et bénévoles', 'Rapports financiers exportables'],
-    checkColor: '#B22842',
+    checkColor: 'var(--hibiscus)',
     checkBg: 'transparent',
   },
   {
     label: 'Communauté',
     title: 'Explorez. Rejoignez.',
-    desc: 'Par type : associations, ONG, mutuelles, institutions. Créez votre espace en quelques secondes.',
+    desc: 'Par type : associations, ONG, mutuelles, institutions. Pré-réservez votre espace en quelques secondes.',
     bg: '#1a1a1a',
     img: 'https://res.cloudinary.com/dyqeot2wi/image/upload/v1778355344/Creer_com1_ae1u3e.png',
     checks: ['8 types de communautés disponibles', "Création d'espace en 3 étapes", 'Recommandations personnalisées'],
-    checkColor: '#1A2BFF',
+    checkColor: 'var(--cobalt)',
     checkBg: '#F3F0FF',
   },
   {
@@ -101,16 +101,16 @@ export default function MobileApp() {
       <Nav />
 
       {/* HERO */}
-      <section data-nav-theme="dark" style={{ padding: '120px 64px 80px', background: '#14110D', position: 'relative', overflow: 'hidden' }}>
-        <div style={{ position: 'absolute', top: -200, left: -200, width: 600, height: 600, borderRadius: '50%', background: '#1A2BFF', opacity: 0.12, filter: 'blur(80px)' }} />
-        <div style={{ position: 'absolute', bottom: -100, right: -100, width: 400, height: 400, borderRadius: '50%', background: '#1A2BFF', opacity: 0.1, filter: 'blur(60px)' }} />
+      <section data-nav-theme="dark" style={{ padding: '120px 64px 80px', background: 'var(--encre)', position: 'relative', overflow: 'hidden' }}>
+        <div style={{ position: 'absolute', top: -200, left: -200, width: 600, height: 600, borderRadius: '50%', background: 'var(--cobalt)', opacity: 0.12, filter: 'blur(80px)' }} />
+        <div style={{ position: 'absolute', bottom: -100, right: -100, width: 400, height: 400, borderRadius: '50%', background: 'var(--cobalt)', opacity: 0.1, filter: 'blur(60px)' }} />
         <div className="container" style={{ position: 'relative', zIndex: 2 }}>
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 80, alignItems: 'center' }}>
             <div>
               <span className="eyebrow dark">Application mobile</span>
               <h1 style={{ fontSize: 88, lineHeight: 0.88, color: 'white', marginTop: 28 }}>
                 Society<br />
-                <span style={{ color: '#1A2BFF' }}>dans votre</span><br />
+                <span style={{ color: 'var(--cobalt)' }}>dans votre</span><br />
                 poche.
               </h1>
               <p style={{ fontSize: 20, color: 'rgba(255,255,255,0.75)', marginTop: 28, lineHeight: 1.6, maxWidth: 460 }}>
@@ -121,8 +121,8 @@ export default function MobileApp() {
                   { icon: 'FaApple', store: 'App Store', note: 'iOS bientôt' },
                   { icon: 'FaGooglePlay', store: 'Google Play', note: 'Android bientôt' },
                 ].map((btn, i) => (
-                  <a key={i} href="#notify" style={{ display: 'flex', alignItems: 'center', gap: 12, padding: '14px 24px', background: 'white', borderRadius: 14, textDecoration: 'none', color: '#14110D', fontWeight: 700, fontSize: 14 }}>
-                    <div style={{ width: 32, height: 32, background: '#14110D', borderRadius: 8, display: 'grid', placeItems: 'center', flexShrink: 0 }}>
+                  <a key={i} href="#notify" style={{ display: 'flex', alignItems: 'center', gap: 12, padding: '14px 24px', background: 'white', borderRadius: 14, textDecoration: 'none', color: 'var(--encre)', fontWeight: 700, fontSize: 14 }}>
+                    <div style={{ width: 32, height: 32, background: 'var(--encre)', borderRadius: 8, display: 'grid', placeItems: 'center', flexShrink: 0 }}>
                       <Icon name={btn.icon} size={14} color="white" />
                     </div>
                     <div>
@@ -167,14 +167,14 @@ export default function MobileApp() {
             {SCREENS.map((screen, i) => (
               <div key={i} style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 64, alignItems: 'center', direction: i % 2 === 1 ? 'rtl' : 'ltr' }}>
                 <div style={{ direction: 'ltr' }}>
-                  <span style={{ display: 'inline-block', padding: '5px 14px', background: '#1A2BFF', color: 'white', borderRadius: 999, fontSize: 11, fontWeight: 700, letterSpacing: '0.06em', textTransform: 'uppercase', marginBottom: 20 }}>
+                  <span style={{ display: 'inline-block', padding: '5px 14px', background: 'var(--cobalt)', color: 'white', borderRadius: 999, fontSize: 11, fontWeight: 700, letterSpacing: '0.06em', textTransform: 'uppercase', marginBottom: 20 }}>
                     {screen.label}
                   </span>
                   <h3 style={{ fontSize: 44, lineHeight: 1.05, letterSpacing: '-0.03em' }}>{screen.title}</h3>
                   <p style={{ fontSize: 17, marginTop: 20, color: '#4A4438', lineHeight: 1.65 }}>{screen.desc}</p>
                   <div style={{ marginTop: 28, display: 'grid', gap: 10 }}>
                     {screen.checks.map((f, j) => (
-                      <div key={j} style={{ display: 'flex', gap: 12, alignItems: 'center', fontSize: 15, color: '#14110D', fontWeight: 500 }}>
+                      <div key={j} style={{ display: 'flex', gap: 12, alignItems: 'center', fontSize: 15, color: 'var(--encre)', fontWeight: 500 }}>
                         <div style={{ width: 26, height: 26, borderRadius: '50%', background: screen.checkBg, display: 'grid', placeItems: 'center', flexShrink: 0 }}>
                           <span style={{ color: screen.checkColor, fontSize: 13, fontWeight: 800 }}>✓</span>
                         </div>
@@ -216,12 +216,12 @@ export default function MobileApp() {
       </section>
 
       {/* BÊTA SIGNUP */}
-      <section id="notify" data-nav-theme="dark" style={{ padding: '100px 64px 120px', background: '#14110D', position: 'relative', overflow: 'hidden' }}>
+      <section id="notify" data-nav-theme="dark" style={{ padding: '100px 64px 120px', background: 'var(--encre)', position: 'relative', overflow: 'hidden' }}>
         <div style={{ position: 'absolute', inset: 0, backgroundImage: 'url(https://res.cloudinary.com/dyqeot2wi/image/upload/v1778357843/14cb4620-97b5-4067-a09b-65b6464dea73_a0evwt.jpg)', backgroundSize: 'cover', backgroundPosition: 'center', opacity: 0.07 }} />
-        <div style={{ position: 'absolute', bottom: -120, left: '50%', transform: 'translateX(-50%)', width: 700, height: 350, borderRadius: '50%', background: '#1A2BFF', opacity: 0.18, filter: 'blur(100px)' }} />
+        <div style={{ position: 'absolute', bottom: -120, left: '50%', transform: 'translateX(-50%)', width: 700, height: 350, borderRadius: '50%', background: 'var(--cobalt)', opacity: 0.18, filter: 'blur(100px)' }} />
         <div className="container" style={{ position: 'relative', zIndex: 2, textAlign: 'center' }}>
           <div style={{ display: 'inline-flex', alignItems: 'center', gap: 10, padding: '8px 20px', background: 'rgba(255,255,255,0.08)', border: '1px solid rgba(255,255,255,0.2)', borderRadius: 999, marginBottom: 32 }}>
-            <div style={{ width: 8, height: 8, borderRadius: '50%', background: '#1A2BFF', animation: 'pulse 2s infinite' }} />
+            <div style={{ width: 8, height: 8, borderRadius: '50%', background: 'var(--cobalt)', animation: 'pulse 2s infinite' }} />
             <span style={{ fontSize: 13, fontWeight: 700, color: 'rgba(255,255,255,0.85)' }}>En développement actif</span>
           </div>
           <h2 style={{ fontSize: 64, color: 'white', lineHeight: 0.92, maxWidth: 700, margin: '0 auto' }}>

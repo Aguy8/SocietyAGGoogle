@@ -36,13 +36,13 @@ export default function Newsletter() {
     <div className="page">
       <Nav />
 
-      <section style={{ padding: '120px 64px 80px', background: 'linear-gradient(135deg, #1A2BFF 0%, #0a3a8f 100%)' }}>
+      <section style={{ padding: '120px 64px 80px', background: 'linear-gradient(135deg, var(--cobalt) 0%, #0a3a8f 100%)' }}>
         <div className="container">
           <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 80, alignItems: 'center' }}>
             <div>
               <span className="eyebrow dark" style={{ color: 'rgba(255,255,255,0.7)' }}>Newsletter</span>
               <h1 style={{ fontSize: 80, marginTop: 24, lineHeight: 0.9, color: 'white' }}>
-                Society<br /><span style={{ color: '#1A2BFF' }}>Weekly.</span>
+                Society<br /><span style={{ color: 'var(--cobalt)' }}>Weekly.</span>
               </h1>
               <p style={{ fontSize: 18, marginTop: 28, maxWidth: 500, lineHeight: 1.65, color: 'rgba(255,255,255,0.8)' }}>
                 Chaque semaine, les bonnes pratiques, les études de cas, les tendances. Pour les leaders communautaires africains. Rejoignez les premiers abonnés.
@@ -56,18 +56,18 @@ export default function Newsletter() {
             <Reveal direction="right">
               <div style={{ background: 'white', borderRadius: 28, padding: 40 }}>
                 <div style={{ fontSize: 13, fontWeight: 700, color: '#6B6B6B', marginBottom: 8 }}>ABONNEZ-VOUS — C'EST GRATUIT</div>
-                <div style={{ fontSize: 22, fontWeight: 800, color: '#14110D', marginBottom: 24 }}>Soyez parmi<br />les premiers abonnés.</div>
+                <div style={{ fontSize: 22, fontWeight: 800, color: 'var(--encre)', marginBottom: 24 }}>Soyez parmi<br />les premiers abonnés.</div>
                 {state === 'success' ? (
                   <div style={{ padding: '28px 24px', background: '#E8EFFC', borderRadius: 16, textAlign: 'center' }}>
                     <div style={{ fontSize: 32, marginBottom: 12 }}>✓</div>
-                    <div style={{ fontSize: 16, fontWeight: 800, color: '#1A2BFF' }}>Bienvenue dans la communauté.</div>
-                    <div style={{ fontSize: 13, color: '#1A2BFF', marginTop: 6 }}>Vous recevrez le prochain numéro dès sa sortie.</div>
+                    <div style={{ fontSize: 16, fontWeight: 800, color: 'var(--cobalt)' }}>Bienvenue dans la communauté.</div>
+                    <div style={{ fontSize: 13, color: 'var(--cobalt)', marginTop: 6 }}>Vous recevrez le prochain numéro dès sa sortie.</div>
                   </div>
                 ) : (
                   <div style={{ display: 'grid', gap: 12 }}>
                     <input value={prenom} onChange={e => setPrenom(e.target.value)} placeholder="Votre prénom" style={{ padding: '16px 18px', borderRadius: 12, border: '1px solid #E5E5E5', fontSize: 15, outline: 'none', fontFamily: 'inherit' }} />
                     <input type="email" value={email} onChange={e => { setEmail(e.target.value); setState('idle') }} placeholder="votre@email.com" style={{ padding: '16px 18px', borderRadius: 12, border: `1px solid ${state === 'error' ? '#C23B5A' : '#E5E5E5'}`, fontSize: 15, outline: 'none', fontFamily: 'inherit' }} />
-                    {state === 'error' && <div style={{ fontSize: 12, color: '#1A2BFF', fontWeight: 600 }}>{errorMsg}</div>}
+                    {state === 'error' && <div style={{ fontSize: 12, color: 'var(--cobalt)', fontWeight: 600 }}>{errorMsg}</div>}
                     <button onClick={handleSubscribe} disabled={state === 'loading'} className="btn btn-primary btn-lg" style={{ justifyContent: 'center', opacity: state === 'loading' ? 0.7 : 1 }}>
                       {state === 'loading' ? 'Inscription...' : <>Je m'abonne gratuitement <Icon name="arrow" size={16} color="white" /></>}
                     </button>
@@ -93,12 +93,12 @@ export default function Newsletter() {
             {EDITIONS.map((e, i) => (
               <Reveal key={i} delay={i * 60}>
                 <div className="hover-lift" style={{ padding: '24px 28px', background: 'white', borderRadius: 20, border: '1px solid #E5E5E5', display: 'flex', alignItems: 'center', gap: 24, cursor: 'pointer' }}>
-                  <div style={{ fontSize: 13, fontWeight: 800, color: '#1A2BFF', minWidth: 40 }}>{e.n}</div>
+                  <div style={{ fontSize: 13, fontWeight: 800, color: 'var(--cobalt)', minWidth: 40 }}>{e.n}</div>
                   <div style={{ flex: 1 }}>
-                    <div style={{ fontWeight: 700, fontSize: 16, color: '#14110D', lineHeight: 1.3 }}>{e.t}</div>
+                    <div style={{ fontWeight: 700, fontSize: 16, color: 'var(--encre)', lineHeight: 1.3 }}>{e.t}</div>
                     <div style={{ fontSize: 13, color: '#6B6B6B', marginTop: 4 }}>{e.date}</div>
                   </div>
-                  <span style={{ padding: '4px 12px', background: '#E8EFFC', color: '#1A2BFF', borderRadius: 999, fontSize: 11, fontWeight: 700, whiteSpace: 'nowrap' }}>{e.cat}</span>
+                  <span style={{ padding: '4px 12px', background: '#E8EFFC', color: 'var(--cobalt)', borderRadius: 999, fontSize: 11, fontWeight: 700, whiteSpace: 'nowrap' }}>{e.cat}</span>
                   <Icon name="arrow" size={16} color="#6B6B6B" />
                 </div>
               </Reveal>
@@ -111,9 +111,9 @@ export default function Newsletter() {
         <div className="container">
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 24 }}>
             {[
-              { icon: 'trending', color: '#1A2BFF', t: 'Études de cas', d: 'Des transformations réelles. Chiffres à l\'appui.' },
-              { icon: 'chart', color: '#1A2BFF', t: 'Tendances & données', d: 'L\'économie communautaire africaine, chaque semaine.' },
-              { icon: 'users', color: '#14110D', t: 'Conseils pratiques', d: 'Des méthodes à appliquer directement dans votre communauté.' },
+              { icon: 'trending', color: 'var(--cobalt)', t: 'Études de cas', d: 'Des transformations réelles. Chiffres à l\'appui.' },
+              { icon: 'chart', color: 'var(--cobalt)', t: 'Tendances & données', d: 'L\'économie communautaire africaine, chaque semaine.' },
+              { icon: 'users', color: 'var(--encre)', t: 'Conseils pratiques', d: 'Des méthodes à appliquer directement dans votre communauté.' },
             ].map((c, i) => (
               <Reveal key={i} delay={i * 100} direction="scale">
                 <div style={{ padding: 32, background: 'white', borderRadius: 24, border: '1px solid #E5E5E5' }}>

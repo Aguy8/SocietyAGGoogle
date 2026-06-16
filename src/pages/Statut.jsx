@@ -30,8 +30,8 @@ export default function Statut() {
         <div className="container">
           <span className="eyebrow">Statut du systeme</span>
           <div style={{ display: 'flex', alignItems: 'center', gap: 20, marginTop: 24 }}>
-            <div style={{ width: 20, height: 20, borderRadius: 999, background: '#1A2BFF', boxShadow: '0 0 0 6px rgba(22,163,74,0.2)', flexShrink: 0 }} />
-            <h1 style={{ fontSize: 72, lineHeight: 0.95, color: '#14110D', fontWeight: 900 }}>
+            <div style={{ width: 20, height: 20, borderRadius: 999, background: 'var(--cobalt)', boxShadow: '0 0 0 6px rgba(22,163,74,0.2)', flexShrink: 0 }} />
+            <h1 style={{ fontSize: 72, lineHeight: 0.95, color: 'var(--encre)', fontWeight: 900 }}>
               Tous les systemes sont operationnels.
             </h1>
           </div>
@@ -41,10 +41,10 @@ export default function Statut() {
 
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 24, marginTop: 56 }}>
             {[
-              { label: 'Uptime global 30j', value: '99,97 %', color: '#1A2BFF' },
-              { label: 'Incidents ce mois', value: '0', color: '#1A2BFF' },
-              { label: 'Temps de reponse API', value: '142 ms', color: '#1A2BFF' },
-              { label: 'Disponibilite CDN', value: '100 %', color: '#1A2BFF' },
+              { label: 'Uptime global 30j', value: '99,97 %', color: 'var(--cobalt)' },
+              { label: 'Incidents ce mois', value: '0', color: 'var(--cobalt)' },
+              { label: 'Temps de reponse API', value: '142 ms', color: 'var(--cobalt)' },
+              { label: 'Disponibilite CDN', value: '100 %', color: 'var(--cobalt)' },
             ].map((s, i) => (
               <div key={i} style={{ padding: '28px 24px', background: 'white', border: '1px solid #EBEBEB', borderRadius: 20 }}>
                 <div style={{ fontSize: 36, fontWeight: 900, color: s.color, letterSpacing: '-0.02em' }}>{s.value}</div>
@@ -64,16 +64,16 @@ export default function Statut() {
             {services.map((s, i) => (
               <div key={i} style={{ display: 'grid', gridTemplateColumns: '1fr auto auto', gap: 24, alignItems: 'center', padding: '24px 32px', borderBottom: i < services.length - 1 ? '1px solid #F0F0F0' : 'none' }}>
                 <div style={{ display: 'flex', alignItems: 'center', gap: 16 }}>
-                  <div style={{ width: 10, height: 10, borderRadius: 999, background: '#1A2BFF', boxShadow: '0 0 0 3px rgba(22,163,74,0.2)', flexShrink: 0 }} />
+                  <div style={{ width: 10, height: 10, borderRadius: 999, background: 'var(--cobalt)', boxShadow: '0 0 0 3px rgba(22,163,74,0.2)', flexShrink: 0 }} />
                   <div>
-                    <div style={{ fontSize: 15, fontWeight: 700, color: '#14110D' }}>{s.name}</div>
+                    <div style={{ fontSize: 15, fontWeight: 700, color: 'var(--encre)' }}>{s.name}</div>
                     <div style={{ fontSize: 13, color: '#9B9B9B', marginTop: 2 }}>{s.desc}</div>
                   </div>
                 </div>
                 <div style={{ fontSize: 13, color: '#6B6B6B', textAlign: 'right' }}>
-                  Uptime 30j : <strong style={{ color: '#14110D' }}>{s.uptime}</strong>
+                  Uptime 30j : <strong style={{ color: 'var(--encre)' }}>{s.uptime}</strong>
                 </div>
-                <div style={{ padding: '6px 14px', background: '#E8EFFC', color: '#1A2BFF', borderRadius: 999, fontSize: 12, fontWeight: 700, letterSpacing: '0.04em', whiteSpace: 'nowrap' }}>
+                <div style={{ padding: '6px 14px', background: '#E8EFFC', color: 'var(--cobalt)', borderRadius: 999, fontSize: 12, fontWeight: 700, letterSpacing: '0.04em', whiteSpace: 'nowrap' }}>
                   Operationnel
                 </div>
               </div>
@@ -92,7 +92,7 @@ export default function Statut() {
             <div style={{ display: 'flex', gap: 4, alignItems: 'flex-end' }}>
               {days.map((d, i) => (
                 <div key={i} style={{ flex: 1, display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 8 }}>
-                  <div style={{ width: '100%', height: 60, background: '#1A2BFF', borderRadius: 6, opacity: 0.85 + (Math.random() * 0.15) }} title={`${d.label} - Operationnel`} />
+                  <div style={{ width: '100%', height: 60, background: 'var(--cobalt)', borderRadius: 6, opacity: 0.85 + (Math.random() * 0.15) }} title={`${d.label} - Operationnel`} />
                   {(i === 0 || i === 7 || i === 14 || i === 21 || i === 29) && (
                     <div style={{ fontSize: 10, color: '#9B9B9B', whiteSpace: 'nowrap' }}>{d.label}</div>
                   )}
@@ -101,7 +101,7 @@ export default function Statut() {
             </div>
             <div style={{ display: 'flex', gap: 24, marginTop: 24, paddingTop: 20, borderTop: '1px solid #F0F0F0' }}>
               <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
-                <div style={{ width: 12, height: 12, borderRadius: 3, background: '#1A2BFF' }} />
+                <div style={{ width: 12, height: 12, borderRadius: 3, background: 'var(--cobalt)' }} />
                 <span style={{ fontSize: 13, color: '#6B6B6B' }}>Operationnel</span>
               </div>
               <div style={{ display: 'flex', alignItems: 'center', gap: 8 }}>
@@ -147,13 +147,13 @@ export default function Statut() {
 
       <section style={{ padding: '40px 64px 80px' }}>
         <div className="container">
-          <div style={{ padding: '32px 40px', background: '#14110D', borderRadius: 20, display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: 32, flexWrap: 'wrap' }}>
+          <div style={{ padding: '32px 40px', background: 'var(--encre)', borderRadius: 20, display: 'flex', justifyContent: 'space-between', alignItems: 'center', gap: 32, flexWrap: 'wrap' }}>
             <div>
               <div style={{ fontSize: 14, color: 'rgba(255,255,255,0.6)', marginBottom: 8 }}>Vous voyez un probleme ?</div>
               <div style={{ fontSize: 17, fontWeight: 700, color: 'white' }}>Notre support repond 24/7</div>
             </div>
             <div style={{ display: 'flex', gap: 12 }}>
-              <a href="mailto:support@society.ci" style={{ padding: '14px 24px', background: '#B22842', color: '#14110D', borderRadius: 12, textDecoration: 'none', fontWeight: 700, fontSize: 14 }}>
+              <a href="mailto:support@society.ci" style={{ padding: '14px 24px', background: 'var(--hibiscus)', color: 'var(--encre)', borderRadius: 12, textDecoration: 'none', fontWeight: 700, fontSize: 14 }}>
                 support@society.ci
               </a>
               <button style={{ padding: '14px 24px', background: 'rgba(255,255,255,0.08)', color: 'white', border: '1px solid rgba(255,255,255,0.12)', borderRadius: 12, fontWeight: 700, fontSize: 14, cursor: 'pointer' }}>

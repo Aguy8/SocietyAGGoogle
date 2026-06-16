@@ -14,7 +14,7 @@ const articles = [
 ]
 
 const catBg = { Gestion: '#E8F0FD', Leadership: '#FDF6EC', Financement: '#E8F0FD', Engagement: '#F2F2F2', Evenements: '#E8F0FD', Impact: '#FDF6EC' }
-const catText = { Gestion: '#1A2BFF', Leadership: '#14110D', Financement: '#1A2BFF', Engagement: '#4A4438', Evenements: '#1A2BFF', Impact: '#14110D' }
+const catText = { Gestion: 'var(--cobalt)', Leadership: 'var(--encre)', Financement: 'var(--cobalt)', Engagement: '#4A4438', Evenements: 'var(--cobalt)', Impact: 'var(--encre)' }
 const catIcon = { Gestion: 'chart', Leadership: 'award', Financement: 'money', Engagement: 'users', Evenements: 'calendar', Impact: 'trending' }
 
 const FULL_CONTENT = {
@@ -80,7 +80,7 @@ export default function Blog() {
           <span className="eyebrow">Blog Society</span>
           <h1 style={{ fontSize: 80, marginTop: 24, lineHeight: 0.92, maxWidth: 800 }}>
             Ressources pour<br />
-            <span style={{ color: '#1A2BFF' }}>leaders africains.</span>
+            <span style={{ color: 'var(--cobalt)' }}>leaders africains.</span>
           </h1>
           <p style={{ fontSize: 19, marginTop: 28, maxWidth: 580, lineHeight: 1.55, color: '#4A4438' }}>
             Méthodes, outils, retours du terrain. Pour structurer, engager et faire grandir votre communauté.
@@ -92,10 +92,10 @@ export default function Blog() {
         <div className="container">
           <span className="eyebrow">Article à la une</span>
           {featured && (
-            <div style={{ marginTop: 32, display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 0, background: '#1A2BFF', borderRadius: 32, overflow: 'hidden', minHeight: 420 }}>
+            <div style={{ marginTop: 32, display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 0, background: 'var(--cobalt)', borderRadius: 32, overflow: 'hidden', minHeight: 420 }}>
               <div style={{ padding: 56, display: 'flex', flexDirection: 'column', justifyContent: 'space-between' }}>
                 <div>
-                  <span style={{ display: 'inline-block', padding: '6px 14px', background: '#1A2BFF', color: 'white', borderRadius: 999, fontSize: 11, fontWeight: 800, letterSpacing: '0.06em', marginBottom: 28 }}>
+                  <span style={{ display: 'inline-block', padding: '6px 14px', background: 'var(--cobalt)', color: 'white', borderRadius: 999, fontSize: 11, fontWeight: 800, letterSpacing: '0.06em', marginBottom: 28 }}>
                     {featured.category.toUpperCase()}
                   </span>
                   <h2 style={{ fontSize: 36, color: 'white', lineHeight: 1.15, fontWeight: 800 }}>
@@ -117,7 +117,7 @@ export default function Blog() {
                   </div>
                   <NavLink to="/blog/cotisations" className="btn btn-primary">
                     Lire l'article
-                    <Icon name="arrow" size={15} color="#14110D" />
+                    <Icon name="arrow" size={15} color='var(--encre)' />
                   </NavLink>
                 </div>
               </div>
@@ -144,7 +144,7 @@ export default function Blog() {
             <h2 style={{ fontSize: 28, fontWeight: 800 }}>Tous les articles</h2>
             <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap' }}>
               {['Tout', 'Gestion', 'Leadership', 'Financement', 'Engagement', 'Evenements', 'Impact'].map(f => (
-                <button key={f} onClick={() => setActiveFilter(f)} style={{ padding: '8px 18px', border: f === activeFilter ? '2px solid #1A2BFF' : '1px solid #E5E5E5', background: f === activeFilter ? '#1A2BFF' : 'white', color: f === activeFilter ? 'white' : '#4A4438', borderRadius: 999, fontSize: 13, fontWeight: 600, cursor: 'pointer', fontFamily: 'inherit', transition: 'all 0.15s' }}>
+                <button key={f} onClick={() => setActiveFilter(f)} style={{ padding: '8px 18px', border: f === activeFilter ? '2px solid var(--cobalt)' : '1px solid #E5E5E5', background: f === activeFilter ? 'var(--cobalt)' : 'white', color: f === activeFilter ? 'white' : '#4A4438', borderRadius: 999, fontSize: 13, fontWeight: 600, cursor: 'pointer', fontFamily: 'inherit', transition: 'all 0.15s' }}>
                   {f}
                 </button>
               ))}
@@ -153,7 +153,7 @@ export default function Blog() {
 
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 28 }}>
             {filtered.map(article => (
-              <div key={article.id} style={{ background: 'white', border: `1px solid ${expanded === article.id ? '#1A2BFF' : '#EBEBEB'}`, borderRadius: 24, overflow: 'hidden', display: 'flex', flexDirection: 'column', transition: 'border-color 0.15s' }}>
+              <div key={article.id} style={{ background: 'white', border: `1px solid ${expanded === article.id ? 'var(--cobalt)' : '#EBEBEB'}`, borderRadius: 24, overflow: 'hidden', display: 'flex', flexDirection: 'column', transition: 'border-color 0.15s' }}>
                 <div style={{ height: 200, background: catBg[article.category] || '#F2F2F2', display: 'flex', alignItems: 'center', justifyContent: 'center', padding: 32 }}>
                   <div style={{ textAlign: 'center' }}>
                     <Icon name={catIcon[article.category] || 'chart'} size={48} color={catText[article.category] || '#4A4438'} />
@@ -178,16 +178,16 @@ export default function Blog() {
                   )}
                   <div style={{ marginTop: 24, paddingTop: 20, borderTop: '1px solid #F0F0F0', display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
                     <div style={{ display: 'flex', alignItems: 'center', gap: 10 }}>
-                      <div style={{ width: 32, height: 32, borderRadius: 999, background: '#1A2BFF', display: 'grid', placeItems: 'center', fontWeight: 800, color: 'white', fontSize: 12 }}>
+                      <div style={{ width: 32, height: 32, borderRadius: 999, background: 'var(--cobalt)', display: 'grid', placeItems: 'center', fontWeight: 800, color: 'white', fontSize: 12 }}>
                         {article.author.charAt(0)}
                       </div>
                       <div>
-                        <div style={{ fontSize: 12, fontWeight: 600, color: '#14110D' }}>{article.author}</div>
+                        <div style={{ fontSize: 12, fontWeight: 600, color: 'var(--encre)' }}>{article.author}</div>
                         <div style={{ fontSize: 11, color: '#9B9B9B' }}>{article.readTime} - {article.date}</div>
                       </div>
                     </div>
-                    <button onClick={() => setExpanded(expanded === article.id ? null : article.id)} style={{ background: 'none', border: 'none', cursor: 'pointer', display: 'flex', alignItems: 'center', gap: 4, fontSize: 13, fontWeight: 700, color: '#1A2BFF', fontFamily: 'inherit' }}>
-                      {expanded === article.id ? 'Réduire' : 'Lire'} <Icon name="arrow" size={14} color="#1A2BFF" />
+                    <button onClick={() => setExpanded(expanded === article.id ? null : article.id)} style={{ background: 'none', border: 'none', cursor: 'pointer', display: 'flex', alignItems: 'center', gap: 4, fontSize: 13, fontWeight: 700, color: 'var(--cobalt)', fontFamily: 'inherit' }}>
+                      {expanded === article.id ? 'Réduire' : 'Lire'} <Icon name="arrow" size={14} color='var(--cobalt)' />
                     </button>
                   </div>
                 </div>
@@ -205,7 +205,7 @@ export default function Blog() {
         </div>
       </section>
 
-      <section data-nav-theme="dark" style={{ padding: '80px 64px', background: 'linear-gradient(135deg, #1A2BFF 0%, #1A2BFF 50%, #0B17B8 100%)' }}>
+      <section data-nav-theme="dark" style={{ padding: '80px 64px', background: 'linear-gradient(135deg, var(--cobalt) 0%, var(--cobalt) 50%, var(--cobalt-deep) 100%)' }}>
         <div className="container" style={{ textAlign: 'center' }}>
           <h2 style={{ fontSize: 48, color: 'white', fontWeight: 800 }}>Restez informé.</h2>
           <p style={{ fontSize: 17, color: 'rgba(255,255,255,0.7)', marginTop: 16, maxWidth: 480, margin: '16px auto 0' }}>

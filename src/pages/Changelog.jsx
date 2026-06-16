@@ -9,7 +9,7 @@ const RELEASES = [
     v: 'v1.4',
     date: 'Mai 2026',
     tag: 'Majeure',
-    tagColor: '#1A2BFF',
+    tagColor: 'var(--cobalt)',
     tagBg: '#E8EFFC',
     titre: 'Module Espace Leader & Monétisation avancée',
     items: [
@@ -25,7 +25,7 @@ const RELEASES = [
     v: 'v1.3',
     date: 'Avril 2026',
     tag: 'Intermédiaire',
-    tagColor: '#B22842',
+    tagColor: 'var(--hibiscus)',
     tagBg: '#FFFFFF',
     titre: 'Intégrations Mobile Money & Communication',
     items: [
@@ -40,7 +40,7 @@ const RELEASES = [
     v: 'v1.2',
     date: 'Mars 2026',
     tag: 'Intermédiaire',
-    tagColor: '#1F5D3A',
+    tagColor: 'var(--acacia)',
     tagBg: '#DCFCE7',
     titre: 'Mise en relation & Bénévolat',
     items: [
@@ -83,9 +83,9 @@ const RELEASES = [
 ]
 
 const TYPE_COLORS = {
-  '✨ Nouveau': { bg: '#E8EFFC', c: '#1A2BFF' },
+  '✨ Nouveau': { bg: '#E8EFFC', c: 'var(--cobalt)' },
   '⚡ Amélioré': { bg: '#FFFFFF', c: '#8B6020' },
-  '🐛 Corrigé': { bg: '#DCFCE7', c: '#1F5D3A' },
+  '🐛 Corrigé': { bg: '#DCFCE7', c: 'var(--acacia)' },
   '🚀 Lancement': { bg: '#FDF2F8', c: '#9D174D' },
 }
 
@@ -99,7 +99,7 @@ export default function Changelog() {
           <span className="eyebrow">Journal des mises à jour</span>
           <h1 style={{ fontSize: 100, marginTop: 28, lineHeight: 0.9, maxWidth: 800 }}>
             Ce qu'on<br />
-            <span style={{ color: '#1A2BFF' }}>améliore</span><br />
+            <span style={{ color: 'var(--cobalt)' }}>améliore</span><br />
             chaque semaine.
           </h1>
           <p style={{ fontSize: 20, marginTop: 32, maxWidth: 600, lineHeight: 1.5 }}>
@@ -126,7 +126,7 @@ export default function Changelog() {
                           <span style={{ padding: '3px 10px', background: r.tagBg, color: r.tagColor, borderRadius: 999, fontSize: 11, fontWeight: 800 }}>{r.tag}</span>
                           <span style={{ fontSize: 13, color: '#6B6B6B' }}>{r.date}</span>
                         </div>
-                        <h2 style={{ fontSize: 22, fontWeight: 800, marginBottom: 20, color: '#14110D' }}>{r.titre}</h2>
+                        <h2 style={{ fontSize: 22, fontWeight: 800, marginBottom: 20, color: 'var(--encre)' }}>{r.titre}</h2>
                         <div style={{ display: 'grid', gap: 10 }}>
                           {r.items.map((item, j) => {
                             const tc = TYPE_COLORS[item.type] || { bg: '#F2F2F2', c: '#6B6B6B' }
@@ -148,7 +148,7 @@ export default function Changelog() {
         </div>
       </section>
 
-      <section data-nav-theme="dark" style={{ padding: '64px 64px 100px', background: '#1A2BFF' }}>
+      <section data-nav-theme="dark" style={{ padding: '64px 64px 100px', background: 'var(--cobalt)' }}>
         <div className="container" style={{ textAlign: 'center' }}>
           <div style={{ fontSize: 13, fontWeight: 700, color: 'rgba(255,255,255,0.6)', marginBottom: 16, letterSpacing: '0.06em' }}>RESTEZ INFORMÉ</div>
           <h2 style={{ fontSize: 40, color: 'white', fontWeight: 800, marginBottom: 24 }}>

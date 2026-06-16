@@ -6,7 +6,7 @@ export default function NotFound() {
   return (
     <div className="page">
       <Nav />
-      <section data-nav-theme="dark" style={{ minHeight: '80vh', display: 'flex', alignItems: 'center', justifyContent: 'center', background: '#14110D', padding: '80px 24px', textAlign: 'center' }}>
+      <section data-nav-theme="dark" style={{ minHeight: '80vh', display: 'flex', alignItems: 'center', justifyContent: 'center', background: 'var(--encre)', padding: '80px 24px', textAlign: 'center' }}>
         <div style={{ maxWidth: 560 }}>
           <div style={{ fontSize: 'clamp(96px, 20vw, 160px)', fontWeight: 900, lineHeight: 1, letterSpacing: '-0.06em', color: 'rgba(255,255,255,0.06)', marginBottom: -20 }}>
             404

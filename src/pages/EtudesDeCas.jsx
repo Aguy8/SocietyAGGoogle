@@ -26,7 +26,7 @@ const etudes = [
       { label: 'Membres actifs', val: '340' },
     ],
     quote: 'Society nous a permis de structurer notre collecte de fonds et de décrocher un bailleur européen pour financer notre programme. Concret.',
-    typeColor: '#1A2BFF',
+    typeColor: 'var(--cobalt)',
     typeBg: '#E8F0FD',
   },
   {
@@ -51,7 +51,7 @@ const etudes = [
       { label: 'Temps comptabilité', val: '30 min/sem' },
     ],
     quote: 'Maintenant toutes les femmes voient leur solde en temps réel. La confiance a augmenté et on a même pu accueillir 40 nouvelles membres.',
-    typeColor: '#1A2BFF',
+    typeColor: 'var(--cobalt)',
     typeBg: '#E8EFFC',
   },
   {
@@ -76,7 +76,7 @@ const etudes = [
       { label: 'Membres actifs/an', val: '1 100' },
     ],
     quote: 'Notre gala 2026 a réuni 4 fois plus de personnes que l\'édition précédente. Society nous a redonné une vraie vie associative.',
-    typeColor: '#1A2BFF',
+    typeColor: 'var(--cobalt)',
     typeBg: '#E8EFFC',
   },
   {
@@ -101,7 +101,7 @@ const etudes = [
       { label: 'Membres premium', val: '520' },
     ],
     quote: 'J\'ai transformé ma passion en business viable en 4 mois. Society m\'a donné les outils que j\'attendais depuis des années.',
-    typeColor: '#14110D',
+    typeColor: 'var(--encre)',
     typeBg: '#F8F8F8',
   },
 ]
@@ -113,7 +113,7 @@ export default function EtudesDeCas() {
 
       <section style={{ padding: '20px 64px', background: '#F8F8F8', borderBottom: '2px solid #E5E5E5' }}>
         <div className="container" style={{ display: 'flex', alignItems: 'center', gap: 14 }}>
-          <div style={{ width: 32, height: 32, borderRadius: '50%', background: '#14110D', display: 'grid', placeItems: 'center', flexShrink: 0, fontSize: 16, fontWeight: 800 }}>⚠</div>
+          <div style={{ width: 32, height: 32, borderRadius: '50%', background: 'var(--encre)', display: 'grid', placeItems: 'center', flexShrink: 0, fontSize: 16, fontWeight: 800 }}>⚠</div>
           <p style={{ fontSize: 14, color: '#4A4438', fontWeight: 500, lineHeight: 1.5, margin: 0 }}>
             <strong>Données de simulation :</strong> Les études de cas présentées sur cette page sont des simulations illustratives. Les noms, chiffres et résultats sont fictifs et servent uniquement à illustrer le potentiel de la plateforme Society. Ils ne constituent pas des témoignages réels.
           </p>
@@ -121,21 +121,21 @@ export default function EtudesDeCas() {
       </section>
 
       <section style={{ padding: '120px 64px 80px', background: 'linear-gradient(160deg, #F4F7FE 0%, #F0F5FF 50%, #F8F8F8 100%)', position: 'relative', overflow: 'hidden' }}>
-        <div style={{ position: 'absolute', top: -80, right: 100, width: 400, height: 400, borderRadius: 999, background: '#1A2BFF', opacity: 0.12 }} />
-        <div style={{ position: 'absolute', bottom: -60, left: -40, width: 300, height: 300, borderRadius: 999, background: '#1A2BFF', opacity: 0.06 }} />
+        <div style={{ position: 'absolute', top: -80, right: 100, width: 400, height: 400, borderRadius: 999, background: 'var(--cobalt)', opacity: 0.12 }} />
+        <div style={{ position: 'absolute', bottom: -60, left: -40, width: 300, height: 300, borderRadius: 999, background: 'var(--cobalt)', opacity: 0.06 }} />
         <div className="container" style={{ position: 'relative', zIndex: 2 }}>
           <span className="eyebrow">Etudes de cas</span>
-          <h1 style={{ fontSize: 88, marginTop: 24, lineHeight: 0.92, color: '#14110D', maxWidth: 900 }}>
+          <h1 style={{ fontSize: 88, marginTop: 24, lineHeight: 0.92, color: 'var(--encre)', maxWidth: 900 }}>
             Ce que Society peut<br />
-            <span style={{ color: '#1A2BFF' }}>changer pour vous.</span>
+            <span style={{ color: 'var(--cobalt)' }}>changer pour vous.</span>
           </h1>
           <p style={{ fontSize: 19, marginTop: 32, maxWidth: 620, lineHeight: 1.55, color: '#4A4438' }}>
             Quatre communautés types. Quatre scénarios concrets. Pour visualiser ce que Society pourrait changer dans votre quotidien.
           </p>
-          <div style={{ display: 'flex', gap: 48, marginTop: 64, paddingTop: 48, borderTop: '1px solid rgba(14,71,171,0.15)', flexWrap: 'wrap' }}>
+          <div style={{ display: 'flex', gap: 48, marginTop: 64, paddingTop: 48, borderTop: '1px solid rgba(26,43,255,0.15)', flexWrap: 'wrap' }}>
             {[['4', 'Communautes etudiees'], ['+180 %', 'Engagement moyen'], ['28→4 %', 'Reduction des impayes'], ['4 mois', 'Temps moyen de transformation']].map(([v, l], i) => (
               <div key={i}>
-                <div style={{ fontSize: 32, fontWeight: 900, color: '#1A2BFF', letterSpacing: '-0.02em' }}>{v}</div>
+                <div style={{ fontSize: 32, fontWeight: 900, color: 'var(--cobalt)', letterSpacing: '-0.02em' }}>{v}</div>
                 <div style={{ fontSize: 13, color: 'var(--so-grey-500)', marginTop: 6 }}>{l}</div>
               </div>
             ))}
@@ -175,7 +175,7 @@ export default function EtudesDeCas() {
                         <div style={{ fontSize: 11, fontWeight: 700, letterSpacing: '0.05em', color: '#9B9B9B', marginBottom: 12 }}>AVANT SOCIETY</div>
                         {e.avant.map((m, j) => (
                           <div key={j} style={{ marginBottom: 8 }}>
-                            <div style={{ fontSize: 18, fontWeight: 800, color: '#14110D' }}>{m.val}</div>
+                            <div style={{ fontSize: 18, fontWeight: 800, color: 'var(--encre)' }}>{m.val}</div>
                             <div style={{ fontSize: 11, color: '#9B9B9B' }}>{m.label}</div>
                           </div>
                         ))}
@@ -191,7 +191,7 @@ export default function EtudesDeCas() {
                       </div>
                     </div>
 
-                    <blockquote style={{ padding: '20px 24px', background: '#14110D', borderRadius: 16, borderLeft: `4px solid ${e.typeColor}`, margin: 0 }}>
+                    <blockquote style={{ padding: '20px 24px', background: 'var(--encre)', borderRadius: 16, borderLeft: `4px solid ${e.typeColor}`, margin: 0 }}>
                       <p style={{ fontSize: 15, color: 'rgba(255,255,255,0.85)', lineHeight: 1.65, margin: 0 }}>{e.quote}</p>
                       <div style={{ fontSize: 12, color: 'rgba(255,255,255,0.5)', marginTop: 12 }}>— {e.personne}, {e.role}</div>
                     </blockquote>
@@ -203,7 +203,7 @@ export default function EtudesDeCas() {
         </div>
       </section>
 
-      <section data-nav-theme="dark" style={{ padding: '80px 64px 120px', background: '#1A2BFF' }}>
+      <section data-nav-theme="dark" style={{ padding: '80px 64px 120px', background: 'var(--cobalt)' }}>
         <div className="container" style={{ textAlign: 'center' }}>
           <h2 style={{ fontSize: 56, color: 'white', fontWeight: 800, maxWidth: 700, margin: '0 auto' }}>
             Votre communaute sera la prochaine etude de cas.
@@ -213,8 +213,8 @@ export default function EtudesDeCas() {
           </p>
           <div style={{ display: 'flex', gap: 16, justifyContent: 'center', marginTop: 40 }}>
             <NavLink to="/inscription" className="btn btn-primary btn-xl">
-              Commencer gratuitement
-              <Icon name="arrow" size={16} color="#14110D" />
+              Rejoindre la liste d'attente
+              <Icon name="arrow" size={16} color='var(--encre)' />
             </NavLink>
             <NavLink to="/contact" className="btn btn-outline btn-xl" style={{ color: 'white', borderColor: 'rgba(255,255,255,0.3)' }}>
               Parler a un expert

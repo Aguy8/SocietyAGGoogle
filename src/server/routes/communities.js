@@ -39,7 +39,7 @@ router.post('/', (req, res) => {
       'INSERT INTO communities (nom, type, description, pays, ville, membres_count, couleur, plan, modules) VALUES (?, ?, ?, ?, ?, ?, ?, ?, ?)'
     ).run(
       nom.trim(), type, description || '', pays || "Côte d'Ivoire",
-      ville || '', membres_count || '', couleur || '#0E47AB',
+      ville || '', membres_count || '', couleur || 'var(--cobalt)',
       plan || 'Starter', modules ? JSON.stringify(modules) : null
     )
     const communityId = r.lastInsertRowid

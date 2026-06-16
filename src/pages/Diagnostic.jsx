@@ -38,8 +38,8 @@ function Section({ num, color, label, children }) {
   return (
     <div style={{ marginBottom: 44 }}>
       <div style={{ display: 'flex', alignItems: 'center', gap: 12, marginBottom: 20 }}>
-        <div style={{ width: 26, height: 26, background: color || '#1A2BFF', borderRadius: 7, display: 'grid', placeItems: 'center', flexShrink: 0 }}>
-          <span style={{ color: color === '#B22842' ? '#14110D' : 'white', fontWeight: 800, fontSize: 12 }}>{num}</span>
+        <div style={{ width: 26, height: 26, background: color || 'var(--cobalt)', borderRadius: 7, display: 'grid', placeItems: 'center', flexShrink: 0 }}>
+          <span style={{ color: color === 'var(--hibiscus)' ? 'var(--encre)' : 'white', fontWeight: 800, fontSize: 12 }}>{num}</span>
         </div>
         <h2 style={{ fontSize: 16, fontWeight: 800, margin: 0, letterSpacing: '0.04em', textTransform: 'uppercase' }}>{label}</h2>
       </div>
@@ -56,7 +56,7 @@ export default function Diagnostic() {
   const { slug } = useParams()
   const s = slug ? SEGMENT_BY_SLUG[slug] : null
   const today = new Date().toLocaleDateString('fr-FR', { year: 'numeric', month: 'long', day: 'numeric' })
-  const accentColor = s?.color || '#1A2BFF'
+  const accentColor = s?.color || 'var(--cobalt)'
 
   const challenges = s ? s.pbDetail : [
     'Suivi manuel des membres et cotisations',
@@ -68,7 +68,7 @@ export default function Diagnostic() {
   return (
     <>
       {/* Barre d'action — masquée à l'impression */}
-      <div className="no-print" style={{ background: '#14110D', padding: '16px 40px', display: 'flex', justifyContent: 'space-between', alignItems: 'center', position: 'sticky', top: 0, zIndex: 100 }}>
+      <div className="no-print" style={{ background: 'var(--encre)', padding: '16px 40px', display: 'flex', justifyContent: 'space-between', alignItems: 'center', position: 'sticky', top: 0, zIndex: 100 }}>
         <NavLink to={s ? `/pour-qui/${slug}` : '/pour-qui'} style={{ color: 'rgba(255,255,255,0.65)', fontSize: 13, textDecoration: 'none', fontWeight: 600, display: 'flex', alignItems: 'center', gap: 8 }}>
           ← Retour {s ? `— ${s.nom}` : ''}
         </NavLink>
@@ -76,7 +76,7 @@ export default function Diagnostic() {
           <span style={{ fontSize: 12, color: 'rgba(255,255,255,0.4)' }}>Appuyez sur Ctrl+P pour sauvegarder en PDF</span>
           <button
             onClick={() => window.print()}
-            style={{ padding: '10px 22px', background: '#B22842', color: '#14110D', border: 'none', borderRadius: 999, fontWeight: 700, fontSize: 14, cursor: 'pointer', display: 'flex', alignItems: 'center', gap: 8 }}>
+            style={{ padding: '10px 22px', background: 'var(--hibiscus)', color: 'var(--encre)', border: 'none', borderRadius: 999, fontWeight: 700, fontSize: 14, cursor: 'pointer', display: 'flex', alignItems: 'center', gap: 8 }}>
             <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round"><path d="M21 15v4a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2v-4"/><polyline points="7 10 12 15 17 10"/><line x1="12" y1="15" x2="12" y2="3"/></svg>
             Télécharger PDF
           </button>
@@ -84,13 +84,13 @@ export default function Diagnostic() {
       </div>
 
       {/* Formulaire — imprimable */}
-      <div style={{ maxWidth: 800, margin: '40px auto 80px', padding: '0 32px', fontFamily: 'Inter, system-ui, sans-serif', color: '#14110D', fontSize: 14 }}>
+      <div style={{ maxWidth: 800, margin: '40px auto 80px', padding: '0 32px', fontFamily: 'Inter, system-ui, sans-serif', color: 'var(--encre)', fontSize: 14 }}>
 
         {/* En-tête */}
         <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'flex-start', marginBottom: 40, paddingBottom: 28, borderBottom: `2.5px solid ${accentColor}` }}>
           <div>
-            <div style={{ fontSize: 26, fontWeight: 800, letterSpacing: '-0.04em', color: '#1A2BFF' }}>
-              Society<span style={{ color: '#1A2BFF' }}>.</span>
+            <div style={{ fontSize: 26, fontWeight: 800, letterSpacing: '-0.04em', color: 'var(--cobalt)' }}>
+              Society<span style={{ color: 'var(--cobalt)' }}>.</span>
             </div>
             <div style={{ fontSize: 10, fontWeight: 700, letterSpacing: '0.1em', textTransform: 'uppercase', color: '#6B6B6B', marginTop: 3 }}>by Difero Fundry</div>
           </div>
@@ -98,7 +98,7 @@ export default function Diagnostic() {
             <div style={{ fontSize: 13, fontWeight: 800, textTransform: 'uppercase', letterSpacing: '0.05em' }}>Formulaire de Diagnostic</div>
             <div style={{ fontSize: 12, color: '#6B6B6B', marginTop: 4 }}>{today}</div>
             {s && (
-              <div style={{ marginTop: 8, padding: '3px 12px', background: accentColor, color: accentColor === '#B22842' ? '#14110D' : 'white', borderRadius: 999, fontSize: 11, fontWeight: 700, display: 'inline-block' }}>
+              <div style={{ marginTop: 8, padding: '3px 12px', background: accentColor, color: accentColor === 'var(--hibiscus)' ? 'var(--encre)' : 'white', borderRadius: 999, fontSize: 11, fontWeight: 700, display: 'inline-block' }}>
                 {s.nom}
               </div>
             )}
@@ -161,7 +161,7 @@ export default function Diagnostic() {
         <Divider />
 
         {/* PARTIE 3 */}
-        <Section num="3" color="#B22842" label="Outils utilisés actuellement">
+        <Section num="3" color='var(--hibiscus)' label="Outils utilisés actuellement">
           <div style={{ display: 'flex', flexWrap: 'wrap', gap: '10px 32px' }}>
             {['WhatsApp / Telegram', 'Excel / Google Sheets', 'Facebook / Instagram', 'Email / Mailchimp', 'Orange Money / Wave', 'Registres papier / carnets', 'Aucun outil structuré', 'Autre : ___________________'].map(t => (
               <CheckItem key={t} label={t} />
@@ -193,7 +193,7 @@ export default function Diagnostic() {
         <Divider />
 
         {/* PARTIE 5 — NPS */}
-        <Section num="5" color="#1F5D3A" label="Évaluation & intérêt pour Society">
+        <Section num="5" color='var(--acacia)' label="Évaluation & intérêt pour Society">
           <div style={{ marginBottom: 32 }}>
             <p style={{ fontSize: 14, fontWeight: 600, marginBottom: 4 }}>
               Sur une échelle de 1 à 10, dans quelle mesure pensez-vous que Society peut résoudre vos problèmes ?
@@ -211,8 +211,8 @@ export default function Diagnostic() {
             </div>
           </div>
 
-          <div style={{ padding: 24, background: '#F0F4FF', borderRadius: 16, border: '1.5px solid rgba(14,71,171,0.15)' }}>
-            <p style={{ fontSize: 14, fontWeight: 700, color: '#1A2BFF', marginBottom: 4 }}>
+          <div style={{ padding: 24, background: '#F0F4FF', borderRadius: 16, border: '1.5px solid rgba(26,43,255,0.15)' }}>
+            <p style={{ fontSize: 14, fontWeight: 700, color: 'var(--cobalt)', marginBottom: 4 }}>
               Score NPS — Si Society répondait pleinement à vos attentes…
             </p>
             <p style={{ fontSize: 13, color: '#4A4438', marginBottom: 0 }}>
@@ -225,7 +225,7 @@ export default function Diagnostic() {
         <Divider />
 
         {/* PARTIE 6 */}
-        <Section num="6" color="#14110D" label="Prochaines étapes">
+        <Section num="6" color='var(--encre)' label="Prochaines étapes">
           <div style={{ display: 'grid', gap: 12, marginBottom: 24 }}>
             {[
               'Je suis intéressé(e) par un appel découverte avec l\'équipe Society (30 min)',
@@ -247,11 +247,11 @@ export default function Diagnostic() {
 
           <div style={{ marginTop: 40, display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 48 }}>
             <div>
-              <div style={{ height: 1, background: '#14110D', marginBottom: 8 }} />
+              <div style={{ height: 1, background: 'var(--encre)', marginBottom: 8 }} />
               <span style={{ fontSize: 11, color: '#6B6B6B' }}>Signature</span>
             </div>
             <div>
-              <div style={{ height: 1, background: '#14110D', marginBottom: 8 }} />
+              <div style={{ height: 1, background: 'var(--encre)', marginBottom: 8 }} />
               <span style={{ fontSize: 11, color: '#6B6B6B' }}>Date</span>
             </div>
           </div>
@@ -260,7 +260,7 @@ export default function Diagnostic() {
         {/* Pied de page */}
         <div style={{ borderTop: '1.5px solid #E5E5E5', paddingTop: 24, marginTop: 24, display: 'flex', justifyContent: 'space-between', alignItems: 'center', flexWrap: 'wrap', gap: 12 }}>
           <div>
-            <div style={{ fontSize: 18, fontWeight: 800, letterSpacing: '-0.03em', color: '#1A2BFF' }}>Society<span style={{ color: '#1A2BFF' }}>.</span></div>
+            <div style={{ fontSize: 18, fontWeight: 800, letterSpacing: '-0.03em', color: 'var(--cobalt)' }}>Society<span style={{ color: 'var(--cobalt)' }}>.</span></div>
             <div style={{ fontSize: 11, color: '#6B6B6B', marginTop: 2 }}>by Difero Fundry · Abidjan, Côte d'Ivoire</div>
           </div>
           <div style={{ fontSize: 12, color: '#6B6B6B', textAlign: 'right', lineHeight: 1.7 }}>

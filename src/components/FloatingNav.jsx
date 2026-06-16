@@ -14,37 +14,37 @@ const DISCOVER_SECTIONS = [
   {
     title: 'Produit',
     items: [
-      { to: '/mobile-app',   label: 'App mobile',    desc: 'Society dans votre poche',  icon: 'phone',  color: '#14110D' },
-      { to: '/evenements',   label: 'Événements',    desc: 'Billetterie & QR codes',    icon: 'calendar',   color: '#14110D' },
-      { to: '/comparatif',   label: 'Comparatif',    desc: 'Society vs alternatives',   icon: 'chart',  color: '#14110D' },
-      { to: '/integrations', label: 'Intégrations',  desc: 'Mobile Money & outils',     icon: 'link',   color: '#14110D' },
+      { to: '/mobile-app',   label: 'App mobile',    desc: 'Society dans votre poche',  icon: 'phone',  color: 'var(--encre)' },
+      { to: '/evenements',   label: 'Événements',    desc: 'Billetterie & QR codes',    icon: 'calendar',   color: 'var(--encre)' },
+      { to: '/comparatif',   label: 'Comparatif',    desc: 'Society vs alternatives',   icon: 'chart',  color: 'var(--encre)' },
+      { to: '/integrations', label: 'Intégrations',  desc: 'Mobile Money & outils',     icon: 'link',   color: 'var(--encre)' },
     ],
   },
   {
     title: 'Communauté',
     items: [
-      { to: '/impact',          label: 'Impact collectif', desc: 'Notre vision & ambitions',    icon: 'globe', color: '#14110D' },
-      { to: '/benevolat',       label: 'Bénévolat',        desc: 'Gérez vos volontaires',       icon: 'users', color: '#14110D' },
-      { to: '/mise-en-relation',label: 'Mise en relation', desc: 'Connecter les communautés',   icon: 'globe', color: '#14110D' },
-      { to: '/ambassadeurs',    label: 'Ambassadeurs',     desc: 'Programme de parrainage',     icon: 'award',  color: '#14110D' },
+      { to: '/impact',          label: 'Impact collectif', desc: 'Notre vision & ambitions',    icon: 'globe', color: 'var(--encre)' },
+      { to: '/benevolat',       label: 'Bénévolat',        desc: 'Gérez vos volontaires',       icon: 'users', color: 'var(--encre)' },
+      { to: '/mise-en-relation',label: 'Mise en relation', desc: 'Connecter les communautés',   icon: 'globe', color: 'var(--encre)' },
+      { to: '/ambassadeurs',    label: 'Ambassadeurs',     desc: 'Programme de parrainage',     icon: 'award',  color: 'var(--encre)' },
     ],
   },
   {
     title: 'Ressources',
     items: [
-      { to: '/etudes-de-cas', label: 'Études de cas',  desc: 'Résultats détaillés',     icon: 'layers', color: '#14110D' },
-      { to: '/blog',          label: 'Blog & articles', desc: 'Ressources pour leaders', icon: 'chart',  color: '#14110D' },
-      { to: '/webinaires',    label: 'Webinaires',      desc: 'Formations gratuites',    icon: 'play',   color: '#14110D' },
-      { to: '/centre-aide',   label: "Centre d'aide",   desc: 'Questions fréquentes',    icon: 'shield', color: '#14110D' },
+      { to: '/etudes-de-cas', label: 'Études de cas',  desc: 'Résultats détaillés',     icon: 'layers', color: 'var(--encre)' },
+      { to: '/blog',          label: 'Blog & articles', desc: 'Ressources pour leaders', icon: 'chart',  color: 'var(--encre)' },
+      { to: '/webinaires',    label: 'Webinaires',      desc: 'Formations gratuites',    icon: 'play',   color: 'var(--encre)' },
+      { to: '/centre-aide',   label: "Centre d'aide",   desc: 'Questions fréquentes',    icon: 'shield', color: 'var(--encre)' },
     ],
   },
   {
     title: 'Society',
     items: [
-      { to: '/manifeste',   label: 'Manifeste',  desc: 'Nos valeurs & vision',      icon: 'file-text', color: '#14110D' },
-      { to: '/rse',         label: 'RSE',        desc: 'Partenariats à impact',      icon: 'globe',  color: '#14110D' },
-      { to: '/newsletter',  label: 'Newsletter', desc: 'Restez informé',             icon: 'bell',   color: '#14110D' },
-      { to: '/changelog',   label: 'Nouveautés', desc: 'Dernières mises à jour',     icon: 'refresh',   color: '#14110D' },
+      { to: '/manifeste',   label: 'Manifeste',  desc: 'Nos valeurs & vision',      icon: 'file-text', color: 'var(--encre)' },
+      { to: '/rse',         label: 'RSE',        desc: 'Partenariats à impact',      icon: 'globe',  color: 'var(--encre)' },
+      { to: '/newsletter',  label: 'Newsletter', desc: 'Restez informé',             icon: 'bell',   color: 'var(--encre)' },
+      { to: '/changelog',   label: 'Nouveautés', desc: 'Dernières mises à jour',     icon: 'refresh',   color: 'var(--encre)' },
     ],
   },
 ]
@@ -111,7 +111,7 @@ export default function FloatingNav() {
                     fontWeight: 600,
                     textDecoration: 'none',
                     background: isActive ? 'rgba(26,43,255,0.1)' : 'rgba(20,17,13,0.04)',
-                    color: isActive ? '#1A2BFF' : '#14110D',
+                    color: isActive ? 'var(--cobalt)' : 'var(--encre)',
                     whiteSpace: 'nowrap',
                   })}>
                   {link.label}
@@ -144,7 +144,7 @@ export default function FloatingNav() {
                         <Icon name={item.icon} size={12} color={item.color} />
                       </div>
                       <div>
-                        <div style={{ fontSize: 12, fontWeight: 700, color: '#14110D', lineHeight: 1.2 }}>{item.label}</div>
+                        <div style={{ fontSize: 12, fontWeight: 700, color: 'var(--encre)', lineHeight: 1.2 }}>{item.label}</div>
                         <div style={{ fontSize: 10, color: 'rgba(20,17,13,0.5)', marginTop: 1, lineHeight: 1.3 }}>{item.desc}</div>
                       </div>
                     </NavLink>
@@ -155,13 +155,13 @@ export default function FloatingNav() {
 
             {/* Bottom CTAs */}
             <div style={{ margin: '8px 4px 4px', paddingTop: 8, borderTop: '1px solid rgba(20,17,13,0.08)', display: 'flex', gap: 8 }}>
-              <NavLink to="/demarrer" style={{ flex: 1, padding: '11px 14px', background: '#1A2BFF', borderRadius: 11, textDecoration: 'none', display: 'flex', alignItems: 'center', gap: 8 }}>
+              <NavLink to="/demarrer" style={{ flex: 1, padding: '11px 14px', background: 'var(--cobalt)', borderRadius: 11, textDecoration: 'none', display: 'flex', alignItems: 'center', gap: 8 }}>
                 <Icon name="arrow" size={13} color="white" />
                 <span style={{ fontSize: 13, fontWeight: 700, color: 'white' }}>Comment démarrer</span>
               </NavLink>
               <NavLink to="/documentation" style={{ flex: 1, padding: '11px 14px', background: 'rgba(20,17,13,0.05)', borderRadius: 11, textDecoration: 'none', display: 'flex', alignItems: 'center', gap: 8 }}>
                 <Icon name="layers" size={13} color="rgba(20,17,13,0.6)" />
-                <span style={{ fontSize: 13, fontWeight: 700, color: '#14110D' }}>Documentation</span>
+                <span style={{ fontSize: 13, fontWeight: 700, color: 'var(--encre)' }}>Documentation</span>
               </NavLink>
             </div>
           </div>
@@ -175,12 +175,12 @@ export default function FloatingNav() {
             style={{
               width: 48, height: 48,
               borderRadius: '50%',
-              background: '#1A2BFF',
+              background: 'var(--cobalt)',
               border: 'none',
               cursor: 'pointer',
               display: 'grid',
               placeItems: 'center',
-              boxShadow: '0 8px 24px rgba(14,71,171,0.45)',
+              boxShadow: '0 8px 24px rgba(26,43,255,0.45)',
               transition: 'opacity 0.25s, transform 0.25s',
               opacity: scrolled ? 1 : 0,
               transform: scrolled ? 'scale(1)' : 'scale(0.6)',
@@ -197,7 +197,7 @@ export default function FloatingNav() {
             style={{
               width: 48, height: 48,
               borderRadius: '50%',
-              background: open ? '#1A2BFF' : 'rgba(255,255,255,0.78)',
+              background: open ? 'var(--cobalt)' : 'rgba(255,255,255,0.78)',
               backdropFilter: 'blur(20px) saturate(180%)',
               WebkitBackdropFilter: 'blur(20px) saturate(180%)',
               border: '1px solid rgba(255,255,255,0.5)',
@@ -213,7 +213,7 @@ export default function FloatingNav() {
                 <path d="M18 6L6 18M6 6l12 12"/>
               </svg>
             ) : (
-              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="#14110D" strokeWidth="2.2" strokeLinecap="round">
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke='var(--encre)' strokeWidth="2.2" strokeLinecap="round">
                 <path d="M4 6h16M4 12h16M4 18h16"/>
               </svg>
             )}

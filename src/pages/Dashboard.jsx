@@ -91,9 +91,9 @@ export default function Dashboard() {
       <section style={{ padding: '60px 64px 120px' }}>
         <div className="container">
           {/* Admin bar */}
-          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 32, padding: '12px 20px', background: '#14110D', borderRadius: 14, flexWrap: 'wrap', gap: 12 }}>
+          <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 32, padding: '12px 20px', background: 'var(--encre)', borderRadius: 14, flexWrap: 'wrap', gap: 12 }}>
             <div style={{ display: 'flex', alignItems: 'center', gap: 12 }}>
-              <div style={{ width: 34, height: 34, borderRadius: 10, background: '#1A2BFF', display: 'grid', placeItems: 'center', fontSize: 13, fontWeight: 800, color: 'white' }}>
+              <div style={{ width: 34, height: 34, borderRadius: 10, background: 'var(--cobalt)', display: 'grid', placeItems: 'center', fontSize: 13, fontWeight: 800, color: 'white' }}>
                 {admin?.nom?.charAt(0) || 'A'}
               </div>
               <div>
@@ -120,10 +120,10 @@ export default function Dashboard() {
           {stats && (
             <div style={{ display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 20, marginBottom: 48 }}>
               {[
-                { v: stats.total_communities, l: 'Communautés', color: '#1A2BFF' },
-                { v: stats.total_membres, l: 'Membres au total', color: '#1A2BFF' },
-                { v: stats.by_type?.length || 0, l: 'Types actifs', color: '#14110D' },
-                { v: stats.by_pays?.[0]?.pays || '—', l: 'Pays principal', color: '#1A2BFF' },
+                { v: stats.total_communities, l: 'Communautés', color: 'var(--cobalt)' },
+                { v: stats.total_membres, l: 'Membres au total', color: 'var(--cobalt)' },
+                { v: stats.by_type?.length || 0, l: 'Types actifs', color: 'var(--encre)' },
+                { v: stats.by_pays?.[0]?.pays || '—', l: 'Pays principal', color: 'var(--cobalt)' },
               ].map((s, i) => (
                 <div key={i} style={{ padding: 28, background: 'white', borderRadius: 20, border: '1px solid #E5E5E5', boxShadow: '0 4px 20px rgba(0,0,0,0.04)' }}>
                   <div style={{ fontSize: 40, fontWeight: 800, letterSpacing: '-0.03em', color: s.color }}>{s.v}</div>
@@ -161,18 +161,18 @@ export default function Dashboard() {
                 <div style={{ display: 'grid', gap: 12 }}>
                   {communities.map(c => (
                     <div key={c.id} onClick={() => selectCommunity(c)}
-                      style={{ padding: 20, background: selected?.id === c.id ? '#F4F7FE' : 'white', border: `1.5px solid ${selected?.id === c.id ? '#1A2BFF' : '#E5E5E5'}`, borderRadius: 16, cursor: 'pointer', display: 'flex', gap: 16, alignItems: 'center' }}>
-                      <div style={{ width: 44, height: 44, borderRadius: 12, background: c.couleur || '#1A2BFF', flexShrink: 0 }} />
+                      style={{ padding: 20, background: selected?.id === c.id ? '#F4F7FE' : 'white', border: `1.5px solid ${selected?.id === c.id ? 'var(--cobalt)' : '#E5E5E5'}`, borderRadius: 16, cursor: 'pointer', display: 'flex', gap: 16, alignItems: 'center' }}>
+                      <div style={{ width: 44, height: 44, borderRadius: 12, background: c.couleur || 'var(--cobalt)', flexShrink: 0 }} />
                       <div style={{ flex: 1, minWidth: 0 }}>
                         <div style={{ fontWeight: 700, fontSize: 16, overflow: 'hidden', textOverflow: 'ellipsis', whiteSpace: 'nowrap' }}>{c.nom}</div>
                         <div style={{ fontSize: 13, color: '#6B6B6B' }}>{c.type} · {c.ville}, {c.pays}</div>
                         <div style={{ display: 'flex', gap: 8, marginTop: 6 }}>
-                          <span style={{ padding: '2px 8px', background: '#E8EFFC', color: '#1A2BFF', borderRadius: 999, fontSize: 11, fontWeight: 600 }}>Plan {c.plan}</span>
+                          <span style={{ padding: '2px 8px', background: '#E8EFFC', color: 'var(--cobalt)', borderRadius: 999, fontSize: 11, fontWeight: 600 }}>Plan {c.plan}</span>
                           <span style={{ padding: '2px 8px', background: '#F2F2F2', borderRadius: 999, fontSize: 11, fontWeight: 600 }}>{c.total_membres} membres</span>
                         </div>
                       </div>
                       <button onClick={ev => { ev.stopPropagation(); deleteCommunity(c.id) }}
-                        style={{ padding: '6px 12px', background: '#FFF5F5', color: '#1A2BFF', border: 'none', borderRadius: 8, fontSize: 12, fontWeight: 600, cursor: 'pointer' }}>
+                        style={{ padding: '6px 12px', background: '#FFF5F5', color: 'var(--cobalt)', border: 'none', borderRadius: 8, fontSize: 12, fontWeight: 600, cursor: 'pointer' }}>
                         Suppr.
                       </button>
                     </div>
@@ -186,7 +186,7 @@ export default function Dashboard() {
               <div>
                 <div style={{ padding: 24, background: 'white', borderRadius: 20, border: '1px solid #E5E5E5', marginBottom: 20 }}>
                   <div style={{ display: 'flex', gap: 16, alignItems: 'center' }}>
-                    <div style={{ width: 52, height: 52, borderRadius: 14, background: selected.couleur || '#1A2BFF', flexShrink: 0 }} />
+                    <div style={{ width: 52, height: 52, borderRadius: 14, background: selected.couleur || 'var(--cobalt)', flexShrink: 0 }} />
                     <div>
                       <h2 style={{ fontSize: 24, margin: 0 }}>{selected.nom}</h2>
                       <div style={{ fontSize: 14, color: '#6B6B6B' }}>{selected.type} · {selected.ville}, {selected.pays}</div>
@@ -208,7 +208,7 @@ export default function Dashboard() {
                 {showAddMember && (
                   <form onSubmit={addMember} style={{ padding: 24, background: '#F8F8F8', borderRadius: 16, marginBottom: 16, display: 'grid', gap: 14 }}>
                     <div style={{ fontSize: 14, fontWeight: 700 }}>Nouveau membre</div>
-                    {memberError && <div style={{ fontSize: 13, color: '#1A2BFF' }}>{memberError}</div>}
+                    {memberError && <div style={{ fontSize: 13, color: 'var(--cobalt)' }}>{memberError}</div>}
                     <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 12 }}>
                       <input type="text" placeholder="Nom *" value={memberForm.nom} onChange={e => setMemberForm(f => ({ ...f, nom: e.target.value }))}
                         style={{ padding: '12px 16px', border: '1.5px solid #E5E5E5', borderRadius: 10, fontSize: 14, fontFamily: 'inherit', outline: 'none' }} />
@@ -242,7 +242,7 @@ export default function Dashboard() {
                   <div style={{ display: 'grid', gap: 10 }}>
                     {members.map(m => (
                       <div key={m.id} style={{ padding: '16px 20px', background: 'white', border: '1px solid #E5E5E5', borderRadius: 14, display: 'flex', alignItems: 'center', gap: 14 }}>
-                        <div style={{ width: 40, height: 40, borderRadius: '50%', background: '#E8EFFC', display: 'grid', placeItems: 'center', fontWeight: 700, fontSize: 14, color: '#1A2BFF', flexShrink: 0 }}>
+                        <div style={{ width: 40, height: 40, borderRadius: '50%', background: '#E8EFFC', display: 'grid', placeItems: 'center', fontWeight: 700, fontSize: 14, color: 'var(--cobalt)', flexShrink: 0 }}>
                           {m.nom?.[0]?.toUpperCase()}{m.prenom?.[0]?.toUpperCase() || ''}
                         </div>
                         <div style={{ flex: 1, minWidth: 0 }}>
@@ -251,7 +251,7 @@ export default function Dashboard() {
                         </div>
                         <span style={{ padding: '4px 12px', background: '#F2F2F2', borderRadius: 999, fontSize: 12, fontWeight: 600, flexShrink: 0 }}>{m.role}</span>
                         <button onClick={() => deleteMember(m.id)}
-                          style={{ padding: '4px 10px', background: '#FFF5F5', color: '#1A2BFF', border: 'none', borderRadius: 6, fontSize: 11, fontWeight: 600, cursor: 'pointer', flexShrink: 0 }}>
+                          style={{ padding: '4px 10px', background: '#FFF5F5', color: 'var(--cobalt)', border: 'none', borderRadius: 6, fontSize: 11, fontWeight: 600, cursor: 'pointer', flexShrink: 0 }}>
                           ×
                         </button>
                       </div>

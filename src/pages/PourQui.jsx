@@ -15,8 +15,8 @@ export default function PourQui() {
         <div className="container" style={{ padding: '120px 64px 96px', position: 'relative', zIndex: 2 }}>
           <Reveal>
             <span className="eyebrow">Pour qui ?</span>
-            <h1 style={{ fontSize: 'clamp(48px, 7vw, 100px)', marginTop: 24, lineHeight: 0.92, letterSpacing: '-0.04em', color: '#14110D', maxWidth: 1000 }}>
-              Quelle que soit votre communauté,<br /><span style={{ color: '#1A2BFF' }}>Society pour vous.</span>
+            <h1 style={{ fontSize: 'clamp(48px, 7vw, 100px)', marginTop: 24, lineHeight: 0.92, letterSpacing: '-0.04em', color: 'var(--encre)', maxWidth: 1000 }}>
+              Quelle que soit votre communauté,<br /><span style={{ color: 'var(--cobalt)' }}>Society pour vous.</span>
             </h1>
             <p style={{ fontSize: 19, marginTop: 32, maxWidth: 600, lineHeight: 1.65, color: '#4A4438' }}>
               7 types de communautés. 7 réalités. Une plateforme qui s'adapte.
@@ -47,18 +47,18 @@ export default function PourQui() {
                     backgroundImage: `url(${s.img})`,
                     backgroundSize: 'cover', backgroundPosition: 'center',
                     transition: 'transform 0.3s, box-shadow 0.3s',
-                    boxShadow: '0 8px 32px rgba(14,71,171,0.1)',
+                    boxShadow: '0 8px 32px rgba(26,43,255,0.1)',
                   }}
                   onMouseEnter={e => {
                     e.currentTarget.style.transform = 'translateY(-6px) scale(1.02)'
-                    e.currentTarget.style.boxShadow = '0 24px 60px rgba(14,71,171,0.2)'
+                    e.currentTarget.style.boxShadow = '0 24px 60px rgba(26,43,255,0.2)'
                   }}
                   onMouseLeave={e => {
                     e.currentTarget.style.transform = 'translateY(0) scale(1)'
-                    e.currentTarget.style.boxShadow = '0 8px 32px rgba(14,71,171,0.1)'
+                    e.currentTarget.style.boxShadow = '0 8px 32px rgba(26,43,255,0.1)'
                   }}>
                   <div style={{ position: 'absolute', inset: 0, background: 'linear-gradient(180deg, transparent 25%, rgba(0,0,0,0.85) 100%)' }} />
-                  <div style={{ position: 'absolute', top: 0, left: 0, right: 0, height: 3, background: '#14110D' }} />
+                  <div style={{ position: 'absolute', top: 0, left: 0, right: 0, height: 3, background: 'var(--encre)' }} />
                   <div style={{
                     position: 'absolute', top: 18, right: 18,
                     padding: '6px 12px',
@@ -89,7 +89,7 @@ export default function PourQui() {
       {/* CTA FINAL — vibrant blue gradient */}
       <section style={{
         padding: '120px 64px',
-        background: 'linear-gradient(135deg, #1A2BFF 0%, #1A2BFF 50%, #0B17B8 100%)',
+        background: 'linear-gradient(135deg, var(--cobalt) 0%, var(--cobalt) 50%, var(--cobalt-deep) 100%)',
         color: 'white', position: 'relative', overflow: 'hidden',
       }}>
 

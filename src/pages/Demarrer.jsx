@@ -6,25 +6,25 @@ import Reveal from '../components/Reveal.jsx'
 
 const STEPS = [
   {
-    n: '01', icon: 'users', color: '#1A2BFF', bg: '#E8EFFC',
-    t: 'Créez votre espace en 5 minutes',
+    n: '01', icon: 'users', color: 'var(--cobalt)', bg: '#E8EFFC',
+    t: 'Pré-réservez votre espace en 5 minutes',
     d: 'Nom, type, logo — quelques clics. Aucune carte demandée.',
     checks: ['Choisissez votre type de communauté', 'Personnalisez votre page publique', 'Invitez vos premiers membres'],
   },
   {
-    n: '02', icon: 'money', color: '#1A2BFF', bg: '#F8F8F8',
+    n: '02', icon: 'money', color: 'var(--cobalt)', bg: '#F8F8F8',
     t: 'Importez vos membres',
     d: 'Excel, CSV, ou un par un. Vos membres reçoivent une invitation par SMS ou email.',
     checks: ['Import Excel / CSV en un clic', 'Invitation automatique par SMS', 'Migration depuis WhatsApp'],
   },
   {
-    n: '03', icon: 'trending', color: '#1A2BFF', bg: '#F3F0FF',
+    n: '03', icon: 'trending', color: 'var(--cobalt)', bg: '#F3F0FF',
     t: 'Lancez votre première activité',
     d: 'Cagnotte, cotisation, évènement — choisissez, lancez, regardez votre communauté répondre.',
     checks: ['Cagnotte en 3 clics', 'Cotisation mensuelle automatique', 'Évènement avec billetterie'],
   },
   {
-    n: '04', icon: 'chart', color: '#1A2BFF', bg: '#E8EFFC',
+    n: '04', icon: 'chart', color: 'var(--cobalt)', bg: '#E8EFFC',
     t: 'Suivez votre impact en temps réel',
     d: 'Tableau de bord : membres actifs, fonds collectés, engagement, projets en cours. Tout, au même endroit.',
     checks: ['Tableau de bord en temps réel', 'Rapports téléchargeables', 'Indicateurs d\'impact RSE'],
@@ -41,9 +41,9 @@ export default function Demarrer() {
           <div style={{ maxWidth: 900 }}>
             <span className="eyebrow">Guide de démarrage</span>
             <h1 style={{ fontSize: 100, marginTop: 28, lineHeight: 0.9 }}>
-              Prêt en <span style={{ color: '#1A2BFF' }}>5 min</span>.<br />
+              Prêt en <span style={{ color: 'var(--cobalt)' }}>5 min</span>.<br />
               Opérationnel en<br />
-              <span style={{ color: '#1A2BFF' }}>24h.</span>
+              <span style={{ color: 'var(--cobalt)' }}>24h.</span>
             </h1>
             <p style={{ fontSize: 20, marginTop: 32, maxWidth: 600, lineHeight: 1.5 }}>
               Démarrer avec Society, étape par étape — de la création de votre espace à votre première activité.
@@ -123,7 +123,7 @@ export default function Demarrer() {
             ].map(([q, a], i) => (
               <Reveal key={i} delay={i * 80}>
                 <div style={{ padding: '24px 28px', background: 'white', borderRadius: 20, border: '1px solid #E5E5E5' }}>
-                  <div style={{ fontWeight: 700, fontSize: 16, color: '#14110D', marginBottom: 10 }}>{q}</div>
+                  <div style={{ fontWeight: 700, fontSize: 16, color: 'var(--encre)', marginBottom: 10 }}>{q}</div>
                   <div style={{ fontSize: 15, color: '#4A4438', lineHeight: 1.6 }}>{a}</div>
                 </div>
               </Reveal>
@@ -132,13 +132,13 @@ export default function Demarrer() {
         </div>
       </section>
 
-      <section data-nav-theme="dark" style={{ padding: '80px 64px 120px', background: '#14110D' }}>
+      <section data-nav-theme="dark" style={{ padding: '80px 64px 120px', background: 'var(--encre)' }}>
         <div className="container" style={{ textAlign: 'center' }}>
           <h2 style={{ fontSize: 72, color: 'white', fontWeight: 800, maxWidth: 700, margin: '0 auto' }}>
-            Votre communauté<br />n'attend plus que<br /><span style={{ color: '#1A2BFF' }}>vous.</span>
+            Votre communauté<br />n'attend plus que<br /><span style={{ color: 'var(--cobalt)' }}>vous.</span>
           </h2>
           <NavLink to="/inscription" className="btn btn-gold btn-xl" style={{ marginTop: 48, display: 'inline-flex' }}>
-            Créer mon espace gratuitement <Icon name="arrow" size={16} color="#14110D" />
+            Créer mon espace gratuitement <Icon name="arrow" size={16} color='var(--encre)' />
           </NavLink>
           <div style={{ marginTop: 20, fontSize: 14, color: 'rgba(255,255,255,0.5)' }}>Aucune carte demandée · 5 minutes pour démarrer</div>
         </div>

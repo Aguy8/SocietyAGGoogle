@@ -17,7 +17,7 @@ function loadDraft() {
   } catch { return null }
 }
 
-const COULEURS = ['#1A2BFF', '#14110D', '#1A2BFF', '#14110D', '#1A2BFF', '#1A2BFF']
+const COULEURS = ['var(--cobalt)', 'var(--encre)', 'var(--cobalt)', 'var(--encre)', 'var(--cobalt)', 'var(--cobalt)']
 const TAILLE_MEMBRES = ['1 - 50', '50 - 200', '200 - 500', '500 - 2 000', '+ 2 000']
 const MODULES_DISPO = ['Gestion communautaire', 'Monétisation', 'Mise en relation', 'Visibilité & Impact', 'Espace Leader']
 const PLANS = [
@@ -40,12 +40,12 @@ function StepIndicator({ current }) {
         const done = i < current
         const active = i === current
         return (
-          <div key={i} style={{ display: 'flex', alignItems: 'center', gap: 14, padding: 14, background: active ? 'white' : 'transparent', borderRadius: 14, border: active ? '1px solid #1A2BFF' : '1px solid transparent' }}>
-            <div style={{ width: 34, height: 34, borderRadius: '50%', background: done ? '#1A2BFF' : active ? '#1A2BFF' : '#E5E5E5', color: done || active ? 'white' : '#6B6B6B', display: 'grid', placeItems: 'center', fontWeight: 700, fontSize: 12, flexShrink: 0 }}>
+          <div key={i} style={{ display: 'flex', alignItems: 'center', gap: 14, padding: 14, background: active ? 'white' : 'transparent', borderRadius: 14, border: active ? '1px solid var(--cobalt)' : '1px solid transparent' }}>
+            <div style={{ width: 34, height: 34, borderRadius: '50%', background: done ? 'var(--cobalt)' : active ? 'var(--cobalt)' : '#E5E5E5', color: done || active ? 'white' : '#6B6B6B', display: 'grid', placeItems: 'center', fontWeight: 700, fontSize: 12, flexShrink: 0 }}>
               {done ? '✓' : s.n}
             </div>
-            <div style={{ fontSize: 15, fontWeight: 700, color: active ? '#14110D' : done ? '#1A2BFF' : '#6B6B6B' }}>{s.t}</div>
-            {active && <div style={{ fontSize: 11, color: '#1A2BFF', fontWeight: 600, marginLeft: 'auto' }}>En cours</div>}
+            <div style={{ fontSize: 15, fontWeight: 700, color: active ? 'var(--encre)' : done ? 'var(--cobalt)' : '#6B6B6B' }}>{s.t}</div>
+            {active && <div style={{ fontSize: 11, color: 'var(--cobalt)', fontWeight: 600, marginLeft: 'auto' }}>En cours</div>}
           </div>
         )
       })}
@@ -67,7 +67,7 @@ export default function Inscription() {
     pays: "Côte d'Ivoire",
     ville: 'Abidjan',
     membres_count: '50 - 200',
-    couleur: '#1A2BFF',
+    couleur: 'var(--cobalt)',
     // Step 2
     modules: ['Gestion communautaire'],
     plan: 'Starter',
@@ -188,7 +188,7 @@ export default function Inscription() {
 
               <StepIndicator current={step} />
 
-              <div style={{ marginTop: 40, padding: 24, background: '#FFFFFF', borderRadius: 16, borderLeft: '4px solid #D4A75B' }}>
+              <div style={{ marginTop: 40, padding: 24, background: '#FFFFFF', borderRadius: 16, borderLeft: '4px solid var(--terre)' }}>
                 <div style={{ fontSize: 14, fontWeight: 700 }}>Accès fondateur</div>
                 <div style={{ fontSize: 13, marginTop: 6, color: '#4A4438', lineHeight: 1.5 }}>Accès fondateur gratuit — sans engagement ni carte bancaire.</div>
               </div>
@@ -201,7 +201,7 @@ export default function Inscription() {
               {step === 0 && (
                 <>
                   <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: 8 }}>
-                    <span style={{ fontSize: 13, fontWeight: 700, color: '#1A2BFF', letterSpacing: '0.05em' }}>ÉTAPE 01 / 04</span>
+                    <span style={{ fontSize: 13, fontWeight: 700, color: 'var(--cobalt)', letterSpacing: '0.05em' }}>ÉTAPE 01 / 04</span>
                     <span style={{ fontSize: 13, color: '#6B6B6B' }}>~ 2 minutes</span>
                   </div>
                   <h2 style={{ fontSize: 40, lineHeight: 1.05 }}>Parlez-nous de votre communauté.</h2>
@@ -210,16 +210,16 @@ export default function Inscription() {
                   <div style={{ marginTop: 36, display: 'grid', gap: 24 }}>
                     {/* Nom */}
                     <div>
-                      <label style={{ fontSize: 14, fontWeight: 600 }}>Nom de votre communauté <span style={{ color: '#1A2BFF' }}>*</span></label>
+                      <label style={{ fontSize: 14, fontWeight: 600 }}>Nom de votre communauté <span style={{ color: 'var(--cobalt)' }}>*</span></label>
                       <input type="text" placeholder="Mutuelle des Femmes d'Abobo" value={form.nom}
                         onChange={e => set('nom', e.target.value)}
-                        style={{ width: '100%', marginTop: 8, padding: '16px 20px', border: `1.5px solid ${errors.nom ? '#1A2BFF' : '#E5E5E5'}`, borderRadius: 14, fontSize: 16, fontFamily: 'inherit', boxSizing: 'border-box', outline: 'none' }} />
-                      {errors.nom && <div style={{ fontSize: 12, color: '#1A2BFF', marginTop: 4 }}>{errors.nom}</div>}
+                        style={{ width: '100%', marginTop: 8, padding: '16px 20px', border: `1.5px solid ${errors.nom ? 'var(--cobalt)' : '#E5E5E5'}`, borderRadius: 14, fontSize: 16, fontFamily: 'inherit', boxSizing: 'border-box', outline: 'none' }} />
+                      {errors.nom && <div style={{ fontSize: 12, color: 'var(--cobalt)', marginTop: 4 }}>{errors.nom}</div>}
                     </div>
 
                     {/* Type */}
                     <div>
-                      <label style={{ fontSize: 14, fontWeight: 600 }}>Type de communauté <span style={{ color: '#1A2BFF' }}>*</span></label>
+                      <label style={{ fontSize: 14, fontWeight: 600 }}>Type de communauté <span style={{ color: 'var(--cobalt)' }}>*</span></label>
                       <div style={{ marginTop: 12, display: 'grid', gridTemplateColumns: 'repeat(4, 1fr)', gap: 10 }}>
                         {SEGMENTS.map((s) => (
                           <button type="button" key={s.slug} onClick={() => set('type', s.slug)}
@@ -243,14 +243,14 @@ export default function Inscription() {
                       <div style={{ fontSize: 12, color: '#6B6B6B', marginTop: 2 }}>En une ou deux phrases. Ce qui vous rassemble.</div>
                       <textarea value={form.description} onChange={e => set('description', e.target.value)}
                         placeholder="Une mutuelle de soutien aux femmes commerçantes du marché d'Abobo..."
-                        style={{ width: '100%', marginTop: 8, padding: '16px 20px', border: `1.5px solid ${errors.description ? '#1A2BFF' : '#E5E5E5'}`, borderRadius: 14, fontSize: 15, fontFamily: 'inherit', minHeight: 100, resize: 'vertical', lineHeight: 1.5, boxSizing: 'border-box', outline: 'none' }} />
-                      {errors.description && <div style={{ fontSize: 12, color: '#1A2BFF', marginTop: 4 }}>{errors.description}</div>}
+                        style={{ width: '100%', marginTop: 8, padding: '16px 20px', border: `1.5px solid ${errors.description ? 'var(--cobalt)' : '#E5E5E5'}`, borderRadius: 14, fontSize: 15, fontFamily: 'inherit', minHeight: 100, resize: 'vertical', lineHeight: 1.5, boxSizing: 'border-box', outline: 'none' }} />
+                      {errors.description && <div style={{ fontSize: 12, color: 'var(--cobalt)', marginTop: 4 }}>{errors.description}</div>}
                     </div>
 
                     {/* Pays + Ville */}
                     <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16 }}>
                       <div>
-                        <label style={{ fontSize: 14, fontWeight: 600 }}>Pays <span style={{ color: '#1A2BFF' }}>*</span></label>
+                        <label style={{ fontSize: 14, fontWeight: 600 }}>Pays <span style={{ color: 'var(--cobalt)' }}>*</span></label>
                         <select value={form.pays} onChange={e => { set('pays', e.target.value); set('ville', '') }}
                           style={{ width: '100%', marginTop: 8, padding: '16px 20px', border: '1.5px solid #E5E5E5', borderRadius: 14, fontSize: 15, fontFamily: 'inherit', background: 'white', outline: 'none' }}>
                           {PAYS_NOMS.map(p => <option key={p} value={p}>{p}</option>)}
@@ -285,7 +285,7 @@ export default function Inscription() {
                         <div style={{ display: 'flex', gap: 10, marginTop: 14, flexWrap: 'wrap' }}>
                           {COULEURS.map((c) => (
                             <button type="button" key={c} onClick={() => set('couleur', c)}
-                              style={{ width: 40, height: 40, borderRadius: '50%', background: c, border: form.couleur === c ? '3px solid #14110D' : '3px solid transparent', cursor: 'pointer', boxShadow: form.couleur === c ? '0 0 0 2px white inset' : 'none', flexShrink: 0 }} />
+                              style={{ width: 40, height: 40, borderRadius: '50%', background: c, border: form.couleur === c ? '3px solid var(--encre)' : '3px solid transparent', cursor: 'pointer', boxShadow: form.couleur === c ? '0 0 0 2px white inset' : 'none', flexShrink: 0 }} />
                           ))}
                         </div>
                       </div>
@@ -304,7 +304,7 @@ export default function Inscription() {
               {step === 1 && (
                 <>
                   <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: 8 }}>
-                    <span style={{ fontSize: 13, fontWeight: 700, color: '#1A2BFF', letterSpacing: '0.05em' }}>ÉTAPE 02 / 04</span>
+                    <span style={{ fontSize: 13, fontWeight: 700, color: 'var(--cobalt)', letterSpacing: '0.05em' }}>ÉTAPE 02 / 04</span>
                     <span style={{ fontSize: 13, color: '#6B6B6B' }}>~ 1 minute</span>
                   </div>
                   <h2 style={{ fontSize: 40, lineHeight: 1.05 }}>Quels sont vos besoins ?</h2>
@@ -322,11 +322,11 @@ export default function Inscription() {
                             <button type="button" key={i} onClick={() => {
                               set('modules', selected ? form.modules.filter(m => m !== mod) : [...form.modules, mod])
                             }}
-                              style={{ padding: '18px 24px', border: `1.5px solid ${selected ? '#1A2BFF' : '#E5E5E5'}`, borderRadius: 16, display: 'flex', alignItems: 'center', gap: 16, cursor: 'pointer', background: selected ? '#F4F7FE' : 'white', fontFamily: 'inherit', textAlign: 'left' }}>
-                              <div style={{ width: 28, height: 28, borderRadius: 8, background: selected ? '#1A2BFF' : '#F2F2F2', color: selected ? 'white' : '#6B6B6B', display: 'grid', placeItems: 'center', fontSize: 14, fontWeight: 700, flexShrink: 0 }}>
+                              style={{ padding: '18px 24px', border: `1.5px solid ${selected ? 'var(--cobalt)' : '#E5E5E5'}`, borderRadius: 16, display: 'flex', alignItems: 'center', gap: 16, cursor: 'pointer', background: selected ? '#F4F7FE' : 'white', fontFamily: 'inherit', textAlign: 'left' }}>
+                              <div style={{ width: 28, height: 28, borderRadius: 8, background: selected ? 'var(--cobalt)' : '#F2F2F2', color: selected ? 'white' : '#6B6B6B', display: 'grid', placeItems: 'center', fontSize: 14, fontWeight: 700, flexShrink: 0 }}>
                                 {selected ? '✓' : `0${i + 1}`}
                               </div>
-                              <span style={{ fontSize: 15, fontWeight: 600, color: selected ? '#1A2BFF' : '#14110D' }}>{mod}</span>
+                              <span style={{ fontSize: 15, fontWeight: 600, color: selected ? 'var(--cobalt)' : 'var(--encre)' }}>{mod}</span>
                             </button>
                           )
                         })}
@@ -340,19 +340,19 @@ export default function Inscription() {
                       <div style={{ marginTop: 14, display: 'grid', gap: 12 }}>
                         {PLANS.map((plan) => (
                           <button type="button" key={plan.id} onClick={() => set('plan', plan.id)}
-                            style={{ padding: '20px 24px', border: `1.5px solid ${form.plan === plan.id ? '#1A2BFF' : '#E5E5E5'}`, borderRadius: 16, display: 'flex', alignItems: 'center', gap: 20, cursor: 'pointer', background: form.plan === plan.id ? '#F4F7FE' : 'white', fontFamily: 'inherit', textAlign: 'left' }}>
-                            <div style={{ width: 24, height: 24, borderRadius: '50%', border: `2px solid ${form.plan === plan.id ? '#1A2BFF' : '#C9C9C9'}`, background: form.plan === plan.id ? '#1A2BFF' : 'white', display: 'grid', placeItems: 'center', flexShrink: 0 }}>
+                            style={{ padding: '20px 24px', border: `1.5px solid ${form.plan === plan.id ? 'var(--cobalt)' : '#E5E5E5'}`, borderRadius: 16, display: 'flex', alignItems: 'center', gap: 20, cursor: 'pointer', background: form.plan === plan.id ? '#F4F7FE' : 'white', fontFamily: 'inherit', textAlign: 'left' }}>
+                            <div style={{ width: 24, height: 24, borderRadius: '50%', border: `2px solid ${form.plan === plan.id ? 'var(--cobalt)' : '#C9C9C9'}`, background: form.plan === plan.id ? 'var(--cobalt)' : 'white', display: 'grid', placeItems: 'center', flexShrink: 0 }}>
                               {form.plan === plan.id && <div style={{ width: 10, height: 10, borderRadius: '50%', background: 'white' }} />}
                             </div>
                             <div style={{ flex: 1 }}>
                               <div style={{ display: 'flex', alignItems: 'center', justifyContent: 'space-between' }}>
                                 <span style={{ fontSize: 16, fontWeight: 700 }}>{plan.label}</span>
-                                <span style={{ fontSize: 14, fontWeight: 700, color: '#1A2BFF' }}>{plan.prix}</span>
+                                <span style={{ fontSize: 14, fontWeight: 700, color: 'var(--cobalt)' }}>{plan.prix}</span>
                               </div>
                               <div style={{ fontSize: 13, color: '#6B6B6B', marginTop: 2 }}>{plan.desc}</div>
                               <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap', marginTop: 8 }}>
                                 {plan.features.map(f => (
-                                  <span key={f} style={{ padding: '2px 8px', background: form.plan === plan.id ? '#E8EFFC' : '#F2F2F2', borderRadius: 999, fontSize: 11, fontWeight: 600, color: form.plan === plan.id ? '#1A2BFF' : '#6B6B6B' }}>{f}</span>
+                                  <span key={f} style={{ padding: '2px 8px', background: form.plan === plan.id ? '#E8EFFC' : '#F2F2F2', borderRadius: 999, fontSize: 11, fontWeight: 600, color: form.plan === plan.id ? 'var(--cobalt)' : '#6B6B6B' }}>{f}</span>
                                 ))}
                               </div>
                             </div>
@@ -375,7 +375,7 @@ export default function Inscription() {
               {step === 2 && (
                 <>
                   <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: 8 }}>
-                    <span style={{ fontSize: 13, fontWeight: 700, color: '#1A2BFF', letterSpacing: '0.05em' }}>ÉTAPE 03 / 04</span>
+                    <span style={{ fontSize: 13, fontWeight: 700, color: 'var(--cobalt)', letterSpacing: '0.05em' }}>ÉTAPE 03 / 04</span>
                     <span style={{ fontSize: 13, color: '#6B6B6B' }}>~ 1 minute</span>
                   </div>
                   <h2 style={{ fontSize: 40, lineHeight: 1.05 }}>Qui êtes-vous ?</h2>
@@ -384,10 +384,10 @@ export default function Inscription() {
                   <div style={{ marginTop: 36, display: 'grid', gap: 20 }}>
                     <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr', gap: 16 }}>
                       <div>
-                        <label style={{ fontSize: 14, fontWeight: 600 }}>Nom <span style={{ color: '#1A2BFF' }}>*</span></label>
+                        <label style={{ fontSize: 14, fontWeight: 600 }}>Nom <span style={{ color: 'var(--cobalt)' }}>*</span></label>
                         <input type="text" placeholder="Koné" value={form.fondateur_nom} onChange={e => set('fondateur_nom', e.target.value)}
-                          style={{ width: '100%', marginTop: 8, padding: '16px 20px', border: `1.5px solid ${errors.fondateur_nom ? '#1A2BFF' : '#E5E5E5'}`, borderRadius: 14, fontSize: 15, fontFamily: 'inherit', boxSizing: 'border-box', outline: 'none' }} />
-                        {errors.fondateur_nom && <div style={{ fontSize: 12, color: '#1A2BFF', marginTop: 4 }}>{errors.fondateur_nom}</div>}
+                          style={{ width: '100%', marginTop: 8, padding: '16px 20px', border: `1.5px solid ${errors.fondateur_nom ? 'var(--cobalt)' : '#E5E5E5'}`, borderRadius: 14, fontSize: 15, fontFamily: 'inherit', boxSizing: 'border-box', outline: 'none' }} />
+                        {errors.fondateur_nom && <div style={{ fontSize: 12, color: 'var(--cobalt)', marginTop: 4 }}>{errors.fondateur_nom}</div>}
                       </div>
                       <div>
                         <label style={{ fontSize: 14, fontWeight: 600 }}>Prénom</label>
@@ -397,10 +397,10 @@ export default function Inscription() {
                     </div>
 
                     <div>
-                      <label style={{ fontSize: 14, fontWeight: 600 }}>Email professionnel <span style={{ color: '#1A2BFF' }}>*</span></label>
+                      <label style={{ fontSize: 14, fontWeight: 600 }}>Email professionnel <span style={{ color: 'var(--cobalt)' }}>*</span></label>
                       <input type="email" placeholder="awa.kone@example.com" value={form.fondateur_email} onChange={e => set('fondateur_email', e.target.value)}
-                        style={{ width: '100%', marginTop: 8, padding: '16px 20px', border: `1.5px solid ${errors.fondateur_email ? '#1A2BFF' : '#E5E5E5'}`, borderRadius: 14, fontSize: 15, fontFamily: 'inherit', boxSizing: 'border-box', outline: 'none' }} />
-                      {errors.fondateur_email && <div style={{ fontSize: 12, color: '#1A2BFF', marginTop: 4 }}>{errors.fondateur_email}</div>}
+                        style={{ width: '100%', marginTop: 8, padding: '16px 20px', border: `1.5px solid ${errors.fondateur_email ? 'var(--cobalt)' : '#E5E5E5'}`, borderRadius: 14, fontSize: 15, fontFamily: 'inherit', boxSizing: 'border-box', outline: 'none' }} />
+                      {errors.fondateur_email && <div style={{ fontSize: 12, color: 'var(--cobalt)', marginTop: 4 }}>{errors.fondateur_email}</div>}
                     </div>
 
                     <div>
@@ -434,7 +434,7 @@ export default function Inscription() {
               {step === 3 && (
                 <>
                   <div style={{ display: 'flex', justifyContent: 'space-between', marginBottom: 8 }}>
-                    <span style={{ fontSize: 13, fontWeight: 700, color: '#1A2BFF', letterSpacing: '0.05em' }}>ÉTAPE 04 / 04</span>
+                    <span style={{ fontSize: 13, fontWeight: 700, color: 'var(--cobalt)', letterSpacing: '0.05em' }}>ÉTAPE 04 / 04</span>
                     <span style={{ fontSize: 13, color: '#6B6B6B' }}>~ 30 secondes</span>
                   </div>
                   <h2 style={{ fontSize: 40, lineHeight: 1.05 }}>Tout est bon ?</h2>
@@ -445,7 +445,7 @@ export default function Inscription() {
                     <div style={{ padding: 24, background: '#F8F8F8', borderRadius: 20 }}>
                       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 16 }}>
                         <div style={{ fontSize: 12, fontWeight: 700, color: '#6B6B6B', textTransform: 'uppercase', letterSpacing: '0.06em' }}>Votre communauté</div>
-                        <button onClick={() => setStep(0)} style={{ fontSize: 12, fontWeight: 600, color: '#1A2BFF', background: 'none', border: 'none', cursor: 'pointer' }}>Modifier</button>
+                        <button onClick={() => setStep(0)} style={{ fontSize: 12, fontWeight: 600, color: 'var(--cobalt)', background: 'none', border: 'none', cursor: 'pointer' }}>Modifier</button>
                       </div>
                       <div style={{ display: 'flex', alignItems: 'center', gap: 16, marginBottom: 16 }}>
                         <div style={{ width: 48, height: 48, borderRadius: 14, background: form.couleur, flexShrink: 0 }} />
@@ -457,7 +457,7 @@ export default function Inscription() {
                       <p style={{ fontSize: 14, color: '#4A4438', lineHeight: 1.5, margin: 0 }}>{form.description}</p>
                       <div style={{ marginTop: 12, display: 'flex', gap: 8, flexWrap: 'wrap' }}>
                         <span style={{ padding: '4px 12px', background: 'white', borderRadius: 999, fontSize: 12, fontWeight: 600 }}>{form.membres_count} membres</span>
-                        <span style={{ padding: '4px 12px', background: '#1A2BFF', color: 'white', borderRadius: 999, fontSize: 12, fontWeight: 600 }}>Plan {form.plan}</span>
+                        <span style={{ padding: '4px 12px', background: 'var(--cobalt)', color: 'white', borderRadius: 999, fontSize: 12, fontWeight: 600 }}>Plan {form.plan}</span>
                       </div>
                     </div>
 
@@ -465,11 +465,11 @@ export default function Inscription() {
                     <div style={{ padding: 24, background: '#F8F8F8', borderRadius: 20 }}>
                       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 14 }}>
                         <div style={{ fontSize: 12, fontWeight: 700, color: '#6B6B6B', textTransform: 'uppercase', letterSpacing: '0.06em' }}>Modules sélectionnés</div>
-                        <button onClick={() => setStep(1)} style={{ fontSize: 12, fontWeight: 600, color: '#1A2BFF', background: 'none', border: 'none', cursor: 'pointer' }}>Modifier</button>
+                        <button onClick={() => setStep(1)} style={{ fontSize: 12, fontWeight: 600, color: 'var(--cobalt)', background: 'none', border: 'none', cursor: 'pointer' }}>Modifier</button>
                       </div>
                       <div style={{ display: 'flex', gap: 8, flexWrap: 'wrap' }}>
                         {form.modules.length > 0 ? form.modules.map(m => (
-                          <span key={m} style={{ padding: '6px 14px', background: '#E8EFFC', color: '#1A2BFF', borderRadius: 999, fontSize: 13, fontWeight: 600 }}>{m}</span>
+                          <span key={m} style={{ padding: '6px 14px', background: '#E8EFFC', color: 'var(--cobalt)', borderRadius: 999, fontSize: 13, fontWeight: 600 }}>{m}</span>
                         )) : <span style={{ fontSize: 14, color: '#6B6B6B' }}>Aucun module sélectionné</span>}
                       </div>
                     </div>
@@ -478,7 +478,7 @@ export default function Inscription() {
                     <div style={{ padding: 24, background: '#F8F8F8', borderRadius: 20 }}>
                       <div style={{ display: 'flex', justifyContent: 'space-between', alignItems: 'center', marginBottom: 14 }}>
                         <div style={{ fontSize: 12, fontWeight: 700, color: '#6B6B6B', textTransform: 'uppercase', letterSpacing: '0.06em' }}>Fondateur·rice</div>
-                        <button onClick={() => setStep(2)} style={{ fontSize: 12, fontWeight: 600, color: '#1A2BFF', background: 'none', border: 'none', cursor: 'pointer' }}>Modifier</button>
+                        <button onClick={() => setStep(2)} style={{ fontSize: 12, fontWeight: 600, color: 'var(--cobalt)', background: 'none', border: 'none', cursor: 'pointer' }}>Modifier</button>
                       </div>
                       <div style={{ display: 'grid', gap: 6 }}>
                         <div style={{ fontSize: 15, fontWeight: 700 }}>{form.fondateur_prenom} {form.fondateur_nom}</div>
@@ -490,24 +490,24 @@ export default function Inscription() {
                   </div>
 
                   {errors.submit && (
-                    <div style={{ marginTop: 16, padding: 16, background: '#EEF1FF', borderRadius: 12, color: '#1A2BFF', fontSize: 14, fontWeight: 600 }}>
+                    <div style={{ marginTop: 16, padding: 16, background: '#EEF1FF', borderRadius: 12, color: 'var(--cobalt)', fontSize: 14, fontWeight: 600 }}>
                       {errors.submit}
                     </div>
                   )}
 
                   <div style={{ marginTop: 24, padding: 20, background: '#E8EFFC', borderRadius: 16, display: 'flex', gap: 12, alignItems: 'flex-start' }}>
-                    <Icon name="check" size={20} color="#1A2BFF" />
+                    <Icon name="check" size={20} color='var(--cobalt)' />
                     <div>
-                      <div style={{ fontSize: 14, fontWeight: 700, color: '#1A2BFF' }}>Accès fondateur gratuit</div>
-                      <div style={{ fontSize: 13, color: '#1A2BFF', marginTop: 2 }}>Votre communauté sera activée immédiatement. Aucun paiement requis à ce stade.</div>
+                      <div style={{ fontSize: 14, fontWeight: 700, color: 'var(--cobalt)' }}>Accès fondateur gratuit</div>
+                      <div style={{ fontSize: 13, color: 'var(--cobalt)', marginTop: 2 }}>Votre communauté sera activée immédiatement. Aucun paiement requis à ce stade.</div>
                     </div>
                   </div>
 
                   <p style={{ marginTop: 20, fontSize: 12, color: '#9B9B9B', lineHeight: 1.6 }}>
                     En créant votre communauté, vous acceptez nos{' '}
-                    <NavLink to="/cgu" style={{ color: '#1A2BFF', textDecoration: 'underline' }}>Conditions générales</NavLink>
+                    <NavLink to="/cgu" style={{ color: 'var(--cobalt)', textDecoration: 'underline' }}>Conditions générales</NavLink>
                     {' '}et notre{' '}
-                    <NavLink to="/confidentialite" style={{ color: '#1A2BFF', textDecoration: 'underline' }}>Politique de confidentialité</NavLink>.
+                    <NavLink to="/confidentialite" style={{ color: 'var(--cobalt)', textDecoration: 'underline' }}>Politique de confidentialité</NavLink>.
                   </p>
 
                   <div style={{ marginTop: 16, paddingTop: 20, borderTop: '1px solid #E5E5E5', display: 'flex', justifyContent: 'space-between' }}>

@@ -5,19 +5,19 @@ import Icon from '../components/Icon.jsx'
 import Reveal from '../components/Reveal.jsx'
 
 const PAYMENTS = [
-  { n: 'Orange Money', region: 'CI, SN, ML, CM, BF', color: '#1A2BFF' },
-  { n: 'Wave', region: 'CI, SN, ML, BF', color: '#1A2BFF' },
-  { n: 'MTN MoMo', region: 'CI, GH, CM, RW', color: '#14110D' },
-  { n: 'Moov Money (Flooz)', region: 'CI, BJ, NE', color: '#1A2BFF' },
-  { n: 'M-Pesa', region: 'KE, TZ, UG, RW', color: '#14110D' },
-  { n: 'Visa / Mastercard', region: 'International', color: '#14110D' },
+  { n: 'Orange Money', region: 'CI, SN, ML, CM, BF', color: 'var(--cobalt)' },
+  { n: 'Wave', region: 'CI, SN, ML, BF', color: 'var(--cobalt)' },
+  { n: 'MTN MoMo', region: 'CI, GH, CM, RW', color: 'var(--encre)' },
+  { n: 'Moov Money (Flooz)', region: 'CI, BJ, NE', color: 'var(--cobalt)' },
+  { n: 'M-Pesa', region: 'KE, TZ, UG, RW', color: 'var(--encre)' },
+  { n: 'Visa / Mastercard', region: 'International', color: 'var(--encre)' },
 ]
 
 const TOOLS = [
-  { cat: 'Communication', icon: 'chat', color: '#1A2BFF', items: ['WhatsApp Business', 'SMS Pro', 'Email Marketing', 'Notifications push'] },
-  { cat: 'Productivité', icon: 'grid', color: '#1A2BFF', items: ['Google Workspace', 'Microsoft 365', 'Notion', 'Trello'] },
-  { cat: 'Comptabilité', icon: 'money', color: '#1A2BFF', items: ['Export CSV/Excel', 'PDF automatique', 'API comptable', 'Rapports donateurs'] },
-  { cat: 'Marketing', icon: 'chart', color: '#1A2BFF', items: ['Mailchimp', 'Analytics Society', 'Meta Ads pixel', 'Google Analytics'] },
+  { cat: 'Communication', icon: 'chat', color: 'var(--cobalt)', items: ['WhatsApp Business', 'SMS Pro', 'Email Marketing', 'Notifications push'] },
+  { cat: 'Productivité', icon: 'grid', color: 'var(--cobalt)', items: ['Google Workspace', 'Microsoft 365', 'Notion', 'Trello'] },
+  { cat: 'Comptabilité', icon: 'money', color: 'var(--cobalt)', items: ['Export CSV/Excel', 'PDF automatique', 'API comptable', 'Rapports donateurs'] },
+  { cat: 'Marketing', icon: 'chart', color: 'var(--cobalt)', items: ['Mailchimp', 'Analytics Society', 'Meta Ads pixel', 'Google Analytics'] },
 ]
 
 export default function Integrations() {
@@ -31,7 +31,7 @@ export default function Integrations() {
             <span className="eyebrow">Intégrations</span>
             <h1 style={{ fontSize: 100, marginTop: 28, lineHeight: 0.9 }}>
               Connecté à tout<br />
-              <span style={{ color: '#1A2BFF' }}>ce que vous</span><br />
+              <span style={{ color: 'var(--cobalt)' }}>ce que vous</span><br />
               utilisez déjà.
             </h1>
             <p style={{ fontSize: 20, marginTop: 32, maxWidth: 640, lineHeight: 1.5 }}>
@@ -52,7 +52,7 @@ export default function Integrations() {
               <Reveal key={i} delay={i * 80} direction="scale">
                 <div className="hover-lift" style={{ padding: 32, background: 'white', borderRadius: 24, border: '1px solid #E5E5E5' }}>
                   <div style={{ width: 36, height: 36, borderRadius: '50%', background: p.color, marginBottom: 16 }} />
-                  <div style={{ fontWeight: 800, fontSize: 18, color: '#14110D' }}>{p.n}</div>
+                  <div style={{ fontWeight: 800, fontSize: 18, color: 'var(--encre)' }}>{p.n}</div>
                   <div style={{ fontSize: 13, color: '#6B6B6B', marginTop: 6 }}>{p.region}</div>
                   <div style={{ marginTop: 16, padding: '6px 12px', background: '#F8F8F8', borderRadius: 8, display: 'inline-block', fontSize: 12, fontWeight: 700, color: '#0F8B4F' }}>✓ Intégré nativement</div>
                 </div>
@@ -62,11 +62,11 @@ export default function Integrations() {
         </div>
       </section>
 
-      <section data-nav-theme="dark" style={{ padding: '80px 64px', background: '#14110D' }}>
+      <section data-nav-theme="dark" style={{ padding: '80px 64px', background: 'var(--encre)' }}>
         <div className="container">
           <Reveal>
             <span className="eyebrow dark">Outils & services</span>
-            <h2 style={{ fontSize: 56, marginTop: 20, marginBottom: 56, color: 'white' }}>Connectez vos outils<br /><span style={{ color: '#1A2BFF' }}>en quelques clics.</span></h2>
+            <h2 style={{ fontSize: 56, marginTop: 20, marginBottom: 56, color: 'white' }}>Connectez vos outils<br /><span style={{ color: 'var(--cobalt)' }}>en quelques clics.</span></h2>
           </Reveal>
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(2, 1fr)', gap: 24 }}>
             {TOOLS.map((t, i) => (
@@ -107,16 +107,16 @@ export default function Integrations() {
               </div>
             </Reveal>
             <Reveal direction="right">
-              <div style={{ background: '#14110D', borderRadius: 20, padding: 28, fontFamily: 'monospace' }}>
+              <div style={{ background: 'var(--encre)', borderRadius: 20, padding: 28, fontFamily: 'monospace' }}>
                 <div style={{ fontSize: 12, color: '#6B6B6B', marginBottom: 16 }}>// Exemple — Récupérer les membres</div>
                 {[
-                  { color: '#1A2BFF', text: 'GET' },
-                  { color: '#1A2BFF', text: ' /v1/communities/{id}/members' },
+                  { color: 'var(--cobalt)', text: 'GET' },
+                  { color: 'var(--cobalt)', text: ' /v1/communities/{id}/members' },
                 ].map((l, i) => (
                   <div key={i} style={{ color: l.color, fontSize: 15, marginBottom: 4 }}>{l.text}</div>
                 ))}
                 <div style={{ marginTop: 20, background: '#1a1a1a', borderRadius: 12, padding: 20 }}>
-                  <pre style={{ color: '#1A2BFF', fontSize: 12, margin: 0 }}>{`{
+                  <pre style={{ color: 'var(--cobalt)', fontSize: 12, margin: 0 }}>{`{
   "data": [
     { "id": "usr_01", "name": "Awa K.",
       "status": "active",

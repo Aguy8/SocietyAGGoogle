@@ -35,18 +35,18 @@ export default function Login() {
   }
 
   return (
-    <div style={{ minHeight: '100vh', background: '#14110D', display: 'flex', alignItems: 'center', justifyContent: 'center', padding: 24 }}>
+    <div style={{ minHeight: '100vh', background: 'var(--encre)', display: 'flex', alignItems: 'center', justifyContent: 'center', padding: 24 }}>
 
       {/* Glow background */}
-      <div style={{ position: 'fixed', top: -200, right: -200, width: 600, height: 600, borderRadius: '50%', background: '#1A2BFF', opacity: 0.12, filter: 'blur(100px)', pointerEvents: 'none' }} />
-      <div style={{ position: 'fixed', bottom: -150, left: -100, width: 400, height: 400, borderRadius: '50%', background: '#B22842', opacity: 0.07, filter: 'blur(100px)', pointerEvents: 'none' }} />
+      <div style={{ position: 'fixed', top: -200, right: -200, width: 600, height: 600, borderRadius: '50%', background: 'var(--cobalt)', opacity: 0.12, filter: 'blur(100px)', pointerEvents: 'none' }} />
+      <div style={{ position: 'fixed', bottom: -150, left: -100, width: 400, height: 400, borderRadius: '50%', background: 'var(--hibiscus)', opacity: 0.07, filter: 'blur(100px)', pointerEvents: 'none' }} />
 
       <div style={{ width: '100%', maxWidth: 420, position: 'relative', zIndex: 1 }}>
 
         {/* Logo */}
         <div style={{ textAlign: 'center', marginBottom: 40 }}>
           <div style={{ fontSize: 32, fontWeight: 800, letterSpacing: '-0.04em', color: 'white', fontFamily: 'Georgia, serif' }}>
-            Society<span style={{ color: '#1A2BFF' }}>.</span>
+            Society<span style={{ color: 'var(--cobalt)' }}>.</span>
           </div>
           <div style={{ fontSize: 13, color: 'rgba(255,255,255,0.35)', marginTop: 6, fontWeight: 500 }}>
             Espace administration
@@ -112,7 +112,7 @@ export default function Login() {
             <button
               type="submit"
               disabled={loading}
-              style={{ marginTop: 8, width: '100%', padding: '16px', background: loading ? 'rgba(14,71,171,0.5)' : '#1A2BFF', color: 'white', border: 'none', borderRadius: 12, fontSize: 15, fontWeight: 700, cursor: loading ? 'not-allowed' : 'pointer', fontFamily: 'inherit', transition: 'background 0.2s', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 10 }}>
+              style={{ marginTop: 8, width: '100%', padding: '16px', background: loading ? 'rgba(26,43,255,0.5)' : 'var(--cobalt)', color: 'white', border: 'none', borderRadius: 12, fontSize: 15, fontWeight: 700, cursor: loading ? 'not-allowed' : 'pointer', fontFamily: 'inherit', transition: 'background 0.2s', display: 'flex', alignItems: 'center', justifyContent: 'center', gap: 10 }}>
               {loading ? (
                 <>
                   <span style={{ width: 16, height: 16, border: '2px solid rgba(255,255,255,0.3)', borderTopColor: 'white', borderRadius: '50%', display: 'inline-block', animation: 'spin 0.7s linear infinite' }} />

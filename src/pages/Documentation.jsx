@@ -11,7 +11,7 @@ const categories = [
     description: 'Documentation complète de l\'API REST Society. Endpoints, paramètres, réponses et codes d\'erreur.',
     count: '47 endpoints',
     color: '#E8F0FD',
-    iconColor: '#1A2BFF',
+    iconColor: 'var(--cobalt)',
     link: '/docs/api',
   },
   {
@@ -20,7 +20,7 @@ const categories = [
     description: 'Intégrez Society en moins de 30 minutes. Tutoriels pas à pas pour les cas d\'usage courants.',
     count: '12 guides',
     color: '#F8F8F8',
-    iconColor: '#14110D',
+    iconColor: 'var(--encre)',
     link: '/docs/guides',
   },
   {
@@ -29,7 +29,7 @@ const categories = [
     description: 'Recevez des notifications en temps réel pour chaque événement important de votre communauté.',
     count: '23 événements',
     color: '#F8F8F8',
-    iconColor: '#1A2BFF',
+    iconColor: 'var(--cobalt)',
     link: '/docs/webhooks',
   },
   {
@@ -38,7 +38,7 @@ const categories = [
     description: 'Kits de développement Android (Kotlin/Java) et iOS (Swift) pour intégrer Society dans vos apps.',
     count: '2 plateformes',
     color: '#F8F8F8',
-    iconColor: '#1A2BFF',
+    iconColor: 'var(--cobalt)',
     link: '/docs/sdk',
   },
   {
@@ -67,7 +67,7 @@ const updates = [
     date: '28 avril 2026',
     type: 'Nouveau',
     desc: 'Endpoint POST /payments/mobile-money supporte désormais Wave CI et MTN MoMo.',
-    typeColor: '#1A2BFF',
+    typeColor: 'var(--cobalt)',
     typeBg: '#E8F0FD',
   },
   {
@@ -75,7 +75,7 @@ const updates = [
     date: '14 avril 2026',
     type: 'Correction',
     desc: 'Correction d\'un bug sur le webhook member.joined qui émettait des doublons dans certains cas.',
-    typeColor: '#1A2BFF',
+    typeColor: 'var(--cobalt)',
     typeBg: '#F0FDF4',
   },
   {
@@ -83,7 +83,7 @@ const updates = [
     date: '2 avril 2026',
     type: 'Amélioré',
     desc: 'Rate limits augmentés à 1 000 requêtes/min sur les plans Pro et Institution.',
-    typeColor: '#14110D',
+    typeColor: 'var(--encre)',
     typeBg: '#FDF6EC',
   },
   {
@@ -91,7 +91,7 @@ const updates = [
     date: '15 mars 2026',
     type: 'Nouveau',
     desc: 'SDK Android v2.2 publié avec support natif des notifications push groupées.',
-    typeColor: '#1A2BFF',
+    typeColor: 'var(--cobalt)',
     typeBg: '#E8F0FD',
   },
 ]
@@ -104,31 +104,31 @@ export default function Documentation() {
       <Nav />
 
       <section style={{ padding: '120px 64px 80px', background: 'linear-gradient(160deg, #F0F6FF 0%, #F4F1FF 50%, #FFFBF2 100%)', position: 'relative', overflow: 'hidden' }}>
-        <div style={{ position: 'absolute', top: 0, left: 0, right: 0, bottom: 0, backgroundImage: 'radial-gradient(circle at 20% 50%, rgba(14,71,171,0.12) 0%, transparent 60%), radial-gradient(circle at 80% 20%, rgba(212,167,91,0.15) 0%, transparent 50%)' }} />
+        <div style={{ position: 'absolute', top: 0, left: 0, right: 0, bottom: 0, backgroundImage: 'radial-gradient(circle at 20% 50%, rgba(26,43,255,0.12) 0%, transparent 60%), radial-gradient(circle at 80% 20%, rgba(212,167,91,0.15) 0%, transparent 50%)' }} />
         <div className="container" style={{ position: 'relative', zIndex: 2 }}>
           <span className="eyebrow">Documentation</span>
-          <h1 style={{ fontSize: 80, marginTop: 24, lineHeight: 0.92, color: '#14110D', maxWidth: 800 }}>
+          <h1 style={{ fontSize: 80, marginTop: 24, lineHeight: 0.92, color: 'var(--encre)', maxWidth: 800 }}>
             Construisez avec<br />
-            <span style={{ color: '#1A2BFF' }}>Society API.</span>
+            <span style={{ color: 'var(--cobalt)' }}>Society API.</span>
           </h1>
           <p style={{ fontSize: 18, marginTop: 28, maxWidth: 560, lineHeight: 1.55, color: '#4A4438' }}>
             Documentation complète, exemples de code et SDKs pour intégrer Society dans vos applications en quelques heures.
           </p>
           <div style={{ marginTop: 48, maxWidth: 600, position: 'relative' }}>
             <div style={{ position: 'absolute', left: 20, top: '50%', transform: 'translateY(-50%)', opacity: 0.6 }}>
-              <Icon name="search" size={18} color="#1A2BFF" />
+              <Icon name="search" size={18} color='var(--cobalt)' />
             </div>
             <input
               type="text"
               placeholder="Rechercher dans la documentation... ex : « webhook cotisation »"
               value={search}
               onChange={e => setSearch(e.target.value)}
-              style={{ width: '100%', padding: '18px 24px 18px 52px', borderRadius: 16, border: '1px solid rgba(14,71,171,0.15)', background: 'white', color: '#14110D', fontSize: 15, outline: 'none', boxSizing: 'border-box', boxShadow: '0 4px 16px rgba(14,71,171,0.08)' }}
+              style={{ width: '100%', padding: '18px 24px 18px 52px', borderRadius: 16, border: '1px solid rgba(26,43,255,0.15)', background: 'white', color: 'var(--encre)', fontSize: 15, outline: 'none', boxSizing: 'border-box', boxShadow: '0 4px 16px rgba(26,43,255,0.08)' }}
             />
           </div>
           <div style={{ display: 'flex', gap: 12, justifyContent: 'center', marginTop: 20, flexWrap: 'wrap' }}>
             {['Démarrage rapide', 'Authentification', 'Webhooks', 'Mobile Money', 'SDK'].map(tag => (
-              <button key={tag} style={{ padding: '8px 16px', background: 'white', border: '1px solid rgba(14,71,171,0.15)', borderRadius: 999, color: '#1A2BFF', fontSize: 12, fontWeight: 700, cursor: 'pointer' }}>
+              <button key={tag} style={{ padding: '8px 16px', background: 'white', border: '1px solid rgba(26,43,255,0.15)', borderRadius: 999, color: 'var(--cobalt)', fontSize: 12, fontWeight: 700, cursor: 'pointer' }}>
                 {tag}
               </button>
             ))}
@@ -143,7 +143,7 @@ export default function Documentation() {
               <span className="eyebrow">Catégories</span>
               <h2 style={{ fontSize: 40, marginTop: 16, fontWeight: 800 }}>Tout ce dont vous avez besoin.</h2>
             </div>
-            <a href="https://github.com/DiferoCorp/society-sdk" target="_blank" rel="noreferrer" style={{ display: 'flex', alignItems: 'center', gap: 10, padding: '12px 24px', background: '#14110D', color: 'white', borderRadius: 12, textDecoration: 'none', fontWeight: 700, fontSize: 14 }}>
+            <a href="https://github.com/DiferoCorp/society-sdk" target="_blank" rel="noreferrer" style={{ display: 'flex', alignItems: 'center', gap: 10, padding: '12px 24px', background: 'var(--encre)', color: 'white', borderRadius: 12, textDecoration: 'none', fontWeight: 700, fontSize: 14 }}>
               <Icon name="globe" size={16} color="white" />
               GitHub SDK open-source
             </a>
@@ -184,7 +184,7 @@ export default function Documentation() {
               {updates.map((u, i) => (
                 <div key={i} style={{ padding: '20px 24px', background: 'white', borderRadius: 16, border: '1px solid #EBEBEB', display: 'grid', gridTemplateColumns: '100px 1fr', gap: 16, alignItems: 'start' }}>
                   <div>
-                    <div style={{ fontFamily: 'monospace', fontSize: 13, fontWeight: 700, color: '#14110D' }}>{u.version}</div>
+                    <div style={{ fontFamily: 'monospace', fontSize: 13, fontWeight: 700, color: 'var(--encre)' }}>{u.version}</div>
                     <div style={{ fontSize: 11, color: '#9B9B9B', marginTop: 4 }}>{u.date}</div>
                     <span style={{ display: 'inline-block', marginTop: 8, padding: '3px 10px', background: u.typeBg, color: u.typeColor, borderRadius: 999, fontSize: 10, fontWeight: 700, letterSpacing: '0.04em' }}>
                       {u.type}
@@ -200,7 +200,7 @@ export default function Documentation() {
 
       <section style={{ padding: '64px 64px 80px' }}>
         <div className="container">
-          <div style={{ background: '#1A2BFF', borderRadius: 28, padding: '56px 64px', display: 'grid', gridTemplateColumns: '1fr auto', gap: 48, alignItems: 'center' }}>
+          <div style={{ background: 'var(--cobalt)', borderRadius: 28, padding: '56px 64px', display: 'grid', gridTemplateColumns: '1fr auto', gap: 48, alignItems: 'center' }}>
             <div>
               <h2 style={{ fontSize: 36, color: 'white', fontWeight: 800 }}>Une question technique ? La communauté répond.</h2>
               <p style={{ fontSize: 16, color: 'rgba(255,255,255,0.75)', marginTop: 16, lineHeight: 1.6 }}>
@@ -208,8 +208,8 @@ export default function Documentation() {
               </p>
             </div>
             <div style={{ display: 'flex', flexDirection: 'column', gap: 12, minWidth: 220 }}>
-              <a href="https://github.com/DiferoCorp" target="_blank" rel="noreferrer" style={{ display: 'flex', alignItems: 'center', gap: 10, padding: '14px 22px', background: 'white', color: '#14110D', borderRadius: 12, textDecoration: 'none', fontWeight: 700, fontSize: 14 }}>
-                <Icon name="globe" size={16} color="#14110D" />
+              <a href="https://github.com/DiferoCorp" target="_blank" rel="noreferrer" style={{ display: 'flex', alignItems: 'center', gap: 10, padding: '14px 22px', background: 'white', color: 'var(--encre)', borderRadius: 12, textDecoration: 'none', fontWeight: 700, fontSize: 14 }}>
+                <Icon name="globe" size={16} color='var(--encre)' />
                 GitHub · DiferoCorp
               </a>
               <button style={{ padding: '14px 22px', background: 'rgba(255,255,255,0.12)', color: 'white', border: '1px solid rgba(255,255,255,0.2)', borderRadius: 12, fontWeight: 700, fontSize: 14, cursor: 'pointer', display: 'flex', alignItems: 'center', gap: 10 }}>

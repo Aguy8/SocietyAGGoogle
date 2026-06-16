@@ -108,7 +108,7 @@ export default function Nav({ variant = 'light' }) {
   return (
     <>
       {toast && (
-        <div role="status" aria-live="polite" style={{ position: 'fixed', bottom: 90, left: '50%', transform: 'translateX(-50%)', background: '#14110D', color: 'white', padding: '14px 22px', borderRadius: 12, fontSize: 14, fontWeight: 600, boxShadow: '0 8px 32px rgba(0,0,0,0.4)', border: '1px solid rgba(255,255,255,0.12)', zIndex: 9999, whiteSpace: 'nowrap', maxWidth: 'calc(100vw - 48px)', textAlign: 'center' }}>
+        <div role="status" aria-live="polite" style={{ position: 'fixed', bottom: 90, left: '50%', transform: 'translateX(-50%)', background: 'var(--encre)', color: 'white', padding: '14px 22px', borderRadius: 12, fontSize: 14, fontWeight: 600, boxShadow: '0 8px 32px rgba(0,0,0,0.4)', border: '1px solid rgba(255,255,255,0.12)', zIndex: 9999, whiteSpace: 'nowrap', maxWidth: 'calc(100vw - 48px)', textAlign: 'center' }}>
           {toast}
         </div>
       )}
@@ -176,7 +176,7 @@ export default function Nav({ variant = 'light' }) {
                                 <Icon name={item.icon} size={16} color="#4A4438" />
                               </div>
                               <div>
-                                <div style={{ fontSize: 14, fontWeight: 700, color: '#14110D', lineHeight: 1.2 }}>{item.label}</div>
+                                <div style={{ fontSize: 14, fontWeight: 700, color: 'var(--encre)', lineHeight: 1.2 }}>{item.label}</div>
                                 <div style={{ fontSize: 12, color: '#9B9B9B', marginTop: 2, lineHeight: 1.2 }}>{item.desc}</div>
                               </div>
                             </NavLink>
@@ -192,7 +192,7 @@ export default function Nav({ variant = 'light' }) {
                     display: 'flex', gap: 12, alignItems: 'center',
                   }}>
                     <NavLink to="/demarrer" onClick={() => setDiscoverOpen(false)} style={{
-                      padding: '12px 22px', background: '#14110D', borderRadius: 12,
+                      padding: '12px 22px', background: 'var(--encre)', borderRadius: 12,
                       textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: 10,
                     }}>
                       <Icon name="arrow" size={14} color="white" />
@@ -202,8 +202,8 @@ export default function Nav({ variant = 'light' }) {
                       padding: '12px 22px', background: 'rgba(20,17,13,0.06)', borderRadius: 12,
                       textDecoration: 'none', display: 'inline-flex', alignItems: 'center', gap: 10,
                     }}>
-                      <Icon name="layers" size={14} color="#14110D" />
-                      <span style={{ fontSize: 14, fontWeight: 700, color: '#14110D' }}>Documentation</span>
+                      <Icon name="layers" size={14} color='var(--encre)' />
+                      <span style={{ fontSize: 14, fontWeight: 700, color: 'var(--encre)' }}>Documentation</span>
                     </NavLink>
                     <div style={{ marginLeft: 'auto', fontSize: 13, color: '#B0A99A' }}>
                       Plateforme pour les communautés africaines
@@ -221,7 +221,7 @@ export default function Nav({ variant = 'light' }) {
               onClick={() => setFounderOpen(o => !o)}
               className="btn btn-ghost"
               style={{ color: 'inherit', display: 'flex', alignItems: 'center', gap: 6 }}>
-              Connexion
+              Accès Bêta
               <span style={{ fontSize: 10, transition: 'transform 0.2s', display: 'inline-block', transform: founderOpen ? 'rotate(180deg)' : 'none' }}>&#9660;</span>
             </button>
             {founderOpen && (
@@ -232,7 +232,7 @@ export default function Nav({ variant = 'light' }) {
                   Se connecter
                 </button>
                 <div style={{ padding: '12px 16px', borderTop: '1px solid #F2F2F2', borderBottom: '1px solid #F2F2F2', fontSize: 11, fontWeight: 700, color: '#6B6B6B', textTransform: 'uppercase', letterSpacing: '0.06em' }}>Fondateur Society</div>
-                <NavLink to="/dashboard" onClick={() => setFounderOpen(false)} style={{ display: 'flex', alignItems: 'center', gap: 10, padding: '14px 20px', textDecoration: 'none', color: '#14110D', fontSize: 14, fontWeight: 600 }}>
+                <NavLink to="/dashboard" onClick={() => setFounderOpen(false)} style={{ display: 'flex', alignItems: 'center', gap: 10, padding: '14px 20px', textDecoration: 'none', color: 'var(--encre)', fontSize: 14, fontWeight: 600 }}>
                   <div style={{ width: 28, height: 28, borderRadius: 8, background: '#F0F0F0', display: 'grid', placeItems: 'center' }}><Icon name="grid" size={14} color="#4A4438" /></div>
                   Dashboard admin
                 </NavLink>
@@ -268,7 +268,7 @@ export default function Nav({ variant = 'light' }) {
           ))}
           <NavLink to="/demarrer" className="nav-mobile-link" onClick={() => setMenuOpen(false)}>Comment démarrer</NavLink>
           <NavLink to="/dashboard" className="nav-mobile-link" onClick={() => setMenuOpen(false)}
-            style={{ color: '#1A2BFF', fontWeight: 700, marginTop: 12 }}>
+            style={{ color: 'var(--cobalt)', fontWeight: 700, marginTop: 12 }}>
             Dashboard fondateur
           </NavLink>
           <NavLink to="/inscription" className="btn btn-primary" onClick={() => setMenuOpen(false)}

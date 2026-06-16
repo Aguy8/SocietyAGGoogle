@@ -6,12 +6,12 @@ import Icon from '../components/Icon.jsx'
 import Reveal from '../components/Reveal.jsx'
 
 const PERKS = [
-  { icon: 'money', color: '#1A2BFF', bg: '#E8EFFC', t: '20 % de commission', d: 'Sur chaque abonnement payant des communautés que vous amenez. Pendant 12 mois.' },
-  { icon: 'award', color: '#1A2BFF', bg: '#E8EFFC', t: 'Accès Pro offert', d: 'Un compte Society Pro à vous, tant que vous êtes ambassadeur actif.' },
-  { icon: 'trending', color: '#1A2BFF', bg: '#E8EFFC', t: 'Formation certifiante', d: 'Le programme Society Leader, pour structurer encore mieux une communauté.' },
-  { icon: 'users', color: '#14110D', bg: '#F8F8F8', t: 'Réseau ambassadeurs', d: 'Le groupe privé des ambassadeurs Society. Échanges, stratégies, entraide.' },
-  { icon: 'chart', color: '#14110D', bg: '#F8F8F8', t: 'Tableau de bord clair', d: 'En temps réel : commissions, filleuls actifs, volume généré.' },
-  { icon: 'globe', color: '#14110D', bg: '#F2F2F2', t: 'Visibilité partagée', d: 'Votre profil mis en avant sur Society et dans nos communications.' },
+  { icon: 'money', color: 'var(--cobalt)', bg: '#E8EFFC', t: '20 % de commission', d: 'Sur chaque abonnement payant des communautés que vous amenez. Pendant 12 mois.' },
+  { icon: 'award', color: 'var(--cobalt)', bg: '#E8EFFC', t: 'Accès Pro offert', d: 'Un compte Society Pro à vous, tant que vous êtes ambassadeur actif.' },
+  { icon: 'trending', color: 'var(--cobalt)', bg: '#E8EFFC', t: 'Formation certifiante', d: 'Le programme Society Leader, pour structurer encore mieux une communauté.' },
+  { icon: 'users', color: 'var(--encre)', bg: '#F8F8F8', t: 'Réseau ambassadeurs', d: 'Le groupe privé des ambassadeurs Society. Échanges, stratégies, entraide.' },
+  { icon: 'chart', color: 'var(--encre)', bg: '#F8F8F8', t: 'Tableau de bord clair', d: 'En temps réel : commissions, filleuls actifs, volume généré.' },
+  { icon: 'globe', color: 'var(--encre)', bg: '#F2F2F2', t: 'Visibilité partagée', d: 'Votre profil mis en avant sur Society et dans nos communications.' },
 ]
 
 const TEMOINS = [
@@ -33,14 +33,14 @@ export default function Ambassadeurs() {
     <div className="page">
       <Nav />
 
-      <section data-nav-theme="dark" style={{ padding: '120px 64px 80px', background: '#14110D', position: 'relative', overflow: 'hidden' }}>
-        <div style={{ position: 'absolute', top: -120, right: -120, width: 500, height: 500, borderRadius: '50%', background: '#1A2BFF', opacity: 0.08, filter: 'blur(80px)' }} />
+      <section data-nav-theme="dark" style={{ padding: '120px 64px 80px', background: 'var(--encre)', position: 'relative', overflow: 'hidden' }}>
+        <div style={{ position: 'absolute', top: -120, right: -120, width: 500, height: 500, borderRadius: '50%', background: 'var(--cobalt)', opacity: 0.08, filter: 'blur(80px)' }} />
         <div className="container" style={{ position: 'relative', zIndex: 2 }}>
           <div style={{ display: 'inline-flex', alignItems: 'center', gap: 8, padding: '6px 16px', background: 'rgba(255,255,255,0.08)', border: '1px solid rgba(255,255,255,0.2)', borderRadius: 999, marginBottom: 32 }}>
             <span style={{ color: 'rgba(255,255,255,0.85)', fontWeight: 700, fontSize: 13 }}>● Lancement imminent — Candidatures ouvertes</span>
           </div>
           <h1 style={{ fontSize: 88, lineHeight: 0.9, color: 'white', maxWidth: 900 }}>
-            Devenez<br /><span style={{ color: '#1A2BFF' }}>Ambassadeur</span><br />Society.
+            Devenez<br /><span style={{ color: 'var(--cobalt)' }}>Ambassadeur</span><br />Society.
           </h1>
           <p style={{ fontSize: 20, marginTop: 28, maxWidth: 580, lineHeight: 1.6, color: 'rgba(255,255,255,0.75)' }}>
             Recommandez Society. Touchez 20 % sur chaque abonnement. Un revenu qui rentre, pendant que vous aidez les communautés à se structurer.
@@ -52,7 +52,7 @@ export default function Ambassadeurs() {
         </div>
       </section>
 
-      <section style={{ padding: '80px 64px', background: '#1A2BFF' }}>
+      <section style={{ padding: '80px 64px', background: 'var(--cobalt)' }}>
         <div className="container">
           <div style={{ display: 'flex', gap: 64, flexWrap: 'wrap', justifyContent: 'center' }}>
             {[['20 %', 'Commission récurrente'], ['12 mois', 'Durée des commissions'], ['0 €', 'Pour rejoindre'], ['Illimité', 'Filleuls possibles']].map(([v, l], i) => (
@@ -122,7 +122,7 @@ export default function Ambassadeurs() {
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 24 }}>
             {TEMOINS.map((t, i) => (
               <Reveal key={i} delay={i * 100}>
-                <div style={{ padding: 32, background: '#14110D', borderRadius: 24, color: 'white' }}>
+                <div style={{ padding: 32, background: 'var(--encre)', borderRadius: 24, color: 'white' }}>
                   <div style={{ display: 'flex', alignItems: 'center', gap: 14, marginBottom: 20 }}>
                     <img src={t.img} style={{ width: 52, height: 52, borderRadius: '50%', objectFit: 'cover' }} alt={t.n} />
                     <div>
@@ -130,7 +130,7 @@ export default function Ambassadeurs() {
                       <div style={{ fontSize: 12, color: 'rgba(255,255,255,0.5)' }}>{t.r}</div>
                     </div>
                   </div>
-                  <div style={{ fontSize: 24, fontWeight: 800, color: '#1A2BFF', marginBottom: 16 }}>{t.gain}</div>
+                  <div style={{ fontSize: 24, fontWeight: 800, color: 'var(--cobalt)', marginBottom: 16 }}>{t.gain}</div>
                   <p style={{ fontSize: 14, color: 'rgba(255,255,255,0.75)', lineHeight: 1.65 }}>« {t.q} »</p>
                 </div>
               </Reveal>
@@ -139,7 +139,7 @@ export default function Ambassadeurs() {
         </div>
       </section>
 
-      <section id="candidater" data-nav-theme="dark" style={{ padding: '100px 64px 120px', background: '#1A2BFF' }}>
+      <section id="candidater" data-nav-theme="dark" style={{ padding: '100px 64px 120px', background: 'var(--cobalt)' }}>
         <div className="container" style={{ maxWidth: 640, margin: '0 auto', textAlign: 'center' }}>
           <Reveal>
             <h2 style={{ fontSize: 56, color: 'white', fontWeight: 800 }}>Candidater au programme.</h2>
@@ -178,9 +178,9 @@ export default function Ambassadeurs() {
                   onClick={handleSubmit}
                   disabled={!form.nom || !form.email}
                   className="btn"
-                  style={{ width: '100%', justifyContent: 'center', background: form.nom && form.email ? 'white' : 'rgba(255,255,255,0.3)', color: '#1A2BFF', fontWeight: 700, cursor: form.nom && form.email ? 'pointer' : 'not-allowed', transition: 'all 0.2s' }}
+                  style={{ width: '100%', justifyContent: 'center', background: form.nom && form.email ? 'white' : 'rgba(255,255,255,0.3)', color: 'var(--cobalt)', fontWeight: 700, cursor: form.nom && form.email ? 'pointer' : 'not-allowed', transition: 'all 0.2s' }}
                 >
-                  Envoyer ma candidature <Icon name="arrow" size={16} color="#1A2BFF" />
+                  Envoyer ma candidature <Icon name="arrow" size={16} color='var(--cobalt)' />
                 </button>
               </div>
             )}

@@ -20,7 +20,7 @@ export default function FeatureMembres() {
     <div className="page">
       <Nav />
 
-      <section data-nav-theme="dark" style={{ padding: '120px 64px 80px', background: '#1A2BFF' }}>
+      <section data-nav-theme="dark" style={{ padding: '120px 64px 80px', background: 'var(--cobalt)' }}>
         <div className="container">
           <div style={{ display: 'flex', alignItems: 'center', gap: 16, marginBottom: 32 }}>
             <NavLink to="/fonctionnalites" style={{ color: 'rgba(255,255,255,0.6)', textDecoration: 'none', fontSize: 14 }}>← Fonctionnalités</NavLink>
@@ -32,7 +32,7 @@ export default function FeatureMembres() {
             <span style={{ color: 'white', fontWeight: 700, fontSize: 13, marginLeft: 8 }}>MODULE 01</span>
           </div>
           <h1 style={{ fontSize: 88, lineHeight: 0.9, color: 'white', maxWidth: 800 }}>
-            Gestion<br /><span style={{ color: '#1A2BFF' }}>membres.</span>
+            Gestion<br /><span style={{ color: 'var(--cobalt)' }}>membres.</span>
           </h1>
           <p style={{ fontSize: 20, marginTop: 28, maxWidth: 580, lineHeight: 1.6, color: 'rgba(255,255,255,0.8)' }}>
             Tout ce qu'il faut pour gérer votre communauté sans Excel ni WhatsApp. Un cœur opérationnel solide, conçu pour les non-techniciens.
@@ -53,7 +53,7 @@ export default function FeatureMembres() {
                   <Reveal key={i} delay={i * 60}>
                     <div style={{ padding: '20px 0', borderBottom: '1px solid #E5E5E5', display: 'grid', gridTemplateColumns: '40px 1fr', gap: 16 }}>
                       <div style={{ width: 36, height: 36, borderRadius: 10, background: '#E8EFFC', display: 'grid', placeItems: 'center' }}>
-                        <Icon name="check" size={18} color="#1A2BFF" />
+                        <Icon name="check" size={18} color='var(--cobalt)' />
                       </div>
                       <div>
                         <div style={{ fontWeight: 700, fontSize: 16 }}>{t}</div>
@@ -78,7 +78,7 @@ export default function FeatureMembres() {
                     <div style={{ display: 'grid', gridTemplateColumns: '1fr 1fr 1fr', gap: 10, marginBottom: 20 }}>
                       {[['1 248', 'Membres'], ['94 %', 'À jour'], ['87 %', 'Actifs']].map(([v, l], i) => (
                         <div key={i} style={{ padding: 14, background: '#F8F8F8', borderRadius: 12, textAlign: 'center' }}>
-                          <div style={{ fontSize: 20, fontWeight: 800, color: '#1A2BFF' }}>{v}</div>
+                          <div style={{ fontSize: 20, fontWeight: 800, color: 'var(--cobalt)' }}>{v}</div>
                           <div style={{ fontSize: 11, color: '#6B6B6B', marginTop: 2 }}>{l}</div>
                         </div>
                       ))}
@@ -94,7 +94,7 @@ export default function FeatureMembres() {
                           <div style={{ fontSize: 13, fontWeight: 700 }}>{m.n}</div>
                           <div style={{ fontSize: 11, color: '#6B6B6B' }}>{m.r}</div>
                         </div>
-                        <div style={{ padding: '4px 10px', background: m.ok ? '#E8EFFC' : '#FEE2E2', color: m.ok ? '#1A2BFF' : '#991B1B', borderRadius: 999, fontSize: 11, fontWeight: 600 }}>{m.ok ? 'À jour' : 'Relancer'}</div>
+                        <div style={{ padding: '4px 10px', background: m.ok ? '#E8EFFC' : '#FEE2E2', color: m.ok ? 'var(--cobalt)' : '#991B1B', borderRadius: 999, fontSize: 11, fontWeight: 600 }}>{m.ok ? 'À jour' : 'Relancer'}</div>
                       </div>
                     ))}
                   </div>

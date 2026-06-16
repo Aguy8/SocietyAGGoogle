@@ -20,19 +20,19 @@ const ROWS = [
 ]
 
 const COLS = ['Society', 'WhatsApp', 'Circle.so', 'Eventbrite', 'Excel']
-const COLORS = ['#1A2BFF', '#25D366', '#6B46C1', '#F05537', '#1E6F3E']
+const COLORS = ['var(--cobalt)', '#25D366', '#6B46C1', '#F05537', '#1E6F3E']
 
 export default function Comparatif() {
   return (
     <div className="page">
       <Nav />
 
-      <section data-nav-theme="dark" style={{ padding: '120px 64px 80px', background: '#14110D' }}>
+      <section data-nav-theme="dark" style={{ padding: '120px 64px 80px', background: 'var(--encre)' }}>
         <div className="container">
           <Reveal>
             <span className="eyebrow dark">Comparatif</span>
             <h1 style={{ fontSize: 88, marginTop: 24, lineHeight: 0.9, color: 'white', maxWidth: 900 }}>
-              Society vs<br /><span style={{ color: '#1A2BFF' }}>les alternatives.</span>
+              Society vs<br /><span style={{ color: 'var(--cobalt)' }}>les alternatives.</span>
             </h1>
             <p style={{ fontSize: 20, marginTop: 28, maxWidth: 640, lineHeight: 1.6, color: 'rgba(255,255,255,0.75)' }}>
               Pourquoi les leaders communautaires africains choisissent Society. Et ce qu'ils laissent derrière.
@@ -53,7 +53,7 @@ export default function Comparatif() {
                         Fonctionnalité
                       </th>
                       {COLS.map((col, i) => (
-                        <th key={col} style={{ padding: '24px 20px', textAlign: 'center', fontSize: 14, fontWeight: 800, background: i === 0 ? '#1A2BFF' : '#F8F8F8', color: i === 0 ? 'white' : '#14110D', borderBottom: '1px solid #E5E5E5', minWidth: 110 }}>
+                        <th key={col} style={{ padding: '24px 20px', textAlign: 'center', fontSize: 14, fontWeight: 800, background: i === 0 ? 'var(--cobalt)' : '#F8F8F8', color: i === 0 ? 'white' : 'var(--encre)', borderBottom: '1px solid #E5E5E5', minWidth: 110 }}>
                           <div style={{ display: 'flex', flexDirection: 'column', alignItems: 'center', gap: 4 }}>
                             <div style={{ width: 8, height: 8, borderRadius: '50%', background: COLORS[i] }} />
                             {col}
@@ -65,11 +65,11 @@ export default function Comparatif() {
                   <tbody>
                     {ROWS.map((row, ri) => (
                       <tr key={ri} style={{ borderTop: '1px solid #E5E5E5' }}>
-                        <td style={{ padding: '18px 28px', fontSize: 14, fontWeight: 600, color: '#14110D' }}>{row[0]}</td>
+                        <td style={{ padding: '18px 28px', fontSize: 14, fontWeight: 600, color: 'var(--encre)' }}>{row[0]}</td>
                         {row.slice(1).map((v, ci) => (
                           <td key={ci} style={{ padding: 18, textAlign: 'center', background: ci === 0 ? '#F4F7FE' : 'transparent' }}>
                             {v
-                              ? <span style={{ display: 'inline-grid', placeItems: 'center', width: 28, height: 28, borderRadius: '50%', background: ci === 0 ? '#1A2BFF' : '#DCFCE7', color: ci === 0 ? 'white' : '#1F5D3A', fontSize: 14, fontWeight: 800 }}>✓</span>
+                              ? <span style={{ display: 'inline-grid', placeItems: 'center', width: 28, height: 28, borderRadius: '50%', background: ci === 0 ? 'var(--cobalt)' : '#DCFCE7', color: ci === 0 ? 'white' : 'var(--acacia)', fontSize: 14, fontWeight: 800 }}>✓</span>
                               : <span style={{ color: '#D1D5DB', fontSize: 20, fontWeight: 400 }}>—</span>}
                           </td>
                         ))}
@@ -83,9 +83,9 @@ export default function Comparatif() {
 
           <div style={{ display: 'grid', gridTemplateColumns: 'repeat(3, 1fr)', gap: 24, marginTop: 64 }}>
             {[
-              { icon: 'money', color: '#1A2BFF', bg: '#E8EFFC', t: 'Mobile Money natif', d: 'Orange Money, Wave, MTN MoMo — intégrés directement, sans passerelle tierce, sans frais cachés.' },
-              { icon: 'globe', color: '#1A2BFF', bg: '#E8EFFC', t: 'Pensé pour l\'Afrique', d: 'Serveurs en Afrique, support francophone, app pensée pour les réseaux qui flanchent.' },
-              { icon: 'shield', color: '#B22842', bg: '#FFFFFF', t: 'Souverain. Vraiment.', d: 'Vos données vous appartiennent. Aucun algorithme tiers. Aucune dépendance à une plateforme externe.' },
+              { icon: 'money', color: 'var(--cobalt)', bg: '#E8EFFC', t: 'Mobile Money natif', d: 'Orange Money, Wave, MTN MoMo — intégrés directement, sans passerelle tierce, sans frais cachés.' },
+              { icon: 'globe', color: 'var(--cobalt)', bg: '#E8EFFC', t: 'Pensé pour l\'Afrique', d: 'Serveurs en Afrique, support francophone, app pensée pour les réseaux qui flanchent.' },
+              { icon: 'shield', color: 'var(--hibiscus)', bg: '#FFFFFF', t: 'Souverain. Vraiment.', d: 'Vos données vous appartiennent. Aucun algorithme tiers. Aucune dépendance à une plateforme externe.' },
             ].map((c, i) => (
               <Reveal key={i} delay={i * 100}>
                 <div className="hover-lift" style={{ padding: 36, background: '#F8F8F8', borderRadius: 24 }}>
@@ -101,14 +101,14 @@ export default function Comparatif() {
         </div>
       </section>
 
-      <section data-nav-theme="dark" style={{ padding: '80px 64px 120px', background: '#1A2BFF' }}>
+      <section data-nav-theme="dark" style={{ padding: '80px 64px 120px', background: 'var(--cobalt)' }}>
         <div className="container" style={{ textAlign: 'center' }}>
           <h2 style={{ fontSize: 56, color: 'white', fontWeight: 800, maxWidth: 700, margin: '0 auto' }}>
             Passez à la vraie plateforme.
           </h2>
           <div style={{ display: 'flex', gap: 16, justifyContent: 'center', marginTop: 40 }}>
             <NavLink to="/inscription" className="btn btn-gold btn-xl">
-              Commencer gratuitement <Icon name="arrow" size={16} color="#14110D" />
+              Rejoindre la liste d'attente <Icon name="arrow" size={16} color='var(--encre)' />
             </NavLink>
             <NavLink to="/tarifs" className="btn btn-outline-white btn-xl">Voir les tarifs</NavLink>
           </div>

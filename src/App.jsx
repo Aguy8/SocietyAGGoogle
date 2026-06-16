@@ -57,7 +57,7 @@ const FeatureImpact = lazy(() => import('./pages/features/Impact.jsx'))
 function PageLoader() {
   return (
     <div style={{ minHeight: '60vh', display: 'grid', placeItems: 'center' }}>
-      <div style={{ width: 36, height: 36, borderRadius: '50%', border: '3px solid #E5E5E5', borderTopColor: '#0E47AB', animation: 'spin 0.8s linear infinite' }} />
+      <div style={{ width: 36, height: 36, borderRadius: '50%', border: '3px solid #E5E5E5', borderTopColor: 'var(--cobalt)', animation: 'spin 0.8s linear infinite' }} />
     </div>
   )
 }

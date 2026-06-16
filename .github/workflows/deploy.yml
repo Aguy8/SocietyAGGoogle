@@ -1,9 +1,18 @@
 name: Deploy to GitHub Pages
 
-# Society est un repo privé — le déploiement public se fait via sync-to-ci.yml → Society.ci
-# Ce workflow est désactivé (déclencher manuellement si besoin de test local)
 on:
+  push:
+    branches: ["main"]
   workflow_dispatch:
+
+permissions:
+  contents: read
+  pages: write
+  id-token: write
+
+concurrency:
+  group: "pages"
+  cancel-in-progress: true
 
 jobs:
   build:
@@ -24,4 +33,20 @@ jobs:
       - name: Build
         run: npm run build
         env:
-          VITE_BASE_PATH: /Society/
+          VITE_BASE_PATH: /SocietyAGGoogle/
+
+      - name: Upload artifact
+        uses: actions/upload-pages-artifact@v3
+        with:
+          path: ./dist
+
+  deploy:
+    environment:
+      name: github-pages
+      url: ${{ steps.deployment.outputs.page_url }}
+    runs-on: ubuntu-latest
+    needs: build
+    steps:
+      - name: Deploy to GitHub Pages
+        id: deployment
+        uses: actions/deploy-pages@v4
